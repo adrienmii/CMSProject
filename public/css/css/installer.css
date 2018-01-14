@@ -19,12 +19,11 @@
   margin-top: 25px; }
 
 .stepCircle {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
-  border: solid 3px #D9DEE4;
-  display: inline-block;
-  background-color: #2D3F52 !important; }
+  border: solid 2px #fff;
+  display: inline-block; }
 
 .stepCircle.active {
   border: solid 3px #1ABB9C; }

@@ -1,0 +1,22 @@
+#navBar {
+  background: #2A3F54;
+  height: 1000px;
+  width: 220px; }
+
+#navBar header {
+  background: url(../../img/petitLogo.svg) 50% 20px no-repeat;
+  height: 60px; }
+
+#userPicture {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: solid 3px #D9DEE4;
+  display: inline-block;
+  background: url(../../img/userImg.svg) no-repeat center; }
+
+#pageContent {
+  width: calc(100% - 220px);
+  height: 1000px; }
+
+/*# sourceMappingURL=template.css.map */
