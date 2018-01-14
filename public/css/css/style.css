@@ -1,0 +1,566 @@
+/**
+ * Calculate column size percentage
+ */
+/**
+ * Spacing mixin to create uniform margin/padding
+ */
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem; }
+
+.col-xs, .col-sm, .col-md, .col-lg, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 1px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem; }
+
+.col-xs, .col-sm, .col-md, .col-lg {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%; }
+
+/**
+ * Build the grid in two steps, to help minimize file size
+ * Step 1, for each namespace, create the grid-base
+ * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
+ */
+.col-xs-1 {
+  flex-basis: 8.3333333333%;
+  max-width: 8.3333333333%; }
+
+.col-xs-2 {
+  flex-basis: 16.6666666667%;
+  max-width: 16.6666666667%; }
+
+.col-xs-3 {
+  flex-basis: 25%;
+  max-width: 25%; }
+
+.col-xs-4 {
+  flex-basis: 33.3333333333%;
+  max-width: 33.3333333333%; }
+
+.col-xs-5 {
+  flex-basis: 41.6666666667%;
+  max-width: 41.6666666667%; }
+
+.col-xs-6 {
+  flex-basis: 50%;
+  max-width: 50%; }
+
+.col-xs-7 {
+  flex-basis: 58.3333333333%;
+  max-width: 58.3333333333%; }
+
+.col-xs-8 {
+  flex-basis: 66.6666666667%;
+  max-width: 66.6666666667%; }
+
+.col-xs-9 {
+  flex-basis: 75%;
+  max-width: 75%; }
+
+.col-xs-10 {
+  flex-basis: 83.3333333333%;
+  max-width: 83.3333333333%; }
+
+.col-xs-11 {
+  flex-basis: 91.6666666667%;
+  max-width: 91.6666666667%; }
+
+.col-xs-12 {
+  flex-basis: 100%;
+  max-width: 100%; }
+
+.col-xs-offset-1 {
+  margin-left: 8.3333333333%; }
+
+.col-xs-offset-2 {
+  margin-left: 16.6666666667%; }
+
+.col-xs-offset-3 {
+  margin-left: 25%; }
+
+.col-xs-offset-4 {
+  margin-left: 33.3333333333%; }
+
+.col-xs-offset-5 {
+  margin-left: 41.6666666667%; }
+
+.col-xs-offset-6 {
+  margin-left: 50%; }
+
+.col-xs-offset-7 {
+  margin-left: 58.3333333333%; }
+
+.col-xs-offset-8 {
+  margin-left: 66.6666666667%; }
+
+.col-xs-offset-9 {
+  margin-left: 75%; }
+
+.col-xs-offset-10 {
+  margin-left: 83.3333333333%; }
+
+.col-xs-offset-11 {
+  margin-left: 91.6666666667%; }
+
+.offset-xs-reset {
+  margin-left: 0; }
+
+@media only screen and (min-width: 768px) {
+  .col-sm-1 {
+    flex-basis: 8.3333333333%;
+    max-width: 8.3333333333%; }
+
+  .col-sm-2 {
+    flex-basis: 16.6666666667%;
+    max-width: 16.6666666667%; }
+
+  .col-sm-3 {
+    flex-basis: 25%;
+    max-width: 25%; }
+
+  .col-sm-4 {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%; }
+
+  .col-sm-5 {
+    flex-basis: 41.6666666667%;
+    max-width: 41.6666666667%; }
+
+  .col-sm-6 {
+    flex-basis: 50%;
+    max-width: 50%; }
+
+  .col-sm-7 {
+    flex-basis: 58.3333333333%;
+    max-width: 58.3333333333%; }
+
+  .col-sm-8 {
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%; }
+
+  .col-sm-9 {
+    flex-basis: 75%;
+    max-width: 75%; }
+
+  .col-sm-10 {
+    flex-basis: 83.3333333333%;
+    max-width: 83.3333333333%; }
+
+  .col-sm-11 {
+    flex-basis: 91.6666666667%;
+    max-width: 91.6666666667%; }
+
+  .col-sm-12 {
+    flex-basis: 100%;
+    max-width: 100%; }
+
+  .col-sm-offset-1 {
+    margin-left: 8.3333333333%; }
+
+  .col-sm-offset-2 {
+    margin-left: 16.6666666667%; }
+
+  .col-sm-offset-3 {
+    margin-left: 25%; }
+
+  .col-sm-offset-4 {
+    margin-left: 33.3333333333%; }
+
+  .col-sm-offset-5 {
+    margin-left: 41.6666666667%; }
+
+  .col-sm-offset-6 {
+    margin-left: 50%; }
+
+  .col-sm-offset-7 {
+    margin-left: 58.3333333333%; }
+
+  .col-sm-offset-8 {
+    margin-left: 66.6666666667%; }
+
+  .col-sm-offset-9 {
+    margin-left: 75%; }
+
+  .col-sm-offset-10 {
+    margin-left: 83.3333333333%; }
+
+  .col-sm-offset-11 {
+    margin-left: 91.6666666667%; }
+
+  .offset-sm-reset {
+    margin-left: 0; } }
+@media only screen and (min-width: 992px) {
+  .col-md-1 {
+    flex-basis: 8.3333333333%;
+    max-width: 8.3333333333%; }
+
+  .col-md-2 {
+    flex-basis: 16.6666666667%;
+    max-width: 16.6666666667%; }
+
+  .col-md-3 {
+    flex-basis: 25%;
+    max-width: 25%; }
+
+  .col-md-4 {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%; }
+
+  .col-md-5 {
+    flex-basis: 41.6666666667%;
+    max-width: 41.6666666667%; }
+
+  .col-md-6 {
+    flex-basis: 50%;
+    max-width: 50%; }
+
+  .col-md-7 {
+    flex-basis: 58.3333333333%;
+    max-width: 58.3333333333%; }
+
+  .col-md-8 {
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%; }
+
+  .col-md-9 {
+    flex-basis: 75%;
+    max-width: 75%; }
+
+  .col-md-10 {
+    flex-basis: 83.3333333333%;
+    max-width: 83.3333333333%; }
+
+  .col-md-11 {
+    flex-basis: 91.6666666667%;
+    max-width: 91.6666666667%; }
+
+  .col-md-12 {
+    flex-basis: 100%;
+    max-width: 100%; }
+
+  .col-md-offset-1 {
+    margin-left: 8.3333333333%; }
+
+  .col-md-offset-2 {
+    margin-left: 16.6666666667%; }
+
+  .col-md-offset-3 {
+    margin-left: 25%; }
+
+  .col-md-offset-4 {
+    margin-left: 33.3333333333%; }
+
+  .col-md-offset-5 {
+    margin-left: 41.6666666667%; }
+
+  .col-md-offset-6 {
+    margin-left: 50%; }
+
+  .col-md-offset-7 {
+    margin-left: 58.3333333333%; }
+
+  .col-md-offset-8 {
+    margin-left: 66.6666666667%; }
+
+  .col-md-offset-9 {
+    margin-left: 75%; }
+
+  .col-md-offset-10 {
+    margin-left: 83.3333333333%; }
+
+  .col-md-offset-11 {
+    margin-left: 91.6666666667%; }
+
+  .offset-md-reset {
+    margin-left: 0; } }
+@media only screen and (min-width: 1200px) {
+  .col-lg-1 {
+    flex-basis: 8.3333333333%;
+    max-width: 8.3333333333%; }
+
+  .col-lg-2 {
+    flex-basis: 16.6666666667%;
+    max-width: 16.6666666667%; }
+
+  .col-lg-3 {
+    flex-basis: 25%;
+    max-width: 25%; }
+
+  .col-lg-4 {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%; }
+
+  .col-lg-5 {
+    flex-basis: 41.6666666667%;
+    max-width: 41.6666666667%; }
+
+  .col-lg-6 {
+    flex-basis: 50%;
+    max-width: 50%; }
+
+  .col-lg-7 {
+    flex-basis: 58.3333333333%;
+    max-width: 58.3333333333%; }
+
+  .col-lg-8 {
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%; }
+
+  .col-lg-9 {
+    flex-basis: 75%;
+    max-width: 75%; }
+
+  .col-lg-10 {
+    flex-basis: 83.3333333333%;
+    max-width: 83.3333333333%; }
+
+  .col-lg-11 {
+    flex-basis: 91.6666666667%;
+    max-width: 91.6666666667%; }
+
+  .col-lg-12 {
+    flex-basis: 100%;
+    max-width: 100%; }
+
+  .col-lg-offset-1 {
+    margin-left: 8.3333333333%; }
+
+  .col-lg-offset-2 {
+    margin-left: 16.6666666667%; }
+
+  .col-lg-offset-3 {
+    margin-left: 25%; }
+
+  .col-lg-offset-4 {
+    margin-left: 33.3333333333%; }
+
+  .col-lg-offset-5 {
+    margin-left: 41.6666666667%; }
+
+  .col-lg-offset-6 {
+    margin-left: 50%; }
+
+  .col-lg-offset-7 {
+    margin-left: 58.3333333333%; }
+
+  .col-lg-offset-8 {
+    margin-left: 66.6666666667%; }
+
+  .col-lg-offset-9 {
+    margin-left: 75%; }
+
+  .col-lg-offset-10 {
+    margin-left: 83.3333333333%; }
+
+  .col-lg-offset-11 {
+    margin-left: 91.6666666667%; }
+
+  .offset-lg-reset {
+    margin-left: 0; } }
+#loginBody {
+  background: url(../../img/loginBackground.png) no-repeat center fixed;
+  background-size: cover; }
+
+#loginForm {
+  position: absolute;
+  width: 500px;
+  height: 700px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
+  border-radius: 15px; }
+
+#loginForm header {
+  height: 50%;
+  background: url(../../img/logo.png) no-repeat 50% 40%; }
+
+#loginForm main {
+  height: 260px; }
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #1ABB9C;
+  height: 2rem;
+  font-size: 1rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #fff;
+  padding-left: 30px;
+  font-size: 21px;
+  letter-spacing: 1px; }
+
+#loginForm input[type="submit"] {
+  background: #1ABB9C;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute; }
+
+#inputLogin {
+  background: url(../../img/icn/iconLogin.svg) no-repeat;
+  margin-bottom: 40px; }
+
+#inputPwd {
+  background: url(../../img/icn/iconPwd.svg) no-repeat;
+  margin-bottom: 80px; }
+
+#help {
+  background: url(../../img/icn/iconHelp.svg) no-repeat 25px;
+  text-align: center;
+  color: rgba(196, 196, 196, 0.5);
+  text-decoration-line: underline;
+  padding-left: 40px;
+  font-size: 1.2rem; }
+
+#loginForm ::-webkit-input-placeholder {
+  color: #fff;
+  font-style: italic;
+  opacity: 0.9; }
+
+@media screen and (max-width: 768px) {
+  #loginBody {
+    background: #fff; }
+
+  #loginForm {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none; }
+
+  #loginForm header {
+    height: 30%; }
+
+  #loginForm main {
+    height: 50%; }
+
+  #help {
+    text-align: left;
+    padding-left: 50px; } }
+#installerBody {
+  background: url(../../img/loginBackground.png) no-repeat center fixed;
+  background-size: cover; }
+
+#logoContainer {
+  background: url(../../img/logo.png) no-repeat 51% 150%;
+  width: 100%;
+  height: 150px; }
+
+#title {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px; }
+
+#installerForm {
+  position: absolute;
+  width: 63%;
+  height: 700px;
+  left: 50%;
+  top: 80%;
+  transform: translateX(-50%) translateY(-80%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
+  border-radius: 15px; }
+
+#installerForm header {
+  margin-top: 25px; }
+
+.stepCircle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: solid 3px #D9DEE4;
+  display: inline-block;
+  background-color: #2D3F52 !important; }
+
+.stepCircle.active {
+  border: solid 3px #1ABB9C; }
+
+.stepCircle:nth-child(1) {
+  background: url(../../img/icn/iconCheckedWhite.svg) no-repeat center; }
+
+.stepCircle:nth-child(3) {
+  background: url(../../img/icn/iconDbWhite.svg) no-repeat center; }
+
+.stepCircle:nth-child(5) {
+  background: url(../../img/icn/iconUserWhite.svg) no-repeat center; }
+
+.stepCircle.active:nth-child(1) {
+  background: url(../../img/icn/iconCheckedGreen.svg) no-repeat center; }
+
+.stepCircle.active:nth-child(3) {
+  background: url(../../img/icn/iconDbGreen.svg) no-repeat center; }
+
+.stepCircle.active:nth-child(5) {
+  background: url(../../img/icn/iconUserGreen.svg) no-repeat center; }
+
+.path {
+  width: 15%;
+  height: 5px;
+  background: #D9DEE4;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 -4px 50px -4px; }
+
+.path.active {
+  background: #1ABB9C; }
+
+@media screen and (max-width: 768px) {
+  #installerBody {
+    background: #fff; }
+
+  #installerForm {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none; } }
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif; }
+
+* {
+  box-sizing: border-box; }
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.clearfix::before {
+  content: '';
+  display: table; }
+
+.text-center {
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

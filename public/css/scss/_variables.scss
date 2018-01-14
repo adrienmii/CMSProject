@@ -1,0 +1,131 @@
+
+$columns: 12 !default;
+$gutter: 0.5rem !default;
+
+$class-row: 'row' !default;
+$class-col: 'col' !default;
+$class-off: 'offset' !default;
+
+$breakpoints: (
+  (xs),
+  (sm, 768px),
+  (md, 992px),
+  (lg, 1200px)
+) !default;
+
+/**
+ * Calculate column size percentage
+ */
+@function get-col-percent($column-num) {
+
+  @return $column-num / $columns * 100%;
+
+}
+
+/**
+ * Spacing mixin to create uniform margin/padding
+ */
+@mixin spacing( $value, $type: margin, $orientation: vertical ) {
+  @if $orientation == vertical {
+    #{ $type }-top: $value;
+    #{ $type }-bottom: $value;
+  } @else {
+    #{ $type }-left: $value;
+    #{ $type }-right: $value;
+  }
+}
+
+.#{ $class-row } {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include spacing( ( -$gutter ), margin, horizontal );
+}
+
+
+%#{ $class-col } {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 1px;
+  @include spacing( ( $gutter ), padding, horizontal );
+}
+
+%#{ $class-col }-flex {
+  @extend %#{ $class-col };
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+@mixin grid-base( $namespace ) {
+  .#{ $class-col }-#{$namespace} {
+    @extend %#{ $class-col }-flex;
+  }
+
+  @for $i from 1 through $columns {
+    .#{ $class-col }-#{$namespace}-#{$i} {
+      @extend %#{ $class-col };
+    }
+  }
+}
+
+@mixin grid-sizes( $namespace ) {
+
+  // Run the loop for as many columns as speficied
+  @for $i from 1 through $columns {
+    .#{ $class-col }-#{$namespace}-#{$i} {
+      flex-basis: get-col-percent($i);
+      max-width:  get-col-percent($i);
+    }
+  }
+
+  @for $i from 1 through $columns {
+
+    // Don't include the .off class for the last column
+    @if ( $i != $columns ) {
+      .#{ $class-col }-#{$namespace}-#{ $class-off }-#{$i} {
+        margin-left: get-col-percent($i);
+      }
+    }
+
+  }
+
+  .#{ $class-off }-#{$namespace}-reset {
+    margin-left: 0;
+  }
+
+}
+
+
+/**
+ * Build the grid in two steps, to help minimize file size
+ * Step 1, for each namespace, create the grid-base
+ * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
+ */
+@each $val in $breakpoints {
+
+  $namespace: nth($val, 1);
+  @include grid-base( $namespace );
+
+}
+
+@each $val in $breakpoints {
+  @if length($val) == 1 {
+
+    $namespace: nth($val, 1);
+    @include grid-sizes( $namespace );
+
+  } @else {
+
+    $namespace: nth($val, 1);
+    $size: nth($val, 2);
+
+    @media only screen and (min-width: #{$size}) {
+      @include grid-sizes( $namespace );
+    }
+  }
+}
