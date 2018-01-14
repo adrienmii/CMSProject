@@ -1,18 +1,10 @@
-#loginBody {
-  background: url(../../img/loginBackground.png) no-repeat center fixed;
-  background-size: cover;
-}
 
-#loginForm{
-	position: absolute;
+#loginForm{	
 	width: 500px;
 	height: 700px;
 	left: 50%;
 	top: 50%;
-	transform:translateX(-50%) translateY(-50%);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
-	border-radius: 15px;
+	transform:translateX(-50%) translateY(-50%);	
 }
 
 #loginForm header{
@@ -27,32 +19,14 @@
 #loginForm input[type="text"],
 #loginForm input[type="password"]
 {
-    background-color: transparent;
-    border: none;
     border-bottom: 1px solid #1ABB9C;
     height: 2rem;
-    font-size: 1rem;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    color:#fff;
-    padding-left:30px;    
-    font-size: 21px;    
-	letter-spacing:1px
+    font-size: 1.3rem;
+    padding-left:30px; 
+    border-bottom: 1px solid #1ABB9C;     
 }
 
 #loginForm input[type="submit"]{	
-	background: #1ABB9C;
-	border-radius: 50px;
-	border: none;
-	padding: 10px 20px;
-	color: #fff;
-	border-radius: 40px;
-	font-size: 1.5rem;
-	cursor: pointer;
 	width:200px;
 	left: 50%;
 	transform:translateX(-50%);
@@ -78,13 +52,6 @@
 	padding-left:40px;
 	font-size: 1.2rem;
 }
-
-#loginForm ::-webkit-input-placeholder {
-   color: #fff;
-   font-style: italic;
-   opacity: 0.9;
-}
-
 
 
 @media screen and (max-width: 768px){

@@ -368,20 +368,12 @@
 
   .offset-lg-reset {
     margin-left: 0; } }
-#loginBody {
-  background: url(../../img/loginBackground.png) no-repeat center fixed;
-  background-size: cover; }
-
 #loginForm {
-  position: absolute;
   width: 500px;
   height: 700px;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
-  border-radius: 15px; }
+  transform: translateX(-50%) translateY(-50%); }
 
 #loginForm header {
   height: 50%;
@@ -392,31 +384,13 @@
 
 #loginForm input[type="text"],
 #loginForm input[type="password"] {
-  background-color: transparent;
-  border: none;
   border-bottom: 1px solid #1ABB9C;
   height: 2rem;
-  font-size: 1rem;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  color: #fff;
+  font-size: 1.3rem;
   padding-left: 30px;
-  font-size: 21px;
-  letter-spacing: 1px; }
+  border-bottom: 1px solid #1ABB9C; }
 
 #loginForm input[type="submit"] {
-  background: #1ABB9C;
-  border-radius: 50px;
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
-  border-radius: 40px;
-  font-size: 1.5rem;
-  cursor: pointer;
   width: 200px;
   left: 50%;
   transform: translateX(-50%);
@@ -438,11 +412,6 @@
   padding-left: 40px;
   font-size: 1.2rem; }
 
-#loginForm ::-webkit-input-placeholder {
-  color: #fff;
-  font-style: italic;
-  opacity: 0.9; }
-
 @media screen and (max-width: 768px) {
   #loginBody {
     background: #fff; }
@@ -462,10 +431,6 @@
   #help {
     text-align: left;
     padding-left: 50px; } }
-#installerBody {
-  background: url(../../img/loginBackground.png) no-repeat center fixed;
-  background-size: cover; }
-
 #logoContainer {
   background: url(../../img/logo.png) no-repeat 51% 150%;
   width: 100%;
@@ -477,17 +442,13 @@
   font-size: 20px; }
 
 #installerForm {
-  position: absolute;
   width: 63%;
   height: 700px;
   left: 50%;
   top: 80%;
-  transform: translateX(-50%) translateY(-80%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
-  border-radius: 15px; }
+  transform: translateX(-50%) translateY(-80%); }
 
-#installerForm header {
+#installerForm > header {
   margin-top: 25px; }
 
 .stepCircle {
@@ -530,15 +491,66 @@
 .path.active {
   background: #1ABB9C; }
 
+.stepTitle {
+  display: inline-block;
+  text-transform: uppercase;
+  color: #D9DEE4; }
+
+#installerForm > main {
+  margin: 4% 8% 8% 8%; }
+
+#formTitle {
+  color: #E5E5E5;
+  font-size: 21px; }
+
+#formDesc {
+  color: #BAC3CF;
+  font-size: 18px; }
+
+#installerForm form {
+  margin-top: 4%; }
+
+.rowTitle {
+  color: #fff; }
+
+.rowValue {
+  color: #fff; }
+
+.rowDesc {
+  color: #BAC3CF; }
+
+#installerForm form .row {
+  margin-bottom: 25px;
+  font-size: 16px; }
+
+#installerForm input {
+  font-size: 16px;
+  border-bottom: 1px solid #1ABB9C; }
+
+.buttonContainer {
+  margin-top: 50px; }
+
+#installerForm input[type="button"] {
+  font-size: 21px;
+  width: 120px;
+  background: url(../../img/icn/iconArrowRightWhite.svg) 80% no-repeat #1ABB9C; }
+
 @media screen and (max-width: 768px) {
   #installerBody {
-    background: #fff; }
+    background: #fff;
+    height: 100%; }
 
   #installerForm {
     width: 100%;
     height: 100%;
     border-radius: 0;
-    border: none; } }
+    border: none; }
+
+  .rowTitle {
+    margin-bottom: 15px; } }
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #installerForm {
+    width: 80%; } }
 html {
   height: 100%; }
 
@@ -562,5 +574,52 @@ body {
 
 .text-center {
   text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+input[type="text"],
+input[type="password"] {
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #fff;
+  letter-spacing: 1px; }
+
+input[type="submit"],
+input[type="button"] {
+  background: #1ABB9C;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 21px;
+  cursor: pointer; }
+
+#loginBody,
+#installerBody {
+  background: url(../../img/loginBackground.png) no-repeat center fixed;
+  background-size: cover; }
+
+#loginForm,
+#installerForm {
+  position: absolute;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
+  border-radius: 15px; }
+
+#loginForm ::-webkit-input-placeholder,
+#installerForm ::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 0.9; }
 
 /*# sourceMappingURL=style.css.map */
