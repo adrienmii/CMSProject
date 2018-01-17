@@ -14,7 +14,6 @@
 
 #loginForm input[type="text"],
 #loginForm input[type="password"] {
-  border-bottom: 1px solid #1ABB9C;
   height: 2rem;
   font-size: 1.3rem;
   padding-left: 30px;

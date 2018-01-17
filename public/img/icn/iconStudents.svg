@@ -1,0 +1,14 @@
+<svg width="24" height="16" viewBox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconStudent</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1001 962)">
+<g id="iconStudent">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(1001 -962)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 10.118 12.064C 12.411 11.535 14.546 11.071 13.512 9.119C 10.366 3.177 12.678 0 16 0C 19.388 0 21.644 3.299 18.488 9.119C 17.423 11.083 19.637 11.546 21.882 12.064C 23.868 12.523 24 13.494 24 15.175L 23.997 16L 8.003 16C 8.003 13.804 7.827 12.593 10.118 12.064ZM 0.002 16L 6.003 16C 5.975 9.458 8.998 12.303 8.998 7.099C 8.998 5.09 7.687 4 6 4C 3.508 4 1.774 6.383 4.134 10.839C 4.909 12.303 3.309 12.651 1.589 13.048C 0.099 13.392 0 14.12 0 15.381L 0.002 16Z"/>
+</defs>
+</svg>

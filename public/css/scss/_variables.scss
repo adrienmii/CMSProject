@@ -5,6 +5,8 @@ $gutter: 0.5rem !default;
 $class-row: 'row' !default;
 $class-col: 'col' !default;
 $class-off: 'offset' !default;
+$class-hidden: 'hidden' !default;
+$class-visible: 'visible' !default;
 
 $breakpoints: (
   (xs),
@@ -73,6 +75,19 @@ $breakpoints: (
   }
 }
 
+@mixin grid-hidden($namespace){
+  .#{$class-hidden}-#{$namespace}{
+    display:none;
+  }
+}
+
+
+@mixin grid-visible($namespace){
+  .#{$class-visible}-#{$namespace}{
+    display:inherit;
+  }
+}
+
 @mixin grid-sizes( $namespace ) {
 
   // Run the loop for as many columns as speficied
@@ -118,6 +133,8 @@ $breakpoints: (
 
     $namespace: nth($val, 1);
     @include grid-sizes( $namespace );
+    @include grid-hidden( $namespace );
+     @include grid-visible( $namespace );
 
   } @else {
 
@@ -126,6 +143,10 @@ $breakpoints: (
 
     @media only screen and (min-width: #{$size}) {
       @include grid-sizes( $namespace );
+      @include grid-hidden( $namespace );
+       @include grid-visible( $namespace );
     }
   }
 }
+
+

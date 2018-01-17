@@ -1,0 +1,14 @@
+<svg width="22" height="22" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>search</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2163 1401)">
+<g id="search">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(2163 -1401)" fill="#5A738E"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 22 19.14L 16.1329 13.3155C 16.9918 11.9726 17.4877 10.3822 17.4877 8.67808C 17.4886 3.894 13.5655 0 8.74385 0C 3.92217 0 0 3.894 0 8.679C 0 13.4649 3.92217 17.3589 8.74385 17.3589C 10.3766 17.3589 11.9032 16.9125 13.2127 16.137L 19.1196 22L 22 19.14ZM 3.25816 8.679C 3.25816 5.67875 5.71934 3.23583 8.74293 3.23583C 11.7674 3.23583 14.2286 5.67783 14.2286 8.679C 14.2286 11.6811 11.7674 14.1231 8.74293 14.1231C 5.71934 14.1231 3.25816 11.6811 3.25816 8.679Z"/>
+</defs>
+</svg>

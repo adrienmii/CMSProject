@@ -116,6 +116,12 @@
 .offset-xs-reset {
   margin-left: 0; }
 
+.hidden-xs {
+  display: none; }
+
+.visible-xs {
+  display: inherit; }
+
 @media only screen and (min-width: 768px) {
   .col-sm-1 {
     flex-basis: 8.3333333333%;
@@ -199,7 +205,13 @@
     margin-left: 91.6666666667%; }
 
   .offset-sm-reset {
-    margin-left: 0; } }
+    margin-left: 0; }
+
+  .hidden-sm {
+    display: none; }
+
+  .visible-sm {
+    display: inherit; } }
 @media only screen and (min-width: 992px) {
   .col-md-1 {
     flex-basis: 8.3333333333%;
@@ -283,7 +295,13 @@
     margin-left: 91.6666666667%; }
 
   .offset-md-reset {
-    margin-left: 0; } }
+    margin-left: 0; }
+
+  .hidden-md {
+    display: none; }
+
+  .visible-md {
+    display: inherit; } }
 @media only screen and (min-width: 1200px) {
   .col-lg-1 {
     flex-basis: 8.3333333333%;
@@ -367,7 +385,13 @@
     margin-left: 91.6666666667%; }
 
   .offset-lg-reset {
-    margin-left: 0; } }
+    margin-left: 0; }
+
+  .hidden-lg {
+    display: none; }
+
+  .visible-lg {
+    display: inherit; } }
 #loginForm {
   width: 500px;
   height: 700px;
@@ -384,7 +408,6 @@
 
 #loginForm input[type="text"],
 #loginForm input[type="password"] {
-  border-bottom: 1px solid #1ABB9C;
   height: 2rem;
   font-size: 1.3rem;
   padding-left: 30px;
@@ -552,12 +575,17 @@
     width: 80%; } }
 #navBar {
   background: #2A3F54;
-  height: 1000px;
-  width: 220px; }
+  min-height: 100%;
+  width: 220px;
+  position: absolute;
+  transition: all 0.3s; }
 
 #navBar header {
   background: url(../../img/petitLogo.svg) 50% 20px no-repeat;
   height: 60px; }
+
+#navBar main {
+  margin-top: 40px; }
 
 #userPicture {
   height: 70px;
@@ -567,10 +595,157 @@
   display: inline-block;
   background: url(../../img/userImg.svg) no-repeat center; }
 
+#userName {
+  color: #fff;
+  margin-top: 20px;
+  transition: all 0.3s; }
+
+#navBar nav {
+  margin-top: 40px; }
+
+nav ul {
+  list-style: none;
+  padding: 0; }
+
+nav ul li {
+  border-bottom: solid 1px #485A6C;
+  color: white;
+  padding: 15px 0px 15px 50px;
+  transition: all 0.3s;
+  cursor: pointer; }
+
+nav ul li:nth-child(2) {
+  background: url(../../img/icn/iconTeacher.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+nav ul li:nth-child(3) {
+  background: url(../../img/icn/iconStudent.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+nav ul li:nth-child(4) {
+  background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+nav ul li:nth-child(5) {
+  background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+nav ul li:nth-child(6) {
+  background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+nav ul li.active {
+  border-right: solid 7px #1ABB9C;
+  background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat; }
+
 #pageContent {
   width: calc(100% - 220px);
-  height: 1000px; }
+  margin-left: 220px;
+  height: 100%;
+  transition: all 0.3s; }
 
+#topBar {
+  height: 70px;
+  background-color: #EDEDED;
+  border-bottom: solid 1px #D9DEE4; }
+
+#toggleIcon {
+  background: url(../../img/icn/iconBurgerMenu.svg) 25px 50% no-repeat;
+  width: 100px;
+  height: 70px; }
+
+#inputSearch {
+  border-bottom: 1px solid #5A738E;
+  font-size: 1.3rem;
+  padding-left: 30px;
+  color: #5A738E;
+  width: 225px;
+  background: url(../../img/icn/iconSearch.svg) no-repeat;
+  top: 25%;
+  position: relative; }
+
+#pathSection {
+  height: 80px;
+  background: url(../../img/pathBackground.svg) no-repeat;
+  background-size: cover; }
+
+#pathSection p {
+  color: white;
+  font-size: 30px;
+  position: relative;
+  top: 30%;
+  margin: 0px 25px; }
+
+#navBar.menuClose header {
+  background: url(../../img/petitLogo.svg) center no-repeat;
+  height: 60px; }
+
+#navBar.menuClose #userName {
+  font-size: 0.6em; }
+
+#navBar.menuClose {
+  width: 100px !important; }
+
+#pageContent.menuClose {
+  width: calc(100% - 100px);
+  margin-left: 100px; }
+
+#navBar.menuClose ul li {
+  border-bottom: solid 1px #485A6C;
+  color: white;
+  font-size: 10px;
+  padding: 30px 15px 15px 15px;
+  margin-top: 15px;
+  text-align: center; }
+
+#navBar.menuClose ul li:nth-child(1) {
+  background: url(../../img/icn/iconChart.svg) center 5% no-repeat; }
+
+#navBar.menuClose ul li:nth-child(2) {
+  background: url(../../img/icn/iconTeacher.svg) center 5% no-repeat; }
+
+#navBar.menuClose ul li:nth-child(3) {
+  background: url(../../img/icn/iconStudent.svg) center 5% no-repeat; }
+
+#navBar.menuClose ul li:nth-child(4) {
+  background: url(../../img/icn/iconStudents.svg) center 5% no-repeat; }
+
+#navBar.menuClose ul li:nth-child(5) {
+  background: url(../../img/icn/iconSchedule.svg) center 5% no-repeat; }
+
+#navBar.menuClose ul li:nth-child(6) {
+  background: url(../../img/icn/iconGear.svg) center 5% no-repeat; }
+
+@media screen and (max-width: 768px) {
+  #pageContent {
+    width: 100%;
+    margin-left: 0px;
+    height: 100%;
+    transition: all 0.3s; }
+
+  #logoMobile {
+    background: url(../../img/logoMobile.png) no-repeat;
+    background-size: cover; }
+
+  #iconSearch {
+    background: url(../../img/icn/iconSearch.svg) center no-repeat; }
+
+  #navBarMobile {
+    transition: all 0.3s; }
+
+  .menuMobileClose {
+    display: none; }
+
+  #navBarMobile ul {
+    margin: 0px; }
+
+  #navBarMobile ul li {
+    border-bottom: solid 1px #485A6C;
+    color: #2A3F54;
+    padding: 15px 0px 15px 0px;
+    transition: all 0.3s;
+    text-align: center; }
+
+  .divInputSearchMobileClose {
+    display: none; }
+
+  #divInputSearchMobile {
+    height: 70px; } }
 html {
   height: 100%; }
 
@@ -578,7 +753,8 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif; }
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px; }
 
 * {
   box-sizing: border-box; }
