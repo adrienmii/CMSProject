@@ -1,0 +1,12 @@
+<svg width="18" height="33" viewBox="0 0 18 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Vector</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1904 -715)">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="matrix(1 -6.69535e-17 6.69535e-17 1 1904 715)" fill="#FFFFFF"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 4.125L 3.6684 0L 18 16.5L 3.6684 33L 0 28.875L 10.8 16.5L 0 4.125Z"/>
+</defs>
+</svg>

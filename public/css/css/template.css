@@ -1,15 +1,15 @@
-#navBar {
+#sideBar {
   background: #2A3F54;
   min-height: 100%;
   width: 220px;
   position: absolute;
   transition: all 0.3s; }
 
-#navBar header {
+#sideBar header {
   background: url(../../img/petitLogo.svg) 50% 20px no-repeat;
   height: 60px; }
 
-#navBar main {
+#sideBar main {
   margin-top: 40px; }
 
 #userPicture {
@@ -25,36 +25,36 @@
   margin-top: 20px;
   transition: all 0.3s; }
 
-#navBar nav {
+#navBar {
   margin-top: 40px; }
 
-nav ul {
+#navBar ul {
   list-style: none;
   padding: 0; }
 
-nav ul li {
+#navBar ul li {
   border-bottom: solid 1px #485A6C;
   color: white;
   padding: 15px 0px 15px 50px;
   transition: all 0.3s;
   cursor: pointer; }
 
-nav ul li:nth-child(2) {
+#navBar ul li:nth-child(2) {
   background: url(../../img/icn/iconTeacher.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
-nav ul li:nth-child(3) {
+#navBar ul li:nth-child(3) {
   background: url(../../img/icn/iconStudent.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
-nav ul li:nth-child(4) {
+#navBar ul li:nth-child(4) {
   background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
-nav ul li:nth-child(5) {
+#navBar ul li:nth-child(5) {
   background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
-nav ul li:nth-child(6) {
+#navBar ul li:nth-child(6) {
   background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
-nav ul li.active {
+#navBar ul li.active {
   border-right: solid 7px #1ABB9C;
   background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat; }
 
@@ -96,21 +96,21 @@ nav ul li.active {
   top: 30%;
   margin: 0px 25px; }
 
-#navBar.menuClose header {
+#sideBar.menuClose header {
   background: url(../../img/petitLogo.svg) center no-repeat;
   height: 60px; }
 
-#navBar.menuClose #userName {
+#sideBar.menuClose #userName {
   font-size: 0.6em; }
 
-#navBar.menuClose {
+#sideBar.menuClose {
   width: 100px !important; }
 
 #pageContent.menuClose {
   width: calc(100% - 100px);
   margin-left: 100px; }
 
-#navBar.menuClose ul li {
+#sideBar.menuClose ul li {
   border-bottom: solid 1px #485A6C;
   color: white;
   font-size: 10px;
@@ -118,22 +118,22 @@ nav ul li.active {
   margin-top: 15px;
   text-align: center; }
 
-#navBar.menuClose ul li:nth-child(1) {
+#sideBar.menuClose ul li:nth-child(1) {
   background: url(../../img/icn/iconChart.svg) center 5% no-repeat; }
 
-#navBar.menuClose ul li:nth-child(2) {
+#sideBar.menuClose ul li:nth-child(2) {
   background: url(../../img/icn/iconTeacher.svg) center 5% no-repeat; }
 
-#navBar.menuClose ul li:nth-child(3) {
+#sideBar.menuClose ul li:nth-child(3) {
   background: url(../../img/icn/iconStudent.svg) center 5% no-repeat; }
 
-#navBar.menuClose ul li:nth-child(4) {
+#sideBar.menuClose ul li:nth-child(4) {
   background: url(../../img/icn/iconStudents.svg) center 5% no-repeat; }
 
-#navBar.menuClose ul li:nth-child(5) {
+#sideBar.menuClose ul li:nth-child(5) {
   background: url(../../img/icn/iconSchedule.svg) center 5% no-repeat; }
 
-#navBar.menuClose ul li:nth-child(6) {
+#sideBar.menuClose ul li:nth-child(6) {
   background: url(../../img/icn/iconGear.svg) center 5% no-repeat; }
 
 @media screen and (max-width: 768px) {
@@ -150,14 +150,16 @@ nav ul li.active {
   #iconSearch {
     background: url(../../img/icn/iconSearch.svg) center no-repeat; }
 
-  #navBarMobile {
-    transition: all 0.3s; }
-
   .menuMobileClose {
     display: none; }
 
+  #navBarMobile {
+    transition: all 0.3s; }
+
   #navBarMobile ul {
-    margin: 0px; }
+    margin: 0px;
+    list-style: none;
+    padding: 0; }
 
   #navBarMobile ul li {
     border-bottom: solid 1px #485A6C;
@@ -170,6 +172,20 @@ nav ul li.active {
     display: none; }
 
   #divInputSearchMobile {
-    height: 70px; } }
+    height: 70px;
+    margin: 0px 25px; }
+
+  #SearchMobile {
+    border-bottom: 1px solid #5A738E;
+    font-size: 1.3rem;
+    color: #5A738E;
+    width: 100%;
+    background: url(../../img/icn/iconSearch.svg) no-repeat;
+    top: 25%;
+    position: relative;
+    padding-left: 25px; }
+
+  #pathSection p {
+    font-size: 15px; } }
 
 /*# sourceMappingURL=template.css.map */

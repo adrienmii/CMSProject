@@ -1,0 +1,72 @@
+#rowBlockInfo{
+	margin-top: 50px;
+}
+
+.blocInfo{
+	width:230px;
+	height: 150px;
+	background:#F4F4F4;
+	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+	margin:0 auto;
+	padding:35px;
+}
+
+.blocTitle{
+	line-height: 17px;
+	font-size: 16px;
+	color: #000000;
+	text-transform: uppercase;
+	margin: 0 auto;
+	background: url(../../img/icn/iconChartBlack.svg) 0% 50% no-repeat;
+	width:80%;
+	height:auto;
+	padding-left: 15%;
+	padding-right: 15%,
+}
+
+.blocValue {
+	font-size: 36px;
+	text-align: center;
+	letter-spacing: 0.01em;
+	margin-top: 10px;
+}
+
+#blockSchedule{	
+	padding: 0px 26px;
+	height: 170px;
+	flex-direction :row !important;
+}
+
+#arrowLeftSchedule{
+	height: 170px;
+	background:url(../../img/icn/iconArrowLeftSchedule.svg)  50% 50% no-repeat #1abb9c;
+	width: 45px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+#contentSchedule{	
+	width: calc(100% - 90px);
+	display: flex;
+}
+
+#arrowRightSchedule{
+	height: 170px;
+	background: url(../../img/icn/iconArrowRightSchedule.svg) 50% 50% no-repeat #3c556e;
+	width: 45px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+#currentCourse{
+	height: 170px;
+	background:#1ABB9C;
+	height: 100%;
+	flex:1;
+}
+#nextCourse{
+	background:#3C556E;
+	height: 100%;
+	flex:1;
+	height: 170px;
+}

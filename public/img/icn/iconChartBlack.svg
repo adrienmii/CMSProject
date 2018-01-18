@@ -1,0 +1,14 @@
+<svg width="20" height="17" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconChart</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1003 1127)">
+<g id="iconChart">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(1003 -1127)" fill="#000000"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 4.16667 6.18182L 4.16667 12.3636L 2.5 12.3636L 2.5 6.18182L 4.16667 6.18182ZM 5.83333 4.63636L 0.833333 4.63636L 0.833333 13.9091L 5.83333 13.9091L 5.83333 4.63636ZM 10.8333 1.54545L 10.8333 12.3636L 9.16667 12.3636L 9.16667 1.54545L 10.8333 1.54545ZM 12.5 0L 7.5 0L 7.5 13.9091L 12.5 13.9091L 12.5 0ZM 17.5 10.0455L 17.5 12.3636L 15.8333 12.3636L 15.8333 10.0455L 17.5 10.0455ZM 19.1667 8.5L 14.1667 8.5L 14.1667 13.9091L 19.1667 13.9091L 19.1667 8.5ZM 20 15.4545L 0 15.4545L 0 17L 20 17L 20 15.4545Z"/>
+</defs>
+</svg>
