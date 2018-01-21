@@ -142,7 +142,34 @@ hr.timeLeft {
 }
 
 #blockHomeWork{
-	height: 170px;
-	background:#F4F4F4;
+	height: 170px;	
 	padding: 0px 26px;
+}
+
+#blockHomeWorkContainer{
+	background:#F4F4F4;
+}
+
+#blockHomeWorkContainer header{
+	font-size: 18px;
+	height:50px;
+	padding: 15px 27px;
+}
+
+#blockHomeWorkContainer table{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#blockHomeWorkContainer table tr{
+	height: 30px;
+}
+
+#blockHomeWorkContainer table tr td:first-child{
+	background: url(../../img/icn/iconClipBoard.svg) 50% 50% no-repeat;
+	width:70px;
+}
+
+#blockHomeWorkContainer table tr:nth-child(2n+1) td{
+	background-color:#fff;
 }

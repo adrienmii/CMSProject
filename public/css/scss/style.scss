@@ -41,6 +41,13 @@ body {
 	text-align:right;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 input[type="text"],
 input[type="password"]
 {

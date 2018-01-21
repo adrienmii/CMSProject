@@ -1,0 +1,14 @@
+<svg width="15" height="18" viewBox="0 0 15 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-clipboard-1</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2004 -1652)">
+<g id="iconmonstr-clipboard-1">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(2004 1652)" fill="#2A3F54"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 3.75 12L 11.25 12L 11.25 12.75L 3.75 12.75L 3.75 12ZM 3.75 11.25L 11.25 11.25L 11.25 10.5L 3.75 10.5L 3.75 11.25ZM 15 1.5L 15 18L 0 18L 0 1.5L 2.25 1.5C 3.17175 1.5 3.885 0.687 4.5 0L 10.5 0C 11.115 0.687 11.8282 1.5 12.75 1.5L 15 1.5ZM 6.75 2.25C 6.75 2.664 7.086 3 7.5 3C 7.914 3 8.25 2.664 8.25 2.25C 8.25 1.836 7.914 1.5 7.5 1.5C 7.086 1.5 6.75 1.836 6.75 2.25ZM 13.5 3L 10.5 3L 9 4.5L 6.0765 4.5L 4.5 3L 1.5 3L 1.5 16.5L 13.5 16.5L 13.5 3ZM 3.75 9.75L 11.25 9.75L 11.25 9L 3.75 9L 3.75 9.75ZM 3.75 8.25L 11.25 8.25L 11.25 7.5L 3.75 7.5L 3.75 8.25Z"/>
+</defs>
+</svg>
