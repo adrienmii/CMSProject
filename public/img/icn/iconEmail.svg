@@ -1,0 +1,14 @@
+<svg width="22" height="22" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-email-8</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3649 132)">
+<g id="iconmonstr-email-8">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(3649 -132)" fill="#3C556E" fill-opacity="0.7"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 10.9908 0L 0 7.99608L 0 22L 22 22L 22 7.99608L 10.9908 0ZM 10.9918 2.266L 19.9687 8.78625L 13.7949 12.9919L 11 10.7277L 8.20508 12.9928L 2.0295 8.78625L 10.9918 2.266ZM 1.83333 10.8698L 6.71825 14.1973L 1.83333 18.1555L 1.83333 10.8698ZM 2.26783 20.1667L 11 13.0873L 19.7322 20.1667L 2.26783 20.1667ZM 20.1667 18.1555L 15.2817 14.1983L 20.1667 10.8698L 20.1667 18.1555Z"/>
+</defs>
+</svg>
