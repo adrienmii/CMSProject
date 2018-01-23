@@ -1,3 +1,6 @@
+#installerBody {
+  font-family: 'Ubuntu', sans-serif !important; }
+
 #logoContainer {
   background: url(../../img/logo.png) no-repeat 51% 150%;
   width: 100%;

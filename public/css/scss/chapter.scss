@@ -1,0 +1,45 @@
+#chapterContainer{
+	margin:50px 80px;
+}
+
+#chapterContainer article header div{
+	color: #1ABB9C;
+	font-weight: bold;	
+	font-size: 25px;
+	margin-bottom:10px;
+}
+
+#chapterContainer article header div span{
+	border-right:solid 2px #1ABB9C;
+	padding-right:20px;
+	margin-right:20px;
+}
+
+#chapterContainer article main div span{
+	border-right:solid 2px #172D44;
+	padding-right:20px;
+	margin-right:20px;
+}
+
+#chapterContainer article main div{
+	color: #172D44;
+	font-weight: bold;	
+	font-size: 19px;
+	margin-bottom:20px;
+	margin-top: 20px
+}
+
+
+#chapterContainer article main p{
+	color: #172D44;
+	font-size: 17px;
+	margin-left:55px;
+}
+
+#chapterContainer input{
+	font-size: 13px;
+	color: #fff;
+	background:url(../../img/icn/iconDl.svg) 5% 50% no-repeat rgba(0,0,0,0.5);
+	padding: 5px 10px 5px 30px;
+	margin-left:55px;
+}

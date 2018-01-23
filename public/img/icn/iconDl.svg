@@ -1,0 +1,14 @@
+<svg width="15" height="15" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-save-13</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4328 160)">
+<g id="iconmonstr-save-13">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(4328 -160)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 8.75 6.25L 11.875 6.25L 7.5 11.25L 3.125 6.25L 6.25 6.25L 6.25 0L 8.75 0L 8.75 6.25ZM 11.3831 1.09625L 10.625 2.09562C 12.49 3.17812 13.75 5.1925 13.75 7.5C 13.75 10.9462 10.9462 13.75 7.5 13.75C 4.05375 13.75 1.25 10.9462 1.25 7.5C 1.25 5.1925 2.51 3.17812 4.375 2.09562L 3.61688 1.09625C 1.45125 2.41062 0 4.78188 0 7.5C 0 11.6419 3.35813 15 7.5 15C 11.6419 15 15 11.6419 15 7.5C 15 4.78188 13.5487 2.41062 11.3831 1.09625Z"/>
+</defs>
+</svg>

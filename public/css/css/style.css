@@ -392,12 +392,16 @@
 
   .visible-lg {
     display: inherit; } }
+body {
+  font-family: 'Ubuntu', sans-serif; }
+
 #loginForm {
   width: 500px;
   height: 700px;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%); }
+  transform: translateX(-50%) translateY(-50%);
+  font-family: 'Ubuntu', sans-serif !important; }
 
 #loginForm header {
   height: 50%;
@@ -454,6 +458,9 @@
   #help {
     text-align: left;
     padding-left: 50px; } }
+#installerBody {
+  font-family: 'Ubuntu', sans-serif !important; }
+
 #logoContainer {
   background: url(../../img/logo.png) no-repeat 51% 150%;
   width: 100%;
@@ -976,6 +983,44 @@ hr.timeLeft {
   height: auto;
   margin-bottom: 25px; }
 
+#chapterContainer {
+  margin: 50px 80px; }
+
+#chapterContainer article header div {
+  color: #1ABB9C;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px; }
+
+#chapterContainer article header div span {
+  border-right: solid 2px #1ABB9C;
+  padding-right: 20px;
+  margin-right: 20px; }
+
+#chapterContainer article main div span {
+  border-right: solid 2px #172D44;
+  padding-right: 20px;
+  margin-right: 20px; }
+
+#chapterContainer article main div {
+  color: #172D44;
+  font-weight: bold;
+  font-size: 19px;
+  margin-bottom: 20px;
+  margin-top: 20px; }
+
+#chapterContainer article main p {
+  color: #172D44;
+  font-size: 17px;
+  margin-left: 55px; }
+
+#chapterContainer input {
+  font-size: 13px;
+  color: #fff;
+  background: url(../../img/icn/iconDl.svg) 5% 50% no-repeat rgba(0, 0, 0, 0.5);
+  padding: 5px 10px 5px 30px;
+  margin-left: 55px; }
+
 html {
   height: 100%; }
 
@@ -983,7 +1028,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px; }
 
 * {
