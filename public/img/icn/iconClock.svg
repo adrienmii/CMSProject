@@ -1,0 +1,14 @@
+<svg width="20" height="24" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-time-12</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3654 -701)">
+<g id="iconmonstr-time-12">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(3654 701)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 20 14C 20 19.523 15.522 24 10 24C 4.478 24 0 19.523 0 14C 0 8.477 4.478 4 10 4C 15.522 4 20 8.477 20 14ZM 18 14C 18 9.589 14.411 6 10 6C 5.589 6 2 9.589 2 14C 2 18.411 5.589 22 10 22C 14.411 22 18 18.411 18 14ZM 12 2.181L 12 0L 8 0L 8 2.181C 9.408 1.943 10.562 1.938 12 2.181ZM 18.679 5.735L 20 4.414L 18.586 3L 17.179 4.407C 17.715 4.809 18.217 5.251 18.679 5.735ZM 10 8L 10 14L 16 14C 16 10.691 13.309 8 10 8Z"/>
+</defs>
+</svg>
