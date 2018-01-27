@@ -1,0 +1,41 @@
+#qcmContainer section {
+  background: #F4F4F4;
+  height: 500px;
+  margin: 50px 250px;
+  padding: 0% 10% 10% 10%; }
+
+#qcmContainer header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px; }
+
+.answerNumber, .answer {
+  display: inline-block; }
+
+#questionNumber {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  width: 140px;
+  height: 140px;
+  border: solid 3px #2A3F54;
+  border-radius: 50%; }
+
+.answerRow {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: solid 1px #C4C4C4; }
+
+.answerNumber {
+  width: 44px;
+  height: 44px;
+  border: solid 2px #2A3F54;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 20px; }
+
+.answerNumber span {
+  position: relative;
+  top: 23%; }
+
+/*# sourceMappingURL=qcm.css.map */
