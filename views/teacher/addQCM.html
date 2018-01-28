@@ -3,8 +3,6 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../../public/css/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
-		<link rel="stylesheet" href="../../ckeditor/samples/css/samples.css">
-	<link rel="stylesheet" href="../../ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 </head>
 <body>	
 	<div id="sideBar" class="hidden-xs visible-sm">
@@ -61,14 +59,11 @@
 				</div>	
 			</div>			
 			<div id="pathSection" class="col-md-12">
-				<p>Chapitres > Ajouter</p>
+				<p>Evaluations > Développement PHP Avancé > QCM 1</p>
 			</div>			
 		</header>
-		<main id="addQCMContainer">		
-			<header>				
-			</header>
-			<main>
-				<form id="QCMForm" class="row">
+		<main id="addQCMContainer">
+			<form id="QCMForm" class="row">
 					<div class="col-md-6 displayInlineBlock">
 						<label>Nom</label>
 						<input placeholder="Nom de l'évaluation" type="text"/>						
@@ -78,16 +73,34 @@
 						<select>
 						    <option value="3A IW1">3A IW1</option>						   
 				    	</select>
-					</div>					
+					</div>	
 				</form>
-			</main>				
-		</main>	
+			<section class="col-md-12">
+				<header>
+					<a href="#" id="previousQuestion">-</a>	
+					<a href="#" id="nextQuestion">+</a>					
+					<div id="questionNumber">Question<br><b>2</b><br>sur 2</div>
+					<div id="question"><input type="text" placeholder="Saisir ici votre question" id="questionInput"/></div>
+				</header>
+				<main>
+					<div class="answerRow">
+						<div class="answerNumber"><span>1</span></div>
+						<div class="answer"><input type="text" placeholder="Réponse 1"/></div>	
+					</div>	
+					<div class="answerRow">
+						<div class="answerNumber"><span>2</span></div>
+						<div class="answer"><input type="text" placeholder="Réponse 2"/></div>	
+					</div>						
+					<div class="text-center">
+						<a id="btnCreate" href="#">Créer</a>
+					</div>	
+				</main>
+			</section>
+		</main>
+		
 	</div>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="../../ckeditor/ckeditor.js"></script>
-	<script src="../../ckeditor/samples/js/sample.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script>
-  		  	
 		function toggleNav() {
 		   $("#sideBar").toggleClass("menuClose");
 		   $("#pageContent").toggleClass("menuClose");		   

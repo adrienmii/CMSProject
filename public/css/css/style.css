@@ -1118,6 +1118,94 @@ hr.timeLeft {
   height: 30px;
   width: 150px; }
 
+#addQCMContainer section {
+  background: #F4F4F4;
+  margin: 0px 250px;
+  padding: 0% 10% 5% 10%; }
+
+#addQCMContainer header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px; }
+
+#QCMForm {
+  margin: 50px 150px 0px 150px; }
+
+#QCMForm label {
+  font-size: 21px;
+  color: #2A3F54;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-right: 20px; }
+
+#QCMForm input[type="text"] {
+  border-bottom: 1px solid #C4C4C4;
+  color: #2A3F54;
+  height: 30px;
+  font-size: 21px;
+  width: 300px;
+  margin-bottom: 50px; }
+
+#QCMForm select {
+  border-radius: 4px;
+  color: #2A3F54;
+  margin-top: 10px;
+  height: 30px;
+  width: 150px; }
+
+#questionInput {
+  text-align: center;
+  border-bottom: 1px solid #C4C4C4;
+  color: #2A3F54;
+  height: 30px;
+  font-size: 21px;
+  width: 500px; }
+
+#questionInput::-webkit-input-placeholder {
+  text-align: center; }
+
+#addQCMContainer .answer {
+  width: 90%; }
+
+.answer input {
+  color: #2A3F54 !important;
+  font-size: 21px;
+  width: 100%; }
+
+#previousQuestion, #nextQuestion {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: solid 2px #5A738E;
+  color: #5A738E;
+  font-size: 27px;
+  font-weight: 100;
+  padding-top: 10px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none; }
+
+#previousQuestion {
+  top: 100px;
+  z-index: 1000;
+  right: 45px;
+  background: #fff; }
+
+#nextQuestion {
+  top: 100px;
+  z-index: 1000;
+  left: 45px;
+  background: #fff; }
+
+#btnCreate {
+  background: #5A738E;
+  color: #FFF;
+  font-size: 21px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  width: 150px; }
+
 #testContainer section {
   background: #F4F4F4;
   margin: 50px 250px;
