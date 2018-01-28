@@ -64,25 +64,21 @@
 				<p>Chapitres > Ajouter</p>
 			</div>			
 		</header>
-		<main id="addChapterContainer">		
+		<main id="addQCMContainer">		
 			<header>				
 			</header>
 			<main>
-				<form id="chapterForm" class="row">
+				<form id="QCMForm" class="row">
 					<div class="col-md-6 displayInlineBlock">
-						<label>Nom du chapitre</label>
-						<input placeholder="Nom du chapitre ici" type="text"/>						
+						<label>Nom</label>
+						<input placeholder="Nom de l'évaluation" type="text"/>						
 					</div>
 					<div class="col-md-6 displayInlineBlock">
 						<label>Classe</label>
 						<select>
 						    <option value="3A IW1">3A IW1</option>						   
 				    	</select>
-					</div>
-					<div class="col-md-12">
-						<textarea name="editor1" id="editor1">			               
-			            </textarea>         
-		            </div>	  
+					</div>					
 				</form>
 			</main>				
 		</main>	
@@ -91,11 +87,7 @@
 	<script src="../../ckeditor/ckeditor.js"></script>
 	<script src="../../ckeditor/samples/js/sample.js"></script>
 	<script>
-  		
-  		CKEDITOR.replace( 'editor1', {
-		    language: 'fr',
-		    height: '450px',		   
-		});
+  		  	
 		function toggleNav() {
 		   $("#sideBar").toggleClass("menuClose");
 		   $("#pageContent").toggleClass("menuClose");		   

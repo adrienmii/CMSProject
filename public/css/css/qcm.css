@@ -61,4 +61,13 @@
   position: relative;
   top: 23%; }
 
+#btnNext {
+  background: #5A738E;
+  color: #FFF;
+  font-size: 21px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  width: 150px; }
+
 /*# sourceMappingURL=qcm.css.map */
