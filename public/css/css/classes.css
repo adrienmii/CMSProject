@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$button_input_color".
-        on line 25 of scss/classes.scss
+        on line 28 of scss/classes.scss
 
-20: #addClasses{
-21: 	width:60px;
-22: 	height:60px;
-23: 	text-align:center;
-24: 	font-weight:bold;
-25: 	border: solid 3px $button_input_color;
-26: 	border-radius:50%;
-27:  	display: inline-block;
-28:     text-decoration: none;
-29:   	color: $button_input_color;
-30:   	font-size:35px;
+23: #addClasses{
+24: 	width:60px;
+25: 	height:60px;
+26: 	text-align:center;
+27: 	font-weight:bold;
+28: 	border: solid 3px $button_input_color;
+29: 	border-radius:50%;
+30:  	display: inline-block;
+31:     text-decoration: none;
+32:   	color: $button_input_color;
+33:   	font-size:35px;
 
 Backtrace:
-scss/classes.scss:25
+scss/classes.scss:28
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$button_input_color\".\A         on line 25 of scss/classes.scss\A \A 20: #addClasses{\A 21: 	width:60px;\A 22: 	height:60px;\A 23: 	text-align:center;\A 24: 	font-weight:bold;\A 25: 	border: solid 3px $button_input_color;\A 26: 	border-radius:50%;\A 27:  	display: inline-block;\A 28:     text-decoration: none;\A 29:   	color: $button_input_color;\A 30:   	font-size:35px;"; }
+  content: "Error: Undefined variable: \"$button_input_color\".\A         on line 28 of scss/classes.scss\A \A 23: #addClasses{\A 24: 	width:60px;\A 25: 	height:60px;\A 26: 	text-align:center;\A 27: 	font-weight:bold;\A 28: 	border: solid 3px $button_input_color;\A 29: 	border-radius:50%;\A 30:  	display: inline-block;\A 31:     text-decoration: none;\A 32:   	color: $button_input_color;\A 33:   	font-size:35px;"; }

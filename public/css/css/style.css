@@ -1229,6 +1229,9 @@ hr.timeLeft {
 #classesContainer > div > div[class^="col-"] {
   padding: 50px; }
 
+#classesContainer > .row {
+  width: 100%; }
+
 #newClassBlock {
   height: 150px;
   background: #fff;
