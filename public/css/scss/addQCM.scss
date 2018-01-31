@@ -1,7 +1,8 @@
 #addQCMContainer section{
-	background:#F4F4F4;
+	background:$block_color;
 	margin: 0px 250px;
 	padding: 0% 10% 5% 10%;
+	box-shadow: $block_shadow;
 }
 
 #addQCMContainer header{
@@ -16,15 +17,15 @@
 
 #QCMForm label{
 	font-size:21px;
-	color:#2A3F54; 
+	color:$primary_color; 
 	font-weight:bold;
 	margin-bottom:50px;
 	margin-right:20px;
 }
 
 #QCMForm input[type="text"]{
-	border-bottom: 1px solid #C4C4C4; 
-	color:#2A3F54; 
+	border-bottom: $input_border_color; 
+	color:$primary_color; 
 	height: 30px;
 	font-size:21px;
 	width:300px;
@@ -33,15 +34,15 @@
 
 #QCMForm select{
 	border-radius:4px;
-	color:#2A3F54; 
+	color:$primary_color; 
 	margin-top:10px;
 	height:30px;
 	width:150px;}
 
 #questionInput{
 	text-align: center;
-	border-bottom: 1px solid #C4C4C4; 
-	color:#2A3F54; 
+	border-bottom: $input_border_color; 
+	color:$primary_color; 
 	height: 30px;
 	font-size:21px;
 	width:500px;
@@ -57,7 +58,7 @@
 }
 
 .answer input{
-	color:#2A3F54 !important; 
+	color:$primary_color !important; 
 	font-size:21px;
 	width: 100%;
 }
@@ -66,8 +67,8 @@
 	width: 55px;
 	height: 55px;
 	border-radius:50%;
-	border:solid 2px #5A738E;
-	color:#5A738E;
+	border:solid 2px $button_input_color;
+	color:$button_input_color;
 	font-size: 27px;
 	font-weight: 100;
 	padding-top: 10px;
@@ -92,7 +93,7 @@
 }
 
 #btnCreate{
-	background:#5A738E;
+	background:$button_input_color;
 	color: #FFF;
 	font-size: 21px;
 	padding:10px 30px;

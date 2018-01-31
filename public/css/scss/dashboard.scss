@@ -5,7 +5,7 @@
 .blocInfo{
 	width:230px;
 	height: 150px;
-	background:#F4F4F4;
+	background:$block_color;
 	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 	margin:0 auto;
 	padding:35px;
@@ -44,7 +44,7 @@
 
 #arrowLeftSchedule{
 	height: 170px;
-	background:url(../../img/icn/iconArrowLeftSchedule.svg)  50% 50% no-repeat #1abb9c;
+	background:url(../../img/icn/iconArrowLeftSchedule.svg)  50% 50% no-repeat $secondary_color;
 	width: 45px;
 	opacity: 0.7;
 	cursor: pointer;
@@ -85,7 +85,7 @@
 
 #currentCourse{
 	height: 170px;
-	background:#1ABB9C;
+	background:$secondary_color;
 	height: 100%;
 	flex:1;
 }
@@ -147,7 +147,7 @@ hr.timeLeft {
 }
 
 #blockHomeWorkContainer{
-	background:#F4F4F4;
+	background:$block_color;
 }
 
 #blockHomeWorkContainer header{

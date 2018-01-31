@@ -37,7 +37,7 @@
 }
 
 .stepCircle.active{
-	border: solid 3px #1ABB9C;	
+	border: solid 3px $secondary_color;	
 }
 
 .stepCircle:nth-child(1){
@@ -70,7 +70,7 @@
 }
 
 .path.active{
-	background:#1ABB9C;
+	background:$secondary_color;
 }
 
 .stepTitle{
@@ -115,7 +115,7 @@
 #installerForm input
 {
 	font-size: 16px;
-    border-bottom: 1px solid #1ABB9C;
+    border-bottom: 1px solid $secondary_color;
 }
 
 .buttonContainer{
@@ -125,7 +125,7 @@
 #installerForm input[type="button"]{
 	font-size:21px;	
 	width:120px;
-	background: url(../../img/icn/iconArrowRightWhite.svg) 80% no-repeat #1ABB9C;
+	background: url(../../img/icn/iconArrowRightWhite.svg) 80% no-repeat $secondary_color;
 }
 
 @media screen and (max-width: 768px){

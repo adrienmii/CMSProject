@@ -22,7 +22,7 @@
 #coursesList header,
 #teacherInfo header,
 #attachementsList header {
-	color:#1ABB9C;
+	color:$secondary_color;
 	font-size:25px;
 	font-weight: 500;
 }
@@ -42,10 +42,10 @@
 
 #coursesList article div,
 #attachementsList article div{	
-	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: $block_shadow;
 	width: 100%;
 	height: 100%;
-	background:#F4F4F4;
+	background:$block_color;
 }
 
 .chapterBlock,.attachementsBlock{
@@ -60,12 +60,12 @@
 
 .attachementsBlock{
 	padding: 20px 0px 0px 70px;
-	background:url(../../img/icn/iconFolder.svg) #F4F4F4 25px 50% no-repeat;
+	background:url(../../img/icn/iconFolder.svg) $block_color 25px 50% no-repeat;
 } 
 
 #teacherInfoBlock{
-	background:#F4F4F4;
-	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+	background:$block_color;
+	box-shadow: $block_shadow;
 	max-height: 500px;
 	padding-top: 25px;
 	height: auto

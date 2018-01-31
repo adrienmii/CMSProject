@@ -1,0 +1,14 @@
+<svg width="12" height="12" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-pencil-9</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2282 1222)">
+<g id="iconmonstr-pencil-9">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(2282 -1222)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 9.18138 4.23218L 9.89791 4.94771L 3.56265 11.2825L 2.375e-11 12.0005L 0.71953 8.43685L 7.05229 2.10259L 7.76782 2.81812L 1.64007 8.93037L 1.27705 10.7224L 3.06913 10.3609L 9.18138 4.23218ZM 9.15338 0L 7.74582 1.40856L 10.5914 4.25468L 12 2.84412L 9.15338 4.44108e-16L 9.15338 0ZM 2.99412 9.35939L 8.65086 3.70115L 8.29835 3.34764L 2.64161 9.00488L 2.99412 9.35939Z"/>
+</defs>
+</svg>

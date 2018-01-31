@@ -3,14 +3,14 @@
 }
 
 #chapterContainer article header div{
-	color: #1ABB9C;
+	color: $secondary_color;
 	font-weight: bold;	
 	font-size: 25px;
 	margin-bottom:10px;
 }
 
 #chapterContainer article header div span{
-	border-right:solid 2px #1ABB9C;
+	border-right:solid 2px $secondary_color;
 	padding-right:20px;
 	margin-right:20px;
 }

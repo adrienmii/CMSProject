@@ -1,0 +1,14 @@
+<svg width="10" height="10" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-x-mark-2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2246 1220)">
+<g id="iconmonstr-x-mark-2">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(2246 -1220)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 10 8.78167L 6.17333 4.99208L 9.96167 1.16958L 8.78167 -3.72533e-11L 4.99417 3.82458L 1.17083 0.0379167L -3.72533e-11 1.20875L 3.8275 5.0025L 0.0379167 8.82917L 1.20875 10L 5.00542 6.17L 8.83042 9.96167L 10 8.78167Z"/>
+</defs>
+</svg>

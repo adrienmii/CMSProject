@@ -1,14 +1,14 @@
 #sideBar{
-	background:#2A3F54;
+	background:$primary_color;
 	min-height:100%;
 	width:220px;
 	position: absolute;
 	transition: all 0.3s
 }
 
-#sideBar header{
-	background: url(../../img/petitLogo.svg) 50% 20px no-repeat;
-	height:60px;
+#sideBar header img{
+	width:100%;
+	padding-top: 10px;
 }
 
 #sideBar main{
@@ -64,7 +64,7 @@
 }
 
 #navBar ul li.active{
-	border-right: solid 7px #1ABB9C;
+	border-right: solid 7px $secondary_color;
 	background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat;
 }
 
@@ -77,7 +77,7 @@
 
 #topBar{
 	height:70px;
-	background-color: #EDEDED;
+	background-color: $topBar_color;
 	border-bottom: solid 1px #D9DEE4;
 }
 
@@ -88,10 +88,10 @@
 }
 
 #inputSearch{
-	border-bottom: 1px solid #5A738E; 
+	border-bottom: 1px solid $button_input_color; 
     font-size: 1.3rem;
     padding-left:30px; 
-    color:#5A738E;
+    color:$button_input_color;
     width:225px;
     background:url(../../img/icn/iconSearch.svg) no-repeat;
     top:25%;
@@ -114,11 +114,6 @@
 
 
 //MenuClose
-#sideBar.menuClose header{
-	background: url(../../img/petitLogo.svg) center no-repeat;
-	height:60px;
-
-}
 
 #sideBar.menuClose #userName{
 	font-size: 0.6em;
@@ -197,7 +192,7 @@
 
 	#navBarMobile ul li{
 		border-bottom: solid 1px #485A6C;
-		color:#2A3F54;
+		color:$primary_color;
 		padding: 15px 0px 15px 0px;
 		transition:all 0.3s;
 		text-align: center;	
@@ -213,9 +208,9 @@
 	}
 
 	#SearchMobile{
-		border-bottom: 1px solid #5A738E; 
+		border-bottom: 1px solid $button_input_color; 
 	    font-size: 1.3rem;
-	    color:#5A738E;
+	    color:$button_input_color;
 	    width:100%;
 	    background:url(../../img/icn/iconSearch.svg) no-repeat;
 	    top:25%;

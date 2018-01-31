@@ -587,9 +587,9 @@ body {
   position: absolute;
   transition: all 0.3s; }
 
-#sideBar header {
-  background: url(../../img/petitLogo.svg) 50% 20px no-repeat;
-  height: 60px; }
+#sideBar header img {
+  width: 100%;
+  padding-top: 10px; }
 
 #sideBar main {
   margin-top: 40px; }
@@ -677,10 +677,6 @@ body {
   position: relative;
   top: 30%;
   margin: 0px 25px; }
-
-#sideBar.menuClose header {
-  background: url(../../img/petitLogo.svg) center no-repeat;
-  height: 60px; }
 
 #sideBar.menuClose #userName {
   font-size: 0.6em; }
@@ -809,7 +805,7 @@ body {
 
 #arrowLeftSchedule {
   height: 170px;
-  background: url(../../img/icn/iconArrowLeftSchedule.svg) 50% 50% no-repeat #1abb9c;
+  background: url(../../img/icn/iconArrowLeftSchedule.svg) 50% 50% no-repeat #1ABB9C;
   width: 45px;
   opacity: 0.7;
   cursor: pointer; }
@@ -1024,7 +1020,8 @@ hr.timeLeft {
 #qcmContainer section {
   background: #F4F4F4;
   margin: 50px 250px;
-  padding: 0% 10% 5% 10%; }
+  padding: 0% 10% 5% 10%;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); }
 
 #qcmContainer header {
   text-align: center;
@@ -1121,7 +1118,8 @@ hr.timeLeft {
 #addQCMContainer section {
   background: #F4F4F4;
   margin: 0px 250px;
-  padding: 0% 10% 5% 10%; }
+  padding: 0% 10% 5% 10%;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); }
 
 #addQCMContainer header {
   text-align: center;
@@ -1209,7 +1207,8 @@ hr.timeLeft {
 #testContainer section {
   background: #F4F4F4;
   margin: 50px 250px;
-  padding: 0% 10% 5% 10%; }
+  padding: 0% 10% 5% 10%;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); }
 
 #testContainer header {
   text-align: center;
@@ -1226,6 +1225,98 @@ hr.timeLeft {
   width: 100%;
   border-bottom: 1px solid #C4C4C4;
   color: #2A3F54; }
+
+#classesContainer > div > div[class^="col-"] {
+  padding: 50px; }
+
+#newClassBlock {
+  height: 150px;
+  background: #fff;
+  border: dashed 1px #C4C4C4;
+  text-align: center; }
+
+#iconAddClassContainer {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+#addClasses {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-weight: bold;
+  border: solid 3px #5A738E;
+  border-radius: 50%;
+  display: inline-block;
+  text-decoration: none;
+  color: #5A738E;
+  font-size: 35px;
+  padding-top: 6px; }
+
+.classBlock {
+  height: 150px;
+  background: linear-gradient(204.26deg, #2A3F54 5%, rgba(60, 85, 110, 0.7) 113.45%);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 20px 30px; }
+
+.actionCol {
+  display: inline-block; }
+
+.actionCol a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 1px #fff;
+  display: inline-block; }
+
+.actionEdit {
+  background: url(../../img/icn/iconPencil.svg) 50% 50% no-repeat; }
+
+.actionDelete {
+  margin-left: 5px;
+  background: url(../../img/icn/iconXmark.svg) 50% 50% no-repeat; }
+
+.actionAdd {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  color: #C4C4C4;
+  border: solid 1px #C4C4C4;
+  float: right;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: 100;
+  font-size: 19px; }
+
+.className {
+  font-weight: 100;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 7px; }
+
+.addStudents {
+  background: #fff;
+  border-radius: 30px;
+  height: auto;
+  padding-top: 5px;
+  color: #172D44;
+  display: inline-block;
+  margin-top: 12px; }
+
+.addStudents div, .addStudents a {
+  display: inline-block; }
+
+.addStudentsText {
+  height: 100%;
+  vertical-align: middle;
+  margin-left: 10px; }
+
+#addStudentsIcon {
+  background: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat #53667A;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%; }
 
 html {
   height: 100%; }
@@ -1287,6 +1378,9 @@ input[type="button"] {
   border-radius: 40px;
   font-size: 21px;
   cursor: pointer; }
+
+a {
+  text-decoration: none; }
 
 #loginBody,
 #installerBody {

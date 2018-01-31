@@ -1,7 +1,8 @@
 #testContainer section{
-	background:#F4F4F4;
+	background:$block_color;
 	margin: 50px 250px;
 	padding: 0% 10% 5% 10%;
+	box-shadow: $block_shadow;
 }
 
 #testContainer header{
@@ -20,7 +21,7 @@
 	height: 30px;
 	font-size:21px;
 	width:100%;
-	border-bottom: 1px solid #C4C4C4; 
-	color:#2A3F54;
+	border-bottom: $input_border_color; 
+	color:$primary_color;
 }
 

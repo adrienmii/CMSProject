@@ -1,124 +1,76 @@
-#installerBody {
-  font-family: 'Ubuntu', sans-serif !important; }
+/*
+Error: Undefined variable: "$secondary_color".
+        on line 40 of scss/installer.scss
 
-#logoContainer {
-  background: url(../../img/logo.png) no-repeat 51% 150%;
-  width: 100%;
-  height: 150px; }
+35: 	border: solid 2px #fff;
+36: 	display:inline-block;	
+37: }
+38: 
+39: .stepCircle.active{
+40: 	border: solid 3px $secondary_color;	
+41: }
+42: 
+43: .stepCircle:nth-child(1){
+44: 	background: url(../../img/icn/iconCheckedWhite.svg) no-repeat  center;
+45: }
 
-#title {
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 20px; }
-
-#installerForm {
-  width: 63%;
-  height: 700px;
-  left: 50%;
-  top: 80%;
-  transform: translateX(-50%) translateY(-80%); }
-
-#installerForm > header {
-  margin-top: 25px; }
-
-.stepCircle {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  border: solid 2px #fff;
-  display: inline-block; }
-
-.stepCircle.active {
-  border: solid 3px #1ABB9C; }
-
-.stepCircle:nth-child(1) {
-  background: url(../../img/icn/iconCheckedWhite.svg) no-repeat center; }
-
-.stepCircle:nth-child(3) {
-  background: url(../../img/icn/iconDbWhite.svg) no-repeat center; }
-
-.stepCircle:nth-child(5) {
-  background: url(../../img/icn/iconUserWhite.svg) no-repeat center; }
-
-.stepCircle.active:nth-child(1) {
-  background: url(../../img/icn/iconCheckedGreen.svg) no-repeat center; }
-
-.stepCircle.active:nth-child(3) {
-  background: url(../../img/icn/iconDbGreen.svg) no-repeat center; }
-
-.stepCircle.active:nth-child(5) {
-  background: url(../../img/icn/iconUserGreen.svg) no-repeat center; }
-
-.path {
-  width: 15%;
-  height: 5px;
-  background: #D9DEE4;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 -4px 50px -4px; }
-
-.path.active {
-  background: #1ABB9C; }
-
-.stepTitle {
-  display: inline-block;
-  text-transform: uppercase;
-  color: #D9DEE4; }
-
-#installerForm > main {
-  margin: 4% 8% 8% 8%; }
-
-#formTitle {
-  color: #E5E5E5;
-  font-size: 21px; }
-
-#formDesc {
-  color: #BAC3CF;
-  font-size: 18px; }
-
-#installerForm form {
-  margin-top: 4%; }
-
-.rowTitle {
-  color: #fff; }
-
-.rowValue {
-  color: #fff; }
-
-.rowDesc {
-  color: #BAC3CF; }
-
-#installerForm form .row {
-  margin-bottom: 25px;
-  font-size: 16px; }
-
-#installerForm input {
-  font-size: 16px;
-  border-bottom: 1px solid #1ABB9C; }
-
-.buttonContainer {
-  margin-top: 50px; }
-
-#installerForm input[type="button"] {
-  font-size: 21px;
-  width: 120px;
-  background: url(../../img/icn/iconArrowRightWhite.svg) 80% no-repeat #1ABB9C; }
-
-@media screen and (max-width: 768px) {
-  #installerBody {
-    background: #fff;
-    height: 100%; }
-
-  #installerForm {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    border: none; }
-
-  .rowTitle {
-    margin-bottom: 15px; } }
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  #installerForm {
-    width: 80%; } }
-
-/*# sourceMappingURL=installer.css.map */
+Backtrace:
+scss/installer.scss:40
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `map'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `_perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `map'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:161:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:10:in `visit'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$secondary_color\".\A         on line 40 of scss/installer.scss\A \A 35: 	border: solid 2px #fff;\A 36: 	display:inline-block;	\A 37: }\A 38: \A 39: .stepCircle.active{\A 40: 	border: solid 3px $secondary_color;	\A 41: }\A 42: \A 43: .stepCircle:nth-child(1){\A 44: 	background: url(../../img/icn/iconCheckedWhite.svg) no-repeat  center;\A 45: }"; }

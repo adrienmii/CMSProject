@@ -4,15 +4,15 @@
 
 #chapterForm label{
 	font-size:21px;
-	color:#2A3F54; 
+	color:$primary_color; 
 	font-weight:bold;
 	margin-bottom:50px;
 	margin-right:20px;
 }
 
 #chapterForm input[type="text"]{
-	border-bottom: 1px solid #C4C4C4; 
-	color:#2A3F54; 
+	border-bottom: $input_border_color; 
+	color:$primary_color; 
 	height: 30px;
 	font-size:21px;
 	width:300px;
@@ -21,8 +21,9 @@
 
 #chapterForm select{
 	border-radius:4px;
-	color:#2A3F54; 
+	color:$primary_color; 
 	margin-top:10px;
 	height:30px;
-	width:150px;}
+	width:150px;
+}
 
