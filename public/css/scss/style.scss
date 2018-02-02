@@ -11,6 +11,7 @@
 @import "addQCM";
 @import "test";
 @import "classes";
+@import "classe";
 
 html {
   height: 100%;
@@ -87,6 +88,16 @@ input[type="button"]
 
 a{
 	text-decoration:none;
+}
+
+table {
+    border-collapse: collapse;
+    width:100%;
+}
+
+td, th {
+    padding: 0;
+    text-align:left;
 }
 
 #loginBody,

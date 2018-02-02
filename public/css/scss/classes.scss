@@ -42,7 +42,7 @@
 	padding:20px 30px;
 }
 
-.actionCol{
+.classBlock .actionCol{
 	display:inline-block;	
 }
 
@@ -54,13 +54,13 @@
 	display:inline-block;
 }
 
-.actionEdit{
-	background:url(../../img/icn/iconPencil.svg) 50% 50% no-repeat;
+.actionEditWhite{
+	background:url(../../img/icn/iconPencilWhite.svg) 50% 50% no-repeat;
 }
 
-.actionDelete{	
+.actionDeleteWhite{	
 	margin-left:5px;
-	background:url(../../img/icn/iconXmark.svg) 50% 50% no-repeat;	
+	background:url(../../img/icn/iconXmarkWhite.svg) 50% 50% no-repeat;	
 }
 
 .actionAdd{	

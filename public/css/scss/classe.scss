@@ -1,0 +1,106 @@
+#classeContainer{
+	padding: 50px 80px;
+}
+
+#className{
+	font-size:28px;
+	text-transform:uppercase;
+	color: $primary_color;
+	display:inline-block;
+}
+
+#eleveTable{
+	margin-top:20px;
+}
+
+#eleveTable thead{
+	background: $primary_color;
+}
+
+#eleveTable tr th:first-child,#eleveTable tr td:first-child{
+	padding-left:15px;
+}
+
+
+#eleveTable thead tr th.actionCol{
+	width:100px;
+}
+
+#eleveTable thead tr th{	
+	font-weight:normal !important;
+	color:#fff;
+	font-size:15px;
+	text-transform:uppercase;
+	padding:8px
+}
+
+#eleveTable tbody tr{	
+	border-bottom:$input_border_color;
+}
+
+#eleveTable tbody tr:nth-child(2n+1){	
+	background:$block_color;
+}
+
+#eleveTable tbody tr td{	
+	padding:6px;
+}
+
+#eleveTable tbody tr td:first-child{	
+	text-transform:uppercase;
+}
+
+
+#eleveTable a,
+#classeContainer header a{
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border: solid 1px $primary_color;
+	display:inline-block;
+}
+
+.actionEditBlue{
+	background:url(../../img/icn/iconPencilBlue.svg) 50% 50% no-repeat;
+}
+
+.actionDeleteBlue{	
+	margin-left:5px;
+	background:url(../../img/icn/iconXmarkBlue.svg) 50% 50% no-repeat;	
+}
+
+#teacherName{
+	background:url(../../img/icn/iconSchoolBlue.svg) 7px 0% no-repeat;	
+	padding-left:40px;
+	padding-top:8px;
+	height:35px;
+	color:$primary_color;
+	font-size:18px;
+}
+
+#studentsCount{
+	background:url(../../img/icn/iconStudentsBlue.svg) 7px 7px no-repeat;
+	display:inline-block;
+	font-size:24px;
+	font-weight:100;
+	padding-top:2px;
+	padding-left:45px;
+	color:$primary_color;
+}
+
+#addStudent{
+	width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: light;
+    border: solid 3px #5A738E;
+    border-radius: 50%;
+    display: inline-block;
+    text-decoration: none;
+    background: $primary_color;
+    color:#fff;
+    font-size: 25px;
+    float:right;
+	font-weight:normal !important;
+}
+
