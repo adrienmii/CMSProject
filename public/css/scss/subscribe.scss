@@ -1,0 +1,66 @@
+#subscribeContainer{
+	font-size:28px;
+	color:$primary_color;
+}
+
+#subscribeContainer header {
+   margin-bottom:50px;
+   margin-top:50px;
+}
+
+#subscribeContainer section {
+    background:$block_color;
+	margin: 50px 250px;
+	padding: 0% 10% 5% 10%;
+	box-shadow: $block_shadow;
+}
+
+#subscribeContainer input{
+	height: 30px;
+	font-size:21px;
+	width:80%;
+	border-bottom: $input_border_color; 
+	color:$primary_color;
+	margin: 10px 0px;
+}
+
+#addProfile{
+	background:$button_input_color;
+	color: #FFF;
+	font-size: 21px;
+	padding:10px 30px;
+	border-radius: 25px;
+	text-decoration: none;
+	width: 150px;
+	left:50%;
+}
+
+.btnAddSubscribe{
+	width:100%;
+	text-align:center;
+	margin-top:50px;
+}
+
+#subscribeContainer .divInfo{
+	margin-bottom:20px;
+  	margin-top:50px;
+}
+
+.profileChoiceContainer{		
+	padding-left:20px;
+	padding-right:20px;
+}	
+
+.profileChoiceContainer a{
+	width:100%;
+	border:$input_border_color;
+	height:75px;
+	padding-top:25px;
+	font-size:20px;
+	background:#fff;
+	color:$primary_color;
+}
+
+.profileChoiceContainer a.active{
+	border: solid 3px $primary_color;
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,2BAA4B;EACxB,UAAU,EAAE,OAAO;EACnB,MAAM,EAAE,UAAU;EAClB,OAAO,EAAE,aAAa;EACtB,UAAU,EAAE,8BAA8B",
+"sources": ["../scss/subscribe.scss"],
+"names": [],
+"file": "subscribe.css"
+}
