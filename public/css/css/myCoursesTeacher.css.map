@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB;EACnB,OAAO,EAAC,YAAY;;AAGrB,sBAAsB;EACrB,OAAO,EAAC,YAAY",
+"sources": ["../scss/myCoursesTeacher.scss"],
+"names": [],
+"file": "myCoursesTeacher.css"
+}

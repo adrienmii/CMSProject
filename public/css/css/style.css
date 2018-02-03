@@ -945,7 +945,7 @@ hr.timeLeft {
   padding-top: 5px;
   padding-bottom: 5px; }
 
-#coursesList article div,
+.chapterBlock,
 #attachementsList article div {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -1468,6 +1468,25 @@ hr.timeLeft {
 
 .profileChoiceContainer a.active {
   border: solid 3px #2A3F54; }
+
+.chapterBlockActions {
+  display: inline-block;
+  width: 100%; }
+
+.chapterBlockActions a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 1px #2A3F54;
+  margin-bottom: 20px; }
+
+.actionRead {
+  background: url(../../img/icn/iconBook.svg) 50% 50% no-repeat;
+  width: 70px !important;
+  height: 70px !important;
+  margin-bottom: 0px !important;
+  margin-right: 30%; }
 
 html {
   height: 100%; }
