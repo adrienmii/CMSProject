@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$primary_color".
-        on line 8 of scss/classe.scss
+        on line 12 of scss/classe.scss
 
-3: }
-4: 
-5: #className{
-6: 	font-size:28px;
-7: 	text-transform:uppercase;
-8: 	color: $primary_color;
-9: 	display:inline-block;
-10: }
-11: 
-12: #eleveTable{
-13: 	margin-top:20px;
+7: }
+8: 
+9: #className{
+10: 	font-size:28px;
+11: 	text-transform:uppercase;
+12: 	color: $primary_color;
+13: 	display:inline-block;
+14: 	font-weight:100;
+15: }
+16: 
+17: #eleveTable{
 
 Backtrace:
-scss/classe.scss:8
+scss/classe.scss:12
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -69,4 +69,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$primary_color\".\A         on line 8 of scss/classe.scss\A \A 3: }\A 4: \A 5: #className{\A 6: 	font-size:28px;\A 7: 	text-transform:uppercase;\A 8: 	color: $primary_color;\A 9: 	display:inline-block;\A 10: }\A 11: \A 12: #eleveTable{\A 13: 	margin-top:20px;"; }
+  content: "Error: Undefined variable: \"$primary_color\".\A         on line 12 of scss/classe.scss\A \A 7: }\A 8: \A 9: #className{\A 10: 	font-size:28px;\A 11: 	text-transform:uppercase;\A 12: 	color: $primary_color;\A 13: 	display:inline-block;\A 14: 	font-weight:100;\A 15: }\A 16: \A 17: #eleveTable{"; }

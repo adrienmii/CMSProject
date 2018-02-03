@@ -1324,11 +1324,15 @@ hr.timeLeft {
 #classeContainer {
   padding: 50px 80px; }
 
+#classeContainer header > div > div {
+  display: inline-block; }
+
 #className {
   font-size: 28px;
   text-transform: uppercase;
   color: #2A3F54;
-  display: inline-block; }
+  display: inline-block;
+  font-weight: 100; }
 
 #eleveTable {
   margin-top: 20px; }

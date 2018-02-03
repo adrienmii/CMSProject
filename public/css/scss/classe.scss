@@ -2,11 +2,16 @@
 	padding: 50px 80px;
 }
 
+#classeContainer header > div > div {
+	display:inline-block;
+}
+
 #className{
 	font-size:28px;
 	text-transform:uppercase;
 	color: $primary_color;
 	display:inline-block;
+	font-weight:100;
 }
 
 #eleveTable{
