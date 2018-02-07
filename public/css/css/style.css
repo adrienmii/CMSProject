@@ -714,16 +714,18 @@ body {
 #sideBar.menuClose ul li:nth-child(6) {
   background: url(../../img/icn/iconGear.svg) center 5% no-repeat; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   #pageContent {
     width: 100%;
     margin-left: 0px;
     height: 100%;
     transition: all 0.3s; }
 
-  #logoMobile {
-    background: url(../../img/logoMobile.png) no-repeat;
-    background-size: cover; }
+  #logoMobile img {
+    width: 200px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%); }
 
   #iconSearch {
     background: url(../../img/icn/iconSearch.svg) center no-repeat; }
@@ -764,7 +766,10 @@ body {
     padding-left: 25px; }
 
   #pathSection p {
-    font-size: 15px; } }
+    font-size: 25px; } }
+#topBarMobile > .row {
+  height: 70px; }
+
 #rowBlockInfo {
   margin-top: 50px; }
 
@@ -774,7 +779,8 @@ body {
   background: #F4F4F4;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
-  padding: 35px; }
+  padding: 35px;
+  margin-bottom: 20px; }
 
 .blocTitle {
   line-height: 17px;
@@ -811,7 +817,7 @@ body {
   cursor: pointer; }
 
 #contentSchedule {
-  width: calc(100% - 90px);
+  width: 100%;
   display: flex;
   color: #fff; }
 
@@ -821,15 +827,17 @@ body {
   background: #8CDDCD;
   padding: 7px 20px;
   border-radius: 25px;
-  position: relative;
-  left: 20%;
   font-size: 15px; }
 
 #contentSchedule #currentCourse a {
-  background: #8CDDCD; }
+  background: #8CDDCD;
+  float: right;
+  margin-right: 25px; }
 
 #contentSchedule #nextCourse a {
-  background: #9DAAB6; }
+  background: #9DAAB6;
+  float: right;
+  margin-right: 25px; }
 
 #arrowRightSchedule {
   height: 170px;
@@ -852,9 +860,18 @@ body {
 
 #teacherCourse {
   padding-left: 45px;
-  background: url(../../img/icn/iconSchool.svg) 20px no-repeat; }
+  background: url(../../img/icn/iconSchool.svg) 20px no-repeat;
+  font-size: 14px; }
 
 #teacherCourse span {
+  text-transform: uppercase; }
+
+#teacherCourseXs {
+  padding-left: 45px;
+  background: url(../../img/icn/iconSchool.svg) 20px no-repeat;
+  font-size: 14px; }
+
+#teacherCourseXs span {
   text-transform: uppercase; }
 
 #roomCourse {
@@ -866,7 +883,7 @@ hr.timeLeft {
   height: 3px;
   background: #fff;
   border: none;
-  width: 80%;
+  width: 88%;
   border-radius: 2px;
   margin-top: 10px;
   margin-bottom: 10px; }
@@ -875,13 +892,14 @@ hr.timeLeft {
   font-size: 10px; }
 
 .titleSchedule {
-  margin-left: 10%;
+  margin-left: 5%;
   vertical-align: top;
   padding-top: 15px;
   width: 130px; }
 
 .timeSpanCours {
-  margin-left: 25px; }
+  margin-right: 25px;
+  float: right; }
 
 .titleSchedule,
 .timeSpanCours {
@@ -901,18 +919,101 @@ hr.timeLeft {
 
 #blockHomeWorkContainer table {
   border-collapse: collapse;
-  width: 100%; }
+  width: 100%;
+  font-size: 15px; }
 
 #blockHomeWorkContainer table tr {
   height: 30px; }
 
 #blockHomeWorkContainer table tr td:first-child {
   background: url(../../img/icn/iconClipBoard.svg) 50% 50% no-repeat;
-  width: 70px; }
+  width: 50px; }
 
 #blockHomeWorkContainer table tr:nth-child(2n+1) td {
   background-color: #fff; }
 
+#arrowTopSchedule {
+  height: 45px;
+  background: url(../../img/icn/iconArrowLeftSchedule.svg) 50% 50% no-repeat #1ABB9C;
+  width: 100%;
+  opacity: 0.7;
+  cursor: pointer; }
+
+#arrowBottomSchedule {
+  height: 45px;
+  background: url(../../img/icn/iconArrowRightSchedule.svg) 50% 50% no-repeat #3c556e;
+  width: 100%;
+  opacity: 0.7;
+  cursor: pointer; }
+
+#contentScheduleXS {
+  width: 100%;
+  display: flex;
+  flex-direction: column !important;
+  color: #fff; }
+
+#contentScheduleXS a {
+  text-decoration: none;
+  color: #fff;
+  background: #8CDDCD;
+  padding: 7px 20px;
+  border-radius: 25px;
+  margin-left: 17%;
+  font-size: 15px; }
+
+#contentScheduleXS #currentCourse a {
+  background: #8CDDCD; }
+
+#contentScheduleXS #nextCourse a {
+  background: #9DAAB6; }
+
+@media screen and (max-width: 768px) {
+  #topBarMobile {
+    box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.25); }
+
+  .blocInfo {
+    width: 100%;
+    padding: 20px 10px;
+    height: auto; }
+
+  .blocTitle {
+    font-size: 15px;
+    padding-left: 25%; }
+
+  .blocValue {
+    font-size: 24px; }
+
+  #blockSchedule {
+    padding: 0px 0.5rem;
+    flex-direction: column !important;
+    height: auto; }
+
+  #arrowLeftSchedule {
+    height: 45px;
+    background: url(../../img/icn/iconArrowDownSchedule.svg) 50% 50% no-repeat #1ABB9C;
+    width: 100%;
+    opacity: 0.7;
+    cursor: pointer; }
+
+  #arrowRightSchedule {
+    height: 45px;
+    background: url(../../img/icn/iconArrowUpSchedule.svg) 50% 50% no-repeat #3c556e;
+    width: 100%;
+    opacity: 0.7;
+    cursor: pointer; }
+
+  #contentSchedule {
+    width: 100%;
+    display: flex;
+    flex-direction: column !important;
+    color: #fff; }
+
+  #currentCourse {
+    padding-bottom: 25px; }
+
+  #blockHomeWork {
+    padding: 0px 0.5rem;
+    margin-top: 20px; } }
 #courseTitle {
   margin-top: 50px;
   font-size: 26px; }

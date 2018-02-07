@@ -158,7 +158,7 @@
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
 
 	#pageContent{
 		width:100%;
@@ -167,9 +167,16 @@
 		transition: all 0.3s
 	}
 
-	#logoMobile{
-		background: url(../../img/logoMobile.png) no-repeat;
-		background-size: cover;
+	#logoMobile{		
+		//background: url(../../img/logoMobile.png) no-repeat;
+		//background-size: cover;
+	}
+
+	#logoMobile img{		
+	    width: 200px;
+	    left: 50%;
+	    position: relative;
+	    transform: translateX(-50%);
 	}
 
 	#iconSearch{
@@ -219,7 +226,11 @@
 	}
 
 	#pathSection p{
-		font-size: 15px;
+		font-size: 25px;
 	}
 
+}
+
+#topBarMobile > .row{
+	height:70px;
 }
