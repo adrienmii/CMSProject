@@ -242,6 +242,10 @@ hr.timeLeft {
 
 @media screen and (max-width: 768px){
 
+	#rowBlockSchedule{
+		margin-top: 20px;
+	}
+
 	#topBarMobile{
 		box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.25);
 	}

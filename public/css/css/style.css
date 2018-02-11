@@ -976,6 +976,9 @@ hr.timeLeft {
   #blockHomeWork {
     margin-top: 20px; } }
 @media screen and (max-width: 768px) {
+  #rowBlockSchedule {
+    margin-top: 20px; }
+
   #topBarMobile {
     box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.25); }
 
@@ -1433,7 +1436,7 @@ hr.timeLeft {
 
 @media screen and (max-width: 768px) {
   #classesContainer {
-    margin-top: 50px; }
+    margin-top: 20px; }
 
   #classesContainer > div > div[class^="col-"] {
     padding: 0px 0.5rem;
@@ -1539,7 +1542,7 @@ hr.timeLeft {
 
 #subscribeContainer section {
   background: #F4F4F4;
-  margin: 50px 250px;
+  margin: 50px 100px;
   padding: 0% 10% 5% 10%;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); }
 
@@ -1575,17 +1578,36 @@ hr.timeLeft {
   padding-right: 20px; }
 
 .profileChoiceContainer a {
+  max-width: 180px;
   width: 100%;
   border: 1px solid #C4C4C4;
   height: 75px;
   padding-top: 25px;
   font-size: 20px;
   background: #fff;
-  color: #2A3F54; }
+  color: #2A3F54;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%); }
 
 .profileChoiceContainer a.active {
   border: solid 3px #2A3F54; }
 
+@media screen and (max-width: 768px) {
+  #subscribeContainer section {
+    margin: 0px; }
+
+  .profileChoiceContainer {
+    margin-bottom: 20px; }
+
+  #subscribeContainer .divInfo {
+    text-align: center;
+    margin-top: 20px; }
+
+  #subscribeContainer form input {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); } }
 .chapterBlockActions {
   display: inline-block;
   width: 100%; }
