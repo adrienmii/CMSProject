@@ -439,6 +439,10 @@ body {
   padding-left: 40px;
   font-size: 1.2rem; }
 
+#help a {
+  color: rgba(196, 196, 196, 0.5);
+  text-decoration-line: underline; }
+
 @media screen and (max-width: 768px) {
   #loginBody {
     background: #fff; }
@@ -472,11 +476,7 @@ body {
   font-size: 20px; }
 
 #installerForm {
-  width: 63%;
-  height: 700px;
-  left: 50%;
-  top: 80%;
-  transform: translateX(-50%) translateY(-80%); }
+  margin-top: 20px; }
 
 #installerForm > header {
   margin-top: 25px; }
@@ -566,7 +566,6 @@ body {
 
 @media screen and (max-width: 768px) {
   #installerBody {
-    background: #fff;
     height: 100%; }
 
   #installerForm {
@@ -577,9 +576,6 @@ body {
 
   .rowTitle {
     margin-bottom: 15px; } }
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  #installerForm {
-    width: 80%; } }
 #sideBar {
   background: #2A3F54;
   min-height: 100%;
@@ -1719,9 +1715,11 @@ td, th {
   background: url(../../img/loginBackground.png) no-repeat center fixed;
   background-size: cover; }
 
+#loginForm {
+  position: absolute; }
+
 #loginForm,
 #installerForm {
-  position: absolute;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: linear-gradient(180deg, #2A3F54 0%, rgba(28, 42, 57, 0.62) 49.72%, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%);
   border-radius: 15px; }

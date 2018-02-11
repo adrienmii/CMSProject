@@ -17,11 +17,12 @@
 }
 
 #installerForm{	
-	width: 63%;
-	height: 700px;
-	left: 50%;
-	top: 80%;
-	transform:translateX(-50%) translateY(-80%);	
+	//width: 63%;
+	margin-top: 20px;
+	//height: 700px;
+	//left: 50%;
+	//top: 80%;
+	//transform:translateX(-50%) translateY(-80%);	
 }
 
 #installerForm > header{
@@ -130,8 +131,7 @@
 
 @media screen and (max-width: 768px){
 
-	#installerBody {
-	  background: #fff;	
+	#installerBody {	
 	  height: 100%; 
 	}
 	
@@ -139,19 +139,11 @@
 		width:100%;
 		height: 100%;
 		border-radius:0;
-		border:none;
+		border:none;		
 	}
 
 	.rowTitle{
 		margin-bottom:15px;
 	}
 	
-}
-
-@media screen and (min-width: 768px) and (max-width:992px){
-	
-	#installerForm{
-		width:80%;		
-	}	
-
 }

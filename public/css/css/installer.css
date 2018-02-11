@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$secondary_color".
-        on line 40 of scss/installer.scss
+        on line 41 of scss/installer.scss
 
-35: 	border: solid 2px #fff;
-36: 	display:inline-block;	
-37: }
-38: 
-39: .stepCircle.active{
-40: 	border: solid 3px $secondary_color;	
-41: }
-42: 
-43: .stepCircle:nth-child(1){
-44: 	background: url(../../img/icn/iconCheckedWhite.svg) no-repeat  center;
-45: }
+36: 	border: solid 2px #fff;
+37: 	display:inline-block;	
+38: }
+39: 
+40: .stepCircle.active{
+41: 	border: solid 3px $secondary_color;	
+42: }
+43: 
+44: .stepCircle:nth-child(1){
+45: 	background: url(../../img/icn/iconCheckedWhite.svg) no-repeat  center;
+46: }
 
 Backtrace:
-scss/installer.scss:40
+scss/installer.scss:41
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$secondary_color\".\A         on line 40 of scss/installer.scss\A \A 35: 	border: solid 2px #fff;\A 36: 	display:inline-block;	\A 37: }\A 38: \A 39: .stepCircle.active{\A 40: 	border: solid 3px $secondary_color;	\A 41: }\A 42: \A 43: .stepCircle:nth-child(1){\A 44: 	background: url(../../img/icn/iconCheckedWhite.svg) no-repeat  center;\A 45: }"; }
+  content: "Error: Undefined variable: \"$secondary_color\".\A         on line 41 of scss/installer.scss\A \A 36: 	border: solid 2px #fff;\A 37: 	display:inline-block;	\A 38: }\A 39: \A 40: .stepCircle.active{\A 41: 	border: solid 3px $secondary_color;	\A 42: }\A 43: \A 44: .stepCircle:nth-child(1){\A 45: 	background: url(../../img/icn/iconCheckedWhite.svg) no-repeat  center;\A 46: }"; }
