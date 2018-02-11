@@ -1125,6 +1125,18 @@ hr.timeLeft {
   padding: 5px 10px 5px 30px;
   margin-left: 55px; }
 
+@media screen and (max-width: 768px) {
+  #chapterContainer {
+    margin: 0px 0.5rem; }
+
+  #courseTitle {
+    margin-bottom: 20px; } }
+@media screen and (max-width: 992px) {
+  #courseTitle {
+    margin-bottom: 20px; } }
+@media screen and (max-width: 1200px) {
+  #courseTitle {
+    margin-bottom: 20px; } }
 #qcmContainer section {
   background: #F4F4F4;
   margin: 50px 250px;
