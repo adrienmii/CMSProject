@@ -15,7 +15,7 @@
 }
 
 #eleveTable{
-	margin-top:20px;
+	margin-top:20px;	
 }
 
 #eleveTable thead{
@@ -53,6 +53,10 @@
 
 #eleveTable tbody tr td:first-child{	
 	text-transform:uppercase;
+}
+
+#eleveTable tbody tr td:last-child{	
+	min-width:90px;
 }
 
 
@@ -109,3 +113,20 @@
 	font-weight:normal !important;
 }
 
+@media screen and (max-width:768px){
+	#classeContainer{
+	    padding: 20px 0.5rem;
+	}
+
+	#classeContainer main > div > div{
+		overflow-x:auto;
+	}
+
+	#teacherName{
+		margin-top:20px
+	}
+
+	#studentsCount{
+		margin-top:20px
+	}
+}
