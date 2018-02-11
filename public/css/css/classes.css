@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$button_input_color".
-        on line 28 of scss/classes.scss
+        on line 29 of scss/classes.scss
 
-23: #addClasses{
-24: 	width:60px;
-25: 	height:60px;
-26: 	text-align:center;
-27: 	font-weight:bold;
-28: 	border: solid 3px $button_input_color;
-29: 	border-radius:50%;
-30:  	display: inline-block;
-31:     text-decoration: none;
-32:   	color: $button_input_color;
-33:   	font-size:35px;
+24: #addClasses{
+25: 	width:60px;
+26: 	height:60px;
+27: 	text-align:center;
+28: 	font-weight:bold;
+29: 	border: solid 3px $button_input_color;
+30: 	border-radius:50%;
+31:  	display: inline-block;
+32:     text-decoration: none;
+33:   	color: $button_input_color;
+34:   	font-size:35px;
 
 Backtrace:
-scss/classes.scss:28
+scss/classes.scss:29
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -59,17 +59,18 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:46
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:294:in `watch'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin.rb:109:in `method_missing'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/bin/sass:13:in `<top (required)>'
-C:/Ruby24-x64/bin/sass:23:in `load'
-C:/Ruby24-x64/bin/sass:23:in `<main>'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$button_input_color\".\A         on line 28 of scss/classes.scss\A \A 23: #addClasses{\A 24: 	width:60px;\A 25: 	height:60px;\A 26: 	text-align:center;\A 27: 	font-weight:bold;\A 28: 	border: solid 3px $button_input_color;\A 29: 	border-radius:50%;\A 30:  	display: inline-block;\A 31:     text-decoration: none;\A 32:   	color: $button_input_color;\A 33:   	font-size:35px;"; }
+  content: "Error: Undefined variable: \"$button_input_color\".\A         on line 29 of scss/classes.scss\A \A 24: #addClasses{\A 25: 	width:60px;\A 26: 	height:60px;\A 27: 	text-align:center;\A 28: 	font-weight:bold;\A 29: 	border: solid 3px $button_input_color;\A 30: 	border-radius:50%;\A 31:  	display: inline-block;\A 32:     text-decoration: none;\A 33:   	color: $button_input_color;\A 34:   	font-size:35px;"; }

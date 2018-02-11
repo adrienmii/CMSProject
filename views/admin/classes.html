@@ -5,7 +5,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
 </head>
 <body>	
-	<div id="sideBar" class="hidden-xs visible-sm">
+	<div id="sideBar" class="hidden-xs hidden-sm visible-md">
 		<header>
 			<img src="../../public/img/petitLogo.svg">
 		</header>
@@ -26,7 +26,7 @@
 	</div>
 	<div id="pageContent">
 		<header>
-			<div id="topBar" class="col-md-12 hidden-xs visible-sm">
+			<div id="topBar" class="col-md-12 hidden-xs  hidden-sm visible-md">
 				<div class="row">
 					<div class="col-md-6">
 						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
@@ -36,7 +36,7 @@
 					</div>
 				</div>											
 			</div>
-			<div id="topBarMobile" class="hidden-sm">
+			<div id="topBarMobile" class="hidden-md">
 				<div class="row">
 					<div class="col-xs-2">
 						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
@@ -59,14 +59,14 @@
 						<input id="SearchMobile" type="text">
 					</div>					
 				</div>	
-			</div>			
+			</div>		
 			<div id="pathSection" class="col-md-12">
 				<p>Classes</p>
 			</div>			
 		</header>
 		<main id="classesContainer">	
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-xs-12 col-sm-6 col-lg-4">
 					<div id="newClassBlock">
 						<div id="iconAddClassContainer">
 							<a href="#" id="addClasses">+</a>
@@ -74,111 +74,153 @@
 						</div>						
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-sm-6 col-lg-4">
 					<div class="classBlock">	
 						<div class="row">
-							<div class="col-md-9 className">
+							<div class="col-xs-7 className">
 								4A SRC
 							</div>
-							<div class="actionCol text-right col-md-3">
+							<div class="actionCol text-right col-xs-5 ">
 								<a class="actionEditWhite" href="#"></a>
 								<a class="actionDeleteWhite" href="#"></a>
 							</div>
-							<div class="col-md-10">
+							<div class="col-xs-10">
 								38 students  •  2 teachers 
 							</div>
-							<div class="addStudents col-md-12">
+							<div class="addStudents col-xs-12">
 								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students to this class</div>
+								<div class="addStudentsText">add students</div>
 								<a href="#" class="actionAdd">+</a>
 							</div>							
 						</div>							
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-sm-6 col-lg-4">
 					<div class="classBlock">	
 						<div class="row">
-							<div class="col-md-9 className">
+							<div class="col-xs-7 className">
 								4A SRC
 							</div>
-							<div class="actionCol text-right col-md-3">
+							<div class="actionCol text-right col-xs-5 ">
 								<a class="actionEditWhite" href="#"></a>
 								<a class="actionDeleteWhite" href="#"></a>
 							</div>
-							<div class="col-md-10">
+							<div class="col-xs-10">
 								38 students  •  2 teachers 
 							</div>
-							<div class="addStudents col-md-12">
+							<div class="addStudents col-xs-12">
 								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students to this class</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
-					</div>
-				</div>			
-				<div class="col-md-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-md-9 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-md-3">
-								<a class="actionEditWhite" href="#"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-md-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-md-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students to this class</div>
+								<div class="addStudentsText">add students</div>
 								<a href="#" class="actionAdd">+</a>
 							</div>							
 						</div>							
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-sm-6 col-lg-4">
 					<div class="classBlock">	
 						<div class="row">
-							<div class="col-md-9 className">
+							<div class="col-xs-7 className">
 								4A SRC
 							</div>
-							<div class="actionCol text-right col-md-3">
+							<div class="actionCol text-right col-xs-5 ">
 								<a class="actionEditWhite" href="#"></a>
 								<a class="actionDeleteWhite" href="#"></a>
 							</div>
-							<div class="col-md-10">
+							<div class="col-xs-10">
 								38 students  •  2 teachers 
 							</div>
-							<div class="addStudents col-md-12">
+							<div class="addStudents col-xs-12">
 								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students to this class</div>
+								<div class="addStudentsText">add students</div>
 								<a href="#" class="actionAdd">+</a>
 							</div>							
 						</div>							
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-sm-6 col-lg-4">
 					<div class="classBlock">	
 						<div class="row">
-							<div class="col-md-9 className">
+							<div class="col-xs-7 className">
 								4A SRC
 							</div>
-							<div class="actionCol text-right col-md-3">
+							<div class="actionCol text-right col-xs-5 ">
 								<a class="actionEditWhite" href="#"></a>
 								<a class="actionDeleteWhite" href="#"></a>
 							</div>
-							<div class="col-md-10">
+							<div class="col-xs-10">
 								38 students  •  2 teachers 
 							</div>
-							<div class="addStudents col-md-12">
+							<div class="addStudents col-xs-12">
 								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students to this class</div>
+								<div class="addStudentsText">add students</div>
 								<a href="#" class="actionAdd">+</a>
 							</div>							
 						</div>							
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-4">
+					<div class="classBlock">	
+						<div class="row">
+							<div class="col-xs-7 className">
+								4A SRC
+							</div>
+							<div class="actionCol text-right col-xs-5 ">
+								<a class="actionEditWhite" href="#"></a>
+								<a class="actionDeleteWhite" href="#"></a>
+							</div>
+							<div class="col-xs-10">
+								38 students  •  2 teachers 
+							</div>
+							<div class="addStudents col-xs-12">
+								<div id="addStudentsIcon"></div>
+								<div class="addStudentsText">add students</div>
+								<a href="#" class="actionAdd">+</a>
+							</div>							
+						</div>							
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-4">
+					<div class="classBlock">	
+						<div class="row">
+							<div class="col-xs-7 className">
+								4A SRC
+							</div>
+							<div class="actionCol text-right col-xs-5 ">
+								<a class="actionEditWhite" href="#"></a>
+								<a class="actionDeleteWhite" href="#"></a>
+							</div>
+							<div class="col-xs-10">
+								38 students  •  2 teachers 
+							</div>
+							<div class="addStudents col-xs-12">
+								<div id="addStudentsIcon"></div>
+								<div class="addStudentsText">add students</div>
+								<a href="#" class="actionAdd">+</a>
+							</div>							
+						</div>							
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-4">
+					<div class="classBlock">	
+						<div class="row">
+							<div class="col-xs-7 className">
+								4A SRC
+							</div>
+							<div class="actionCol text-right col-xs-5 ">
+								<a class="actionEditWhite" href="#"></a>
+								<a class="actionDeleteWhite" href="#"></a>
+							</div>
+							<div class="col-xs-10">
+								38 students  •  2 teachers 
+							</div>
+							<div class="addStudents col-xs-12">
+								<div id="addStudentsIcon"></div>
+								<div class="addStudentsText">add students</div>
+								<a href="#" class="actionAdd">+</a>
+							</div>							
+						</div>							
+					</div>
+				</div>				
 			</div>						
 		</main>	
 	</div>

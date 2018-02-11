@@ -7,8 +7,11 @@
 }
 
 #sideBar header img{
-	width:100%;
-	padding-top: 10px;
+	width: 70%;
+    padding-top: 10px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
 }
 
 #sideBar main{
@@ -82,7 +85,7 @@
 }
 
 #toggleIcon{
-	background:url(../../img/icn/iconBurgerMenu.svg) 25px 50% no-repeat;
+	background:url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
 	width:100px;
 	height:70px;
 }
@@ -218,7 +221,6 @@
 		border-bottom: 1px solid $button_input_color; 
 	    font-size: 1.3rem;
 	    color:$button_input_color;
-	    width:100%;
 	    background:url(../../img/icn/iconSearch.svg) no-repeat;
 	    top:25%;
 	    position: relative;	  
@@ -233,4 +235,5 @@
 
 #topBarMobile > .row{
 	height:70px;
+	margin:0px !important;
 }

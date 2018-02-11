@@ -588,8 +588,11 @@ body {
   transition: all 0.3s; }
 
 #sideBar header img {
-  width: 100%;
-  padding-top: 10px; }
+  width: 70%;
+  padding-top: 10px;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%); }
 
 #sideBar main {
   margin-top: 40px; }
@@ -652,7 +655,7 @@ body {
   border-bottom: solid 1px #D9DEE4; }
 
 #toggleIcon {
-  background: url(../../img/icn/iconBurgerMenu.svg) 25px 50% no-repeat;
+  background: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
   width: 100px;
   height: 70px; }
 
@@ -761,7 +764,6 @@ body {
     border-bottom: 1px solid #5A738E;
     font-size: 1.3rem;
     color: #5A738E;
-    width: 100%;
     background: url(../../img/icn/iconSearch.svg) no-repeat;
     top: 25%;
     position: relative;
@@ -770,7 +772,8 @@ body {
   #pathSection p {
     font-size: 25px; } }
 #topBarMobile > .row {
-  height: 70px; }
+  height: 70px;
+  margin: 0px !important; }
 
 #rowBlockInfo {
   margin-top: 50px; }
@@ -969,6 +972,9 @@ hr.timeLeft {
 #contentScheduleXS #nextCourse a {
   background: #9DAAB6; }
 
+@media screen and (max-width: 1200px) {
+  #blockHomeWork {
+    margin-top: 20px; } }
 @media screen and (max-width: 768px) {
   #topBarMobile {
     box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.25); }
@@ -1333,7 +1339,8 @@ hr.timeLeft {
   padding: 50px; }
 
 #classesContainer > .row {
-  width: 100%; }
+  width: 100%;
+  margin: 0px !important; }
 
 #newClassBlock {
   height: 150px;
@@ -1364,7 +1371,7 @@ hr.timeLeft {
   background: linear-gradient(204.26deg, #2A3F54 5%, rgba(60, 85, 110, 0.7) 113.45%);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   color: #fff;
-  padding: 20px 30px; }
+  padding: 20px 20px; }
 
 .classBlock .actionCol {
   display: inline-block; }
@@ -1416,7 +1423,7 @@ hr.timeLeft {
 .addStudentsText {
   height: 100%;
   vertical-align: middle;
-  margin-left: 10px; }
+  margin-left: 5px; }
 
 #addStudentsIcon {
   background: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat #53667A;
@@ -1424,6 +1431,13 @@ hr.timeLeft {
   height: 33px;
   border-radius: 50%; }
 
+@media screen and (max-width: 768px) {
+  #classesContainer {
+    margin-top: 50px; }
+
+  #classesContainer > div > div[class^="col-"] {
+    padding: 0px 0.5rem;
+    margin-bottom: 20px; } }
 #classeContainer {
   padding: 50px 80px; }
 

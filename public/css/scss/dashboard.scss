@@ -234,7 +234,11 @@ hr.timeLeft {
 }
 
 
-
+@media screen and (max-width: 1200px){
+	#blockHomeWork{
+		margin-top: 20px;
+	}
+}
 
 @media screen and (max-width: 768px){
 
