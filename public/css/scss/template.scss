@@ -1,6 +1,7 @@
 #sideBar{
 	background:$primary_color;
 	min-height:100%;
+	 height: 100vh;
 	width:220px;
 	position: absolute;
 	transition: all 0.3s
@@ -108,7 +109,7 @@
 
 #pathSection p{
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 	position: relative;
 	top:30%;
 	margin: 0px 25px;
@@ -226,10 +227,7 @@
 	    position: relative;	  
 	    padding-left: 25px; 
 	}
-
-	#pathSection p{
-		font-size: 25px;
-	}
+	
 
 }
 

@@ -579,6 +579,7 @@ body {
 #sideBar {
   background: #2A3F54;
   min-height: 100%;
+  height: 100vh;
   width: 220px;
   position: absolute;
   transition: all 0.3s; }
@@ -671,7 +672,7 @@ body {
 
 #pathSection p {
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   position: relative;
   top: 30%;
   margin: 0px 25px; }
@@ -763,10 +764,7 @@ body {
     background: url(../../img/icn/iconSearch.svg) no-repeat;
     top: 25%;
     position: relative;
-    padding-left: 25px; }
-
-  #pathSection p {
-    font-size: 25px; } }
+    padding-left: 25px; } }
 #topBarMobile > .row {
   height: 70px;
   margin: 0px !important; }
@@ -1031,10 +1029,10 @@ hr.timeLeft {
 
 #coursesList,
 #attachementsList {
-  padding: 50px 80px; }
+  padding: 50px 60px; }
 
 #teacherInfo {
-  padding: 50px 80px 50px 10px; }
+  padding: 50px 20px 0px 0px; }
 
 #coursesList header,
 #teacherInfo header,
@@ -1061,7 +1059,7 @@ hr.timeLeft {
   background: #F4F4F4; }
 
 .chapterBlock, .attachementsBlock {
-  padding: 10px 25px;
+  padding: 10px 15px;
   min-height: 80px; }
 
 .chapterNumber, .attachementsStorage {
@@ -1070,7 +1068,7 @@ hr.timeLeft {
 
 .attachementsBlock {
   padding: 20px 0px 0px 70px;
-  background: url(../../img/icn/iconFolder.svg) #F4F4F4 25px 50% no-repeat !important; }
+  background: url(../../img/icn/iconFolder.svg) #F4F4F4 15px 50% no-repeat !important; }
 
 #teacherInfoBlock {
   background: #F4F4F4;
@@ -1080,13 +1078,21 @@ hr.timeLeft {
   height: auto; }
 
 .infoContent {
-  background: url(../../img/icn/iconEmail.svg) 20px 0px no-repeat;
-  font-size: 16px;
-  padding-left: 50px;
+  background: url(../../img/icn/iconEmail.svg) 10px 0px no-repeat;
+  padding-left: 40px;
   min-height: 25px;
   height: auto;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  word-wrap: break-word;
+  padding-top: 4px; }
 
+@media screen and (max-width: 768px) {
+  #coursesList, #attachementsList, #teacherInfo {
+    padding: 0px 0.5rem;
+    margin-bottom: 20px; }
+
+  #coursesList header, #teacherInfo header, #attachementsList header {
+    text-align: center; } }
 #chapterContainer {
   margin: 50px 80px; }
 
