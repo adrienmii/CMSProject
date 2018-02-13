@@ -1239,6 +1239,9 @@ hr.timeLeft {
     text-align: center; }
 
   .answerNumber {
+    margin-top: 10px; }
+
+  .answerNumber {
     margin-bottom: 10px; } }
 #chapterForm {
   margin: 50px 150px; }
