@@ -1359,8 +1359,8 @@ hr.timeLeft {
 
 #testContainer section {
   background: #F4F4F4;
-  margin: 50px 250px;
-  padding: 0% 10% 5% 10%;
+  margin: 50px 60px;
+  padding: 5px 10% 5% 10%;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); }
 
 #testContainer header {
@@ -1379,6 +1379,9 @@ hr.timeLeft {
   border-bottom: 1px solid #C4C4C4;
   color: #2A3F54; }
 
+@media screen and (max-width: 768px) {
+  #testContainer section {
+    margin: 0px; } }
 #classesContainer > div > div[class^="col-"] {
   padding: 50px; }
 

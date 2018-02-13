@@ -1,7 +1,7 @@
 #testContainer section{
 	background:$block_color;
-	margin: 50px 250px;
-	padding: 0% 10% 5% 10%;
+	margin: 50px 60px;
+	padding: 5px 10% 5% 10%;
 	box-shadow: $block_shadow;
 }
 
@@ -25,3 +25,10 @@
 	color:$primary_color;
 }
 
+
+@media screen and (max-width:768px){
+	#testContainer section{
+		margin: 0px;
+	}
+	
+}
