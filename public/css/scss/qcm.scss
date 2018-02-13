@@ -1,7 +1,7 @@
 #qcmContainer section{
 	background:$block_color;
-	margin: 50px 250px;
-	padding: 0% 10% 5% 10%;
+	margin: 50px 60px;
+	padding: 5px 10% 5% 10%;
 	box-shadow: $block_shadow;
 }
 
@@ -29,6 +29,12 @@
 
 .answerNumber, .answer{
 	display: inline-block;
+}
+
+.answer{
+	vertical-align: bottom;
+	padding-bottom: 15px;
+	width: 80%;
 }
 
 #questionNumber{
@@ -69,7 +75,7 @@
 
 .answerNumber span{
 	position: relative;
-	top:23%;
+	top:28%;
 }
 
 #btnNext{
@@ -80,4 +86,34 @@
 	border-radius: 25px;
 	text-decoration: none;
 	width: 150px;
+}
+
+
+.btnNextContainer{
+	margin-top: 50px;
+}
+
+@media screen and (max-width:768px){
+	#qcmContainer section{
+		margin: 0px;
+	}
+	
+}
+
+@media screen and (max-width:992px){
+	#timeLeft{
+		float: none;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+
+	.answerNumber, .answer{
+		display: block;
+		margin: 0 auto; 
+		text-align: center;
+	}
+
+	.answerNumber{
+		margin-bottom: 10px;
+	}
 }
