@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$primary_color".
-        on line 11 of scss/myCoursesTeacher.scss
+        on line 21 of scss/myCoursesTeacher.scss
 
-6: .chapterBlockActions a{
-7: 	display:inline-block;
-8: 	width:30px;
-9: 	height:30px;
-10: 	border-radius:50%;
-11: 	border: solid 1px $primary_color;
-12: 	margin-bottom:20px;
-13: }
-14: 
-15: .actionRead{
-16: 	background:url(../../img/icn/iconBook.svg) 50% 50% no-repeat;	
+16: .chapterBlockActions a{
+17: 	display:inline-block;
+18: 	width:30px;
+19: 	height:30px;
+20: 	border-radius:50%;
+21: 	border: solid 1px $primary_color;
+22: }
+23: 
+24: @media screen and (max-width: 768px){
+25: 	#techerCoursesContainer #coursesList > main{
+26: 		margin-left:0px;
 
 Backtrace:
-scss/myCoursesTeacher.scss:11
+scss/myCoursesTeacher.scss:21
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$primary_color\".\A         on line 11 of scss/myCoursesTeacher.scss\A \A 6: .chapterBlockActions a{\A 7: 	display:inline-block;\A 8: 	width:30px;\A 9: 	height:30px;\A 10: 	border-radius:50%;\A 11: 	border: solid 1px $primary_color;\A 12: 	margin-bottom:20px;\A 13: }\A 14: \A 15: .actionRead{\A 16: 	background:url(../../img/icn/iconBook.svg) 50% 50% no-repeat;	"; }
+  content: "Error: Undefined variable: \"$primary_color\".\A         on line 21 of scss/myCoursesTeacher.scss\A \A 16: .chapterBlockActions a{\A 17: 	display:inline-block;\A 18: 	width:30px;\A 19: 	height:30px;\A 20: 	border-radius:50%;\A 21: 	border: solid 1px $primary_color;\A 22: }\A 23: \A 24: @media screen and (max-width: 768px){\A 25: 	#techerCoursesContainer #coursesList > main{\A 26: 		margin-left:0px;"; }

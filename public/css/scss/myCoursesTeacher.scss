@@ -1,6 +1,16 @@
+#techerCoursesContainer .chapterBlock{
+	display:inline-block;
+	height: auto !important;
+	padding-top: 20px;
+}
+
+.courseTitle{
+	display:inline-block;
+}
+
 .chapterBlockActions{
 	display:inline-block;
-	width:100%;
+	float: right;
 }
 
 .chapterBlockActions a{
@@ -9,14 +19,25 @@
 	height:30px;
 	border-radius:50%;
 	border: solid 1px $primary_color;
-	margin-bottom:20px;
 }
 
-.actionRead{
-	background:url(../../img/icn/iconBook.svg) 50% 50% no-repeat;	
-	width:70px !important; 
-	height:70px !important;
-	margin-bottom:0px !important;
-	margin-right:30%;
+@media screen and (max-width: 768px){
+	#techerCoursesContainer #coursesList > main{
+		margin-left:0px;
+		margin-right: 0px;
+	}
 
+	#techerCoursesContainer .chapterBlock{
+		text-align: center;
+	}
+
+	.chapterBlockActions{
+		float: none;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+
+	#techerCoursesContainer header{
+		margin-top: 50px;
+	}
 }
