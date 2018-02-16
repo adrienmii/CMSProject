@@ -1243,7 +1243,7 @@ hr.timeLeft {
   .answerNumber {
     margin-bottom: 10px; } }
 #chapterForm {
-  margin: 50px 150px; }
+  margin: 50px 60px 0px 60px; }
 
 #chapterForm label {
   font-size: 21px;
@@ -1267,6 +1267,22 @@ hr.timeLeft {
   height: 30px;
   width: 150px; }
 
+@media screen and (max-width: 992px) {
+  #chapterForm {
+    margin: 0px 0.5rem;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+
+  #chapterForm input[type="text"] {
+    margin-bottom: 20px;
+    text-align: center; }
+
+  #chapterForm select {
+    margin-bottom: 20px; }
+
+  #chapterForm label {
+    margin-right: 0px; } }
 #addQCMContainer section {
   background: #F4F4F4;
   margin: 50px 60px;
@@ -1393,8 +1409,12 @@ hr.timeLeft {
   #addQCMContainer section {
     margin: 0px; }
 
+  #QCMForm label {
+    margin-right: 0px; }
+
   #QCMForm input[type="text"] {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    text-align: center; }
 
   .goodAnswerCheckbox {
     display: block;

@@ -2,7 +2,7 @@
 Error: Undefined variable: "$primary_color".
         on line 7 of scss/addChapter.scss
 
-2: 	margin:50px 150px;
+2: 	margin:50px 60px 0px 60px;
 3: }
 4: 
 5: #chapterForm label{
@@ -69,4 +69,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$primary_color\".\A         on line 7 of scss/addChapter.scss\A \A 2: 	margin:50px 150px;\A 3: }\A 4: \A 5: #chapterForm label{\A 6: 	font-size:21px;\A 7: 	color:$primary_color; \A 8: 	font-weight:bold;\A 9: 	margin-bottom:50px;\A 10: 	margin-right:20px;\A 11: }\A 12: "; }
+  content: "Error: Undefined variable: \"$primary_color\".\A         on line 7 of scss/addChapter.scss\A \A 2: 	margin:50px 60px 0px 60px;\A 3: }\A 4: \A 5: #chapterForm label{\A 6: 	font-size:21px;\A 7: 	color:$primary_color; \A 8: 	font-weight:bold;\A 9: 	margin-bottom:50px;\A 10: 	margin-right:20px;\A 11: }\A 12: "; }

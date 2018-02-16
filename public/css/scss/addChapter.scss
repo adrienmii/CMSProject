@@ -1,5 +1,5 @@
 #chapterForm {
-	margin:50px 150px;
+	margin:50px 60px 0px 60px;
 }
 
 #chapterForm label{
@@ -27,3 +27,27 @@
 	width:150px;
 }
 
+@media screen and (max-width:992px){
+
+	#chapterForm{
+		margin:0px 0.5rem; 
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom:20px;
+	}
+
+	#chapterForm input[type="text"] {
+	    margin-bottom: 20px;
+	    text-align: center;
+	}
+	#chapterForm select {
+	    margin-bottom: 20px;
+	}
+
+
+	#chapterForm label{
+		margin-right: 0px;
+	}
+
+
+}
