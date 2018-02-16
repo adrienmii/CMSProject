@@ -1,7 +1,7 @@
 #addQCMContainer section{
 	background:$block_color;
-	margin: 0px 250px;
-	padding: 0% 10% 3% 10%;
+	margin: 50px 60px;
+	padding: 5px 10% 5% 10%;
 	box-shadow: $block_shadow;
 }
 
@@ -11,8 +11,17 @@
 	margin-top:40px;
 }
 
+#addQCMContainer .answerRow{
+	border-bottom: solid 1px $primary_color;
+	margin-bottom: 10px;
+}
+
+#addQCMContainer .answerAddQCM{
+	width: 75%;
+}
+
 #QCMForm {
-	margin:50px 150px 0px 150px;
+	margin:50px 60px 0px 60px;
 }
 
 #QCMForm label{
@@ -53,11 +62,7 @@
 }
 
 
-#addQCMContainer .answer {
-	width: 90%
-}
-
-.answer input{
+.answerAddQCM input[type="text"]{
 	color:$primary_color !important; 
 	font-size:21px;
 	width: 100%;
@@ -100,4 +105,86 @@
 	border-radius: 25px;
 	text-decoration: none;
 	width: 150px;
+}
+
+.answerAddQCM{
+	padding-bottom: 10px;
+}
+
+.goodAnswerCheckbox{
+	vertical-align: bottom;
+	display: inline-block;
+	float: right;
+}
+
+.answerRow.addAnswer{
+	border-bottom: none !important;
+}
+
+#addAnswer{
+	width:44px;
+	height:44px;
+	border:solid 2px #C4C4C4;;
+	border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 3px;
+    color: #C4C4C4;
+    font-size: 27px;
+    font-weight: 100; 
+}
+
+@media screen and (max-width:992px){
+
+	#QCMForm{
+		margin:0px 0.5rem; 
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom:20px;
+	}
+
+	#addQCMContainer section{
+		margin: 0px;
+	}
+
+	#QCMForm input[type="text"] {
+	    margin-bottom: 20px;
+	}
+
+
+	.goodAnswerCheckbox{
+	    display: block;
+		margin: 0 auto;
+		text-align: center;
+		float: none;
+	}
+
+	.answerAddQCM input[type="text"]{
+		border-bottom: $input_border_color; 
+		margin-bottom: 20px;
+		margin-top: 20px;
+		width: 100%;
+	}
+	
+	.answerNumber, .answerAddQCM{
+		display: block;
+		margin: 0 auto; 
+		text-align: center;
+	}
+
+	.answerAddQCM input{
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	#questionInput{
+		width: 100%;
+	}
+
+	#addAnswer{
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}	
+
 }

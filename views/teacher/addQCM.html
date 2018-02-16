@@ -60,24 +60,24 @@
 					</div>					
 				</div>	
 			</div>	
-			<div id="pathSection" class="col-md-12">
+			<div id="pathSection" class="col-xs-12">
 				<p>Evaluations > Développement PHP Avancé > QCM 1</p>
 			</div>			
 		</header>
 		<main id="addQCMContainer">
 			<form id="QCMForm" class="row">
-					<div class="col-md-6 displayInlineBlock">
+					<div class="col-xs-12 col-md-7 displayInlineBlock">
 						<label>Nom</label>
 						<input placeholder="Nom de l'évaluation" type="text"/>						
 					</div>
-					<div class="col-md-6 displayInlineBlock">
+					<div class="col-xs-12 col-md-5 displayInlineBlock">
 						<label>Classe</label>
 						<select>
 						    <option value="3A IW1">3A IW1</option>						   
 				    	</select>
 					</div>	
 				</form>
-			<section class="col-md-12">
+			<section class="col-xs-12">
 				<header>
 					<a href="#" id="previousQuestion">-</a>	
 					<a href="#" id="nextQuestion">+</a>					
@@ -87,13 +87,18 @@
 				<main>
 					<div class="answerRow">
 						<div class="answerNumber"><span>1</span></div>
-						<div class="answer"><input type="text" placeholder="Réponse 1"/></div>	
+						<div class="answerAddQCM"><input type="text" placeholder="Réponse 1"/></div>	
+						<div class="goodAnswerCheckbox"><input type="checkbox"  /></div>	
 					</div>	
 					<div class="answerRow">
 						<div class="answerNumber"><span>2</span></div>
-						<div class="answer"><input type="text" placeholder="Réponse 2"/></div>	
-					</div>						
-					<div class="text-center">
+						<div class="answerAddQCM"><input type="text" placeholder="Réponse 2"/></div>
+						<div class="goodAnswerCheckbox"><input type="checkbox"  /></div>	
+					</div>	
+					<div class="answerRow addAnswer">
+						<a href="#" id="addAnswer">+</a>		
+					</div>					
+					<div class="text-center btnNextContainer">
 						<a id="btnCreate" href="#">Créer</a>
 					</div>	
 				</main>

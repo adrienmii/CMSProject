@@ -4,8 +4,8 @@ Error: Undefined variable: "$block_color".
 
 1: #addQCMContainer section{
 2: 	background:$block_color;
-3: 	margin: 0px 250px;
-4: 	padding: 0% 10% 3% 10%;
+3: 	margin: 50px 60px;
+4: 	padding: 5px 10% 5% 10%;
 5: 	box-shadow: $block_shadow;
 6: }
 7: 
@@ -65,4 +65,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$block_color\".\A         on line 2 of scss/addQCM.scss\A \A 1: #addQCMContainer section{\A 2: 	background:$block_color;\A 3: 	margin: 0px 250px;\A 4: 	padding: 0% 10% 3% 10%;\A 5: 	box-shadow: $block_shadow;\A 6: }\A 7: "; }
+  content: "Error: Undefined variable: \"$block_color\".\A         on line 2 of scss/addQCM.scss\A \A 1: #addQCMContainer section{\A 2: 	background:$block_color;\A 3: 	margin: 50px 60px;\A 4: 	padding: 5px 10% 5% 10%;\A 5: 	box-shadow: $block_shadow;\A 6: }\A 7: "; }
