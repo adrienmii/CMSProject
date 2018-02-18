@@ -965,9 +965,28 @@ hr.timeLeft {
 #contentScheduleXS #nextCourse a {
   background: #9DAAB6; }
 
+#rowChart {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+#myChart, #myChart2 {
+  background: #F4F4F4;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+  width: 94% !important;
+  margin: 0 auto; }
+
 @media screen and (max-width: 1200px) {
   #blockHomeWork {
     margin-top: 20px; } }
+@media screen and (max-width: 992px) {
+  #myChart {
+    margin-bottom: 20px; }
+
+  #rowBlockInfo {
+    margin-top: 20px; }
+
+  #rowChart {
+    margin-top: 0px; } }
 @media screen and (max-width: 768px) {
   #rowBlockSchedule {
     margin-top: 20px; }
