@@ -1,0 +1,63 @@
+.iconStudents{
+	width:48px;
+	height: 48px;
+	background:url(../../img/icn/iconStudentsGrey.svg) 50% 50% #fff no-repeat;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#teacherClassesContainer .chapterBlock {
+    display: inline-block;
+    height: auto !important;
+    padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+.teacherClassInfo{
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 5px;
+	float: right;
+
+}
+
+.teacherClassName{
+	text-align: center;
+	font-size: 18px;	
+}
+
+.teacherClassChapter{
+	text-align: center;
+	font-size: 13px;	
+}
+
+@media screen and (max-width: 768px){
+	#teacherClassesContainer{
+		margin:0px 0.5rem;
+	}
+
+	#courseTitle{
+		margin-bottom: 20px;
+	}	
+
+	#teacherClassesContainer header{
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-width: 992px){
+
+	#courseTitle{
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 1200px){
+
+	#courseTitle{
+		margin-bottom: 20px;
+	}
+}

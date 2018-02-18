@@ -1,0 +1,27 @@
+<svg width="51" height="51" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>iconmonstr-user-21</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3088 -2628)">
+<g id="iconmonstr-user-21">
+<g id="Ellipse" filter="url(#filter0_d)">
+<use xlink:href="#path0_fill" transform="translate(3089 2628)" fill="#FFFFFF"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(3103 2645)" fill="#3C556E" fill-opacity="0.7"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="3088" y="2628" width="51" height="51" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="1"/>
+<feGaussianBlur stdDeviation="0.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" d="M 49 24.5C 49 38.031 38.031 49 24.5 49C 10.969 49 0 38.031 0 24.5C 0 10.969 10.969 0 24.5 0C 38.031 0 49 10.969 49 24.5Z"/>
+<path id="path1_fill" d="M 9.27483 10.7019C 11.3768 10.2327 13.3338 9.82105 12.386 8.08944C 9.50217 2.81831 11.6215 0 14.6667 0C 17.7723 0 19.8403 2.92653 16.9473 8.08944C 15.9711 9.83169 18.0006 10.2424 20.0585 10.7019C 21.879 11.1091 22 11.9705 22 13.4617L 21.9972 14.1935L 7.33608 14.1935C 7.33608 12.2455 7.17475 11.1712 9.27483 10.7019L 9.27483 10.7019ZM 0.00183333 14.1935L 5.50275 14.1935C 5.47708 8.39016 8.24817 10.914 8.24817 6.2975C 8.24817 4.51532 7.04642 3.54839 5.5 3.54839C 3.21567 3.54839 1.62617 5.66234 3.7895 9.61524C 4.49992 10.914 3.03325 11.2227 1.45658 11.5748C 0.09075 11.88 0 12.5258 0 13.6444L 0.00183333 14.1935L 0.00183333 14.1935Z"/>
+</defs>
+</svg>
