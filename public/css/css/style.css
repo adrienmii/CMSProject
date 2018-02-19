@@ -620,6 +620,12 @@ body {
   transition: all 0.3s;
   cursor: pointer; }
 
+#navBar ul li a {
+  color: #fff; }
+
+#navBar ul li:nth-child(1) {
+  background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
 #navBar ul li:nth-child(2) {
   background: url(../../img/icn/iconTeacher.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
@@ -635,9 +641,47 @@ body {
 #navBar ul li:nth-child(6) {
   background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
 
+.studentNav#navBar ul li:nth-child(1) {
+  background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.studentNav#navBar ul li:nth-child(2) {
+  background: url(../../img/icn/iconBookWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.studentNav#navBar ul li:nth-child(3) {
+  background: url(../../img/icn/iconPenWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.studentNav#navBar ul li:nth-child(4) {
+  background: url(../../img/icn/iconPenWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.studentNav#navBar ul li:nth-child(5) {
+  background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.studentNav#navBar ul li:nth-child(6) {
+  background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.studentNav#navBar ul li:nth-child(7) {
+  background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.teacherNav#navBar ul li:nth-child(1) {
+  background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.teacherNav#navBar ul li:nth-child(2) {
+  background: url(../../img/icn/iconBookWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.teacherNav#navBar ul li:nth-child(3) {
+  background: url(../../img/icn/iconPenWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.teacherNav#navBar ul li:nth-child(4) {
+  background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.teacherNav#navBar ul li:nth-child(5) {
+  background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
+.teacherNav#navBar ul li:nth-child(6) {
+  background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat; }
+
 #navBar ul li.active {
-  border-right: solid 7px #1ABB9C;
-  background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat; }
+  border-right: solid 7px #1ABB9C; }
 
 #pageContent {
   width: calc(100% - 220px);
@@ -744,10 +788,12 @@ body {
 
   #navBarMobile ul li {
     border-bottom: solid 1px #485A6C;
-    color: #2A3F54;
     padding: 15px 0px 15px 0px;
     transition: all 0.3s;
     text-align: center; }
+
+  #navBarMobile ul li a {
+    color: #2A3F54; }
 
   .divInputSearchMobileClose {
     display: none; }
@@ -1074,7 +1120,8 @@ hr.timeLeft {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 100%;
-  background: #F4F4F4; }
+  background: #F4F4F4;
+  color: #000; }
 
 .chapterBlock, .attachementsBlock {
   padding: 10px 15px;
