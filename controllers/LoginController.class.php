@@ -16,6 +16,7 @@ class LoginController {
 
 						$_SESSION['token'] = $u->getToken();
 
+
 					} else {
 						echo "mdp correspondent pas";
 					}
@@ -24,4 +25,15 @@ class LoginController {
 		}
 		$v = new View("login");
 	}
+
+	public function logoutAction() {
+
+		$BSQL = new BaseSQL();
+		$user = $BSQL->user();
+		$user->setToken(1);
+		$user->save();
+
+		session_destroy();
+	}
+
 }

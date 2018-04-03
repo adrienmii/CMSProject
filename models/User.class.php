@@ -39,9 +39,12 @@ class User extends BaseSQL {
 	public function setToken($token = null) {
 		if ($token)  {
 			$this->token = $token;
+		} elseif ($token == 1) {
+			$this->token = "";
 		} else {
 			$this->token = substr(sha1("a64d1c9bfa6343".substr(time(), 5).uniqid()."148542cf0205cdd"), 2, 10);
 		}
+		
 	}
 
 	public function setStatus($status) {
