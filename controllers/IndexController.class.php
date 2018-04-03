@@ -7,7 +7,4 @@ class IndexController {
 		$v = new View("default", "front");
 		$v->assign("name", $name);
 	}
-	public function loginAction($params) {
-		$v = new View("login", "front");
-	}
 }

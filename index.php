@@ -4,12 +4,14 @@
 
 
 	function myAutoloader($class) {
-		if (file_exists("core/".$class.".class.php")) {
-			include("core/".$class.".class.php");
-		} else if (file_exists("models/".$class.".class.php")) { // pour inclure automatiquement les modèles
-			include("models/".$class.".class.php");
-		} else {
-			die($class."() : Error");
+		if ($class != "LoginController") {
+			if (file_exists("core/".$class.".class.php")) {
+				include("core/".$class.".class.php");
+			} else if (file_exists("models/".$class.".class.php")) { // pour inclure automatiquement les modèles
+				include("models/".$class.".class.php");
+			} else {
+				die($class."() : Error index.php");
+			}
 		}
 	}
 

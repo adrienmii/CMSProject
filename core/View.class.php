@@ -18,10 +18,22 @@ class View {
 		}
 	}
 
+	// public function __construct($v = "default") {
+	// 	$this->v = $v.".view.php";
+
+	// 	if (!file_exists("views/".$this->v)) {
+	// 		die("La vue ".$this->v." n'existe pas.");
+	// 	}
+	// }
+
 	public function __destruct() {
 		global $c, $a; // va chercher une variable globale déclarée plus tôt
 		extract($this->data); // transforme les clés du tableau en variables
-		include("views/templates/".$this->t); // dans le destruct pour pouvoir passer des paramètres avant l'affichage
+		if ($this->v != "login.view.php") {
+			include("views/templates/".$this->t); // dans le destruct pour pouvoir passer des paramètres avant l'affichage
+		} else {
+			include("views/".$this->v);
+		}
 	}
 
 	public function show404() {

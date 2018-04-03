@@ -9,7 +9,7 @@
 <body>	
 	<div id="sideBar" class="hidden-xs visible-sm">
 		<header>
-			<img src="../../public/img/petitLogo.svg">
+			<img src="<?php echo DIRNAME; ?>public/img/petitLogo.svg">
 		</header>
 		<main class="text-center">
 			<div id="userPicture"></div>
