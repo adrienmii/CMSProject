@@ -28,10 +28,10 @@ class LoginController {
 
 	public function logoutAction() {
 
-		$BSQL = new BaseSQL();
-		$user = $BSQL->user();
-		$user->setToken(1);
-		$user->save();
+		// $BSQL = new BaseSQL();
+		// $user = $BSQL->user();
+		// $user->setToken(1);
+		// $user->save();
 
 		session_destroy();
 	}
