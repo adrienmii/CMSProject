@@ -9,8 +9,11 @@ class User extends BaseSQL {
 	protected $token;
 	protected $status = 0;
 
-	public function __construct() {
+	public function __construct($id = null) {
 		parent::__construct();
+		if ($id != null) {
+			$this->id = $id;
+		}
 	}
 
 	public function setId($id) {
@@ -36,15 +39,17 @@ class User extends BaseSQL {
 	public function setToken($token = null) {
 		if ($token)  {
 			$this->token = $token;
-		} else if (!empty($this->email)) {
-			$this->token = substr(sha1("a64d1c9bfa6343".$this->email.substr(time(), 5).uniqid()."148542cf0205cdd"), 2, 10);
 		} else {
-			die("Veuillez préciser un e-mail"); // afficher une 500 et créer un log plutôt
+			$this->token = substr(sha1("a64d1c9bfa6343".substr(time(), 5).uniqid()."148542cf0205cdd"), 2, 10);
 		}
 	}
 
 	public function setStatus($status) {
 		$this->status = $status;
+	}
+
+	public function getToken() {
+		return $this->token;
 	}
 
 }

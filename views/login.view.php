@@ -12,20 +12,20 @@
 			<header>				
 			</header>
 			<main>
-				<form>	
+				<form action="" method="POST">	
 					<div class="row">
 						<div class="col-xs-8 col-xs-offset-2">
-							<input type="text" placeholder="email" id="inputLogin">						
+							<input type="text" placeholder="email" id="inputLogin" name="email">						
 						</div>	
 					</div>	
 					<div class="row">
 						<div class="col-xs-8 col-xs-offset-2">						
-							<input type="password" placeholder="password" id="inputPwd">
+							<input type="password" placeholder="password" id="inputPwd" name="pwd">
 						</div>	
 					</div>
 					<div class="row">
 						<div class="col-xs-12">						
-							<input type="submit" value="Sign in">	
+							<input type="submit" value="Sign in" name="submit_signin">	
 						</div>	
 					</div>										
 				</form>			

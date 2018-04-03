@@ -21,7 +21,7 @@ class BaseSQL {
 	public function save() {	
 		$this->setColumns();
 
-		print_r(get_object_vars($this));
+		// print_r(get_object_vars($this));
 
 		if ($this->id) {
 			//update
@@ -30,6 +30,7 @@ class BaseSQL {
 
 			$this->columns = array_filter($this->columns);
 
+			$set = null;
 			foreach ($this->columns as $key => $value) {
 				$set .= $key." = :".$key.", ";
 			}
@@ -42,7 +43,6 @@ class BaseSQL {
 				);
 
 			$query->execute($this->columns);
-			
 
 		} else {
 			//insert
@@ -59,5 +59,14 @@ class BaseSQL {
 			$query->execute($this->columns);
 		}
 
+	}
+
+	public function login($email, $pwd) {	
+		$sql = "SELECT id, COUNT(*) as count, pwd FROM user WHERE email = '".$email."'";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$user = $query->fetch();
+
+		return $user;
 	}
 }
