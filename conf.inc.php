@@ -2,7 +2,7 @@
 
 	define("DBHOST", "localhost");
 	define("DBPORT", "3306");
-	define("DBNAME", "cours_php");
+	define("DBNAME", "edulab");
 	define("DBUSER", "root");
 	define("DBPWD", "root");
 	define("DBDRIVER", "mysql");

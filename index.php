@@ -1,5 +1,8 @@
 <?php
 	session_start(); // session accessible partout sur le site
+	if (isset($_SESSION['token'])) {
+		echo "connected with token : ".$_SESSION['token'];
+	}
 	require("conf.inc.php");
 
 
