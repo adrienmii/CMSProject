@@ -27,4 +27,5 @@ class UserController {
 		echo "Action de supression d'un User";
 		echo var_dump($params);
 	}
+
 }
