@@ -13,7 +13,7 @@ class View {
 		if (!file_exists("views/templates/".$this->t)) {
 			die("Le template ".$this->t." n'existe pas.");
 		}
-		if (!file_exists("views/".$this->v)) {
+		if (!file_exists("views/admin/".$this->v) && !file_exists("views/teacher/".$this->v) && !file_exists("views/student/".$this->v)) {
 			die("La vue ".$this->v." n'existe pas.");
 		}
 	}
@@ -32,7 +32,13 @@ class View {
 		if ($this->v != "login.view.php") {
 			include("views/templates/".$this->t); // dans le destruct pour pouvoir passer des paramètres avant l'affichage
 		} else {
-			include("views/".$this->v);
+			if (file_exists("views/admin/".$this->v)) {
+				include("views/admin/".$this->v);
+			}elseif (file_exists("views/teacher/".$this->v)) {
+				include("views/teacher/".$this->v);
+			}elseif(file_exists("views/student/".$this->v)) {
+				include("views/student/".$this->v);
+			}			
 		}
 	}
 
