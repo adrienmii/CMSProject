@@ -68,6 +68,17 @@
 		</header>
 		<main>		
 			<div class="col-md-12">
+				<?php
+
+					if (file_exists("views/admin/".$this->v)) {
+						include("views/admin/".$this->v);
+					}elseif (file_exists("views/teacher/".$this->v)) {
+						include("views/teacher/".$this->v);
+					}elseif(file_exists("views/student/".$this->v)) {
+						include("views/student/".$this->v);
+					}	
+
+				?>				
 			</div>							
 		</main>	
 	</div>

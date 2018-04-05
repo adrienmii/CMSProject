@@ -1,248 +1,160 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="../../public/css/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>	
-	<div id="sideBar" class="hidden-xs hidden-sm visible-md">
-		<header>
-			<a href="dashboard.html"><img src="../../public/img/petitLogo.svg"></a>
-		</header>
-		<main class="text-center">
-			<div id="userPicture"></div>
-			<div id="userName">VARVEROPOULOS<br>Valentin</div>
-		</main>
-		<nav id="navBar">
-			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
-				<li><a href="subscribe.html">Enseignants</a></li>
-				<li><a href="subscribe.html">Elèves</a></li>
-				<li class="active"><a href="classes.html">Classes</a></li>
-				<li><a href="edt.html">Emploi du temps</a></li>
-				<li>Paramètres</li>
-			</ul>			
-		</nav>
-	</div>
-	<div id="pageContent">
-		<header>
-			<div id="topBar" class="col-md-12 hidden-xs  hidden-sm visible-md">
-				<div class="row">
-					<div class="col-md-6">
-						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
-					</div>
-					<div class="col-md-2 col-md-offset-4">
-						<input  id="inputSearch" type="text">
-					</div>
-				</div>											
+	
+<main id="classesContainer">	
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div id="newClassBlock">
+				<div id="iconAddClassContainer">
+					<a href="#" id="addClasses">+</a>
+					<p>Create a new class</p>
+				</div>						
 			</div>
-			<div id="topBarMobile" class="hidden-md">
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
 				<div class="row">
-					<div class="col-xs-2">
-						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
+					<div class="col-xs-7 className">
+						4A SRC
 					</div>
-					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="../../public/img/logoMobile.png"></div>
-					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
-				</div>	
-				<nav id="navBarMobile" class="menuMobileClose">
-					<ul>
-						<li><a href="dashboard.html">Dashboard</a></li>
-						<li><a href="subscribe.html">Enseignants</a></li>
-						<li><a href="subscribe.html">Elèves</a></li>
-						<li><a href="classes.html">Classes</a></li>
-						<li><a href="edt.html">Emploi du temps</a></li>
-						<li>Paramètres</li>
-					</ul>		
-				</nav>
-				<div id="divInputSearchMobile" class="row divInputSearchMobileClose">
-					<div class="col-xs-12">
-						<input id="SearchMobile" type="text">
-					</div>					
-				</div>	
-			</div>		
-			<div id="pathSection" class="col-md-12">
-				<p>Classes</p>
-			</div>			
-		</header>
-		<main id="classesContainer">	
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div id="newClassBlock">
-						<div id="iconAddClassContainer">
-							<a href="#" id="addClasses">+</a>
-							<p>Create a new class</p>
-						</div>						
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
+				<div class="row">
+					<div class="col-xs-7 className">
+						4A SRC
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
+				<div class="row">
+					<div class="col-xs-7 className">
+						4A SRC
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<div class="classBlock">	
-						<div class="row">
-							<div class="col-xs-7 className">
-								4A SRC
-							</div>
-							<div class="actionCol text-right col-xs-5 ">
-								<a class="actionEditWhite" href="classe.html"></a>
-								<a class="actionDeleteWhite" href="#"></a>
-							</div>
-							<div class="col-xs-10">
-								38 students  •  2 teachers 
-							</div>
-							<div class="addStudents col-xs-12">
-								<div id="addStudentsIcon"></div>
-								<div class="addStudentsText">add students</div>
-								<a href="#" class="actionAdd">+</a>
-							</div>							
-						</div>							
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
 					</div>
-				</div>				
-			</div>						
-		</main>	
-	</div>
-
-
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>
-	function toggleNav() {
-	   $("#sideBar").toggleClass("menuClose");
-	   $("#pageContent").toggleClass("menuClose");		   
-	}	
-
-	function toggleMenuMobile() {
-	  	$("#navBarMobile").toggleClass("menuMobileClose");
-	}
-
-	function toggleSearchMobile() {
-	  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-	}			
-</script>
-</body>
-</html>
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
+				<div class="row">
+					<div class="col-xs-7 className">
+						4A SRC
+					</div>
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
+					</div>
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
+					</div>
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
+				<div class="row">
+					<div class="col-xs-7 className">
+						4A SRC
+					</div>
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
+					</div>
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
+					</div>
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
+				<div class="row">
+					<div class="col-xs-7 className">
+						4A SRC
+					</div>
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
+					</div>
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
+					</div>
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<div class="classBlock">	
+				<div class="row">
+					<div class="col-xs-7 className">
+						4A SRC
+					</div>
+					<div class="actionCol text-right col-xs-5 ">
+						<a class="actionEditWhite" href="classe.html"></a>
+						<a class="actionDeleteWhite" href="#"></a>
+					</div>
+					<div class="col-xs-10">
+						38 students  •  2 teachers 
+					</div>
+					<div class="addStudents col-xs-12">
+						<div id="addStudentsIcon"></div>
+						<div class="addStudentsText">add students</div>
+						<a href="#" class="actionAdd">+</a>
+					</div>							
+				</div>							
+			</div>
+		</div>				
+	</div>						
+</main>	

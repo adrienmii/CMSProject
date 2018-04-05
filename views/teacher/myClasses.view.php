@@ -1,165 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="../../public/css/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>	
-	<div id="sideBar" class="hidden-xs hidden-sm visible-md">
+					
+<main class="row" id="teacherClassesContainer">					
+	<section id="coursesList" class="col-xs-12">	
 		<header>
-				<a href="dashboard.html"><img src="../../public/img/petitLogo.svg"></a>
-		</header>
-		<main class="text-center">
-			<div id="userPicture"></div>
-			<div id="userName">VARVEROPOULOS<br>Valentin</div>
-		</main>
-		<nav id="navBar" class="teacherNav">
-			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
-				<li><a href="myCourses.html">Mes cours</a></li>
-				<li><a href="addQCM.html">Evaluations</a></li>				
-				<li class="active"><a href="myClasses.html">Mes classes</a></li>
-				<li><a href="edt.html">Emploi du temps</a></li>
-				<li>Paramètres</li>
-			</ul>			
-		</nav>
-	</div>
-	<div id="pageContent">
-		<header>
-			<div id="topBar" class="col-md-12 hidden-xs  hidden-sm visible-md">
-				<div class="row">
-					<div class="col-md-6">
-						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
-					</div>
-					<div class="col-md-2 col-md-offset-4">
-						<input  id="inputSearch" type="text">
-					</div>
-				</div>											
-			</div>
-			<div id="topBarMobile" class="hidden-md">
-				<div class="row">
-					<div class="col-xs-2">
-						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
-					</div>
-					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="../../public/img/logoMobile.png"></div>
-					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
-				</div>	
-				<nav id="navBarMobile" class="menuMobileClose">
-					<ul>
-						<li><a href="dashboard.html">Dashboard</a></li>
-						<li><a href="myCourses.html">Mes cours</a></li>
-						<li><a href="addQCM.html">Evaluations</a></li>				
-						<li><a href="myClasses.html">Mes classes</a></li>
-						<li><a href="edt.html">Emploi du temps</a></li>
-						<li>Paramètres</li>
-					</ul>	
-				</nav>
-				<div id="divInputSearchMobile" class="row divInputSearchMobileClose">
-					<div class="col-xs-12">
-						<input id="SearchMobile" type="text">
-					</div>					
-				</div>	
-			</div>		
-			<div id="pathSection" class="col-xs-12">
-				<p>Mes cours > UX Design</p>
-			</div>			
+			Mes classes
 		</header>					
-		<main class="row" id="teacherClassesContainer">					
-			<section id="coursesList" class="col-xs-12">	
-				<header>
-					Mes classes
-				</header>					
-				<main class="row">
-					<div class="col-xs-12">
-						<div class="row">
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-							<article class="col-xs-6 col-md-3">
-								<div class="chapterBlock">
-									<div class="iconStudents"></div>
-									<div class="teacherClassInfo">
-										<div class="teacherClassName">3A IW1</div>
-										<div class="teacherClassChapter">15 chapitres</div>
-									</div>							
-								</div>
-							</article>	
-																		
+		<main class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
 						</div>
-					</div>										
-				</main>
-			</section>						
-							
-		</main>							
-	</div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script>
-		function toggleNav() {
-		   $("#sideBar").toggleClass("menuClose");
-		   $("#pageContent").toggleClass("menuClose");		   
-		}	
-
-		function toggleMenuMobile() {
-		  	$("#navBarMobile").toggleClass("menuMobileClose");
-		}
-
-		function toggleSearchMobile() {
-		  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-		}			
-	</script>
-
-</body>
-</html>
+					</article>	
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
+						</div>
+					</article>	
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
+						</div>
+					</article>	
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
+						</div>
+					</article>	
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
+						</div>
+					</article>	
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
+						</div>
+					</article>	
+					<article class="col-xs-6 col-md-3">
+						<div class="chapterBlock">
+							<div class="iconStudents"></div>
+							<div class="teacherClassInfo">
+								<div class="teacherClassName">3A IW1</div>
+								<div class="teacherClassChapter">15 chapitres</div>
+							</div>							
+						</div>
+					</article>	
+																
+				</div>
+			</div>										
+		</main>
+	</section>						
+					
+</main>							

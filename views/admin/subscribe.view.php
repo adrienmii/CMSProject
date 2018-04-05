@@ -1,128 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="../../public/css/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>	
-	<div id="sideBar" class="hidden-xs hidden-sm visible-md">
-		<header>
-			<a href="dashboard.html"><img src="../../public/img/petitLogo.svg"></a>
+
+<main id="subscribeContainer">
+	<section class="col-md-12">
+		<header class="text-center">
+			Type de Compte
 		</header>
-		<main class="text-center">
-			<div id="userPicture"></div>
-			<div id="userName">VARVEROPOULOS<br>Valentin</div>
-		</main>
-		<nav id="navBar">
-			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
-				<li class="active"><a href="subscribe.html">Enseignants</a></li>
-				<li class="active"><a href="subscribe.html">Elèves</a></li>
-				<li><a href="classes.html">Classes</a></li>
-				<li><a href="edt.html">Emploi du temps</a></li>
-				<li>Paramètres</li>
-			</ul>			
-		</nav>
-	</div>
-	<div id="pageContent">
-		<header>
-			<div id="topBar" class="col-md-12 hidden-xs  hidden-sm visible-md">
+		<main>
+			<form>
 				<div class="row">
-					<div class="col-md-6">
-						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
+					<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 text-center profileChoiceContainer">
+						<a href="#" class="active" onclick="toggleProfile()" id="profileStudent">Etudiant</a>
 					</div>
-					<div class="col-md-2 col-md-offset-4">
-						<input  id="inputSearch" type="text">
+					<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-5 col-lg-4 offset-lg-reset text-center profileChoiceContainer">
+						<a href="#"  onclick="toggleProfile()" id="profileTeacher">Professeur</a>
 					</div>
-				</div>											
-			</div>
-			<div id="topBarMobile" class="hidden-md">
-				<div class="row">
-					<div class="col-xs-2">
-						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
+					<div class="col-xs-12 divInfo">Informations</div>
+					<div class="col-xs-12 col-sm-6">
+						<input type="text" placeholder="nom">
+						<input type="text" placeholder="prenom">
+						<input type="text" placeholder="email">
+						<input type="text" placeholder="date">
 					</div>
-					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="../../public/img/logoMobile.png"></div>
-					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
-				</div>	
-				<nav id="navBarMobile" class="menuMobileClose">
-					<ul>
-						<li><a href="dashboard.html">Dashboard</a></li>
-						<li><a href="subscribe.html">Enseignants</a></li>
-						<li><a href="subscribe.html">Elèves</a></li>
-						<li><a href="classes.html">Classes</a></li>
-						<li><a href="edt.html">Emploi du temps</a></li>
-						<li>Paramètres</li>
-					</ul>			
-				</nav>
-				<div id="divInputSearchMobile" class="row divInputSearchMobileClose">
-					<div class="col-xs-12">
-						<input id="SearchMobile" type="text">
-					</div>					
-				</div>	
-			</div>		
-			<div id="pathSection" class="col-md-12">
-				<p>Formulaire d'inscription</p>
-			</div>			
-		</header>
-		<main id="subscribeContainer">
-			<section class="col-md-12">
-				<header class="text-center">
-					Type de Compte
-				</header>
-				<main>
-					<form>
-						<div class="row">
-							<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 text-center profileChoiceContainer">
-								<a href="#" class="active" onclick="toggleProfile()" id="profileStudent">Etudiant</a>
-							</div>
-							<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-5 col-lg-4 offset-lg-reset text-center profileChoiceContainer">
-								<a href="#"  onclick="toggleProfile()" id="profileTeacher">Professeur</a>
-							</div>
-							<div class="col-xs-12 divInfo">Informations</div>
-							<div class="col-xs-12 col-sm-6">
-								<input type="text" placeholder="nom">
-								<input type="text" placeholder="prenom">
-								<input type="text" placeholder="email">
-								<input type="text" placeholder="date">
-							</div>
-							<div class="col-xs-12 col-sm-6">
-								<input type="text" placeholder="info">
-								<input type="text" placeholder="info">
-								<input type="text" placeholder="info">
-								<input type="text" placeholder="info">
-							</div>
-							<div class="btnAddSubscribe">
-								<a id="addProfile" href="#">Ajouter</a>		
-							</div>									
-						</div>
-					</form>
-				</main>
-			</section>
+					<div class="col-xs-12 col-sm-6">
+						<input type="text" placeholder="info">
+						<input type="text" placeholder="info">
+						<input type="text" placeholder="info">
+						<input type="text" placeholder="info">
+					</div>
+					<div class="btnAddSubscribe">
+						<a id="addProfile" href="#">Ajouter</a>		
+					</div>									
+				</div>
+			</form>
 		</main>
-		
-	</div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script>
-		function toggleNav() {
-		   $("#sideBar").toggleClass("menuClose");
-		   $("#pageContent").toggleClass("menuClose");		   
-		}	
+	</section>
+</main>
 
-		function toggleMenuMobile() {
-		  	$("#navBarMobile").toggleClass("menuMobileClose");
-		}
-
-		function toggleSearchMobile() {
-		  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-		}
-
-		function toggleProfile() {
-		  	$("#profileStudent").toggleClass("active");
-	  		$("#profileTeacher").toggleClass("active");
-		}				
-	</script>
-
-</body>
-</html>
+<script>
+function toggleProfile() {
+  	$("#profileStudent").toggleClass("active");
+		$("#profileTeacher").toggleClass("active");
+}				
+</script>
