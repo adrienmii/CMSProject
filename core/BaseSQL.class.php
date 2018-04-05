@@ -70,12 +70,13 @@ class BaseSQL {
 		return $user;
 	}
 
-	public function user() {
+	public function userInfo() {
 		$sql = "SELECT * FROM user WHERE token = '".$_SESSION['token']."'";
-		try { $query = $this->pdo->query($sql)->fetchObject('User'); }
+		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$user = $query->fetch();
 
-		return $query;
+		return $user;
 	}
 
 }

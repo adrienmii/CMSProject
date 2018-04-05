@@ -2,37 +2,27 @@
 
 class LoginController {
 	public function indexAction($params) {
-		if (!empty($_POST['submit_signin']) && isset($_POST['submit_signin'])) {
-			if ($_POST['submit_signin']) {
-				$BSQL = new BaseSQL();
-				$user = $BSQL->login($_POST['email'], $_POST['pwd']);
-				if  ($user['count'] == 1) {
-					if (password_verify($_POST['pwd'], $user['pwd'])) {
-						echo 'OK user existe';
-		
-						$u = new User($user['id']);
-						$u->setToken();
-						$u->save();
+		$user = new User();
+		$form = $user->generateLoginForm();
 
-						$_SESSION['token'] = $u->getToken();
+		$errors = null;
 
+		if (!empty($params['POST'])) {
+			// Vérification des saisies
+			$errors = Validator::validate($form, $params['POST']);
 
-					} else {
-						echo "mdp correspondent pas";
-					}
-				}
+			if (empty($errors)) {
+				echo "Connecté !";
 			}
+
 		}
+
 		$v = new View("login");
+		$v->assign("config", $form);
+		$v->assign("errors", $errors);
 	}
 
 	public function logoutAction() {
-
-		// $BSQL = new BaseSQL();
-		// $user = $BSQL->user();
-		// $user->setToken(1);
-		// $user->save();
-
 		session_destroy();
 	}
 

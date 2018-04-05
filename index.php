@@ -1,8 +1,5 @@
 <?php
 	session_start(); // session accessible partout sur le site
-	if (isset($_SESSION['token'])) {
-		echo "connected with token : ".$_SESSION['token'];
-	}
 	require("conf.inc.php");
 
 
@@ -65,4 +62,23 @@
 		}
 	} else {
 		die("Le fichier ".$c." n'existe pas");
+	}
+
+
+	if (isset($_SESSION['token']) && isset($_SESSION['user_id'])) {
+		$BSQL = new BaseSQL();
+		$userinfo = $BSQL->userInfo($_SESSION['token']);
+		if ($userinfo['id'] == $_SESSION['user_id']) { 
+			$u = new User($userinfo['id']);
+			$u->setToken();
+			$u->save();
+
+			$_SESSION['token'] = $u->getToken();
+			
+			echo "connected with token : ".$_SESSION['token'];
+		} else {
+			// si token user de la session est différent de la base on déco
+			echo "déconnecté automatiquement par sécurité";
+			session_destroy();
+		}
 	}

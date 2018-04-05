@@ -42,17 +42,31 @@ class User extends BaseSQL {
 		} elseif ($token == 1) {
 			$this->token = "";
 		} else {
-			$this->token = substr(sha1("a64d1c9bfa6343".substr(time(), 5).uniqid()."148542cf0205cdd"), 2, 10);
+			$this->token = substr(sha1("a64d1c9bfa6343".substr(time(), 5).uniqid()."148542cf0205cdd"), 2, 15);
 		}
-		
 	}
 
 	public function setStatus($status) {
 		$this->status = $status;
 	}
 
+	public function getId() {
+		return $this->id;
+	}
+
 	public function getToken() {
 		return $this->token;
+	}
+
+	public function generateLoginForm() {
+		return [
+					"config" => ["method"=> "POST", "action" => ""],
+					"input" => [
+						"email" => ["type" => "text", "placeholder" => "E-mail", "required" => true, "id" => "inputLogin"],
+						"pwd" => ["type" => "password", "placeholder" => "Mot de passe", "required" => true, "id" => "inputPwd"]
+					],
+					"submit" => "Se connecter"
+		];
 	}
 
 }
