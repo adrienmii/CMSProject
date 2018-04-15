@@ -75,10 +75,10 @@
 
 			$_SESSION['token'] = $u->getToken();
 			
-			echo "connected with token : ".$_SESSION['token'];
+			echo "<div style='top:0px;right:0px;z-index:10;position:fixed;background-color:#cd5c5ce0;color:white;padding:10px;'>Connecté (".$userinfo['firstname']." ".$userinfo['lastname'].") w/ token : ".$_SESSION['token']."</div>";
 		} else {
 			// si token user de la session est différent de la base on déco
-			echo "déconnecté automatiquement par sécurité";
+			echo "<div style='top:0px;right:0px;z-index:10;position:fixed;background-color:#cd5c5ce0;color:white;padding:10px;'>Déconnecté automatiquement par sécurité</div>";
 			session_destroy();
 		}
 	}

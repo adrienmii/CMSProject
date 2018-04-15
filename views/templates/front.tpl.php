@@ -13,7 +13,7 @@
 		</header>
 		<main class="text-center">
 			<div id="userPicture"></div>
-			<div id="userName">VARVEROPOULOS<br>Valentin</div>
+			<div id="userName"><?php $BSQL = new BaseSQL(); $userinfo = $BSQL->userInfo($_SESSION['token']); echo $userinfo['firstname']."<br>".$userinfo['lastname']; ?></div>
 		</main>
 		<nav id="navBar">
 			<ul>
