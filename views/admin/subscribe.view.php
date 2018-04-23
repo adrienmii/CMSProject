@@ -2,10 +2,11 @@
 <main id="subscribeContainer">
 	<section class="col-md-12">
 		<header class="text-center">
-			Type de Compte
+			Ajouter des utilisateurs
 		</header>
 		<main>
-			<form>
+			<?php $this->addModal("adduser", $config, $errors); ?>
+			<!--<form>
 				<div class="row">
 					<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 text-center profileChoiceContainer">
 						<a href="#" class="active" onclick="toggleProfile()" id="profileStudent">Etudiant</a>
@@ -30,7 +31,7 @@
 						<a id="addProfile" href="#">Ajouter</a>		
 					</div>									
 				</div>
-			</form>
+			</form>-->
 		</main>
 	</section>
 </main>
