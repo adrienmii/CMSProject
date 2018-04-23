@@ -180,24 +180,7 @@
 		</main>	
 	</div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script>
-		function toggleNav() {
-		   $("#sideBar").toggleClass("menuClose");
-		   $("#pageContent").toggleClass("menuClose");		   
-		}	
-
-		function toggleMenuMobile() {
-		  	$("#navBarMobile").toggleClass("menuMobileClose");
-		}
-
-		function toggleSearchMobile() {
-		  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-		}
-
-
-
-
-	</script>
+<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
 
 </body>
 </html>
