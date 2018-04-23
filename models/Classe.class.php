@@ -1,6 +1,6 @@
 <?php
 
-class Class extends BaseSQL {
+class Classe extends BaseSQL {
 	protected $id = null;
 	protected $classname;
 	protected $teacher;
