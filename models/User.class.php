@@ -46,8 +46,8 @@ class User extends BaseSQL {
 		}
 	}
 
-	public function setStatus($status) {
-		$this->status = $status;
+	public function setRank($rank) {
+		$this->rank = $rank;
 	}
 
 	public function getId() {
@@ -57,6 +57,10 @@ class User extends BaseSQL {
 	public function getToken() {
 		return $this->token;
 	}
+
+    public function getRank($rank) {
+        return $this->rank;
+    }
 
 	public function generateLoginForm() {
 		return [
