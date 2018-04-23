@@ -53,9 +53,9 @@
 										
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
-					if($userinfo['rank'] == 0){						
+					if($userinfo['rank'] == 1){						
 						$myArray = $menuAdmin;
-					}elseif($userinfo['rank'] == 1){
+					}elseif($userinfo['rank'] == 2){
 						$myArray = $menuTeacher;
 					}else{
 						$myArray = $menuStudent;
