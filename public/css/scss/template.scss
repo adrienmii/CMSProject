@@ -54,76 +54,43 @@
 	color:#fff;
 }
 
-#navBar ul li:nth-child(1){
+
+#navBar ul li#liDashboard{
 	background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
 
-#navBar ul li:nth-child(2){
+#navBar ul li#liEnseignants{
 	background: url(../../img/icn/iconTeacher.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
-#navBar ul li:nth-child(3){
+
+#navBar ul li#liElèves{
 	background: url(../../img/icn/iconStudent.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
-#navBar ul li:nth-child(4){
+
+#navBar ul li#liClasses{
 	background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
-#navBar ul li:nth-child(5){
+
+#navBar ul li#liEmploidutemps{
 	background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
-#navBar ul li:nth-child(6){
+
+#navBar ul li#liParamètres{
 	background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
 
-
-
-.studentNav#navBar ul li:nth-child(1){
-	background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-
-.studentNav#navBar ul li:nth-child(2){
-	background: url(../../img/icn/iconBookWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-.studentNav#navBar ul li:nth-child(3){
-	background: url(../../img/icn/iconPenWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-
-.studentNav#navBar ul li:nth-child(4){
-	background: url(../../img/icn/iconPenWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-
-.studentNav#navBar ul li:nth-child(5){
-	background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-.studentNav#navBar ul li:nth-child(6){
-	background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-.studentNav#navBar ul li:nth-child(7){
-	background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-
-
-.teacherNav#navBar ul li:nth-child(1){
-	background: url(../../img/icn/iconChart.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-.teacherNav#navBar ul li:nth-child(2){
+#navBar ul li#liMesCours{
 	background: url(../../img/icn/iconBookWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
 
-.teacherNav#navBar ul li:nth-child(3){
+#navBar ul li#liEvaluations{
 	background: url(../../img/icn/iconPenWhite.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
 
-.teacherNav#navBar ul li:nth-child(4){
-	background: url(../../img/icn/iconStudents.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-
-.teacherNav#navBar ul li:nth-child(5){
-	background: url(../../img/icn/iconSchedule.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
-}
-
-.teacherNav#navBar ul li:nth-child(6){
+#navBar ul li#liMaclasse{
 	background: url(../../img/icn/iconGear.svg) 20px 50% no-repeat, url(../../img/icn/iconArrowRightWhite.svg) 200px 50% no-repeat;
 }
+
 
 
 

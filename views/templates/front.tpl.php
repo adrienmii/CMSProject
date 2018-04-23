@@ -68,7 +68,7 @@
 						if($i==0){
 							echo"<li id='li".$value."' class='active'><a href='".$key."'>".$value."</a></li>";
 						}else{
-							echo"<li id='li".$value."'><a href='".$key."'>".$value."</a></li>";
+							echo"<li id='li".str_replace(" ", "",$value)."'><a href='".$key."'>".$value."</a></li>";
 						}						
 						$i++;
 					}
