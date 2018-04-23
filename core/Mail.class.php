@@ -16,6 +16,8 @@ class Mail {
 
 		$this->subject = $subject;
 
+	    $this->body = $body;
+
 		$this->data = $data;
 
 		$this->headers = 'MIME-Version: 1.0' . self::SEPERATOR;
