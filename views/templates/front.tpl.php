@@ -25,24 +25,32 @@
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
-						"http://localhost/ProjetCMS/dashboard" => "Dashboard",
-						"#" => "Enseignants",
-						"http://localhost/ProjetCMS/Class/getClassStundent" => "Elèves",
-						"http://localhost/ProjetCMS/Class" => "Classes",
-						"http://localhost/ProjetCMS/Timetable" => "Emploi du temps",
-						"Param" => "Paramètres"
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."#" => "Enseignants",
+						DIRNAME."Class/getClassStundent" => "Elèves",
+						DIRNAME."Class" => "Classes",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
 					);
 
 					$menuTeacher = array(
-						"http://localhost/ProjetCMS/dashboard" => "Dashboard",
-						"http://localhost/ProjetCMS/Course/Mycourses" => "Mes cours",
-						"http://localhost/ProjetCMS/QCM/add" => "Evaluations",
-						"http://localhost/ProjetCMS/Class" => "Ma classe",
-						"http://localhost/ProjetCMS/Timetable" => "Emploi du temps",
-						"Param" => "Paramètres"
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."QCM" => "Evaluations",
+						DIRNAME."Class" => "Ma classe",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
 					);
-					
-					$menuStudent = array("foo", "bar", "hello", "world");
+
+					$menuStudent = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."QCM" => "Evaluations",
+						DIRNAME."Devoirs" => "Devoirs",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+										
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
 					if($userinfo['rank'] == 0){						
