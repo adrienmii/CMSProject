@@ -14,7 +14,7 @@ class LoginController {
 			$errors = Validator::validate($form, $params['POST']);
 
 			if (empty($errors)) {
-				header("Location : http://localhost/ProjetCMS/dashboard");
+				header("Location: ".DIRNAME."dashboard");
 				exit();
 			}
 		}
