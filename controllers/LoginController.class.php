@@ -28,10 +28,6 @@ class LoginController {
 	public function logoutAction() {
 		session_destroy();
 
-		$user = new User();
-		$form = $user->generateLoginForm();
-		$errors = null;
-
 		header("Location: ".DIRNAME."login");
 		exit();
 	}
