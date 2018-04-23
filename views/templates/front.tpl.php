@@ -101,12 +101,56 @@
 				</div>	
 				<nav id="navBarMobile" class="menuMobileClose">
 					<ul>
-						<li>Dashboard</li>
-						<li>Enseignants</li>
-						<li>Elèves</li>
-						<li>Classes</li>
-						<li>Emploi du temps</li>
-						<li>Paramètres</li>
+						<?php 
+
+					$BSQL = new BaseSQL(); 
+					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+
+					//Définitions de chaque menu avec l'url correspondante
+					$menuAdmin = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."#" => "Enseignants",
+						DIRNAME."Class/getClassStundent" => "Elèves",
+						DIRNAME."Class" => "Classes",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+
+					$menuTeacher = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."QCM" => "Evaluations",
+						DIRNAME."Class" => "Ma classe",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+
+					$menuStudent = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."QCM" => "Evaluations",
+						DIRNAME."Devoirs" => "Devoirs",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+										
+
+					//En fonction du rank de l'utilisateur on récupére son menu associé
+					if($userinfo['rank'] == 1){						
+						$myArray = $menuAdmin;
+					}elseif($userinfo['rank'] == 2){
+						$myArray = $menuTeacher;
+					}else{
+						$myArray = $menuStudent;
+					}
+
+					//Génération du menu					
+					foreach($myArray as $key => $value){
+						echo"<li id='li".str_replace(" ", "",$value)."'><a href='".$key."'>".$value."</a></li>";						
+					}
+					
+			
+				?>
 					</ul>	
 				</nav>
 				<div id="divInputSearchMobile" class="row divInputSearchMobileClose">
@@ -148,7 +192,11 @@
 
 		function toggleSearchMobile() {
 		  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-		}			
+		}
+
+
+
+
 	</script>
 
 </body>
