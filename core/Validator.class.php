@@ -51,7 +51,12 @@ class Validator {
                 $errorMsg[] = "Entrez une adresse e-mail valide.";
             }
 
-            
+            if($name == 'email'){
+                var_dump($BSQL->emailAlreadyExists($params[$name]));
+                if($BSQL->emailAlreadyExists($params[$name])['count'] != 0){
+                    $errorMsg[] = "Adresse e-mail déjà utilisée.";
+                }
+            }
 
         }
 
