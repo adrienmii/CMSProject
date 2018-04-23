@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d21d137-708c-4034-98be-79c7a3c33864" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/Mail.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.class.php" afterPath="$PROJECT_DIR$/controllers/LoginController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.class.php" afterPath="$PROJECT_DIR$/models/User.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Validator.class.php" afterPath="$PROJECT_DIR$/core/Validator.class.php" />
     </list>
     <ignored path="ProjetCMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="User.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+            <state relative-caret-position="411">
+              <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -77,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Validator.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Validator.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/Validator.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="32" />
+            <state relative-caret-position="630">
+              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -134,9 +132,9 @@
         <option value="$PROJECT_DIR$/views/admin/subscribe.view.php" />
         <option value="$PROJECT_DIR$/controllers/UserController.class.php" />
         <option value="$PROJECT_DIR$/core/BaseSQL.class.php" />
-        <option value="$PROJECT_DIR$/core/Validator.class.php" />
         <option value="$PROJECT_DIR$/controllers/LoginController.class.php" />
         <option value="$PROJECT_DIR$/models/User.class.php" />
+        <option value="$PROJECT_DIR$/core/Validator.class.php" />
       </list>
     </option>
   </component>
@@ -340,12 +338,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522838323035</updated>
       <workItem from="1522838324367" duration="828000" />
-      <workItem from="1524486268293" duration="9023000" />
+      <workItem from="1524486268293" duration="9063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9851000" />
+    <option name="totallyTimeSpent" value="9891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -476,14 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Validator.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/StudentController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -510,8 +500,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/User.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="411">
+          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Validator.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
           <folding />
         </state>
       </provider>

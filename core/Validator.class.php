@@ -51,7 +51,7 @@ class Validator {
                 $errorMsg[] = "Entrez une adresse e-mail valide.";
             }
 
-            if($BSQL->emailAlreadyExists())
+            
 
         }
 
