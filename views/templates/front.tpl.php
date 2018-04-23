@@ -17,12 +17,57 @@
 		</main>
 		<nav id="navBar">
 			<ul>
-				<li class="active">Dashboard</li>
-				<li>Enseignants</li>
-				<li>Elèves</li>
-				<li>Classes</li>
-				<li>Emploi du temps</li>
-				<li>Paramètres</li>
+
+				<?php 
+
+					$BSQL = new BaseSQL(); 
+					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+
+					//Définitions de chaque menu avec l'url correspondante
+					$menuAdmin = array(
+						"http://localhost/ProjetCMS/dashboard" => "Dashboard",
+						"#" => "Enseignants",
+						"http://localhost/ProjetCMS/Class/getClassStundent" => "Elèves",
+						"http://localhost/ProjetCMS/Class" => "Classes",
+						"http://localhost/ProjetCMS/Timetable" => "Emploi du temps",
+						"Param" => "Paramètres"
+					);
+
+					$menuTeacher = array(
+						"http://localhost/ProjetCMS/dashboard" => "Dashboard",
+						"http://localhost/ProjetCMS/Course/Mycourses" => "Mes cours",
+						"http://localhost/ProjetCMS/QCM/add" => "Evaluations",
+						"http://localhost/ProjetCMS/Class" => "Ma classe",
+						"http://localhost/ProjetCMS/Timetable" => "Emploi du temps",
+						"Param" => "Paramètres"
+					);
+					
+					$menuStudent = array("foo", "bar", "hello", "world");
+
+					//En fonction du rank de l'utilisateur on récupére son menu associé
+					if($userinfo['rank'] == 0){						
+						$myArray = $menuAdmin;
+					}elseif($userinfo['rank'] == 1){
+						$myArray = $menuTeacher;
+					}else{
+						$myArray = $menuStudent;
+					}
+
+					//Génération du menu
+					$i = 0;
+					foreach($myArray as $key => $value){
+
+						if($i==0){
+							echo"<li id='li".$value."' class='active'><a href='".$key."'>".$value."</a></li>";
+						}else{
+							echo"<li id='li".$value."'><a href='".$key."'>".$value."</a></li>";
+						}						
+						$i++;
+					}
+					
+			
+				?>
+				
 			</ul>			
 		</nav>
 	</div>
