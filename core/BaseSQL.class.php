@@ -70,6 +70,15 @@ class BaseSQL {
 		return $user;
 	}
 
+    public function emailAlreadyExists($email) {
+        $sql = "SELECT COUNT(*) as count FROM user WHERE email = '".$email."'";
+        try { $query = $this->pdo->query($sql); }
+        catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+        $user = $query->fetch();
+
+        return $user;
+    }
+
 	public function userInfo() {
 		$sql = "SELECT * FROM user WHERE token = '".$_SESSION['token']."'";
 		try { $query = $this->pdo->query($sql); }
