@@ -11,7 +11,7 @@ class LoginController {
 
 		if (!empty($params['POST'])) {
 			// Vérification des saisies
-			$errors = Validator::validate($form, $params['POST']);
+			$errors = Validator::validateLogin($form, $params['POST']);
 
 			if (empty($errors)) {
 				header("Location: ".DIRNAME."dashboard");
