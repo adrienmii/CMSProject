@@ -7,7 +7,7 @@ class User extends BaseSQL {
 	protected $email;
 	protected $pwd;
 	protected $token;
-	protected $status = 0;
+	protected $rank;
 
 	public function __construct($id = null) {
 		parent::__construct();
