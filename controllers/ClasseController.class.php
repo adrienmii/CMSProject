@@ -59,6 +59,15 @@ class ClasseController {
         exit();
 	}
 
+    public function removeUserAction($params) {
+        $user = new User($params['URL'][0]);
+        $user->setClasse(0);
+        $user->save();
+
+        header('Location: '.DIRNAME.'classe');
+        exit();
+    }
+
     public function listAction($params) {
 
     	$BaseSQL = new BaseSQL();
@@ -74,6 +83,41 @@ class ClasseController {
 		$v->assign("teachers", $teachers);
 		
 	}
+
+    public function studsAction($params) {  
+
+        $class = new Classe();
+        $form = $class->generateFormStudents();
+
+        $errors = null;
+
+        if (!empty($params['POST'])) {
+            // Vérification des saisies
+            $errors = Validator::validateAddClass($form, $params['POST']);
+
+            if (empty($errors)) {
+
+                // echo var_dump($params);
+                // die();
+
+                foreach ($params['POST']['students'] as $student) {
+                    $user = new User($student);
+                    $user->setClasse($params['URL'][0]);
+                    $user->save();
+                }
+
+                header('Location: '.DIRNAME.'classe/list/'.$params['URL'][0]);
+                exit();
+            }
+
+        }
+
+
+        $v = new View("addStudents", "front");
+        $v->assign("config", $form);
+        $v->assign("errors", $errors);
+        
+    }
 
 	public function getTeacherClassesAction($params) {		
 

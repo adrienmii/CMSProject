@@ -150,13 +150,22 @@ class BaseSQL {
 
     }
 
-	public function teacherWithoutClasse() {
+	public function getTeachersAndAdmin() {
 		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 OR rank = 1 AND status = 1";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
-		$users = $query->fetchAll();
+		$t = $query->fetchAll();
 
-		return $users;
+		return $t;
+	}
+
+	public function studentsWithoutClasse() {
+		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 3 AND status = 1 AND classe IS NULL OR classe = 0";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$s = $query->fetchAll();
+
+		return $s;
 	}
 
 	public function getAllClasses() {

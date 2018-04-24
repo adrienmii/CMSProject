@@ -21,7 +21,7 @@
 					}
 					?>
 					</div>
-					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left"><?php echo $count; ?><a href="#" id="addStudent">+</a></div>
+					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left"><?php echo $count; ?><a href="<?php echo DIRNAME.'classe/studs/'.$classe['id']; ?>" id="addStudent">+</a></div>
 				</div>
 			</header>
 			<main>
@@ -44,7 +44,7 @@
 									<td><?php echo $student['email']; ?></td>
 									<td>
 										<a class="actionEditBlue" href="#"></a>
-										<a class="actionDeleteBlue" href="#"></a>
+										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'classe/removeUser/'.$student['id']; ?>"></a>
 									</td>
 								</tr>
 								<?php } ?>
