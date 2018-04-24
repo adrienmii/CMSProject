@@ -67,7 +67,7 @@
 
 	if (isset($_SESSION['token']) && isset($_SESSION['user_id'])) {
 		$BSQL = new BaseSQL();
-		$userinfo = $BSQL->userInfo($_SESSION['token']);
+		$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 		if ($userinfo['id'] == $_SESSION['user_id']) { 
 			$u = new User($userinfo['id']);
 			$u->setToken();

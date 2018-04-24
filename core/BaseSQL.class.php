@@ -88,7 +88,7 @@ class BaseSQL {
         return $user;
     }
 
-	public function userInfo() {
+	public function userInfoByToken() {
 		$sql = "SELECT * FROM user WHERE token = '".$_SESSION['token']."'";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }

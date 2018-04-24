@@ -13,7 +13,7 @@
 		</header>
 		<main class="text-center">
 			<div id="userPicture"></div>
-			<div id="userName"><?php $BSQL = new BaseSQL(); $userinfo = $BSQL->userInfo($_SESSION['token']); echo $userinfo['firstname']."<br>".$userinfo['lastname']; ?></div>
+			<div id="userName"><?php $BSQL = new BaseSQL(); $userinfo = $BSQL->userInfoByToken($_SESSION['token']); echo $userinfo['firstname']."<br>".$userinfo['lastname']; ?></div>
 		</main>
 		<nav id="navBar">
 			<ul>
@@ -21,7 +21,7 @@
 				<?php 
 
 					$BSQL = new BaseSQL(); 
-					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+					$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
@@ -54,7 +54,7 @@
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
 
-					if($userinfo['rank'] == 1){		
+					if($userinfo['rank'] == 1){
 						$myArray = $menuAdmin;
 					}elseif($userinfo['rank'] == 2){
 						$myArray = $menuTeacher;
@@ -105,7 +105,7 @@
 						<?php 
 
 					$BSQL = new BaseSQL(); 
-					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+					$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
