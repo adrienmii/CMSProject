@@ -2,11 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d21d137-708c-4034-98be-79c7a3c33864" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/modals/edituser.mdl.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/addChapter.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/addQCM.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/chapter.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/classe.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/classes.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/dashboard.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/edt.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/grid.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/installer.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/login.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/myClasses.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/myCourses.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/myCoursesTeacher.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/qcm.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/style.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/subscribe.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/template.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/test.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/.sass-cache/0c2484f5805d355c4e2096d1e2208e2d331358db/variables.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/ClasseController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Classe.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/icn/iconHomework.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/global.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/addClass.view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/modals/addclasse.mdl.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/ClassController.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/Class.class.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UserController.class.php" afterPath="$PROJECT_DIR$/controllers/UserController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.class.php" afterPath="$PROJECT_DIR$/models/User.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.class.php" afterPath="$PROJECT_DIR$/controllers/LoginController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Mail.class.php" afterPath="$PROJECT_DIR$/core/Mail.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/Validator.class.php" afterPath="$PROJECT_DIR$/core/Validator.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/css/style.css" afterPath="$PROJECT_DIR$/public/css/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/css/style.css.map" afterPath="$PROJECT_DIR$/public/css/css/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/css/template.css" afterPath="$PROJECT_DIR$/public/css/css/template.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/scss/template.scss" afterPath="$PROJECT_DIR$/public/css/scss/template.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/templates/front.tpl.php" afterPath="$PROJECT_DIR$/views/templates/front.tpl.php" />
     </list>
     <ignored path="ProjetCMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +76,8 @@
             <state relative-caret-position="465">
               <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
               <folding>
-                <marker date="1524485500447" expanded="true" signature="2490:2586" ph="..." />
-                <marker date="1524485500447" expanded="true" signature="2793:2889" ph="..." />
+                <marker date="1524571759664" expanded="true" signature="2490:2586" ph="..." />
+                <marker date="1524571759664" expanded="true" signature="2851:2947" ph="..." />
               </folding>
             </state>
           </provider>
@@ -53,18 +86,18 @@
       <file leaf-file-name="LoginController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/LoginController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front.tpl.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="front.tpl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/templates/front.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="68" column="70" selection-start-line="68" selection-start-column="70" selection-end-line="68" selection-end-column="70" />
+            <state relative-caret-position="840">
+              <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -86,8 +119,15 @@
         <entry file="file://$PROJECT_DIR$/core/Validator.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-              <folding />
+              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+              <folding>
+                <marker date="1524571759663" expanded="true" signature="927:1681" ph="..." />
+                <marker date="1524571759663" expanded="true" signature="1013:1096" ph="..." />
+                <marker date="1524571759663" expanded="true" signature="1191:1287" ph="..." />
+                <marker date="1524571759663" expanded="true" signature="1379:1459" ph="..." />
+                <marker date="1524571759663" expanded="true" signature="1495:1670" ph="..." />
+                <marker date="1524571759663" expanded="true" signature="1572:1656" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,11 +158,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,13 +190,13 @@
         <option value="$PROJECT_DIR$/views/admin/subscribe.view.php" />
         <option value="$PROJECT_DIR$/core/Validator.class.php" />
         <option value="$PROJECT_DIR$/controllers/LoginController.class.php" />
-        <option value="$PROJECT_DIR$/views/templates/front.tpl.php" />
         <option value="$PROJECT_DIR$/views/admin/edit.view.php" />
         <option value="$PROJECT_DIR$/core/BaseSQL.class.php" />
         <option value="$PROJECT_DIR$/views/modals/edituser.mdl.php" />
         <option value="$PROJECT_DIR$/controllers/UserController.class.php" />
         <option value="$PROJECT_DIR$/models/User.class.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/views/templates/front.tpl.php" />
       </list>
     </option>
   </component>
@@ -340,12 +380,12 @@
       <updated>1522838323035</updated>
       <workItem from="1522838324367" duration="828000" />
       <workItem from="1524486268293" duration="14760000" />
-      <workItem from="1524570997613" duration="602000" />
+      <workItem from="1524570997613" duration="864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16190000" />
+    <option name="totallyTimeSpent" value="16452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -566,14 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates/front.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="68" column="70" selection-start-line="68" selection-start-column="70" selection-end-line="68" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/modals/edituser.mdl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -584,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/LoginController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -593,8 +625,15 @@
     <entry file="file://$PROJECT_DIR$/core/Validator.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding />
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding>
+            <marker date="1524571759663" expanded="true" signature="927:1681" ph="..." />
+            <marker date="1524571759663" expanded="true" signature="1013:1096" ph="..." />
+            <marker date="1524571759663" expanded="true" signature="1191:1287" ph="..." />
+            <marker date="1524571759663" expanded="true" signature="1379:1459" ph="..." />
+            <marker date="1524571759663" expanded="true" signature="1495:1670" ph="..." />
+            <marker date="1524571759663" expanded="true" signature="1572:1656" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -621,8 +660,8 @@
         <state relative-caret-position="465">
           <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
           <folding>
-            <marker date="1524485500447" expanded="true" signature="2490:2586" ph="..." />
-            <marker date="1524485500447" expanded="true" signature="2793:2889" ph="..." />
+            <marker date="1524571759664" expanded="true" signature="2490:2586" ph="..." />
+            <marker date="1524571759664" expanded="true" signature="2851:2947" ph="..." />
           </folding>
         </state>
       </provider>
@@ -643,8 +682,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/front.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
           <folding />
         </state>
       </provider>

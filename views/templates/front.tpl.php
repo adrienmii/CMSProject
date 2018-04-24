@@ -53,7 +53,8 @@
 										
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
-					if($userinfo['rank'] == 1){
+
+					if($userinfo['rank'] == 1){		
 						$myArray = $menuAdmin;
 					}elseif($userinfo['rank'] == 2){
 						$myArray = $menuTeacher;
@@ -68,7 +69,7 @@
 						if($i==0){
 							echo"<li id='li".$value."' class='active'><a href='".$key."'>".$value."</a></li>";
 						}else{
-							echo"<li id='li".$value."'><a href='".$key."'>".$value."</a></li>";
+							echo"<li id='li".str_replace(" ", "",$value)."'><a href='".$key."'>".$value."</a></li>";
 						}						
 						$i++;
 					}
@@ -101,12 +102,56 @@
 				</div>	
 				<nav id="navBarMobile" class="menuMobileClose">
 					<ul>
-						<li>Dashboard</li>
-						<li>Enseignants</li>
-						<li>Elèves</li>
-						<li>Classes</li>
-						<li>Emploi du temps</li>
-						<li>Paramètres</li>
+						<?php 
+
+					$BSQL = new BaseSQL(); 
+					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+
+					//Définitions de chaque menu avec l'url correspondante
+					$menuAdmin = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."#" => "Enseignants",
+						DIRNAME."Class/getClassStundent" => "Elèves",
+						DIRNAME."Class" => "Classes",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+
+					$menuTeacher = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."QCM" => "Evaluations",
+						DIRNAME."Class" => "Ma classe",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+
+					$menuStudent = array(
+						DIRNAME."dashboard" => "Dashboard",
+						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."QCM" => "Evaluations",
+						DIRNAME."Devoirs" => "Devoirs",
+						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Param" => "Paramètres"
+					);
+										
+
+					//En fonction du rank de l'utilisateur on récupére son menu associé
+					if($userinfo['rank'] == 1){						
+						$myArray = $menuAdmin;
+					}elseif($userinfo['rank'] == 2){
+						$myArray = $menuTeacher;
+					}else{
+						$myArray = $menuStudent;
+					}
+
+					//Génération du menu					
+					foreach($myArray as $key => $value){
+						echo"<li id='li".str_replace(" ", "",$value)."'><a href='".$key."'>".$value."</a></li>";						
+					}
+					
+			
+				?>
 					</ul>	
 				</nav>
 				<div id="divInputSearchMobile" class="row divInputSearchMobileClose">
@@ -136,20 +181,7 @@
 		</main>	
 	</div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script>
-		function toggleNav() {
-		   $("#sideBar").toggleClass("menuClose");
-		   $("#pageContent").toggleClass("menuClose");		   
-		}	
-
-		function toggleMenuMobile() {
-		  	$("#navBarMobile").toggleClass("menuMobileClose");
-		}
-
-		function toggleSearchMobile() {
-		  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-		}			
-	</script>
+<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
 
 </body>
 </html>

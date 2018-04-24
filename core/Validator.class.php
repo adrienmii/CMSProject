@@ -59,10 +59,27 @@ class Validator {
 
         }
 
+        return $errorMsg;
+    }
 
+
+    public static function validateAddClass($form, $params)
+    {
+        $errorMsg = [];
+        $BSQL = new BaseSQL();
+        foreach ($form['input'] as $name => $config) {
+
+            if (isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant.";
+            }
+
+
+        }
 
         return $errorMsg;
     }
+
+
 
 	public static function minLength($value, $length) {
 		return strlen(trim($value)) >= $length;
