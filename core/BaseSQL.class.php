@@ -136,7 +136,7 @@ class BaseSQL {
 
     public function getAllUsers()
     {
-        $sql = "SELECT * FROM user WHERE status=1";
+        $sql = "SELECT * FROM user WHERE status = 1";
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
@@ -167,7 +167,7 @@ class BaseSQL {
 	}
 
 	public function getStudentByClasseId($id) {
-		$sql = "SELECT * FROM user WHERE classe = ".$id." AND rank = 3";
+		$sql = "SELECT * FROM user WHERE classe = ".$id." AND rank = 3 AND status = 1";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$classe = $query->fetchAll();
@@ -176,7 +176,7 @@ class BaseSQL {
 	}
 
 	public function getCountClasse($idClass) {
-		$sql = "SELECT count(*) as count FROM user WHERE classe = ".$idClass;
+		$sql = "SELECT count(*) as count FROM user WHERE classe = ".$idClass." AND status = 1";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$count = $query->fetch();
