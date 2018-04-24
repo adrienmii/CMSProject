@@ -26,7 +26,7 @@
 						<a class="actionDeleteWhite" href="<?php echo DIRNAME.'classe/delete/'.$class['id']; ?>" onClick="return confirm('Souhaitez vous supprimer la classe <?php echo $class['classname']; ?> définitivement ?')"></a>
 					</div>
 					<div class="col-xs-10">
-						<?php echo $count['count']; ?> élève(s)  •  <?php echo $teacher['firstname']. " " . $teacher['lastname']?>
+						<?php echo $count; ?> élève(s)  •  <?php echo $teacher['firstname']. " " . $teacher['lastname']?>
 					</div>
 					<div class="addStudents col-xs-12">
 						<div id="addStudentsIcon"></div>

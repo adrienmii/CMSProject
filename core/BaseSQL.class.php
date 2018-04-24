@@ -181,7 +181,7 @@ class BaseSQL {
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$count = $query->fetch();
 
-		return $count; 
+		return $count['count']; 
 	}
 
 	public function getCountUsers() {

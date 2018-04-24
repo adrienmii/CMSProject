@@ -9,7 +9,7 @@
 						<a class="actionEditBlue" href="#"></a>
 					</div>
 					<div id="teacherName" class="col-xs-8 col-sm-4"><?php echo $teacher['firstname']." ".$teacher['lastname']; ?></div>
-					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left"><?php echo $count['count']; ?><a href="#" id="addStudent">+</a></div>
+					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left"><?php echo $count; ?><a href="#" id="addStudent">+</a></div>
 				</div>
 			</header>
 			<main>
