@@ -20,8 +20,8 @@
 								<tr>
 									<th>nom</th>
 									<th>prénom</th>
-									<th>email</th>
-									<th class="actionCol">action</th>
+									<th>Adresse e-mail</th>
+									<th class="actionCol">actions</th>
 								</tr>
 							</thead>
 							<tbody>

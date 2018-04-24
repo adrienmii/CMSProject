@@ -22,6 +22,7 @@ class UserController {
                 $user->setLastname($params['POST']['name']);
                 $user->setEmail($params['POST']['email']);
                 $user->setRank($params['POST']['rank']);
+                $user->setStatus(1);
                 $user->setToken();
                 $pwd = strtolower(substr($params['POST']['firstname'], 0, 1).substr($params['POST']['name'], 0, 4));
                 $user->setPwd($pwd);
@@ -45,9 +46,11 @@ class UserController {
 	public function listAction($params){
         $BSQL = new BaseSQL();
         $users = $BSQL->getAllUsers();
+        $count = $BSQL->getCountUsers();
 
         $v = new View("listUser");
         $v->assign("users", $users);
+        $v->assign("count", $count);
     }
 
 	public function editAction($params) {
@@ -88,7 +91,7 @@ class UserController {
 
 	public function removeAction($params) {
         $user = new User($params['URL'][0]);
-        $user->setStatus(2);
+        $user->setStatus(0);
         $user->save();
 
         header('Location: '.DIRNAME.'user/list');

@@ -113,7 +113,7 @@ class User extends BaseSQL {
                 "email" => ["type" => "text", "placeholder" => "E-mail", "required" => true, "id" => "inputEmail"],
                 "name" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
                 "firstname" => ["type" => "text", "placeholder" => "Prénom", "required" => true, "id" => "inputFirstname"],
-                "rank" => ["type" => "select", "options" => [0 => "Rôles", 1 => "Administrateur", 2 => "Professeur", 3 => "Elève"], "required" => true, "id" => "selectRank"]
+                "rank" => ["type" => "select", "options" => [0 => "--- Rôle ---", 1 => "Administrateur", 2 => "Professeur", 3 => "Elève"], "required" => true, "id" => "selectRank"]
             ],
             "submit" => "Enregistrer"
         ];

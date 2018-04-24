@@ -28,7 +28,7 @@ class BaseSQL {
 
 			unset($this->columns['id']);
 
-			$this->columns = array_filter($this->columns);
+			$this->columns = array_filter($this->columns, 'strlen');
 
 
 			$set = null;
@@ -182,6 +182,15 @@ class BaseSQL {
 		$count = $query->fetch();
 
 		return $count; 
+	}
+
+	public function getCountUsers() {
+		$sql = "SELECT count(*) as count FROM user WHERE status = 1";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$count = $query->fetch();
+
+		return $count['count']; 
 	}
 
 }

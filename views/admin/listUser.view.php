@@ -4,7 +4,8 @@
 		<div class="col-xs-12">
 			<header>
 				<div class="row">
-					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-8 text-left"><a href="<?php echo DIRNAME.'user/add'; ?>" id="addStudent">+</a></div>
+					<div id="offset" class="col-xs-8 col-sm-4"></div>
+					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left"><?php echo $count; ?><a href="<?php echo DIRNAME.'user/add'; ?>" id="addStudent">+</a></div>
 				</div>
 			</header>
 			<main>
@@ -30,7 +31,7 @@
 									<td><?php echo $rank[$user['rank']]; ?></td>
 									<td>
 										<a class="actionEditBlue" href="<?php echo DIRNAME.'user/edit/'.$user['id']; ?>"></a>
-										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'user/remove/'.$user['id']; ?>"></a>
+										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'user/remove/'.$user['id']; ?>" onclick="return confirm('Souhaitez vous supprimer l\'utilisateur <?php echo $user['firstname'].' '.$user['lastname']; ?> ?')"></a>
 									</td>
 								</tr>
 							<?php endforeach; ?>
