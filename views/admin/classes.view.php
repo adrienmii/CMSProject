@@ -1,160 +1,42 @@
-	
 <main id="classesContainer">	
 	<div class="row">
 		<div class="col-xs-12 col-sm-6 col-lg-4">
 			<div id="newClassBlock">
 				<div id="iconAddClassContainer">
 					<a href="<?php echo DIRNAME."classe/add";?>" id="addClasses">+</a>
-					<p>Create a new class</p>
+					<p>Ajouter une nouvelle classe</p>
 				</div>						
 			</div>
 		</div>
+
+		<?php foreach ($classes as $class) {
+			$BaseSQL = new BaseSQL(); 
+			$teacher = $BaseSQL->userInfoById($class['teacher']);
+		 ?>
+
 		<div class="col-xs-12 col-sm-6 col-lg-4">
 			<div class="classBlock">	
 				<div class="row">
 					<div class="col-xs-7 className">
-						4A SRC
+						<?php echo $class['classname']; ?>
 					</div>
 					<div class="actionCol text-right col-xs-5 ">
 						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
+						<a class="actionDeleteWhite" href="<?php echo DIRNAME.'classe/delete/'.$class['id']; ?>" onClick="return confirm('Souhaitez vous supprimer la classe <?php echo $class['classname']; ?> définitivement ?')"></a>
 					</div>
 					<div class="col-xs-10">
-						38 students  •  2 teachers 
+						{nb} élèves  •  <?php echo $teacher['firstname']. " " . $teacher['lastname']?>
 					</div>
 					<div class="addStudents col-xs-12">
 						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
+						<div class="addStudentsText">Ajouter des élèves</div>
 						<a href="#" class="actionAdd">+</a>
 					</div>							
 				</div>							
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
-				<div class="row">
-					<div class="col-xs-7 className">
-						4A SRC
-					</div>
-					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
-					</div>
-					<div class="col-xs-10">
-						38 students  •  2 teachers 
-					</div>
-					<div class="addStudents col-xs-12">
-						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
-						<a href="#" class="actionAdd">+</a>
-					</div>							
-				</div>							
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
-				<div class="row">
-					<div class="col-xs-7 className">
-						4A SRC
-					</div>
-					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
-					</div>
-					<div class="col-xs-10">
-						38 students  •  2 teachers 
-					</div>
-					<div class="addStudents col-xs-12">
-						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
-						<a href="#" class="actionAdd">+</a>
-					</div>							
-				</div>							
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
-				<div class="row">
-					<div class="col-xs-7 className">
-						4A SRC
-					</div>
-					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
-					</div>
-					<div class="col-xs-10">
-						38 students  •  2 teachers 
-					</div>
-					<div class="addStudents col-xs-12">
-						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
-						<a href="#" class="actionAdd">+</a>
-					</div>							
-				</div>							
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
-				<div class="row">
-					<div class="col-xs-7 className">
-						4A SRC
-					</div>
-					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
-					</div>
-					<div class="col-xs-10">
-						38 students  •  2 teachers 
-					</div>
-					<div class="addStudents col-xs-12">
-						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
-						<a href="#" class="actionAdd">+</a>
-					</div>							
-				</div>							
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
-				<div class="row">
-					<div class="col-xs-7 className">
-						4A SRC
-					</div>
-					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
-					</div>
-					<div class="col-xs-10">
-						38 students  •  2 teachers 
-					</div>
-					<div class="addStudents col-xs-12">
-						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
-						<a href="#" class="actionAdd">+</a>
-					</div>							
-				</div>							
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
-				<div class="row">
-					<div class="col-xs-7 className">
-						4A SRC
-					</div>
-					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
-					</div>
-					<div class="col-xs-10">
-						38 students  •  2 teachers 
-					</div>
-					<div class="addStudents col-xs-12">
-						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">add students</div>
-						<a href="#" class="actionAdd">+</a>
-					</div>							
-				</div>							
-			</div>
-		</div>				
+			
+		<?php }	?>
+
 	</div>						
 </main>	

@@ -61,6 +61,14 @@ class BaseSQL {
 
 	}
 
+	public function delete() {
+		$query = $this->pdo->prepare("
+			DELETE FROM ".$this->table." WHERE id = ".$this->id
+		);
+
+		$query->execute();
+	}
+
 	public function login($email, $pwd) {	
 		$sql = "SELECT id, COUNT(*) as count, pwd FROM user WHERE email = '".$email."'";
 		try { $query = $this->pdo->query($sql); }
@@ -132,6 +140,15 @@ class BaseSQL {
 		$users = $query->fetchAll();
 
 		return $users;
+	}
+
+	public function getAllClasses() {
+		$sql = "SELECT * FROM classe";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$classes = $query->fetchAll();
+
+		return $classes; 
 	}
 
 }
