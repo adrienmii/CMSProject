@@ -22,7 +22,7 @@
 					</div>
 					<div class="actionCol text-right col-xs-5 ">
 						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="#"></a>
+						<a class="actionDeleteWhite" href="<?php echo DIRNAME.'classe/delete/'.$class['id']; ?>" onClick="return confirm('Souhaitez vous supprimer la classe <?php echo $class['classname']; ?> définitivement ?')"></a>
 					</div>
 					<div class="col-xs-10">
 						{nb} élèves  •  <?php echo $teacher['firstname']. " " . $teacher['lastname']?>
