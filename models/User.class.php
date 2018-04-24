@@ -54,6 +54,14 @@ class User extends BaseSQL {
 		return $this->token;
 	}
 
+	public function getEmail() {
+		return $this->email;
+	}
+
+	public function getFirstname() {
+		return $this->firstname;
+	}
+
 	public function generateLoginForm() {
 		return [
 					"config" => ["method"=> "POST", "action" => ""],
