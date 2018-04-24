@@ -37,9 +37,15 @@ class UserController {
 
 	}
 	public function editAction($params) {
+        $BSQL = new BaseSQL();
+        if(!isset($params['URL'][0]) || empty($params['URL'][0]) || $BSQL->userExists($params['URL'][0])['count'] != 1){
+                header('Location: ' . DIRNAME . 'user/add');
+                exit();
+        }
 
         $user = new User($params['URL'][0]);
-        $form = $user->generateAddUserForm();
+        var_dump($user);
+        $form = $user->generateEditUserForm();
 
         $errors = null;
 
@@ -52,15 +58,13 @@ class UserController {
                 $user->setLastname($params['POST']['name']);
                 $user->setEmail($params['POST']['email']);
                 $user->setRank($params['POST']['rank']);
-                $user->setToken();
-                $pwd = strtoupper(substr($params['POST']['name'], 0, 4).substr($params['POST']['firstname'], 0, 1));
-                $user->setPwd($pwd);
+                $user->setPwd($params['POST']['pwd']);
                 $user->save();
             }
 
         }
 
-        $v = new View("subscribe");
+        $v = new View("edit");
         $v->assign("config", $form);
         $v->assign("errors", $errors);
 	}
