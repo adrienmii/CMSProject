@@ -2039,7 +2039,7 @@ input[type="password"] {
   color: #fff;
   letter-spacing: 1px; }
 
-input[type="select"] {
+select {
   height: 30px;
   width: 80%;
   border-bottom: 1px solid #C4C4C4;
