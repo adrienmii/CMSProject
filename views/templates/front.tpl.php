@@ -27,7 +27,7 @@
 					$menuAdmin = array(
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."#" => "Enseignants",
-						DIRNAME."Classe/getClassStundent" => "Elèves",
+						DIRNAME."user/list" => "Elèves",
 						DIRNAME."Classe" => "Classes",
 						DIRNAME."Timetable" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"

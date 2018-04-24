@@ -151,4 +151,13 @@ class BaseSQL {
 		return $classes; 
 	}
 
+	public function getCountClasse($idClass) {
+		$sql = "SELECT count(*) as count FROM user WHERE classe = ".$idClass;
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$count = $query->fetch();
+
+		return $count; 
+	}
+
 }
