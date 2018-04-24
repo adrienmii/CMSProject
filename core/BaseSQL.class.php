@@ -119,4 +119,13 @@ class BaseSQL {
 		return $users;
 	}
 
+	public function getAllClasses() {
+		$sql = "SELECT * FROM classe";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$classes = $query->fetchAll();
+
+		return $classes; 
+	}
+
 }

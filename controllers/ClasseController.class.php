@@ -2,9 +2,14 @@
 
 class ClasseController {
 
-	public function indexAction($params) {		
+	public function indexAction($params) {	
+
+		$BaseSQL = new BaseSQL();
+		$classes = $BaseSQL->getAllClasses();
+
 
 		$v = new View("classes", "front");
+		$v->assign("classes", $classes);
 		
 	}
 
@@ -24,7 +29,8 @@ class ClasseController {
                 $classe->setTeacher($params['POST']['teacher']);
                 $classe->save();
 
-                // marche pas !
+                header('Location: '.DIRNAME.'classe');
+                exit();
             }
 
         }
