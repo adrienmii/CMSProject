@@ -45,7 +45,7 @@ class UserController {
 
         $user = new User($params['URL'][0]);
         var_dump($user);
-        $form = $user->generateAddUserForm();
+        $form = $user->generateEditUserForm();
 
         $errors = null;
 
