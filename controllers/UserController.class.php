@@ -74,6 +74,9 @@ class UserController {
                 $user->setRank($params['POST']['rank']);
                 $user->setPwd((!empty($params['POST']['pwd']) ? $params['POST']['pwd'] : $form['prefill']['pwd']));
                 $user->save();
+
+                header('Location: '.DIRNAME.'user/list');
+                exit();
             }
 
         }
