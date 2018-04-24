@@ -79,6 +79,15 @@ class BaseSQL {
         return $user;
     }
 
+    public function userExists($id) {
+        $sql = "SELECT COUNT(*) as count FROM user WHERE id = '".$id."'";
+        try { $query = $this->pdo->query($sql); }
+        catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+        $user = $query->fetch();
+
+        return $user;
+    }
+
 	public function userInfo() {
 		$sql = "SELECT * FROM user WHERE token = '".$_SESSION['token']."'";
 		try { $query = $this->pdo->query($sql); }
