@@ -4,7 +4,7 @@
 		<div class="col-xs-12 col-sm-6 col-lg-4">
 			<div id="newClassBlock">
 				<div id="iconAddClassContainer">
-					<a href="#" id="addClasses">+</a>
+					<a href="<?php echo DIRNAME."classe/add";?>" id="addClasses">+</a>
 					<p>Create a new class</p>
 				</div>						
 			</div>

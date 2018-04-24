@@ -27,8 +27,8 @@
 					$menuAdmin = array(
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."#" => "Enseignants",
-						DIRNAME."Class/getClassStundent" => "Elèves",
-						DIRNAME."Class" => "Classes",
+						DIRNAME."Classe/getClassStundent" => "Elèves",
+						DIRNAME."Classe" => "Classes",
 						DIRNAME."Timetable" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"
 					);
@@ -37,7 +37,7 @@
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."Course/Mycourses" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
-						DIRNAME."Class" => "Ma classe",
+						DIRNAME."Classe" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"
 					);
