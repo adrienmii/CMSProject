@@ -77,6 +77,18 @@ input[type="password"]
 	letter-spacing:1px;
 }
 
+input[type="select"]
+{
+    height: 30px;
+    width: 80%;
+    border-bottom: 1px solid #C4C4C4;
+    color: #2A3F54;
+    margin: 10px 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    font-size: 20px;
+}
+
 input[type="submit"],
 input[type="button"]
 {	
