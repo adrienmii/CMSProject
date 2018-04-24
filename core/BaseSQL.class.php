@@ -120,6 +120,20 @@ class BaseSQL {
 
     }
 
+    public function classeInfoById($id)
+    {
+        $sql = "SELECT * FROM classe WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $classe = $query->fetch();
+
+        return $classe;
+
+    }
+
     public function getAllUsers()
     {
         $sql = "SELECT * FROM user WHERE status=1";
@@ -150,6 +164,15 @@ class BaseSQL {
 		$classes = $query->fetchAll();
 
 		return $classes; 
+	}
+
+	public function getStudentByClasseId($id) {
+		$sql = "SELECT * FROM user WHERE classe = ".$id." AND rank = 3";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$classe = $query->fetchAll();
+
+		return $classe; 
 	}
 
 	public function getCountClasse($idClass) {

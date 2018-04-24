@@ -31,7 +31,7 @@
 					<div class="addStudents col-xs-12">
 						<div id="addStudentsIcon"></div>
 						<div class="addStudentsText">Ajouter des élèves</div>
-						<a href="#" class="actionAdd">+</a>
+						<a href="<?php echo DIRNAME.'classe/list/'.$class['id']; ?>" class="actionAdd">+</a>
 					</div>							
 				</div>							
 			</div>

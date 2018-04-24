@@ -48,9 +48,19 @@ class ClasseController {
         exit();
 	}
 
-    public function getClassStudentAction($params) {
+    public function listAction($params) {
+
+    	$BaseSQL = new BaseSQL();
+    	$students = $BaseSQL->getStudentByClasseId($params['URL'][0]);
+    	$count = $BaseSQL->getCountClasse($params['URL'][0]);
+    	$classe = $BaseSQL->classeInfoById($params['URL'][0]);
+    	$teacher = $BaseSQL->userInfoById($classe['teacher']);
 
 		$v = new View("class", "front");
+		$v->assign("students", $students);
+		$v->assign("count", $count);
+		$v->assign("classe", $classe);
+		$v->assign("teacher", $teacher);
 		
 	}
 
