@@ -1,38 +1,18 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le :  mar. 24 avr. 2018 à 15:08
--- Version du serveur :  5.6.35
--- Version de PHP :  7.1.8
+-- Client :  localhost:3306
+-- Généré le :  Mar 24 Avril 2018 à 16:19
+-- Version du serveur :  5.6.33
+-- Version de PHP :  7.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `EDULAB`
+-- Base de données :  `edulab`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `classe`
---
-
-CREATE TABLE `classe` (
-  `id` int(10) NOT NULL,
-  `classname` varchar(255) NOT NULL,
-  `teacher` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `classe`
---
-
-INSERT INTO `classe` (`id`, `classname`, `teacher`) VALUES
-(2, '3IW1', 6),
-(3, 'test', 8);
 
 -- --------------------------------------------------------
 
@@ -48,32 +28,27 @@ CREATE TABLE `user` (
   `pwd` char(60) NOT NULL,
   `token` char(15) DEFAULT NULL,
   `rank` int(11) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `classe` int(10) DEFAULT NULL,
   `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_created` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `user`
+-- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `date_inserted`, `date_created`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'e430d7a18f405e2', 1, '2018-04-23 14:41:56', '2018-04-24 13:04:25'),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, '2018-04-23 15:54:57', '2018-04-23 16:29:20'),
-(7, 'Student', 'EDULAB', 'student@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'f35fe4f357c0818', 3, '2018-04-23 16:15:48', '2018-04-23 19:17:18'),
-(8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, '2018-04-23 15:54:57', '2018-04-23 16:29:20'),
-(9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, '2018-04-23 15:54:57', '2018-04-23 16:29:20'),
-(10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, '2018-04-23 15:54:57', '2018-04-23 16:29:20');
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`) VALUES
+(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '9fcb41106ede113', 1, 1, NULL, '2018-04-23 14:41:56', '2018-04-24 14:14:07'),
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-23 16:29:20'),
+(7, 'Student', 'EDULAB', 'student@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'f35fe4f357c0818', 3, 1, NULL, '2018-04-23 16:15:48', '2018-04-23 19:17:18'),
+(8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-23 16:29:20'),
+(9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-23 16:29:20'),
+(10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-23 16:29:20');
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
-
---
--- Index pour la table `classe`
---
-ALTER TABLE `classe`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`);
 
 --
 -- Index pour la table `user`
@@ -83,14 +58,9 @@ ALTER TABLE `user`
   ADD KEY `id` (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
---
--- AUTO_INCREMENT pour la table `classe`
---
-ALTER TABLE `classe`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `user`
 --

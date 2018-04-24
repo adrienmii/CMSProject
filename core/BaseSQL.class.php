@@ -118,6 +118,21 @@ class BaseSQL {
         return $user;
 
     }
+
+    public function getAllUsers()
+    {
+        $sql = "SELECT * FROM user";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $user = $query->fetchAll();
+
+        return $user;
+
+    }
+
 	public function teacherWithoutClasse() {
 		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 AND id NOT IN (SELECT teacher FROM classe)";
 		try { $query = $this->pdo->query($sql); }

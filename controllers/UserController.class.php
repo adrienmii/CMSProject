@@ -4,6 +4,7 @@ class UserController {
 	public function indexAction($params) {
 		echo "Action par défaut d'un User";
 	}
+
 	public function addAction($params) {
 
         $user = new User();
@@ -40,6 +41,15 @@ class UserController {
         $v->assign("errors", $errors);
 
 	}
+
+	public function listAction($params){
+        $BSQL = new BaseSQL();
+        $users = $BSQL->getAllUsers();
+
+        $v = new View("listUser");
+        $v->assign("users", $users);
+    }
+
 	public function editAction($params) {
         $BSQL = new BaseSQL();
         if(!isset($params['URL'][0]) || empty($params['URL'][0]) || $BSQL->userExists($params['URL'][0])['count'] != 1){
@@ -72,6 +82,7 @@ class UserController {
         $v->assign("config", $form);
         $v->assign("errors", $errors);
 	}
+
 	public function removeAction($params) {
 		echo "Action de supression d'un User";
 		echo var_dump($params);

@@ -48,7 +48,7 @@ class ClasseController {
         exit();
 	}
 
-	public function getClassStundentAction($params) {		
+    public function getClassStudentAction($params) {
 
 		$v = new View("class", "front");
 		
