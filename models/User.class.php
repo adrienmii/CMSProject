@@ -85,10 +85,10 @@ class User extends BaseSQL {
             "config" => ["method"=> "POST", "action" => ""],
             "input" => [
                 "email" => ["type" => "text", "placeholder" => "E-mail", "required" => true, "id" => "inputEmail"],
-                "pwd" => ["type" => "password", "placeholder" => "Mot de passe", "required" => true, "id" => "inputPwdEdit"],
-                "name" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
+                "pwd" => ["type" => "password", "placeholder" => "Modifier le mot de passe", "id" => "inputPwdEdit"],
+                "lastname" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
                 "firstname" => ["type" => "text", "placeholder" => "Prénom", "required" => true, "id" => "inputFirstname"],
-                "rank" => ["type" => "select", "options" => [0 => "Rôles", 1 => "Administrateur", 2 => "Professeur", 3 => "Elève"], "required" => true, "id" => "selectRank"]
+                "rank" => ["type" => "select", "options" => [1 => "Administrateur", 2 => "Professeur", 3 => "Elève"], "required" => true, "id" => "selectRank"]
             ],
             "submit" => "Enregistrer"
         ];

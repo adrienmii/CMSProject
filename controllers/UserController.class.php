@@ -44,21 +44,21 @@ class UserController {
         }
 
         $user = new User($params['URL'][0]);
-        var_dump($user);
-        $form = $user->generateEditUserForm();
+        $form['form'] = $user->generateEditUserForm();
+        $form['prefill'] = $BSQL->userInfoById($params['URL'][0]);
 
         $errors = null;
 
         if (!empty($params['POST'])) {
             // Vérification des saisies
-            $errors = Validator::validateAddUser($form, $params['POST']);
+            $errors = Validator::validateEditUser($form['form'], $params['POST']);
 
             if (empty($errors)) {
                 $user->setFirstname($params['POST']['firstname']);
-                $user->setLastname($params['POST']['name']);
+                $user->setLastname($params['POST']['lastname']);
                 $user->setEmail($params['POST']['email']);
                 $user->setRank($params['POST']['rank']);
-                $user->setPwd($params['POST']['pwd']);
+                $user->setPwd((!empty($params['POST']['pwd']) ? $params['POST']['pwd'] : $form['prefill']['pwd']));
                 $user->save();
             }
 
