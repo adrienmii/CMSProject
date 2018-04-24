@@ -23,9 +23,13 @@ class UserController {
                 $user->setEmail($params['POST']['email']);
                 $user->setRank($params['POST']['rank']);
                 $user->setToken();
-                $pwd = strtoupper(substr($params['POST']['name'], 0, 4).substr($params['POST']['firstname'], 0, 1));
+                $pwd = strtolower(substr($params['POST']['firstname'], 0, 1).substr($params['POST']['name'], 0, 4));
                 $user->setPwd($pwd);
                 $user->save();
+
+                // envoi du mail au nouveau inscrit avec ses identifiants de connexion
+                $mail = new Mail($user->getEmail(), "Vos identifiants de connexion", "Bonjour #PRENOM#,<br>Un compte vous a été crée sur EDULAB.<br><br>Voici vos identifiants :<br><br>E-mail : #EMAIL#<br>Mot de passe : #MOTDEPASSE# (Pensez à le modifier lors de votre première connexion !)<br><br>Cordialement,<br>EDULAB.", ["prenom" => $user->getFirstname(), "email" => $user->getEmail(), "motdepasse" => $pwd]);
+                $mail->send();
             }
 
         }
