@@ -8,10 +8,10 @@
 	<div id="rowBlockSchedule" class="row">
 		
 
-		<?php
-			//Chargement du contenu du dashboard en fonction du rank
-			if($userinfo['rank'] != 1){
-				echo('
+		
+			<?php //Chargement du contenu du dashboard en fonction du rank
+			if($userinfo['rank'] != 1){?>
+				
 
 						<div id="blockSchedule" class="col-xs-12 col-lg-8">
 							<div id="arrowLeftSchedule">
@@ -50,14 +50,9 @@
 							</div>
 							<div id="arrowRightSchedule">
 							</div>
-						</div>
+						</div>						
 
-				');
-			}
-
-			if($userinfo['rank'] == 3){
-				echo('
-
+			<?php } if($userinfo['rank'] == 3){?>
 					<div id="blockHomeWork" class="col-xs-12 col-md-12 col-lg-4">
 						<div id="blockHomeWorkContainer">
 							<header>
@@ -86,11 +81,9 @@
 								</tr>
 							</table>
 						</div>
-					</div>
-
-				');
-			}
-		?>
+					</div>				
+			<?php } ?>
+		
 		
 	</div>	
 	<div id="rowBlockInfo" class="row" >
