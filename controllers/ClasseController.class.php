@@ -24,10 +24,21 @@ class ClasseController {
             $errors = Validator::validateAddClass($form, $params['POST']);
 
             if (empty($errors)) {
+
+                // echo var_dump($params);
+                // die();
+
                 $classe = new Classe();
                 $classe->setClassname($params['POST']['classname']);
-                $classe->setTeacher($params['POST']['teacher']);
-                $classe->save();
+                $lastInsertId = $classe->save();
+
+                // on associe autant de fois la classe avec les profs
+                foreach ($params['POST']['teachers'] as $teacher) {
+                    $classeteacher = new ClasseTeacher();
+                    $classeteacher->setClasse($lastInsertId);
+                    $classeteacher->setTeacher($teacher);
+                    $classeteacher->save();
+                }
 
                 header('Location: '.DIRNAME.'classe');
                 exit();
@@ -54,13 +65,13 @@ class ClasseController {
     	$students = $BaseSQL->getStudentByClasseId($params['URL'][0]);
     	$count = $BaseSQL->getCountClasse($params['URL'][0]);
     	$classe = $BaseSQL->classeInfoById($params['URL'][0]);
-    	$teacher = $BaseSQL->userInfoById($classe['teacher']);
+    	$teachers = $BaseSQL->getClasseTeacher($params['URL'][0]);
 
 		$v = new View("class", "front");
 		$v->assign("students", $students);
 		$v->assign("count", $count);
 		$v->assign("classe", $classe);
-		$v->assign("teacher", $teacher);
+		$v->assign("teachers", $teachers);
 		
 	}
 

@@ -58,6 +58,8 @@ class BaseSQL {
 				");
 
 			$query->execute($this->columns);
+
+			return $this->pdo->lastInsertId();
 		}
 
 	}
@@ -149,7 +151,7 @@ class BaseSQL {
     }
 
 	public function teacherWithoutClasse() {
-		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 AND id NOT IN (SELECT teacher FROM classe)";
+		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 OR rank = 1 AND status = 1";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$users = $query->fetchAll();
@@ -191,6 +193,24 @@ class BaseSQL {
 		$count = $query->fetch();
 
 		return $count['count']; 
+	}
+
+	public function getCountTeachers($id) {
+		$sql = "SELECT count(*) as count FROM classeteacher c INNER JOIN user u ON u.id = c.teacher WHERE status = 1 AND c.classe = ".$id;
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$count = $query->fetch();
+
+		return $count['count']; 
+	}
+
+	public function getClasseTeacher($id) {
+		$sql = "SELECT * FROM classeteacher c INNER JOIN user u ON u.id = c.teacher WHERE status = 1 AND c.classe = ".$id;
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$t = $query->fetchAll();
+
+		return $t; 
 	}
 
 }

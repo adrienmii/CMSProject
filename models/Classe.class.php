@@ -3,7 +3,6 @@
 class Classe extends BaseSQL {
 	protected $id = null;
 	protected $classname;
-	protected $teacher;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -20,20 +19,12 @@ class Classe extends BaseSQL {
 		$this->classname = $classname;
 	}
 
-	public function setTeacher($teacher) {
-		$this->teacher = $teacher;
-	}
-
 	public function getId() {
 		return $this->id;
 	}
 
 	public function getClassname() {
 		return $this->classname;
-	}
-
-	public function getTeacher() {
-		return $this->teacher;
 	}
 
 	public function generateForm() {
@@ -43,7 +34,7 @@ class Classe extends BaseSQL {
 					"config" => ["method"=> "POST", "action" => ""],
 					"input" => [
 						"classname" => ["type" => "text", "placeholder" => "Nom de la classe", "required" => true, "id" => "inputClassName"],
-						"teacher" => ["type" => "select", "options" => $options, "required" => true, "id" => "selectTeacher"]
+						"teachers[]" => ["type" => "select", "options" => $options, "required" => true, "multiple" => true, "id" => "selectTeacher"]
 					],
 					"submit" => "Créer"
 		];

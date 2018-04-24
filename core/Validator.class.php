@@ -96,9 +96,11 @@ class Validator {
         $BSQL = new BaseSQL();
         foreach ($form['input'] as $name => $config) {
 
-            if (isset($config['required']) && !self::minLength($params[$name], 1)) {
-                $errorMsg[] = "Le champ " . $name . " est manquant.";
-            }
+            // if (isset($config['required']) && !self::minLength($params[$name], 1)) {
+            //     $errorMsg[] = "Le champ " . $name . " est manquant.";
+            // }
+
+            // vérifier que teacher est un array
         }
 
         return $errorMsg;
