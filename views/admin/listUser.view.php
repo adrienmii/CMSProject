@@ -4,7 +4,7 @@
 		<div class="col-xs-12">
 			<header>
 				<div class="row">
-					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-8 text-left"><a href="#" id="addStudent">+</a></div>
+					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-8 text-left"><a href="<?php echo DIRNAME.'user/add'; ?>" id="addStudent">+</a></div>
 				</div>
 			</header>
 			<main>
