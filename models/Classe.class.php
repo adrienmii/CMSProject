@@ -37,11 +37,13 @@ class Classe extends BaseSQL {
 	}
 
 	public function generateForm() {
+		$BaseSQL = new BaseSQL();
+        $options = $BaseSQL->teacherWithoutClasse();
 		return [
 					"config" => ["method"=> "POST", "action" => ""],
 					"input" => [
 						"classname" => ["type" => "text", "placeholder" => "Nom de la classe", "required" => true, "id" => "inputClassName"],
-						"teacher" => ["type" => "text", "placeholder" => "Prof", "required" => true, "id" => "inputTeacher"]
+						"teacher" => ["type" => "select", "options" => $options, "required" => true, "id" => "selectTeacher"]
 					],
 					"submit" => "Créer"
 		];
