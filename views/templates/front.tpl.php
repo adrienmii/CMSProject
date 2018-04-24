@@ -173,6 +173,8 @@
 						include("views/teacher/".$this->v);
 					}elseif(file_exists("views/student/".$this->v)) {
 						include("views/student/".$this->v);
+					}elseif(file_exists("views/shared/".$this->v)) {
+						include("views/shared/".$this->v);
 					}	
 
 				?>				
