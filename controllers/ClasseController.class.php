@@ -40,6 +40,14 @@ class ClasseController {
         $v->assign("errors", $errors);
 	}
 
+	public function deleteAction($params) {
+        $classe = new Classe($params['URL'][0]);
+        $classe->delete();
+
+        header('Location: '.DIRNAME.'classe');
+        exit();
+	}
+
 	public function getClassStundentAction($params) {		
 
 		$v = new View("class", "front");
