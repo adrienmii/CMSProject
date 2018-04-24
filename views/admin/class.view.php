@@ -3,11 +3,11 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<header>
-				<div class="row">							
+				<div class="row">
 					<div class="col-xs-12 text-center">
 						<div id="className">4a src</div>
 						<a class="actionEditBlue" href="#"></a>
-					</div>				
+					</div>
 					<div id="teacherName" class="col-xs-8 col-sm-4">M. SKRYPZIK Yves</div>
 					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left">12<a href="#" id="addStudent">+</a></div>
 				</div>

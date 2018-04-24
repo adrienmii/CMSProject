@@ -34,7 +34,7 @@ class ClasseController {
         $v->assign("errors", $errors);
 	}
 
-	public function getClassStundentAction($params) {		
+	public function getClassStudentAction($params) {
 
 		$v = new View("class", "front");
 		
