@@ -97,13 +97,19 @@ class BaseSQL {
 		return $user;
 	}
 
-	public function userInfoById($id) {
-		$sql = "SELECT * FROM user WHERE id = '".$id."'";
-		try { $query = $this->pdo->query($sql); }
-		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
-		$user = $query->fetch();
+	public function userInfoById($id)
+    {
+        $sql = "SELECT * FROM user WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $user = $query->fetch();
 
-		return $user;
+        return $user;
+
+    }
 	public function teacherWithoutClasse() {
 		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 AND id NOT IN (SELECT teacher FROM classe)";
 		try { $query = $this->pdo->query($sql); }

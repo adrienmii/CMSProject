@@ -1,6 +1,6 @@
 <?php 
 	$BSQL = new BaseSQL(); 
-	$userinfo = $BSQL->userInfo($_SESSION['token']);	
+	$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 ?>
 
 <main class="col-xs-12">		
