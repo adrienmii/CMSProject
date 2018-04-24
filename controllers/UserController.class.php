@@ -80,8 +80,11 @@ class UserController {
 	}
 
 	public function removeAction($params) {
-		echo "Action de supression d'un User";
-		echo var_dump($params);
+        $user = new User($params['URL'][0]);
+        $user->setStatus(2);
+        $user->save();
+
+        header('Location: '.DIRNAME.'user/list');
 	}
 
 }

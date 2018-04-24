@@ -8,6 +8,8 @@ class User extends BaseSQL {
 	protected $pwd;
 	protected $token;
 	protected $rank;
+	protected $status;
+	protected $classe;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -54,6 +56,36 @@ class User extends BaseSQL {
 		return $this->token;
 	}
 
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    public function setRank($rank)
+    {
+        $this->rank = $rank;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    public function setClasse($classe)
+    {
+        $this->classe = $classe;
+    }
+
 	public function generateLoginForm() {
 		return [
 					"config" => ["method"=> "POST", "action" => ""],
@@ -92,22 +124,6 @@ class User extends BaseSQL {
             ],
             "submit" => "Enregistrer"
         ];
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRank()
-    {
-        return $this->rank;
-    }
-
-    /**
-     * @param mixed $rank
-     */
-    public function setRank($rank)
-    {
-        $this->rank = $rank;
     }
 
 

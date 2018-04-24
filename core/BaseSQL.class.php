@@ -30,6 +30,7 @@ class BaseSQL {
 
 			$this->columns = array_filter($this->columns);
 
+
 			$set = null;
 			foreach ($this->columns as $key => $value) {
 				$set .= $key." = :".$key.", ";
@@ -121,7 +122,7 @@ class BaseSQL {
 
     public function getAllUsers()
     {
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM user WHERE status=1";
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
@@ -143,7 +144,7 @@ class BaseSQL {
 	}
 
 	public function getAllClasses() {
-		$sql = "SELECT * FROM classe";
+		$sql = "SELECT * FROM class";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$classes = $query->fetchAll();
