@@ -1,6 +1,7 @@
 <?php if(!empty($errors)) {
 	echo implode("<br>", $errors);
 } ?>
+
 <form method="<?php echo $config['config']['method']; ?>" action="<?php echo $config['config']['action']; ?>">
 
 	<?php foreach ($config['input'] as $name => $params): ?>
@@ -16,8 +17,8 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>">
-						<?php foreach ($params['options'] as $value => $text): ?>
-							<option value="<?php echo $value; ?>"><?php echo $text; ?></option>
+						<?php foreach ($params['options'] as $value): ?>
+							<option value="<?php echo $value['id']; ?>"><?php echo $value['firstname']." ".$value['lastname']; ?></option>
 						<?php endforeach; ?>
 					</select>
 				</div>
