@@ -2,9 +2,13 @@
 
 class IndexController {
 	public function indexAction($params) {
-		$name = "audric";
-
-		$v = new View("default", "front");
-		$v->assign("name", $name);
+		// si n'est pas connecté rediriger vers page login sinon vers le dashboard
+		if (empty($_SESSION['token'])) {
+			header('Location: '.DIRNAME.'login');
+			exit;
+		} else {
+			header('Location: '.DIRNAME.'dashboard');
+			exit;
+		}
 	}
 }
