@@ -5,7 +5,7 @@
 			Ajouter des utilisateurs
 		</header>
 		<main>
-			<?php $this->addModal("adduser", $config, $errors); ?>
+			<?php $this->addModal("edituser", $config, $errors); ?>
 			<!--<form>
 				<div class="row">
 					<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 text-center profileChoiceContainer">
