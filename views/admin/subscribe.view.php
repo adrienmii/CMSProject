@@ -36,9 +36,4 @@
 	</section>
 </main>
 
-<script>
-function toggleProfile() {
-  	$("#profileStudent").toggleClass("active");
-		$("#profileTeacher").toggleClass("active");
-}				
-</script>
+
