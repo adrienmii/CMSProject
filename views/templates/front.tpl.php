@@ -14,7 +14,7 @@
 		</header>
 		<main class="text-center">
 			<div id="userPicture"></div>
-			<div id="userName"><?php $BSQL = new BaseSQL(); $userinfo = $BSQL->userInfo($_SESSION['token']); echo $userinfo['firstname']."<br>".$userinfo['lastname']; ?></div>
+			<div id="userName"><?php $BSQL = new BaseSQL(); $userinfo = $BSQL->userInfoByToken($_SESSION['token']); echo $userinfo['firstname']."<br>".$userinfo['lastname']; ?></div>
 		</main>
 		<nav id="navBar">
 			<ul>
@@ -22,14 +22,14 @@
 				<?php 
 
 					$BSQL = new BaseSQL(); 
-					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+					$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."#" => "Enseignants",
-						DIRNAME."Class/getClassStundent" => "Elèves",
-						DIRNAME."Class" => "Classes",
+						DIRNAME."user/list" => "Elèves",
+						DIRNAME."Classe" => "Classes",
 						DIRNAME."Timetable" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"
 					);
@@ -38,7 +38,7 @@
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."Course/Mycourses" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
-						DIRNAME."Class" => "Ma classe",
+						DIRNAME."Classe" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"
 					);
@@ -55,7 +55,7 @@
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
 
-					if($userinfo['rank'] == 1){		
+					if($userinfo['rank'] == 1){
 						$myArray = $menuAdmin;
 					}elseif($userinfo['rank'] == 2){
 						$myArray = $menuTeacher;
@@ -106,7 +106,7 @@
 						<?php 
 
 					$BSQL = new BaseSQL(); 
-					$userinfo = $BSQL->userInfo($_SESSION['token']); 
+					$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(

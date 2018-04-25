@@ -2,9 +2,14 @@
 
 class ClasseController {
 
-	public function indexAction($params) {		
+	public function indexAction($params) {	
+
+		$BaseSQL = new BaseSQL();
+		$classes = $BaseSQL->getAllClasses();
+
 
 		$v = new View("classes", "front");
+		$v->assign("classes", $classes);
 		
 	}
 
@@ -19,12 +24,24 @@ class ClasseController {
             $errors = Validator::validateAddClass($form, $params['POST']);
 
             if (empty($errors)) {
+
+                // echo var_dump($params);
+                // die();
+
                 $classe = new Classe();
                 $classe->setClassname($params['POST']['classname']);
-                $classe->setTeacher($params['POST']['teacher']);
-                $classe->save();
+                $lastInsertId = $classe->save();
 
-                // marche pas !
+                // on associe autant de fois la classe avec les profs
+                foreach ($params['POST']['teachers'] as $teacher) {
+                    $classeteacher = new ClasseTeacher();
+                    $classeteacher->setClasse($lastInsertId);
+                    $classeteacher->setTeacher($teacher);
+                    $classeteacher->save();
+                }
+
+                header('Location: '.DIRNAME.'classe');
+                exit();
             }
 
         }
@@ -34,11 +51,73 @@ class ClasseController {
         $v->assign("errors", $errors);
 	}
 
-	public function getClassStundentAction($params) {		
+	public function deleteAction($params) {
+        $classe = new Classe($params['URL'][0]);
+        $classe->delete();
+
+        header('Location: '.DIRNAME.'classe');
+        exit();
+	}
+
+    public function removeUserAction($params) {
+        $user = new User($params['URL'][0]);
+        $user->setClasse(0);
+        $user->save();
+
+        header('Location: '.DIRNAME.'classe');
+        exit();
+    }
+
+    public function listAction($params) {
+
+    	$BaseSQL = new BaseSQL();
+    	$students = $BaseSQL->getStudentByClasseId($params['URL'][0]);
+    	$count = $BaseSQL->getCountClasse($params['URL'][0]);
+    	$classe = $BaseSQL->classeInfoById($params['URL'][0]);
+    	$teachers = $BaseSQL->getClasseTeacher($params['URL'][0]);
 
 		$v = new View("class", "front");
+		$v->assign("students", $students);
+		$v->assign("count", $count);
+		$v->assign("classe", $classe);
+		$v->assign("teachers", $teachers);
 		
 	}
+
+    public function studsAction($params) {  
+
+        $class = new Classe();
+        $form = $class->generateFormStudents();
+
+        $errors = null;
+
+        if (!empty($params['POST'])) {
+            // Vérification des saisies
+            $errors = Validator::validateAddClass($form, $params['POST']);
+
+            if (empty($errors)) {
+
+                // echo var_dump($params);
+                // die();
+
+                foreach ($params['POST']['students'] as $student) {
+                    $user = new User($student);
+                    $user->setClasse($params['URL'][0]);
+                    $user->save();
+                }
+
+                header('Location: '.DIRNAME.'classe/list/'.$params['URL'][0]);
+                exit();
+            }
+
+        }
+
+
+        $v = new View("addStudents", "front");
+        $v->assign("config", $form);
+        $v->assign("errors", $errors);
+        
+    }
 
 	public function getTeacherClassesAction($params) {		
 

@@ -8,6 +8,8 @@ class User extends BaseSQL {
 	protected $pwd;
 	protected $token;
 	protected $rank;
+	protected $status;
+	protected $classe;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -54,6 +56,44 @@ class User extends BaseSQL {
 		return $this->token;
 	}
 
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    public function setRank($rank)
+    {
+        $this->rank = $rank;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    public function setClasse($classe)
+    {
+        $this->classe = $classe;
+    }
+
+	public function getEmail() {
+		return $this->email;
+	}
+
+	public function getFirstname() {
+		return $this->firstname;
+	}
+
 	public function generateLoginForm() {
 		return [
 					"config" => ["method"=> "POST", "action" => ""],
@@ -86,29 +126,13 @@ class User extends BaseSQL {
             "config" => ["method"=> "POST", "action" => ""],
             "input" => [
                 "email" => ["type" => "text", "placeholder" => "E-mail", "required" => true, "id" => "inputEmail"],
-                "pwd" => ["type" => "password", "placeholder" => "Mot de passe", "required" => true, "id" => "inputPwdEdit"],
-                "name" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
+                "pwd" => ["type" => "password", "placeholder" => "Modifier le mot de passe", "id" => "inputPwdEdit"],
+                "lastname" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
                 "firstname" => ["type" => "text", "placeholder" => "Prénom", "required" => true, "id" => "inputFirstname"],
-                "rank" => ["type" => "select", "options" => [0 => "Rôles", 1 => "Administrateur", 2 => "Professeur", 3 => "Elève"], "required" => true, "id" => "selectRank"]
+                "rank" => ["type" => "select", "options" => [1 => "Administrateur", 2 => "Professeur", 3 => "Elève"], "required" => true, "id" => "selectRank"]
             ],
             "submit" => "Enregistrer"
         ];
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRank()
-    {
-        return $this->rank;
-    }
-
-    /**
-     * @param mixed $rank
-     */
-    public function setRank($rank)
-    {
-        $this->rank = $rank;
     }
 
 

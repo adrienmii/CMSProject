@@ -1,6 +1,6 @@
 <?php 
 	$BSQL = new BaseSQL(); 
-	$userinfo = $BSQL->userInfo($_SESSION['token']);	
+	$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 ?>
 
 <main class="col-xs-12">		
@@ -23,11 +23,11 @@
 									<hr class="timeLeft">								
 									<div id="teacherCourse" class="hidden-xs visible-sm">
 										<div>Développement PHP Avancé<br>
-										<span>M. SCRYPZYK</span></div>
+										<span>M. SKRZYPCZYK</span></div>
 									</div>
 									<div id="teacherCourseXs" class="hidden-sm visible-xs">
 										<div>Développement PHP Avancé
-										<span>M. SCRYPZYK</span></div>
+										<span>M. SKRZYPCZYK</span></div>
 									</div>
 									<div id="roomCourse">
 										Salle B21

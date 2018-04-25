@@ -16,7 +16,7 @@
 		<?php }elseif ($params['type'] == "select"){ ?>
 			<div class="row">
 				<div class="col-xs-12">
-					<select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>">
+					<select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" <?php echo ($params['multiple'])?" style='height:100px' multiple":""; ?>>
 						<?php foreach ($params['options'] as $value): ?>
 							<option value="<?php echo $value['id']; ?>"><?php echo $value['firstname']." ".$value['lastname']; ?></option>
 						<?php endforeach; ?>
