@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mar. 24 avr. 2018 à 23:02
+-- Généré le :  jeu. 26 avr. 2018 à 14:38
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -30,11 +30,9 @@ CREATE TABLE `classe` (
 --
 
 INSERT INTO `classe` (`id`, `classname`) VALUES
-(11, 'tttty'),
 (12, 'admin'),
-(13, 'teac23'),
-(14, 'tete'),
-(15, 'lla');
+(13, 'MCSI3'),
+(14, 'tete');
 
 -- --------------------------------------------------------
 
@@ -53,15 +51,10 @@ CREATE TABLE `classeteacher` (
 --
 
 INSERT INTO `classeteacher` (`id`, `classe`, `teacher`) VALUES
-(1, 11, 9),
-(2, 11, 11),
 (3, 12, 2),
 (4, 13, 8),
 (5, 13, 9),
-(6, 14, 11),
-(7, 15, 2),
-(8, 15, 6),
-(9, 15, 8);
+(6, 14, 11);
 
 -- --------------------------------------------------------
 
@@ -88,13 +81,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '32dd76bd011518e', 1, 1, NULL, '2018-04-23 14:41:56', '2018-04-24 21:02:04'),
+(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$GMFN2.AfNBaawuQ9a9/SXeAUNY1yvhRal6HhHzKMeYt6421xjKmVC', 'c58c7fba3fbc84c', 1, 1, NULL, '2018-04-23 14:41:56', '2018-04-26 12:38:04'),
 (6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'b5129a35ed2e2d0', 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 20:57:44'),
-(7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 3, 1, NULL, '2018-04-23 16:15:48', '2018-04-24 21:02:26'),
+(7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$sRnco4uGAj0mhtZ5OSaGv.HO4CQRfc0HhFbUhF61gCFxkUWBn6Imi', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-04-26 12:26:13'),
 (8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '96ec4f908a43da0', 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 18:52:42'),
 (9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:56'),
 (10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:58'),
-(11, 'Test', 'TEST', 'test@tetst.fr', '$2y$10$zWWRl6H2wry.jodQEAT/iO60G2WKS0B795WgVbmb5cLkku.NxW8SK', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-24 20:22:40');
+(11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-26 11:45:23'),
+(12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$2AsCqsKQIWDAcfX/rAWXnOzEZ6mYq4fExTEv1xcAYNf7b/JZV6VEm', '5fbf4f3177d7618', 3, 1, 0, '2018-04-26 09:13:51', '2018-04-26 12:35:16'),
+(13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$bQsMx6tCMjTc/L5U396ZgOnf4zO7I9bzmDzXoVf.cMvfDEwuhuhQ.', '1702b296cfaa791', 3, 1, NULL, '2018-04-26 11:43:31', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -133,9 +128,9 @@ ALTER TABLE `classe`
 -- AUTO_INCREMENT pour la table `classeteacher`
 --
 ALTER TABLE `classeteacher`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
