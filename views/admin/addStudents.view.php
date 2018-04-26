@@ -5,7 +5,7 @@
 			Gestion des élèves pour cette classe
 		</header>
 		<main>
-			<?php $this->addModal("addclasse", $config, $errors); ?>
+			<?php $this->addModal("classe", $config, $errors); ?>
 		
 		</main>
 	</section>

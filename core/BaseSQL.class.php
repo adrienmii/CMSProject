@@ -231,4 +231,20 @@ class BaseSQL {
 		return $t; 
 	}
 
+	public function deleteClasseCascadeTeachers($id) {
+		$query = $this->pdo->prepare("
+			DELETE FROM classeteacher WHERE classe = ".$id
+		);
+
+		$query->execute();
+	}
+
+	public function deleteClasseCascadeStudents($id) {
+		$query = $this->pdo->prepare("
+			UPDATE user SET classe = 0 WHERE classe = ".$id
+		);
+
+		$query->execute();
+	}
+
 }

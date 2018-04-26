@@ -52,6 +52,10 @@ class ClasseController {
 	}
 
 	public function deleteAction($params) {
+        $BaseSQL = new BaseSQL();
+        $BaseSQL->deleteClasseCascadeStudents($params['URL'][0]);
+        $BaseSQL->deleteClasseCascadeTeachers($params['URL'][0]);
+
         $classe = new Classe($params['URL'][0]);
         $classe->delete();
 
@@ -74,6 +78,37 @@ class ClasseController {
 
         header('Location: '.DIRNAME.'classe');
         exit();
+    }
+
+    public function editAction($params) {
+        $class = new Classe();
+        $form = $class->generateFormEdit();
+
+        $errors = null;
+
+        if (!empty($params['POST'])) {
+            // Vérification des saisies
+            $errors = Validator::validateAddClass($form, $params['POST']);
+
+            if (empty($errors)) {
+
+                // echo var_dump($params);
+                // die();
+
+                $classe = new Classe($params['URL'][0]);
+                $classe->setClassname($params['POST']['classname']);
+                $classe->save();
+
+              
+                header('Location: '.DIRNAME.'classe');
+                exit();
+            }
+
+        }
+
+        $v = new View("editClass");
+        $v->assign("config", $form);
+        $v->assign("errors", $errors);
     }
 
     public function listAction($params) {
