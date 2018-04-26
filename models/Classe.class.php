@@ -52,6 +52,18 @@ class Classe extends BaseSQL {
 		];
 	}
 
+	public function generateFormTeachers($id) {
+		$BaseSQL = new BaseSQL();
+        $options = $BaseSQL->teachersExceptClasseId($id);
+		return [
+					"config" => ["method"=> "POST", "action" => ""],
+					"input" => [
+						"teachers[]" => ["type" => "select", "options" => $options, "required" => true, "multiple" => true, "id" => "selectTeachers"]
+					],
+					"submit" => "Valider"
+		];
+	}
+
 
 
 }

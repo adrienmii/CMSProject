@@ -222,4 +222,13 @@ class BaseSQL {
 		return $t; 
 	}
 
+	public function teachersExceptClasseId($id) {
+		$sql = "SELECT * FROM user WHERE id NOT IN (SELECT c.teacher FROM user u INNER JOIN classeteacher c ON u.id = c.teacher WHERE c.classe = '".$id."' AND (rank = 1 OR rank = 2)) AND (rank = 1 OR rank = 2)";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$t = $query->fetchAll();
+
+		return $t; 
+	}
+
 }

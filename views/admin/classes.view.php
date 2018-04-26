@@ -23,14 +23,14 @@
 					</div>
 					<div class="actionCol text-right col-xs-5 ">
 						<a class="actionEditWhite" href="classe.html"></a>
-						<a class="actionDeleteWhite" href="<?php echo DIRNAME.'classe/delete/'.$class['id']; ?>" onClick="return confirm('Souhaitez vous supprimer la classe <?php echo $class['classname']; ?> définitivement ?')"></a>
+						<a class="actionDeleteWhite" href="<?php echo DIRNAME.'classe/delete/'.$class['id']; ?>" onClick="return confirm('Souhaitez vous supprimer la classe <?php echo strtoupper($class['classname']); ?> définitivement ?')"></a>
 					</div>
 					<div class="col-xs-10">
 						<?php echo $count; ?> élève(s)  •  <?php echo $teachers; ?> professeur(s)
 					</div>
 					<div class="addStudents col-xs-12">
 						<div id="addStudentsIcon"></div>
-						<div class="addStudentsText">Ajouter des élèves</div>
+						<div class="addStudentsText">Gérer cette classe</div>
 						<a href="<?php echo DIRNAME.'classe/list/'.$class['id']; ?>" class="actionAdd">+</a>
 					</div>							
 				</div>							

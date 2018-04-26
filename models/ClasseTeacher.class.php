@@ -7,6 +7,9 @@ class ClasseTeacher extends BaseSQL {
 
 	public function __construct($id = null) {
 		parent::__construct();
+		if ($id != null) {
+			$this->id = $id;
+		}
 	}
 
 	public function setId($id) {
