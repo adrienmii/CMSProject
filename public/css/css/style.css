@@ -1762,7 +1762,8 @@ hr.timeLeft {
   padding: 0% 10% 5% 10%;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1); }
 
-#subscribeContainer input[type="text"] {
+#subscribeContainer input[type="text"],
+#subscribeContainer input[type="password"] {
   font-size: 21px;
   width: 100%;
   border-bottom: 1px solid #C4C4C4;

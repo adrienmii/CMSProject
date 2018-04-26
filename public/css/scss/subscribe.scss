@@ -15,7 +15,8 @@
 	box-shadow: $block_shadow;
 }
 
-#subscribeContainer input[type="text"]{
+#subscribeContainer input[type="text"],
+#subscribeContainer input[type="password"]{
 	//height: 30px;
 	font-size:21px;
 	width:100%;
