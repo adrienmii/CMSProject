@@ -40,6 +40,18 @@ class Classe extends BaseSQL {
 		];
 	}
 
+	public function generateFormEdit() {
+		$BaseSQL = new BaseSQL();
+        $options = $BaseSQL->getTeachersAndAdmin();
+		return [
+					"config" => ["method"=> "POST", "action" => ""],
+					"input" => [
+						"classname" => ["type" => "text", "placeholder" => "Nom de la classe", "required" => true, "id" => "inputClassName"]
+					],
+					"submit" => "Modifier"
+		];
+	}
+
 	public function generateFormStudents() {
 		$BaseSQL = new BaseSQL();
         $options = $BaseSQL->studentsWithoutClasse();

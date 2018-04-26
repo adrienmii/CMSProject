@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col-xs-12 text-center">
 						<div id="className"><?php echo $classe['classname']; ?></div>
-						<a class="actionEditBlue" href="#"></a>
+						<a class="actionEditBlue" href="<?php echo DIRNAME.'classe/edit/'.$classe['id']; ?>"></a>
 					</div>
 					<div id="nothing" class="col-xs-8 col-sm-4">
 					</div>
