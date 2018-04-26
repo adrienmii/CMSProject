@@ -1,15 +1,4 @@
 
-$(document).ready(function() {
-
-   	$("#navBar ul li a").click(function () {
-   		$("#navBar ul li").find("active").removeClass("active");
-        $(this).parent().addClass("active");
-    });
-    
-
-});
-
-
 
 function toggleNav() {
    $("#sideBar").toggleClass("menuClose");
@@ -22,4 +11,18 @@ function toggleMenuMobile() {
 
 function toggleSearchMobile() {
   	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
+}
+
+
+function showNotify() {
+    var x = document.getElementById("notify");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
+
+
+function showNotify() {
+    var x = document.getElementById("notify");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }

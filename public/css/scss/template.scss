@@ -168,25 +168,6 @@
 	text-align: center;
 }
 
-#sideBar.menuClose ul li:nth-child(1){
-	background: url(../../img/icn/iconChart.svg) center 5% no-repeat;
-}
-
-#sideBar.menuClose ul li:nth-child(2){
-	background: url(../../img/icn/iconTeacher.svg) center 5% no-repeat;
-}
-#sideBar.menuClose ul li:nth-child(3){
-	background: url(../../img/icn/iconStudent.svg) center 5% no-repeat;
-}
-#sideBar.menuClose ul li:nth-child(4){
-	background: url(../../img/icn/iconStudents.svg) center 5% no-repeat;
-}
-#sideBar.menuClose ul li:nth-child(5){
-	background: url(../../img/icn/iconSchedule.svg) center 5% no-repeat;
-}
-#sideBar.menuClose ul li:nth-child(6){
-	background: url(../../img/icn/iconGear.svg) center 5% no-repeat;
-}
 
 #sideBar.menuClose ul li#liDashboard{
 	background: url(../../img/icn/iconChart.svg) center 5% no-repeat;
@@ -228,7 +209,56 @@
 	background: url(../../img/icn/iconHomework.svg)  center 5% no-repeat;
 }
 
+#notify{
+	visibility: hidden;
+    min-width: 400px;   
+    color: #fff; 
+    text-align: center; 
+    padding: 16px;
+    position: fixed; 
+    z-index: 1; 
+    right: 20px; 
+    bottom: 20px;
+}
 
+#notify.show.danger{
+	 background-color: #f44336; 
+}
+
+#notify.show.warning{
+	 background-color: #ff9800; 
+}
+
+#notify.show.success{
+	 background-color: #4CAF50; 
+}
+
+
+#notify.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 20px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 20px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 20px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 20px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
 
 @media screen and (max-width: 992px){
 

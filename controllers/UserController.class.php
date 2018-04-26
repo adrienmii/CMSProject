@@ -31,6 +31,9 @@ class UserController {
                 // envoi du mail au nouveau inscrit avec ses identifiants de connexion
                 $mail = new Mail($user->getEmail(), "Vos identifiants de connexion", "Bonjour #PRENOM#,<br>Un compte vous a été crée sur EDULAB.<br><br>Voici vos identifiants :<br><br>E-mail : #EMAIL#<br>Mot de passe : #MOTDEPASSE# (Pensez à le modifier lors de votre première connexion !)<br><br>Cordialement,<br>EDULAB.", ["prenom" => $user->getFirstname(), "email" => $user->getEmail(), "motdepasse" => $pwd]);
                 $mail->send();
+                $notify = new Notify("User enregistré","success");
+            }else{
+                $notify = new Notify($errors,"danger");
             }
 
         }
