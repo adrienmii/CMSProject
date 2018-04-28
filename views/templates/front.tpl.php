@@ -184,6 +184,7 @@
 		</main>	
 	</div>
 	
+	<div id="notify"></div>
 
 	<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>

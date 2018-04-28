@@ -11,7 +11,9 @@ class Notify {
 		$this->state = $state;
 
 		if(is_string($this->message)){
-			$result = "<div id='notify' class='show ".$this->state."'>".$this->message."</div>";
+			//$result = "<div id='notify' class='show ".$this->state."'>".$this->message."</div>";
+			echo("ici");
+			echo("<script>showNotify('".$this->message."');</script>");
 		}else{			
 			$result ="<div id='notify' class='show ".$this->state."'><ul>";
 			foreach ($message as $value) {
@@ -20,7 +22,7 @@ class Notify {
 			$result = $result."</ul></div>";
 		}
 
-		echo($result);
+		//echo($result);
 	
 	}
 
