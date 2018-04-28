@@ -183,8 +183,19 @@
 			</div>							
 		</main>	
 	</div>
+
+	<!-- Merci de transformer tout le style en dur en SCSS + de dev les classes ntf-success, ntf-danger etc... -->
+
+	<style>
+	.ntf-default {
+		background-color: #F4F4F4;
+		border: 1px solid #000;
+		color: #000;
+	}
+	</style>
 	
-	<div id="notify"></div>
+	<div id="notifications" style="position: fixed;bottom: 5px;right: 5px;margin-left: 5px;z-index: 99;font-size:15px">
+	</div>
 
 	<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
@@ -259,6 +270,11 @@
 			    }
 			});
 	</script>
+	<?php if (!empty($_SESSION['ntf'])) {
+		echo $_SESSION['ntf'];
+		$_SESSION['ntf'] = null;
+	}
+	?>
 
 </body>
 </html>

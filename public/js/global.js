@@ -13,17 +13,13 @@ function toggleSearchMobile() {
   	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
 }
 
-
-function showNotify() {
-    var x = document.getElementById("notify");
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+function showNotify(message, type = "default") {	
+    var notifications = document.getElementById("notifications");
+    notifications.innerHTML += "<div id='ntf' class='ntf ntf-"+type+" show' style='text-align: right;margin-top: 10px; padding: 15px;float: right;clear: right;'>"+message+"</div>";
+    var ntf = document.getElementsByClassName("ntf");
+    setTimeout(function(){ for (var i = 0; i < ntf.length; i++){
+        ntf[i].style.display = 'none';
+    } }, 10000);
 }
 
 
-function showNotify(message) {	
-    var notify = document.getElementById("notify");
-    notify.innerHTML = message;
-    notify.className = "show";
-    setTimeout(function(){ notify.className = notify.className.replace("show", ""); }, 5000);
-}

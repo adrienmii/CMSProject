@@ -7,22 +7,18 @@ class Notify {
 
 
 	public function __construct($message = null, $state = null) {	
-		$this->message = $message;
+		$this->message = htmlspecialchars($message, ENT_QUOTES); // on échappe éviter des erreurs à cause des simples quotes
 		$this->state = $state;
 
 		if(is_string($this->message)){
-			//$result = "<div id='notify' class='show ".$this->state."'>".$this->message."</div>";
-			echo("ici");
-			echo("<script>showNotify('".$this->message."');</script>");
-		}else{			
-			$result ="<div id='notify' class='show ".$this->state."'><ul>";
-			foreach ($message as $value) {
-				$result = $result."<li>".$value."</li>";
-			}
-			$result = $result."</ul></div>";
-		}
 
-		//echo($result);
+			if (!empty($_SESSION['ntf'])) {
+				$_SESSION['ntf'] .= "<script>showNotify('".$this->message."', '".$this->state."');</script>";
+		 	} else {
+		 		$_SESSION['ntf'] = "<script>showNotify('".$this->message."', '".$this->state."');</script>";
+		 	}
+
+		}
 	
 	}
 
