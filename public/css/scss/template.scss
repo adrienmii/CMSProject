@@ -209,9 +209,9 @@
 	background: url(../../img/icn/iconHomework.svg)  center 5% no-repeat;
 }
 
-#notify{
+#notifications{
 	visibility: hidden;
-    min-width: 400px;   
+    max-width: 400px;   
     color: #fff; 
     text-align: center; 
     padding: 16px;
@@ -221,23 +221,35 @@
     bottom: 20px;
 }
 
-#notify.show.danger{
-	 background-color: #f44336; 
+.ntf{
+	padding: 15px;
 }
 
-#notify.show.warning{
-	 background-color: #ff9800; 
+.ntf-default {
+	background-color: #F4F4F4;	
+	color: #000;
 }
 
-#notify.show.success{
+.ntf-danger{
+	background-color: #f44336; 
+	color: #fff;
+}
+
+.ntf-warning{
+	background-color: #ff9800;
+	color: #fff; 
+}
+
+.ntf-success{
 	 background-color: #4CAF50; 
+	 color: #fff;
 }
 
 
-#notify.show {
+#notifications.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
-    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 9.5s;
+    animation: fadein 0.5s, fadeout 0.5s 9.5s;
 }
 
 @-webkit-keyframes fadein {

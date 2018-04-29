@@ -182,19 +182,9 @@
 				?>				
 			</div>							
 		</main>	
-	</div>
-
-	<!-- Merci de transformer tout le style en dur en SCSS + de dev les classes ntf-success, ntf-danger etc... -->
-
-	<style>
-	.ntf-default {
-		background-color: #F4F4F4;
-		border: 1px solid #000;
-		color: #000;
-	}
-	</style>
+	</div>	
 	
-	<div id="notifications" style="position: fixed;bottom: 5px;right: 5px;margin-left: 5px;z-index: 99;font-size:15px">
+	<div id="notifications">
 	</div>
 
 	<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>

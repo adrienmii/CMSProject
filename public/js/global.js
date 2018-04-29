@@ -14,12 +14,10 @@ function toggleSearchMobile() {
 }
 
 function showNotify(message, type = "default") {	
-    var notifications = document.getElementById("notifications");
-    notifications.innerHTML += "<div id='ntf' class='ntf ntf-"+type+" show' style='text-align: right;margin-top: 10px; padding: 15px;float: right;clear: right;'>"+message+"</div>";
-    var ntf = document.getElementsByClassName("ntf");
-    setTimeout(function(){ for (var i = 0; i < ntf.length; i++){
-        ntf[i].style.display = 'none';
-    } }, 10000);
+	$("#notifications").addClass("show");
+    $("#notifications").append("<div id='ntf' class='ntf ntf-"+type+"'>"+message+"</div>");
+    setTimeout(function(){ 
+    	$("#notifications").removeClass("show");
+	}, 10000);	
 }
-
 
