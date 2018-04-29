@@ -36,7 +36,7 @@
 									<td><?php echo $rank[$teacher['rank']]; ?></td>
 									<td>
 										<a class="actionEditBlue" href="#"></a>
-										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'classe/removeTeacher/'.$teacher['id']; ?>" onClick="return confirm('Souhaitez vous retirer à <?php echo $teacher['firstname'].' '.$teacher['lastname']; ?> le rôle de professeur pour cette classe ?')"></a>
+										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'classe/removeTeacher/'.$teacher['id'].'/'.$classe['id']; ?>" onClick="return confirm('Souhaitez vous retirer à <?php echo $teacher['firstname'].' '.$teacher['lastname']; ?> le rôle de professeur pour cette classe ?')"></a>
 									</td>
 								</tr>
 								<?php } ?>

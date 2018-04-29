@@ -68,13 +68,17 @@ class ClasseController {
         $user->setClasse(0);
         $user->save();
 
+        new Notify("L'étudiant a bien été supprimé de la classe", "success");
+
         header('Location: '.DIRNAME.'classe');
         exit();
     }
 
     public function removeTeacherAction($params) {
-        $classeteacher = new ClasseTeacher($params['URL'][0]);
-        $classeteacher->delete();
+        $BaseSQL = new BaseSQL();
+        $BaseSQL->removeTeacher($params['URL'][0], $params['URL'][1]);
+
+        new Notify("Le professeur a bien été retiré de la classe", "success");
 
         header('Location: '.DIRNAME.'classe');
         exit();

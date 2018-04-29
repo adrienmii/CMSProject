@@ -239,6 +239,14 @@ class BaseSQL {
 		$query->execute();
 	}
 
+	public function removeTeacher($id_teach, $id_classe) {
+		$query = $this->pdo->prepare("
+			DELETE FROM classeteacher WHERE teacher = ".$id_teach." AND classe = ".$id_classe
+		);
+
+		$query->execute();
+	}
+
 	public function deleteClasseCascadeStudents($id) {
 		$query = $this->pdo->prepare("
 			UPDATE user SET classe = 0 WHERE classe = ".$id
