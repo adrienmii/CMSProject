@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>	
-	<div id="sideBar" class="hidden-xs visible-sm">
+	<div id="sideBar" class="hidden-xs visible-md">
 		<header>
 			<img src="<?php echo DIRNAME; ?>public/img/petitLogo.svg">
 		</header>
@@ -82,7 +82,7 @@
 	</div>
 	<div id="pageContent">
 		<header>
-			<div id="topBar" class="col-md-12 hidden-xs visible-sm">
+			<div id="topBar" class="col-md-12 hidden-xs visible-md">
 				<div class="row">
 					<div class="col-md-6">
 						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
@@ -92,12 +92,12 @@
 					</div>
 				</div>											
 			</div>
-			<div id="topBarMobile" class="hidden-sm">
+			<div id="topBarMobile" class="hidden-md">
 				<div class="row">
 					<div class="col-xs-2">
 						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
 					</div>
-					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"></div>
+					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="<?php echo DIRNAME; ?>public/img/logoMobile.png"></div>
 					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
 				</div>	
 				<nav id="navBarMobile" class="menuMobileClose">
