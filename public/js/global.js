@@ -21,3 +21,20 @@ function showNotify(message, type = "default") {
 	}, 10000);	
 }
 
+function toggleProfile(that) {
+
+	var getTypeSelected = that.getAttribute("id");				
+	$("#profileAdmin").removeClass("active");
+	$("#profileStudent").removeClass("active");
+	$("#profileTeacher").removeClass("active");
+	$("#"+getTypeSelected).addClass("active");
+
+
+	if(getTypeSelected=="profileStudent"){
+		selectRank.value = 3 ;
+	}else if(getTypeSelected=="profileTeacher"){
+		selectRank.value = 2 ;
+	}else{
+		selectRank.value = 1 ;
+	}
+}

@@ -36,28 +36,4 @@
 
 </form>
 
-<script>
-
-function toggleProfile(that) {
-
-	var getTypeSelected = that.getAttribute("id");
-	//var inputRank =  document.getElementById(<?php echo json_encode($params['id']) ?>);		
-
-		
-		$("#profileAdmin").removeClass("active");
-		$("#profileStudent").removeClass("active");
-		$("#profileTeacher").removeClass("active");
-		$("#"+getTypeSelected).addClass("active");
-
-
-		if(getTypeSelected=="profileStudent"){
-			selectRank.value = 3 ;
-		}else if(getTypeSelected=="profileTeacher"){
-			selectRank.value = 2 ;
-		}else{
-			selectRank.value = 1 ;
-		}
-	}
-				
-</script>
 

@@ -42,7 +42,7 @@ class UserController {
 
         }
 
-		$v = new View("subscribe");
+		$v = new View("addUser");
         $v->assign("config", $form);
         $v->assign("errors", $errors);
 
@@ -83,13 +83,16 @@ class UserController {
                 $user->setPwd((!empty($params['POST']['pwd']) ? $params['POST']['pwd'] : $form['prefill']['pwd']));
                 $user->save();
 
+                $notify = new Notify("L'utilisateur a bien été modifié","success");
                 header('Location: '.DIRNAME.'user/list');
                 exit();
+            }else{
+                $notify = new Notify($errors,"danger");
             }
 
         }
 
-        $v = new View("edit");
+        $v = new View("editUser");
         $v->assign("config", $form);
         $v->assign("errors", $errors);
 	}
