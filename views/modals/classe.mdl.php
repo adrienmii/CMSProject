@@ -1,7 +1,3 @@
-<?php if(!empty($errors)) {
-	echo implode("<br>", $errors);
-} ?>
-
 <form method="<?php echo $config['config']['method']; ?>" action="<?php echo $config['config']['action']; ?>">
 
 	<?php foreach ($config['input'] as $name => $params): ?>
@@ -9,7 +5,7 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<input type="<?php echo $params['type']; ?>" name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
+					<input type="<?php echo $params['type']; ?>" <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))?"value='".strtoupper($config['prefill'][$name])."'":""; ?> name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
 				</div>
 			</div>
 

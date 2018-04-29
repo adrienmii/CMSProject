@@ -91,16 +91,24 @@ class Validator {
 
 
     public static function validateAddClass($form, $params)
-    {
+    {   
         $errorMsg = [];
         $BSQL = new BaseSQL();
         foreach ($form['input'] as $name => $config) {
 
-            // if (isset($config['required']) && !self::minLength($params[$name], 1)) {
-            //     $errorMsg[] = "Le champ " . $name . " est manquant.";
-            // }
+            if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant";
+            }
 
-            // vérifier que teacher est un array
+            if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 8)) {
+                $errorMsg[] = "Le champ " . $name . " est trop long (8 caractères maximum)";
+            }
+
+            if ($config['type'] == "select" && !array_key_exists(trim($name,"[]"),$params)){
+                $errorMsg[] = "Vous devez choisir des éléments dans " . trim($name,"[]");
+            }
+
+
         }
 
         return $errorMsg;
@@ -113,5 +121,9 @@ class Validator {
 	public static function minLength($value, $length) {
 		return strlen(trim($value)) >= $length;
 	}
+
+    public static function maxLength($value, $length) {
+        return strlen(trim($value)) <= $length;
+    }
 
 }

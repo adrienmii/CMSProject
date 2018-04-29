@@ -41,6 +41,8 @@ class ClasseController {
 
                 header('Location: '.DIRNAME.'classe');
                 exit();
+            } else {
+                new Notify($errors, "danger");
             }
 
         }
@@ -88,6 +90,8 @@ class ClasseController {
     public function editAction($params) {
         $class = new Classe();
         $form = $class->generateFormEdit();
+        $BaseSQL = new BaseSQL();
+        $form['prefill'] = $BaseSQL->classeInfoById($params['URL'][0]);
 
         $errors = null;
 
@@ -106,6 +110,8 @@ class ClasseController {
               
                 header('Location: '.DIRNAME.'classe');
                 exit();
+            } else {
+                new Notify($errors, "danger");
             }
 
         }
