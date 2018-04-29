@@ -211,23 +211,26 @@
 
 #notifications{
 	visibility: hidden;
-    max-width: 400px;   
-    color: #fff; 
-    text-align: center; 
-    padding: 16px;
-    position: fixed; 
-    z-index: 1; 
-    right: 20px; 
-    bottom: 20px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin-left: 5px;
+    z-index: 99;
+    font-size: 15px;
 }
 
 .ntf{
-	padding: 15px;
+	margin-top: 10px;
+    padding: 10px 15px;
+    max-width: 450px;
+    float: right;
+    clear: right;
 }
 
 .ntf-default {
 	background-color: #F4F4F4;	
 	color: #000;
+	border: 1px solid #000;
 }
 
 .ntf-danger{
@@ -248,27 +251,27 @@
 
 #notifications.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 9.5s;
-    animation: fadein 0.5s, fadeout 0.5s 9.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 9.6s;
+    animation: fadein 0.5s, fadeout 0.5s 9.6s;
 }
 
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
-    to {bottom: 20px; opacity: 1;}
+    to {bottom: 10px; opacity: 1;}
 }
 
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 20px; opacity: 1;}
+    to {bottom: 10px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 20px; opacity: 1;} 
+    from {bottom: 10px; opacity: 1;} 
     to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-    from {bottom: 20px; opacity: 1;}
+    from {bottom: 10px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 

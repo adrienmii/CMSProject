@@ -3,7 +3,7 @@
 class UserController {
 	public function indexAction($params) {
 		echo "Action par défaut d'un User";
-        $notify = new Notify("L'utilisateur a bien été ajouté, un notification de création de compte lui a été envoyé par mail", "default");
+        $notify = new Notify("L'utilisateur a bien été ajouté, une notification de création de compte lui a été envoyé par mail", "success");
 	}
 
 	public function addAction($params) {
