@@ -162,6 +162,8 @@ class ClasseController {
 
                 header('Location: '.DIRNAME.'classe/list/'.$params['URL'][0]);
                 exit();
+            } else {
+                new Notify($errors, "danger");
             }
 
         }
@@ -200,6 +202,8 @@ class ClasseController {
 
                 header('Location: '.DIRNAME.'classe/list/'.$params['URL'][0]);
                 exit();
+            } else {
+                new Notify($errors, "danger");
             }
 
         }
