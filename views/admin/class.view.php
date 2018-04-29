@@ -81,7 +81,7 @@
 									<td><?php echo $student['email']; ?></td>
 									<td>
 										<a class="actionEditBlue" href="#"></a>
-										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'classe/removeStudent/'.$student['id']; ?>"></a>
+										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'classe/removeStudent/'.$student['id']; ?>" onClick="return confirm('Souhaitez vous retirer l\'étudiant <?php echo $student['firstname'].' '.$student['lastname']; ?> de cette classe ?')"></a>
 									</td>
 								</tr>
 								<?php } ?>
