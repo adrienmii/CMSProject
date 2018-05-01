@@ -35,7 +35,7 @@
 
 					$menuTeacher = array(
 						DIRNAME."dashboard" => "Dashboard",
-						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Classe" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
@@ -44,7 +44,7 @@
 
 					$menuStudent = array(
 						DIRNAME."dashboard" => "Dashboard",
-						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
 						DIRNAME."Timetable" => "Emploi du temps",

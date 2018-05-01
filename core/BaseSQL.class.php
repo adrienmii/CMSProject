@@ -136,6 +136,35 @@ class BaseSQL {
 
     }
 
+    public function chapterInfoById($id)
+    {
+        $sql = "SELECT * FROM chapter WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $c = $query->fetch();
+
+        return $c;
+
+    }
+
+    public function getAllById($table, $id)
+    {
+        $sql = "SELECT * FROM ".$table." WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $g = $query->fetch();
+
+        return $g;
+    }
+
+
+
     public function getAllUsers()
     {
         $sql = "SELECT * FROM user WHERE status = 1";
@@ -253,6 +282,21 @@ class BaseSQL {
 		);
 
 		$query->execute();
+	}
+
+	public function getChapters($option = null) {
+		if (is_numeric($option)) {
+			$sql = "SELECT p.id, label, description, c.classe, s.classname from chapter p INNER JOIN classeteacher c ON p.classe = c.classe INNER JOIN classe s ON c.classe = s.id where c.teacher = ".$option;
+		 
+		} elseif ($option == 'all') {
+			$sql = "SELECT p.id, label, description, p.classe, c.classname from chapter p INNER JOIN classe c ON p.classe = c.id";
+		}
+
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$chapters = $query->fetchAll();
+
+		return $chapters;
 	}
 
 }
