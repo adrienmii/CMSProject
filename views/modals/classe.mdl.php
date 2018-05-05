@@ -1,7 +1,3 @@
-<?php if(!empty($errors)) {
-	echo implode("<br>", $errors);
-} ?>
-
 <form method="<?php echo $config['config']['method']; ?>" action="<?php echo $config['config']['action']; ?>">
 
 	<?php foreach ($config['input'] as $name => $params): ?>
@@ -9,14 +5,14 @@
 
 			<div class="row">
 				<div class="col-xs-12">
-					<input type="<?php echo $params['type']; ?>" name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
+					<input type="<?php echo $params['type']; ?>" <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))?"value='".strtoupper($config['prefill'][$name])."'":""; ?> name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
 				</div>
 			</div>
 
 		<?php }elseif ($params['type'] == "select"){ ?>
 			<div class="row">
 				<div class="col-xs-12">
-					<select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>">
+					<select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" <?php echo ($params['multiple'])?" style='height:100px' multiple":""; ?>>
 						<?php foreach ($params['options'] as $value): ?>
 							<option value="<?php echo $value['id']; ?>"><?php echo $value['firstname']." ".$value['lastname']; ?></option>
 						<?php endforeach; ?>

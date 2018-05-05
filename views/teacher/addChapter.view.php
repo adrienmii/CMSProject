@@ -1,118 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="../../public/css/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
-		<link rel="stylesheet" href="../../ckeditor/samples/css/samples.css">
-	<link rel="stylesheet" href="../../ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>	
-	<div id="sideBar" class="hidden-xs hidden-sm visible-md">
-		<header>
-				<a href="dashboard.html"><img src="../../public/img/petitLogo.svg"></a>
+
+<main id="subscribeContainer">
+	<section class="col-md-12">
+		<header class="text-center">
+			Ajouter un chapitre
 		</header>
-		<main class="text-center">
-			<div id="userPicture"></div>
-			<div id="userName">VARVEROPOULOS<br>Valentin</div>
+		<main>
+			<?php $this->addModal("chapter", $config, $errors); ?>
+		
 		</main>
-		<nav id="navBar" class="teacherNav">
-			<ul>
-				<li><a href="dashboard.html">Dashboard</a></li>
-				<li class="active"><a href="myCourses.html">Mes cours</a></li>
-				<li><a href="addQCM.html">Evaluations</a></li>				
-				<li><a href="myClasses.html">Mes classes</a></li>
-				<li><a href="edt.html">Emploi du temps</a></li>
-				<li>Paramètres</li>
-			</ul>			
-		</nav>
-	</div>
-	<div id="pageContent">
-		<header>
-			<div id="topBar" class="col-md-12 hidden-xs  hidden-sm visible-md">
-				<div class="row">
-					<div class="col-md-6">
-						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
-					</div>
-					<div class="col-md-2 col-md-offset-4">
-						<input  id="inputSearch" type="text">
-					</div>
-				</div>											
-			</div>
-			<div id="topBarMobile" class="hidden-md">
-				<div class="row">
-					<div class="col-xs-2">
-						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
-					</div>
-					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="../../public/img/logoMobile.png"></div>
-					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
-				</div>	
-				<nav id="navBarMobile" class="menuMobileClose">
-					<ul>
-						<li><a href="dashboard.html">Dashboard</a></li>
-						<li><a href="myCourses.html">Mes cours</a></li>
-						<li><a href="addQCM.html">Evaluations</a></li>				
-						<li><a href="myClasses.html">Mes classes</a></li>
-						<li><a href="edt.html">Emploi du temps</a></li>
-						<li>Paramètres</li>
-					</ul>
-				</nav>
-				<div id="divInputSearchMobile" class="row divInputSearchMobileClose">
-					<div class="col-xs-12">
-						<input id="SearchMobile" type="text">
-					</div>					
-				</div>	
-			</div>
-			<div id="pathSection" class="col-md-12">
-				<p>Chapitres > Ajouter</p>
-			</div>			
-		</header>
-		<main id="addChapterContainer">		
-			<header>				
-			</header>
-			<main>
-				<form id="chapterForm" class="row">
-					<div class="col-xs-12 col-md-7 displayInlineBlock">
-						<label>Nom du chapitre</label>
-						<input placeholder="Nom du chapitre ici" type="text"/>						
-					</div>
-					<div class="col-xs-12 col-md-5 displayInlineBlock">
-						<label>Classe</label>
-						<select>
-						    <option value="3A IW1">3A IW1</option>						   
-				    	</select>
-					</div>
-					<div class="col-xs-12">
-						<textarea name="editor1" id="editor1">			               
-			            </textarea>         
-		            </div>	  
-				</form>
-			</main>				
-		</main>	
-	</div>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="../../ckeditor/ckeditor.js"></script>
-	<script src="../../ckeditor/samples/js/sample.js"></script>
-	<script>
-  		
-  		CKEDITOR.replace( 'editor1', {
-		    language: 'fr',
-		    height: '450px',		   
-		});
-		function toggleNav() {
-		   $("#sideBar").toggleClass("menuClose");
-		   $("#pageContent").toggleClass("menuClose");		   
-		}	
+	</section>
+</main>
 
-		function toggleMenuMobile() {
-		  	$("#navBarMobile").toggleClass("menuMobileClose");
-		}
-
-		function toggleSearchMobile() {
-		  	$("#divInputSearchMobile").toggleClass("divInputSearchMobileClose");
-		}			
-	</script>
-
-</body>
-</html>

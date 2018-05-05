@@ -5,7 +5,7 @@
 			Ajouter une classe
 		</header>
 		<main>
-			<?php $this->addModal("addclasse", $config, $errors); ?>
+			<?php $this->addModal("classe", $config, $errors); ?>
 		
 		</main>
 	</section>

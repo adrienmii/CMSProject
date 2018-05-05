@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>	
-	<div id="sideBar" class="hidden-xs visible-sm">
+	<div id="sideBar" class="hidden-xs visible-md">
 		<header>
 			<img src="<?php echo DIRNAME; ?>public/img/petitLogo.svg">
 		</header>
@@ -35,7 +35,7 @@
 
 					$menuTeacher = array(
 						DIRNAME."dashboard" => "Dashboard",
-						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Classe" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
@@ -44,7 +44,7 @@
 
 					$menuStudent = array(
 						DIRNAME."dashboard" => "Dashboard",
-						DIRNAME."Course/Mycourses" => "Mes cours",
+						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
 						DIRNAME."Timetable" => "Emploi du temps",
@@ -82,7 +82,7 @@
 	</div>
 	<div id="pageContent">
 		<header>
-			<div id="topBar" class="col-md-12 hidden-xs visible-sm">
+			<div id="topBar" class="col-md-12 hidden-xs visible-md">
 				<div class="row">
 					<div class="col-md-6">
 						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
@@ -92,12 +92,12 @@
 					</div>
 				</div>											
 			</div>
-			<div id="topBarMobile" class="hidden-sm">
+			<div id="topBarMobile" class="hidden-md">
 				<div class="row">
 					<div class="col-xs-2">
 						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
 					</div>
-					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"></div>
+					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="<?php echo DIRNAME; ?>public/img/logoMobile.png"></div>
 					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
 				</div>	
 				<nav id="navBarMobile" class="menuMobileClose">
@@ -181,81 +181,96 @@
 				?>				
 			</div>							
 		</main>	
+	</div>	
+	
+	<div id="notifications">
 	</div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-<script>
-		var ctx = document.getElementById("myChart");		
-		var myChart = new Chart(ctx, {
-		    type: 'bar',		    
-		    data: {
-		        labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
-		        datasets: [{
-		            label: 'nb eleves',
-		            data: [2, 4, 12, 6],
-		            backgroundColor: [
-		                'rgba(255, 99, 132, 0.5)',
-		                'rgba(54, 162, 235, 0.5)',
-		                'rgba(255, 206, 86, 0.5)',
-		                'rgba(75, 192, 192, 0.5)',		                
-		            ],
-		             backgroundColor: [
-		                '#2A3F54',		                
-		                '#1ABB9C',
-		                '#172D44',
-		                '#70D4C1',		                
-		            ],		 
-		            borderWidth: 1
-		        }]
-		    },
-		    options: {
-		        scales: {
-		            yAxes: [{
-		                ticks: {
-		                    beginAtZero:true
-		                }
-		            }]
-		        },
-		        title: {
-		        	display: true,
-		        	text:'Résultats Contrôle continu'
-		        },
-		        legend: {
-		        	display: true,
-		        	position: "bottom"
-		        }
-		    }
-		});
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+	<script>		
+		CKEDITOR.replace( 'editor1', {
+		    language: 'fr',
+		    height: '450px',		   
+		});	
+	</script>
+	<script>
+			var ctx = document.getElementById("myChart");		
+			var myChart = new Chart(ctx, {
+			    type: 'bar',		    
+			    data: {
+			        labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
+			        datasets: [{
+			            label: 'nb eleves',
+			            data: [2, 4, 12, 6],
+			            backgroundColor: [
+			                'rgba(255, 99, 132, 0.5)',
+			                'rgba(54, 162, 235, 0.5)',
+			                'rgba(255, 206, 86, 0.5)',
+			                'rgba(75, 192, 192, 0.5)',		                
+			            ],
+			             backgroundColor: [
+			                '#2A3F54',		                
+			                '#1ABB9C',
+			                '#172D44',
+			                '#70D4C1',		                
+			            ],		 
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+			        },
+			        title: {
+			        	display: true,
+			        	text:'Résultats Contrôle continu'
+			        },
+			        legend: {
+			        	display: true,
+			        	position: "bottom"
+			        }
+			    }
+			});
 
-		ctx = document.getElementById("myChart2");
-		var myChart2 = new Chart(ctx, {
-		    type: 'pie',		    
-		    data: {
-		        labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
-		        datasets: [{
-		            data: [2, 4, 12, 6],
-		            backgroundColor: [
-		                '#2A3F54',
-		                '#172D44',
-		                '#1ABB9C',
-		                '#70D4C1',		                
-		            ],		            
-		        }]
-		    },
-		    options: {		       
-		        title: {
-		        	display: true,
-		        	text:'Résultats Contrôle continu'
-		        },
-		        legend: {
-		        	display: true,
-		        	position: "bottom"
-		        }
-		    }
-		});
-</script>
+			ctx = document.getElementById("myChart2");
+			var myChart2 = new Chart(ctx, {
+			    type: 'pie',		    
+			    data: {
+			        labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
+			        datasets: [{
+			            data: [2, 4, 12, 6],
+			            backgroundColor: [
+			                '#2A3F54',
+			                '#172D44',
+			                '#1ABB9C',
+			                '#70D4C1',		                
+			            ],		            
+			        }]
+			    },
+			    options: {		       
+			        title: {
+			        	display: true,
+			        	text:'Résultats Contrôle continu'
+			        },
+			        legend: {
+			        	display: true,
+			        	position: "bottom"
+			        }
+			    }
+			});
+	</script>
+	<?php if (!empty($_SESSION['ntf'])) {
+		echo $_SESSION['ntf'];
+		$_SESSION['ntf'] = null;
+	}
+	?>
 
 </body>
 </html>

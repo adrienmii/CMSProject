@@ -28,7 +28,7 @@ class BaseSQL {
 
 			unset($this->columns['id']);
 
-			$this->columns = array_filter($this->columns);
+			$this->columns = array_filter($this->columns, 'strlen');
 
 
 			$set = null;
@@ -58,6 +58,8 @@ class BaseSQL {
 				");
 
 			$query->execute($this->columns);
+
+			return $this->pdo->lastInsertId();
 		}
 
 	}
@@ -120,9 +122,52 @@ class BaseSQL {
 
     }
 
+    public function classeInfoById($id)
+    {
+        $sql = "SELECT * FROM classe WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $classe = $query->fetch();
+
+        return $classe;
+
+    }
+
+    public function chapterInfoById($id)
+    {
+        $sql = "SELECT * FROM chapter WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $c = $query->fetch();
+
+        return $c;
+
+    }
+
+    public function getAllById($table, $id)
+    {
+        $sql = "SELECT * FROM ".$table." WHERE id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $g = $query->fetch();
+
+        return $g;
+    }
+
+
+
     public function getAllUsers()
     {
-        $sql = "SELECT * FROM user WHERE status=1";
+        $sql = "SELECT * FROM user WHERE status = 1";
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
@@ -134,17 +179,26 @@ class BaseSQL {
 
     }
 
-	public function teacherWithoutClasse() {
-		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 AND id NOT IN (SELECT teacher FROM classe)";
+	public function getTeachersAndAdmin() {
+		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 OR rank = 1 AND status = 1";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
-		$users = $query->fetchAll();
+		$t = $query->fetchAll();
 
-		return $users;
+		return $t;
+	}
+
+	public function studentsWithoutClasse() {
+		$sql = "SELECT id, firstname, lastname FROM user WHERE rank = 3 AND status = 1 AND classe IS NULL OR classe = 0";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$s = $query->fetchAll();
+
+		return $s;
 	}
 
 	public function getAllClasses() {
-		$sql = "SELECT * FROM class";
+		$sql = "SELECT * FROM classe";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$classes = $query->fetchAll();
@@ -152,13 +206,97 @@ class BaseSQL {
 		return $classes; 
 	}
 
+	public function getStudentByClasseId($id) {
+		$sql = "SELECT * FROM user WHERE classe = ".$id." AND rank = 3 AND status = 1";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$classe = $query->fetchAll();
+
+		return $classe; 
+	}
+
 	public function getCountClasse($idClass) {
-		$sql = "SELECT count(*) as count FROM user WHERE classe = ".$idClass;
+		$sql = "SELECT count(*) as count FROM user WHERE classe = ".$idClass." AND status = 1";
 		try { $query = $this->pdo->query($sql); }
 		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
 		$count = $query->fetch();
 
-		return $count; 
+		return $count['count']; 
+	}
+
+	public function getCountUsers() {
+		$sql = "SELECT count(*) as count FROM user WHERE status = 1";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$count = $query->fetch();
+
+		return $count['count']; 
+	}
+
+	public function getCountTeachers($id) {
+		$sql = "SELECT count(*) as count FROM classeteacher c INNER JOIN user u ON u.id = c.teacher WHERE status = 1 AND c.classe = ".$id;
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$count = $query->fetch();
+
+		return $count['count']; 
+	}
+
+	public function getClasseTeacher($id) {
+		$sql = "SELECT * FROM classeteacher c INNER JOIN user u ON u.id = c.teacher WHERE status = 1 AND c.classe = ".$id;
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$t = $query->fetchAll();
+
+		return $t; 
+	}
+
+	public function teachersExceptClasseId($id) {
+		$sql = "SELECT * FROM user WHERE id NOT IN (SELECT c.teacher FROM user u INNER JOIN classeteacher c ON u.id = c.teacher WHERE c.classe = '".$id."' AND (rank = 1 OR rank = 2)) AND (rank = 1 OR rank = 2)";
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$t = $query->fetchAll();
+
+		return $t; 
+	}
+
+	public function deleteClasseCascadeTeachers($id) {
+		$query = $this->pdo->prepare("
+			DELETE FROM classeteacher WHERE classe = ".$id
+		);
+
+		$query->execute();
+	}
+
+	public function removeTeacher($id_teach, $id_classe) {
+		$query = $this->pdo->prepare("
+			DELETE FROM classeteacher WHERE teacher = ".$id_teach." AND classe = ".$id_classe
+		);
+
+		$query->execute();
+	}
+
+	public function deleteClasseCascadeStudents($id) {
+		$query = $this->pdo->prepare("
+			UPDATE user SET classe = 0 WHERE classe = ".$id
+		);
+
+		$query->execute();
+	}
+
+	public function getChapters($option = null) {
+		if (is_numeric($option)) {
+			$sql = "SELECT p.id, label, description, c.classe, s.classname from chapter p INNER JOIN classeteacher c ON p.classe = c.classe INNER JOIN classe s ON c.classe = s.id where c.teacher = ".$option;
+		 
+		} elseif ($option == 'all') {
+			$sql = "SELECT p.id, label, description, p.classe, c.classname from chapter p INNER JOIN classe c ON p.classe = c.id";
+		}
+
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$chapters = $query->fetchAll();
+
+		return $chapters;
 	}
 
 }

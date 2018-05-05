@@ -3,7 +3,6 @@
 class Classe extends BaseSQL {
 	protected $id = null;
 	protected $classname;
-	protected $teacher;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -20,10 +19,6 @@ class Classe extends BaseSQL {
 		$this->classname = $classname;
 	}
 
-	public function setTeacher($teacher) {
-		$this->teacher = $teacher;
-	}
-
 	public function getId() {
 		return $this->id;
 	}
@@ -32,20 +27,52 @@ class Classe extends BaseSQL {
 		return $this->classname;
 	}
 
-	public function getTeacher() {
-		return $this->teacher;
-	}
-
 	public function generateForm() {
 		$BaseSQL = new BaseSQL();
-        $options = $BaseSQL->teacherWithoutClasse();
+        $options = $BaseSQL->getTeachersAndAdmin();
 		return [
 					"config" => ["method"=> "POST", "action" => ""],
 					"input" => [
 						"classname" => ["type" => "text", "placeholder" => "Nom de la classe", "required" => true, "id" => "inputClassName"],
-						"teacher" => ["type" => "select", "options" => $options, "required" => true, "id" => "selectTeacher"]
+						"teachers[]" => ["type" => "select", "options" => $options, "required" => true, "multiple" => true, "id" => "selectTeachers"]
 					],
 					"submit" => "Créer"
+		];
+	}
+
+	public function generateFormEdit() {
+		$BaseSQL = new BaseSQL();
+        $options = $BaseSQL->getTeachersAndAdmin();
+		return [
+					"config" => ["method"=> "POST", "action" => ""],
+					"input" => [
+						"classname" => ["type" => "text", "placeholder" => "Nom de la classe", "required" => true, "id" => "inputClassName"]
+					],
+					"submit" => "Modifier"
+		];
+	}
+
+	public function generateFormStudents() {
+		$BaseSQL = new BaseSQL();
+        $options = $BaseSQL->studentsWithoutClasse();
+		return [
+					"config" => ["method"=> "POST", "action" => ""],
+					"input" => [
+						"students[]" => ["type" => "select", "options" => $options, "required" => true, "multiple" => true, "id" => "selectStudents"]
+					],
+					"submit" => "Valider"
+		];
+	}
+
+	public function generateFormTeachers($id) {
+		$BaseSQL = new BaseSQL();
+        $options = $BaseSQL->teachersExceptClasseId($id);
+		return [
+					"config" => ["method"=> "POST", "action" => ""],
+					"input" => [
+						"teachers[]" => ["type" => "select", "options" => $options, "required" => true, "multiple" => true, "id" => "selectTeachers"]
+					],
+					"submit" => "Valider"
 		];
 	}
 

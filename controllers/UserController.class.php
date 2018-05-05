@@ -3,6 +3,7 @@
 class UserController {
 	public function indexAction($params) {
 		echo "Action par défaut d'un User";
+        $notify = new Notify("L'utilisateur a bien été ajouté, une notification de création de compte lui a été envoyé par mail", "success");
 	}
 
 	public function addAction($params) {
@@ -22,6 +23,7 @@ class UserController {
                 $user->setLastname($params['POST']['name']);
                 $user->setEmail($params['POST']['email']);
                 $user->setRank($params['POST']['rank']);
+                $user->setStatus(1);
                 $user->setToken();
                 $pwd = strtolower(substr($params['POST']['firstname'], 0, 1).substr($params['POST']['name'], 0, 4));
                 $user->setPwd($pwd);
@@ -30,13 +32,17 @@ class UserController {
                 // envoi du mail au nouveau inscrit avec ses identifiants de connexion
                 $mail = new Mail($user->getEmail(), "Vos identifiants de connexion", "Bonjour #PRENOM#,<br>Un compte vous a été crée sur EDULAB.<br><br>Voici vos identifiants :<br><br>E-mail : #EMAIL#<br>Mot de passe : #MOTDEPASSE# (Pensez à le modifier lors de votre première connexion !)<br><br>Cordialement,<br>EDULAB.", ["prenom" => $user->getFirstname(), "email" => $user->getEmail(), "motdepasse" => $pwd]);
                 $mail->send();
+                $notify = new Notify("L'utilisateur a bien été ajouté, une notification de création de compte lui a été envoyé par mail","success");
+
+                header('Location: '.DIRNAME.'user/list');
+                exit();
+            }else{
+                $notify = new Notify($errors,"danger");
             }
 
         }
 
-
-
-		$v = new View("subscribe");
+		$v = new View("addUser");
         $v->assign("config", $form);
         $v->assign("errors", $errors);
 
@@ -45,9 +51,11 @@ class UserController {
 	public function listAction($params){
         $BSQL = new BaseSQL();
         $users = $BSQL->getAllUsers();
+        $count = $BSQL->getCountUsers();
 
         $v = new View("listUser");
         $v->assign("users", $users);
+        $v->assign("count", $count);
     }
 
 	public function editAction($params) {
@@ -74,18 +82,24 @@ class UserController {
                 $user->setRank($params['POST']['rank']);
                 $user->setPwd((!empty($params['POST']['pwd']) ? $params['POST']['pwd'] : $form['prefill']['pwd']));
                 $user->save();
+
+                $notify = new Notify("L'utilisateur a bien été modifié","success");
+                header('Location: '.DIRNAME.'user/list');
+                exit();
+            }else{
+                $notify = new Notify($errors,"danger");
             }
 
         }
 
-        $v = new View("edit");
+        $v = new View("editUser");
         $v->assign("config", $form);
         $v->assign("errors", $errors);
 	}
 
 	public function removeAction($params) {
         $user = new User($params['URL'][0]);
-        $user->setStatus(2);
+        $user->setStatus(0);
         $user->save();
 
         header('Location: '.DIRNAME.'user/list');
