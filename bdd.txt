@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mar. 15 mai 2018 à 10:03
+-- Généré le :  mar. 15 mai 2018 à 10:47
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -13,6 +13,70 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `EDULAB`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `chapter`
+--
+
+CREATE TABLE `chapter` (
+  `id` int(11) NOT NULL,
+  `label` varchar(120) NOT NULL,
+  `description` varchar(120) DEFAULT NULL,
+  `classe` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `chapter`
+--
+
+INSERT INTO `chapter` (`id`, `label`, `description`, `classe`) VALUES
+(1, 'Mathématiques', 'Cours de maths', 13),
+(2, 'Python', 'desc du chapitre python', 12),
+(5, 'BDD', '', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `classe`
+--
+
+CREATE TABLE `classe` (
+  `id` int(10) NOT NULL,
+  `classname` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `classe`
+--
+
+INSERT INTO `classe` (`id`, `classname`) VALUES
+(12, 'ADMIN'),
+(13, 'MCSI5'),
+(14, 'TEST');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `classeteacher`
+--
+
+CREATE TABLE `classeteacher` (
+  `id` int(100) NOT NULL,
+  `classe` int(100) NOT NULL,
+  `teacher` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `classeteacher`
+--
+
+INSERT INTO `classeteacher` (`id`, `classe`, `teacher`) VALUES
+(3, 12, 2),
+(6, 14, 11),
+(8, 13, 8),
+(9, 13, 9);
 
 -- --------------------------------------------------------
 
@@ -41,7 +105,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
 (2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$jgIQMpKyZG9tSs.boSj5He0TPq576XbH7rPOsYyzeE50c5tyOUlsK', 'c3be95df2676be2', 1, 1, NULL, '2018-04-23 14:41:56', '2018-04-26 12:43:06', 0),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '1fe70ac82e5bb3c', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-01 21:03:02', 0),
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'f2b8ac7090af92e', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-15 08:47:15', 0),
 (7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$sRnco4uGAj0mhtZ5OSaGv.HO4CQRfc0HhFbUhF61gCFxkUWBn6Imi', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-04-26 12:26:13', 0),
 (8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'ce5c6372b64b875', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-01 21:35:47', 0),
 (9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:56', 0),
@@ -62,6 +126,25 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 --
 
 --
+-- Index pour la table `chapter`
+--
+ALTER TABLE `chapter`
+  ADD KEY `id` (`id`);
+
+--
+-- Index pour la table `classe`
+--
+ALTER TABLE `classe`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+
+--
+-- Index pour la table `classeteacher`
+--
+ALTER TABLE `classeteacher`
+  ADD KEY `id` (`id`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
@@ -72,6 +155,21 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
+--
+-- AUTO_INCREMENT pour la table `chapter`
+--
+ALTER TABLE `chapter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT pour la table `classe`
+--
+ALTER TABLE `classe`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT pour la table `classeteacher`
+--
+ALTER TABLE `classeteacher`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
