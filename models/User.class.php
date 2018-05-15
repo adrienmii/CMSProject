@@ -10,6 +10,7 @@ class User extends BaseSQL {
 	protected $rank;
 	protected $status;
 	protected $classe;
+	protected $pwdChanged;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -66,6 +67,11 @@ class User extends BaseSQL {
         $this->rank = $rank;
     }
 
+    public function setPwdChanged($pwdChanged)
+    {
+        $this->pwdChanged = $pwdChanged;
+    }
+
     public function getStatus()
     {
         return $this->status;
@@ -92,6 +98,10 @@ class User extends BaseSQL {
 
 	public function getFirstname() {
 		return $this->firstname;
+	}
+
+	public function getPwdChanged() {
+		return $this->pwdChanged;
 	}
 
 	public function generateLoginForm() {
