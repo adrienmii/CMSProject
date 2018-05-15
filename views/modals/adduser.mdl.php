@@ -6,7 +6,14 @@
 
 			
 				<div class="col-sm-6 col-sm-offset-3">
-					<input type="<?php echo $params['type']; ?>" name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
+					<input
+						type="<?php echo $params['type']; ?>"
+						name="<?php echo $name; ?>"
+						placeholder="<?php echo $params['placeholder']; ?>"
+						id="<?php echo $params['id']; ?>"
+						<?php echo (isset($params['required']))?'required="required"':''; ?>
+						
+					>
 				</div>
 			
 

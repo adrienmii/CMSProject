@@ -5,7 +5,20 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <input type="<?php echo $params['type']; ?>" <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))?"value='".ucfirst($config['prefill'][$name])."'":""; ?> name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
+                    <input
+                        <?php
+                            if(empty($config['post'][$name])){
+                                echo (!empty($config['prefill']) && !empty($config['prefill'][$name])?"value='".ucfirst($config['prefill'][$name])."'":"");
+                            }else{
+                                echo 'value="'. $config['post'][$name].'"';
+                            }
+                        ?>
+                        type="<?php echo $params['type']; ?>"
+                        name="<?php echo $name; ?>"
+                        placeholder="<?php echo $params['placeholder']; ?>"
+                        id="<?php echo $params['id']; ?>"
+                        <?php echo (isset($params['required']))?'required="required"':''; ?>
+                    >
                 </div>
             </div>
 
@@ -18,7 +31,7 @@
                             <option disabled>Vous devez créer un chapitre avant d'écrire un cours</option>
                         <?php }else{ ?>
                         <?php foreach ($params['options'] as $value): ?>
-                            <option value="<?php echo $value['id']; ?>" <?php if (!empty($config['prefill'][$name]) && $config['prefill'][$name] == $value['id']) { echo 'selected'; }?>> <?php echo $value['label']; ?></option>
+                            <option value="<?php echo $value['id']; ?>" <?php if(empty($config['post'][$name])){if (!empty($config['prefill'][$name]) && $config['prefill'][$name] == $value['id']) { echo 'selected'; }}else{if($config['post'][$name] == $value['id']){echo "selected";};}?>> <?php echo $value['label']; ?></option>
                         <?php endforeach; }?>
                     </select>
                 </div>
@@ -32,7 +45,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <textarea name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
-                    <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))? ucfirst($config['prefill'][$name]) : ""; ?>
+                    <?php if(empty($config['post'][$name])){echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))? $config['prefill'][$name] : "";}else{echo $config['post'][$name];} ?>
                 </textarea>
             </div>
         </div>
