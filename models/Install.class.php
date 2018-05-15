@@ -6,6 +6,7 @@ class Install extends BaseSQL {
     public function generateForm() {
         return [
             "config" => ["method"=> "POST", "action" => ""],
+            "titles" => ["head" => "Identifiants de la base de données", "sub" => "Veuillez saisir ci-dessous les informations de connexion à votre base de données"],
             "input" => [
                 "dbname" => ["type" => "text", "label" => "Nom de la base", "required" => true, "desc" => "Le nom de la base de données sur laquelle vous souhaitez installer Edulab.®","id" => "dbName", "example" => "edulab"],
                 "user" => ["type" => "text", "label" => "Utilisateur", "required" => true, "desc" => "Le nom d'utilisateur de votre base de données","id" => "user", "example" => "root"],

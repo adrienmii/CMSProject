@@ -5,16 +5,23 @@ class InstallController {
 
 	public function indexAction($params) {		
 
+		// si déjà configuré
+		if (DBBONFIGURED) {
+			header('Location: '.DIRNAME.'login');
+			exit;
+		}	
+
 		$v = new View("installer");
 		$v->assign("step", 'general');
 		
 	}
 
 	public function dbAction($params) {	
-
-		// if (file_exists('conf.inc.php')) {
-		// 	header('Location: '.DIRNAME.'install/admin');
-		// }	
+		// si déjà configuré
+		if (DBBONFIGURED) {
+			header('Location: '.DIRNAME.'install/admin');
+			exit;
+		}	
 
 		$install = new Install();
         $form = $install->generateForm();
@@ -31,6 +38,8 @@ class InstallController {
             	if ($BSQL->createDatabase($params['POST']['host'],$params['POST']['user'],$params['POST']['pwd'],$params['POST']['port'], $params['POST']['dbname'])) {
 
             		$notify = new Notify("La db a été crée","success");
+            		header('Location: '.DIRNAME.'install/admin');
+            		exit;
 
             	} else {
             		$notify = new Notify("Impossible de créer la base, vérifiez votre saisie","danger");
@@ -48,6 +57,11 @@ class InstallController {
 	}
 
 	public function adminAction($params) {	
+		$BSQL = new BaseSQL();
+
+		if ($BSQL->alreadyAdminExists() >= 1) {
+			header('Location: '.DIRNAME.'login');
+		}
 
 		$admin = new User();
         $form = $admin->generateInstallForm();
@@ -66,10 +80,12 @@ class InstallController {
                 $admin->setStatus(1);
                 $admin->setToken();
                 $admin->setPwd($params['POST']['pwd']);
-                $admin->setPwdChanged(0);
+                $admin->setPwdChanged(1);
                 $admin->save();
 
             	$notify = new Notify("L'admin a été crée","success");
+            	header('Location: '.DIRNAME.'login');
+            	exit;
             	     
             }else{
                 $notify = new Notify($errors,"danger");

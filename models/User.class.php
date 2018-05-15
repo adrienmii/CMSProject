@@ -10,7 +10,7 @@ class User extends BaseSQL {
 	protected $rank;
 	protected $status;
 	protected $classe;
-	protected $pwdChanged;
+	protected $pwd_changed;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -67,9 +67,9 @@ class User extends BaseSQL {
         $this->rank = $rank;
     }
 
-    public function setPwdChanged($pwdChanged)
+    public function setPwdChanged($pwd_changed)
     {
-        $this->pwdChanged = $pwdChanged;
+        $this->pwd_changed = $pwd_changed;
     }
 
     public function getStatus()
@@ -101,7 +101,7 @@ class User extends BaseSQL {
 	}
 
 	public function getPwdChanged() {
-		return $this->pwdChanged;
+		return $this->pwd_changed;
 	}
 
 	public function generateLoginForm() {
@@ -133,16 +133,17 @@ class User extends BaseSQL {
     public function generateInstallForm() {
         return [
             "config" => ["method"=> "POST", "action" => ""],
+            "titles" => ["head" => "Création du premier utilisateur", "sub" => "Utiliez le formulaire ci-dessous pour vous créer un compte administrateur"],
             "input" => [
 
                 "lastname" => ["type" => "text", "label" => "Nom", "required" => true, "id" => "inputLastname", "example" => "", "desc" => "Le nom de l'admin"],
                 "firstname" => ["type" => "text", "label" => "Prénom", "required" => true, "id" => "inputFirstname", "example" => "", "desc" => "...son prénom"],
 
                 "email" => ["type" => "text", "label" => "E-mail", "required" => true, "id" => "inputEmail", "example" => "", "desc" => "Une adresse e-mail valide"],
-                "pwd" => ["type" => "password", "label" => "Mot de passe", "required" => true, "id" => "inputFirstname", "example" => "", "desc" => "Un mot de passe fort (1 majuscule, 1 minuscule, 1 chiffre)"]
+                "pwd" => ["type" => "password", "label" => "Mot de passe", "required" => true, "id" => "inputFirstname", "example" => "", "desc" => "Un mot de passe fort (1 majuscule, 1 minuscule, 1 chiffre et plus de 5 caractères)"]
                
             ],
-            "submit" => "Enregistrer"
+            "submit" => "Créer"
         ];
     }
 
@@ -156,6 +157,17 @@ class User extends BaseSQL {
                 "pwd" => ["type" => "password", "placeholder" => "Modifier le mot de passe", "id" => "inputPwdEdit"],
                 "lastname" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
                 "firstname" => ["type" => "text", "placeholder" => "Prénom", "required" => true, "id" => "inputFirstname"]                
+            ],
+            "submit" => "Enregistrer"
+        ];
+    }
+
+    public function generateNewPwdUserForm() {
+        return [
+            "config" => ["method"=> "POST", "action" => ""],
+            "input" => [
+                "pwd" => ["type" => "password", "placeholder" => "Saisir votre mot de passe", "id" => "inputNewPwd"],    
+                "pwd2" => ["type" => "password", "placeholder" => "Confirmez votre mot de passe", "id" => "inputNewPwd2"]                           
             ],
             "submit" => "Enregistrer"
         ];

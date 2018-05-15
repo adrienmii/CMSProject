@@ -34,19 +34,12 @@
 			</div>
 			</header>
 			<?php if ($step == 'db' || $step == 'admin') { ?>
-			<main>
-				<header>
-					<div class="row">
-						<div id="formTitle" class="col-xs-12">Identifiants de la base de données</div>
-						<div id="formDesc" class="col-xs-12">Veuillez saisir ci-dessous les informations de connexion à votre base de données.</div>
-					</div>
-				</header>
-				<main>
+			
 					<?php $this->addModal("install", $config, $errors); ?>	
 					
-				</main>
-			</main>	
+			
 		<?php } else { ?>
+			<?php if (!DBBONFIGURED) { ?>
 			<main>
 				<header>
 					<div class="row">
@@ -62,6 +55,18 @@
 					</div>
 				</div>
 			</main>
+			<?php } else { ?>
+				<main>
+				<header>
+					<div class="row">
+						<div id="formTitle" class="col-xs-12">Informations générales</div>
+						<div id="formDesc" class="col-xs-12">Vous avez déjà installé Edulab.®</div>
+					</div>
+				</header>
+			</main>
+			
+			<?php } ?>
+
 		<?php } ?>
 		</section>
 	</main>		

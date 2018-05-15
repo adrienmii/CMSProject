@@ -245,6 +245,15 @@ hr.timeLeft {
 	  margin: 0 auto;
 }
 
+#inputNewPwd,
+#inputNewPwd2{
+	font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+    color: #2A3F54;
+    margin: 20px 0px;
+}
+
 @media screen and (max-width: 1200px){
 	#blockHomeWork{
 		margin-top: 20px;

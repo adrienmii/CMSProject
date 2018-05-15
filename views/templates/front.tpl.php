@@ -5,6 +5,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>	
+
 </head>
 <body>	
 	<div id="sideBar" class="hidden-xs visible-md">
@@ -17,11 +24,7 @@
 		</main>
 		<nav id="navBar">
 			<ul>
-
-				<?php 
-
-					$BSQL = new BaseSQL(); 
-					$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
+				<?php  
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
@@ -102,10 +105,7 @@
 				</div>	
 				<nav id="navBarMobile" class="menuMobileClose">
 					<ul>
-						<?php 
-
-					$BSQL = new BaseSQL(); 
-					$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
+					<?php 
 
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
@@ -183,19 +183,9 @@
 		</main>	
 	</div>	
 	
+
 	<div id="notifications">
 	</div>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-	<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
-	<script>		
-		CKEDITOR.replace( 'editor1', {
-		    language: 'fr',
-		    height: '450px',		   
-		});	
-	</script>
 	<script>
 			var ctx = document.getElementById("myChart");		
 			var myChart = new Chart(ctx, {

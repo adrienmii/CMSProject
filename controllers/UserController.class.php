@@ -27,6 +27,7 @@ class UserController {
                 $user->setToken();
                 $pwd = strtolower(substr($params['POST']['firstname'], 0, 1).substr($params['POST']['name'], 0, 4));
                 $user->setPwd($pwd);
+                $user->setPwdChanged(0);
                 $user->save();
 
                 // envoi du mail au nouveau inscrit avec ses identifiants de connexion

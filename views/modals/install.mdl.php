@@ -1,3 +1,12 @@
+<main>
+				<header>
+					<div class="row">
+						<div id="formTitle" class="col-xs-12"><?php echo $config['titles']['head']; ?></div>
+						<div id="formDesc" class="col-xs-12"><?php echo $config['titles']['sub']; ?></div>
+					</div>
+				</header>
+				<main>
+
 <form method="<?php echo $config['config']['method']; ?>" action="<?php echo $config['config']['action']; ?>">
 
 	<?php foreach ($config['input'] as $name => $params): ?>
@@ -27,3 +36,5 @@
 
 </form>
 
+</main>
+</main>
