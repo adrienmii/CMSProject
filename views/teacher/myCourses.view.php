@@ -12,7 +12,7 @@
                             <div class="chapterBlock">
 
                                 <div class="teacherClassName"><?php echo ucfirst($course['title'])." (".$course['label'].")"; ?></div>
-                                <a href="<?php echo DIRNAME.'course/delete/'.$course['course']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')">Supprimer</a>
+                                <a href="<?php echo DIRNAME.'course/delete/'.$course['course']; ?>" onclick="return confirm('Souhaitez vous supprimer ce cours ?')">Supprimer</a>
                                 <a href="<?php echo DIRNAME.'course/edit/'.$course['course']; ?>" >Modifier</a>
                                 <a href="<?php echo DIRNAME.'course/view/'.$course['course']; ?>" >Afficher</a>
 

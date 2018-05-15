@@ -141,33 +141,36 @@ class Validator {
     public static function validateInstall($form, $params)
     {
         $errorMsg = [];
-
         $BSQL = new BaseSQL();
+
         foreach ($form['input'] as $name => $config) {
 
             if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {
                 $errorMsg[] = "Le champ " . $name . " est manquant";
             }
 
-
             if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 140)) {
                 $errorMsg[] = "Le champ " . $name . " est trop long";
             }
-        
 
         }
+
+        return $errorMsg;
 
     }
 
     public static function validateCourse($form, $params)
     {
-        /*$errorMsg = [];
+        $errorMsg = [];
+        $BSQL = new BaseSQL();
 
+        if(empty($params['content'])){
+            $errorMsg[] = "Le contenu du cours est manquant";
+        }
+        foreach ($form['input'] as $name => $config) {
 
-        return $errorMsg;
-
-            if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 120)) {
-                $errorMsg[] = "Le champ " . $name . " est trop long (120 caractères maximum)";
+            if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant";
             }
 
             if ($config['type'] == "select" && !array_key_exists(trim($name,"[]"),$params)){
@@ -176,8 +179,7 @@ class Validator {
 
         }
 
-        return $errorMsg;*/
-
+        return $errorMsg;
     }
 
     public static function checkPwd($pwd){
