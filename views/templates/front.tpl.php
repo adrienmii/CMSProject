@@ -11,6 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 	<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>	
+
 </head>
 <body>	
 	<div id="sideBar" class="hidden-xs visible-md">
@@ -185,7 +186,6 @@
 
 	<div id="notifications">
 	</div>
-	
 	<script>
 			var ctx = document.getElementById("myChart");		
 			var myChart = new Chart(ctx, {
