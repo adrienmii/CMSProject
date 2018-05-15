@@ -9,7 +9,7 @@
                     <?php foreach ($courses as $course) { ?>
 
                         <article class="col-xs-6 col-md-3">
-                            <div class="chapterBlock">
+                            <div class="block">
 
                                 <div class="teacherClassName"><?php echo ucfirst($course['title'])." (".$course['label'].")"; ?></div>
                                 <a href="<?php echo DIRNAME.'course/delete/'.$course['course']; ?>" onclick="return confirm('Souhaitez vous supprimer ce cours ?')">Supprimer</a>

@@ -9,16 +9,29 @@
 				<div class="row">
 					<?php foreach ($chapters as $chapter) { ?>
 
-						<article class="col-xs-6 col-md-3">
-							<div class="chapterBlock">
-		
-									<div class="teacherClassName"><?php echo ucfirst($chapter['label'])." (".$chapter['classname'].")"; ?></div>
-									<div class="teacherClassChapter">0 cours</div>
-									<a href="<?php echo DIRNAME.'chapter/delete/'.$chapter['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')">Supprimer</a>
-									<a href="<?php echo DIRNAME.'chapter/edit/'.$chapter['id']; ?>" >Modifier</a>
 						
+
+						<div class="col-xs-12 col-sm-6 col-lg-4">
+							<div class="classBlock">	
+								<div class="row">
+									<div class="col-xs-7 className">
+										<?php echo ucfirst($chapter['label'])." (".$chapter['classname'].")"; ?>
+									</div>
+									<div class="actionCol text-right col-xs-5 ">
+										<a class="actionEditWhite" href="<?php echo DIRNAME.'chapter/edit/'.$chapter['id']; ?>"></a>
+										<a class="actionDeleteWhite" href="<?php echo DIRNAME.'chapter/delete/'.$chapter['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
+									</div>
+									<div class="col-xs-10">
+										0 cours 
+									</div>
+									<div class="addStudents col-xs-12">
+										<div id="addStudentsIcon"></div>
+										<div class="addStudentsText">add chapter</div>
+										<a href="#" class="actionAdd">+</a>
+									</div>							
+								</div>							
 							</div>
-						</article>	
+						</div>
 
 					<?php } ?>
 					

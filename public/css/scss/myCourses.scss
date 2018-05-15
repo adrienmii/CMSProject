@@ -41,7 +41,7 @@
 	padding-bottom: 5px;
 }
 
-.chapterBlock,
+.block,
 #attachementsList article div{	
 	box-shadow: $block_shadow;
 	width: 100%;
@@ -50,7 +50,7 @@
 	color: #000;
 }
 
-.chapterBlock,.attachementsBlock{
+.block,.attachementsBlock{
 	padding: 10px 15px;
 	min-height: 80px;
 }

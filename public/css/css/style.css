@@ -1175,7 +1175,7 @@ hr.timeLeft {
   padding-top: 5px;
   padding-bottom: 5px; }
 
-.chapterBlock,
+.block,
 #attachementsList article div {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -1183,7 +1183,7 @@ hr.timeLeft {
   background: #F4F4F4;
   color: #000; }
 
-.chapterBlock, .attachementsBlock {
+.block, .attachementsBlock {
   padding: 10px 15px;
   min-height: 80px; }
 
