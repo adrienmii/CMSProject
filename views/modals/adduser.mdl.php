@@ -12,7 +12,7 @@
 						placeholder="<?php echo $params['placeholder']; ?>"
 						id="<?php echo $params['id']; ?>"
 						<?php echo (isset($params['required']))?'required="required"':''; ?>
-						
+						<?php echo (!empty($config['post'][$name]) ? $config['post'][$name] : ""); ?>
 					>
 				</div>
 			
@@ -20,7 +20,7 @@
 		<?php }elseif ($params['type'] == "select"){ ?>
 			
 				<div class="col-xs-12">					
-					<input name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" value="1" type="text" hidden/>
+					<input name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" value="<?php echo (!empty($config['post'][$name]) ? $config['post'][$name] : "1"); ?>" type="text" hidden/>
 				</div>
 				<div class="col-xs-10 col-xs-offset-1 col-sm-4 offset-sm-reset text-center profileChoiceContainer">
 					<a href="#" class="active"  onclick="toggleProfile(this)" id="profileAdmin">Admin</a>
