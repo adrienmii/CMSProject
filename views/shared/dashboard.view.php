@@ -1,6 +1,6 @@
 <?php 
 	$BSQL = new BaseSQL(); 
-	$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
+	$userinfo = $BSQL->userInfoByToken();
 ?>
 
 <main class="col-xs-12">		
@@ -137,5 +137,20 @@
 		</div>				
 	</div>
 </main>	
-</body>
-</html>
+<?php
+
+		if($userinfo['pwd_changed'] == 0){			
+			echo("<script>showModal('myModal')</script>");
+		}
+
+	?>
+
+	<div id="myModal" class="modal">
+		<span onclick="hideModal()">&times;</span>
+		<div class="modalHeader">			
+			Rénitialisez votre mot de passe !
+		</div>		
+		<div class="modalBody">
+			<?php $this->addModal("newPwdUser", $config, $errors); ?>			
+		</div>
+	</div>

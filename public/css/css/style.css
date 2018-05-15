@@ -2190,4 +2190,53 @@ td, th {
   visibility: visible;
   opacity: 1; }
 
+.modal {
+  background-color: white;
+  width: 800px;
+  height: auto;
+  min-height: 200px;
+  top: 200%;
+  position: fixed;
+  transition: top 1s;
+  border-radius: 0px;
+  border: 1px solid #C4C4C4;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1200; }
+
+.modalHeader {
+  height: 75px;
+  border-bottom: 1px solid #C4C4C4;
+  padding: 25px 20px;
+  color: #2A3F54;
+  font-size: 20px;
+  font-weight: bold; }
+
+.modalBody {
+  padding: 5px 20px;
+  color: #2A3F54; }
+
+#shadowModal {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 1s;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0; }
+
+.modal span {
+  position: relative;
+  float: right;
+  top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2A3F54;
+  right: 20px;
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */

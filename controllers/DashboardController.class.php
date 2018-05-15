@@ -4,7 +4,33 @@ class DashboardController {
 
 	public function indexAction($params) {		
 
-		$v = new View("dashboard", "front");
+		$BSQL = new BaseSQL();
+		$userinfo = $BSQL->userInfoByToken();
+		$user = new User($userinfo["id"]);
+
 		
+        $form = $user->generateNewPwdUserForm();
+        $errors = null;
+
+        if (!empty($params['POST'])) {
+            // Vérification des saisies
+            $errors = Validator::validateAddUser($form, $params['POST']);
+
+            if (empty($errors)) {
+                $user->setPwdChanged(1);                
+                $user->setPwd($params['POST']['pwd']);
+                $user->save();
+
+                $notify = new Notify("Votre mot de passe a été modifié avec succès","success");               
+            }else{
+                $notify = new Notify($errors,"danger");
+            }
+
+        }
+
+		$v = new View("dashboard", "front");
+
+		$v->assign("config", $form);
+        $v->assign("errors", $errors);
 	}
 }

@@ -10,7 +10,7 @@ class User extends BaseSQL {
 	protected $rank;
 	protected $status;
 	protected $classe;
-	protected $pwdChanged;
+	protected $pwd_changed;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -67,9 +67,9 @@ class User extends BaseSQL {
         $this->rank = $rank;
     }
 
-    public function setPwdChanged($pwdChanged)
+    public function setPwdChanged($pwd_changed)
     {
-        $this->pwdChanged = $pwdChanged;
+        $this->pwd_changed = $pwd_changed;
     }
 
     public function getStatus()
@@ -101,7 +101,7 @@ class User extends BaseSQL {
 	}
 
 	public function getPwdChanged() {
-		return $this->pwdChanged;
+		return $this->pwd_changed;
 	}
 
 	public function generateLoginForm() {
@@ -140,6 +140,16 @@ class User extends BaseSQL {
                 "pwd" => ["type" => "password", "placeholder" => "Modifier le mot de passe", "id" => "inputPwdEdit"],
                 "lastname" => ["type" => "text", "placeholder" => "Nom", "required" => true, "id" => "inputName"],
                 "firstname" => ["type" => "text", "placeholder" => "Prénom", "required" => true, "id" => "inputFirstname"]                
+            ],
+            "submit" => "Enregistrer"
+        ];
+    }
+
+    public function generateNewPwdUserForm() {
+        return [
+            "config" => ["method"=> "POST", "action" => ""],
+            "input" => [
+                "pwd" => ["type" => "password", "placeholder" => "Saisir votre mot de passe", "id" => "inputPwd"]                           
             ],
             "submit" => "Enregistrer"
         ];
