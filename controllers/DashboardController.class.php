@@ -16,6 +16,13 @@ class DashboardController {
             // Vérification des saisies
             $errors = Validator::validateAddUser($form, $params['POST']);
 
+            $pwd = $params['POST']['pwd'];
+            $pwd2 = $params['POST']['pwd2'];
+
+            if($pwd != $pwd2){
+                $errors = "Les mots de passe doivent être identiques";
+            }
+
             if (empty($errors)) {
                 $user->setPwdChanged(1);                
                 $user->setPwd($params['POST']['pwd']);

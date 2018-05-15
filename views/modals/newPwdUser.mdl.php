@@ -13,7 +13,7 @@
 	<?php endforeach; ?>
 </div>
 <div class="row">
-	<div class="col-xs-12 col-sm-2 col-sm-offset-10 btnAddSubscribe">	
+	<div class="col-xs-12 col-sm-3 col-sm-offset-9">	
 		<input type="submit" class="addProfile" value="<?php echo $config['submit']; ?>" name="submit_signin">
 	</div>
 </div>	

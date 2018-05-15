@@ -149,7 +149,8 @@ class User extends BaseSQL {
         return [
             "config" => ["method"=> "POST", "action" => ""],
             "input" => [
-                "pwd" => ["type" => "password", "placeholder" => "Saisir votre mot de passe", "id" => "inputPwd"]                           
+                "pwd" => ["type" => "password", "placeholder" => "Saisir votre mot de passe", "id" => "inputNewPwd"],    
+                "pwd2" => ["type" => "password", "placeholder" => "Confirmez votre mot de passe", "id" => "inputNewPwd2"]                           
             ],
             "submit" => "Enregistrer"
         ];
