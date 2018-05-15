@@ -31,8 +31,8 @@ class CourseController {
                 $course = new Course();
                 $course->setTitle($params['POST']['title']);
                 $course->setContent($params['POST']['content']);
-                $course->setTeacherId($bdd->userInfoByToken()['id']);
-                $course->setChapterId($params['POST']['chapter']);
+                $course->setTeacher($bdd->userInfoByToken()['id']);
+                $course->setChapter($params['POST']['chapter']);
                 $course->save();
 
                 $notify = new Notify("Le cours ".$params['POST']['title']." a bien été crée", "success");
