@@ -43,7 +43,7 @@ class BaseSQL {
 					WHERE id = ".$this->id
 				);
 
-			$query->execute($this->columns);
+            $query->execute($this->columns);
 
 		} else {
 			//insert
@@ -298,5 +298,29 @@ class BaseSQL {
 
 		return $chapters;
 	}
+
+	public function getCoursesByTeacher($id){
+        $sql = "SELECT course.id as course, chapter.id as chapter, course.*, chapter.* from course INNER JOIN chapter ON course.chapter = chapter.id WHERE course.teacher = ". $id;
+
+        try { $query = $this->pdo->query($sql); }
+        catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+        $courses = $query->fetchAll();
+
+        return $courses;
+    }
+
+    public function courseInfoById($id)
+    {
+        $sql = "SELECT course.id as course, chapter.id as chapter, course.*, chapter.* FROM course INNER JOIN chapter ON course.chapter = chapter.id WHERE course.id = '" . $id . "'";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $c = $query->fetch();
+
+        return $c;
+
+    }
 
 }
