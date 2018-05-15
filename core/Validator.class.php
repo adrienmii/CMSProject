@@ -137,6 +137,26 @@ class Validator {
         return $errorMsg;
     }
 
+    public static function validateInstall($form, $params)
+    {
+        $errorMsg = [];
+        $BSQL = new BaseSQL();
+        foreach ($form['input'] as $name => $config) {
+
+            if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant";
+            }
+
+            if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 140)) {
+                $errorMsg[] = "Le champ " . $name . " est trop long";
+            }
+        
+
+        }
+
+        return $errorMsg;
+    }
+
     public static function checkPwd($pwd){
         return strlen($pwd)>5 && preg_match("/[A-Z]/", $pwd) && preg_match("/[a-z]/", $pwd) && preg_match("/[0-9]/", $pwd);
     }

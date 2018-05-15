@@ -130,6 +130,22 @@ class User extends BaseSQL {
         ];
     }
 
+    public function generateInstallForm() {
+        return [
+            "config" => ["method"=> "POST", "action" => ""],
+            "input" => [
+
+                "lastname" => ["type" => "text", "label" => "Nom", "required" => true, "id" => "inputLastname", "example" => "", "desc" => "Le nom de l'admin"],
+                "firstname" => ["type" => "text", "label" => "Prénom", "required" => true, "id" => "inputFirstname", "example" => "", "desc" => "...son prénom"],
+
+                "email" => ["type" => "text", "label" => "E-mail", "required" => true, "id" => "inputEmail", "example" => "", "desc" => "Une adresse e-mail valide"],
+                "pwd" => ["type" => "password", "label" => "Mot de passe", "required" => true, "id" => "inputFirstname", "example" => "", "desc" => "Un mot de passe fort (1 majuscule, 1 minuscule, 1 chiffre)"]
+               
+            ],
+            "submit" => "Enregistrer"
+        ];
+    }
+
 
     public function generateEditUserForm() {
         return [

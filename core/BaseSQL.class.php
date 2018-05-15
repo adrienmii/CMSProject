@@ -9,10 +9,40 @@ class BaseSQL {
 		try {
 			$this->pdo = new PDO(DBDRIVER.":host=".DBHOST.";dbname=".DBNAME, DBUSER, DBPWD);
 		} catch (Exception $e) {
-			die("Erreur SQL : ".$e->getMessage());
+			//echo "Erreur SQL : ".$e->getMessage()."<br>Passez par l'installeur !";
 		}
 		$this->table = strtolower(get_called_class());
 	}
+
+	public function createDatabase($host,$user,$pwd,$port,$dbname) {
+		// $dbname = strtoupper(htmlentities($dbname));
+		try {
+		    $PDO = new PDO("mysql:host=$host", $user, $pwd);
+		    $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    $sql = "CREATE DATABASE IF NOT EXISTS ".$dbname;
+		    $PDO->exec($sql);
+
+		    // on modifie le fichier de config
+		    $configFile = fopen('conf.inc.php', 'w+');
+		    $data = '<?php
+
+	define("DBHOST", "'.$host.'");
+	define("DBPORT", "'.$port.'");
+	define("DBNAME", "'.$dbname.'");
+	define("DBUSER", "'.$user.'");
+	define("DBPWD", "'.$pwd.'");
+	define("DBDRIVER", "mysql");
+	define("DS", "/");
+	$scriptName = (dirname($_SERVER["SCRIPT_NAME"]) == "/")?"":dirname($_SERVER["SCRIPT_NAME"]);
+	define("DIRNAME", $scriptName.DS);';
+		    fputs($configFile, $data);
+
+		}
+		catch(PDOException $e) {
+		    return false;
+		}
+		return true;
+	}	
 
 	public function setColumns() {
 		$this->columns = array_diff_key(get_object_vars($this), get_class_vars(get_class())); //nécessite que les vars soient en protedted et pas private
