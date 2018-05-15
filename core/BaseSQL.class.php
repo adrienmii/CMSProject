@@ -9,10 +9,54 @@ class BaseSQL {
 		try {
 			$this->pdo = new PDO(DBDRIVER.":host=".DBHOST.";dbname=".DBNAME, DBUSER, DBPWD);
 		} catch (Exception $e) {
-			die("Erreur SQL : ".$e->getMessage());
+			//echo "Erreur SQL : ".$e->getMessage()."<br>Passez par l'installeur !";
 		}
 		$this->table = strtolower(get_called_class());
 	}
+
+	public function createDatabase($host,$user,$pwd,$port,$dbname) {
+		$dbname = strtoupper(htmlentities($dbname));
+		try {
+		    $PDO = new PDO("mysql:host=$host", $user, $pwd);
+		    $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    $sql = "CREATE DATABASE IF NOT EXISTS ".$dbname;
+		    $PDO->exec($sql);
+
+		    // on modifie le fichier de config
+		    $configFile = fopen('conf.inc.php', 'w+');
+		    $data = '<?php
+			define("DBHOST", "'.$host.'");
+			define("DBPORT", "'.$port.'");
+			define("DBNAME", "'.$dbname.'");
+			define("DBUSER", "'.$user.'");
+			define("DBPWD", "'.$pwd.'");
+			define("DBDRIVER", "mysql");
+			define("DS", "/");
+			define("DBBONFIGURED", true);
+			$scriptName = (dirname($_SERVER["SCRIPT_NAME"]) == "/")?"":dirname($_SERVER["SCRIPT_NAME"]);
+			define("DIRNAME", $scriptName.DS);';
+		    fputs($configFile, $data);
+
+		}
+		catch(PDOException $e) {
+		    return false;
+		}
+		
+		try {
+		     $db = new PDO(DBDRIVER.":host=".$host.";dbname=".$dbname, $user, $pwd);
+		     $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
+		     
+		     $sql = "SET SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO'; SET time_zone = '+00:00'; CREATE TABLE chapter ( id int(11) NOT NULL, label varchar(120) NOT NULL, description varchar(120) DEFAULT NULL, classe int(100) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8; CREATE TABLE classe ( id int(10) NOT NULL, classname varchar(255) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8; CREATE TABLE classeteacher ( id int(100) NOT NULL, classe int(100) NOT NULL, teacher int(100) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8; CREATE TABLE user ( id int(11) NOT NULL, firstname varchar(100) NOT NULL, lastname varchar(100) NOT NULL, email varchar(250) NOT NULL, pwd char(60) NOT NULL, token char(15) DEFAULT NULL, rank int(11) DEFAULT NULL, status int(1) NOT NULL DEFAULT '1', classe int(10) DEFAULT NULL, date_inserted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, date_created TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP, pwd_changed int(11) NOT NULL DEFAULT '0') ENGINE=InnoDB DEFAULT CHARSET=utf8; ALTER TABLE chapter ADD KEY id (id); ALTER TABLE classe ADD PRIMARY KEY (id), ADD KEY id (id); ALTER TABLE classeteacher ADD KEY id (id); ALTER TABLE user ADD PRIMARY KEY (id), ADD KEY id (id); ALTER TABLE chapter MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6; ALTER TABLE classe MODIFY id int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15; ALTER TABLE classeteacher MODIFY id int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10; ALTER TABLE user MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;";
+		     $db->exec($sql);
+
+		} catch(PDOException $e) {
+		    echo $e->getMessage();
+		    return false;
+		}
+
+		return true;
+	}
+	
 
 	public function setColumns() {
 		$this->columns = array_diff_key(get_object_vars($this), get_class_vars(get_class())); //nécessite que les vars soient en protedted et pas private
@@ -119,7 +163,19 @@ class BaseSQL {
         $user = $query->fetch();
 
         return $user;
+    }
 
+    public function alreadyAdminExists()
+    {
+        $sql = "SELECT count(*) AS nb FROM user WHERE rank = 1";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $r = $query->fetch();
+
+        return $r['nb'];
     }
 
     public function classeInfoById($id)

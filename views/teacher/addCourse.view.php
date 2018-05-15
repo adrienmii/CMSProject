@@ -2,7 +2,7 @@
 <main id="subscribeContainer">
 	<section class="col-md-12">
 		<header class="text-center">
-			Ajouter un cours
+			<?php echo (!empty($config['prefill']) ? "Modifier le cours" : "Ajouter un cours"); ?>
 		</header>
 		<main>
 

@@ -19,6 +19,7 @@ class CourseController {
         $form = $course->generateFormAddCourse();
 
         $errors = null;
+        $post = null;
 
         if (!empty($params['POST'])) {
             // Vérification des saisies
@@ -40,6 +41,7 @@ class CourseController {
                 header('Location: '.DIRNAME.'course/list');
                 exit();
             }else{
+                $form['post'] = $params['POST'];
                 $notify = new Notify($errors,"danger");
             }
 
@@ -91,6 +93,7 @@ class CourseController {
                 header('Location: '.DIRNAME.'course/list');
                 exit();
             }else{
+                $form['post'] = $params['POST'];
                 $notify = new Notify($errors,"danger");
             }
 

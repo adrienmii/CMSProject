@@ -22,7 +22,7 @@ class View {
 	public function __destruct() {
 		global $c, $a; // va chercher une variable globale déclarée plus tôt
 		extract($this->data); // transforme les clés du tableau en variables
-		if ($this->v != "login.view.php") {
+		if ($this->v != "login.view.php" && $this->v != "installer.view.php") {
 			include("views/templates/".$this->t); // dans le destruct pour pouvoir passer des paramètres avant l'affichage
 		} else {
 			if (file_exists("views/admin/".$this->v)) {
