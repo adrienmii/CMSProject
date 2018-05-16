@@ -148,7 +148,7 @@
 	<div id="myModal" class="modal">
 		<span onclick="hideModal()">&times;</span>
 		<div class="modalHeader">			
-			Rénitialisez votre mot de passe !
+			Votre mot de passe n'est pas sécurisé, veuillez le modifier
 		</div>		
 		<div class="modalBody">
 			<?php $this->addModal("newPwdUser", $config, $errors); ?>			
