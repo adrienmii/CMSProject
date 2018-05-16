@@ -1,3 +1,8 @@
+<!-- Requis pour les notifs -->
+<div id="notifications"></div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo DIRNAME; ?>public/js/global.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +28,13 @@
 			</footer>
 		</section>
 	</main>		
+	
+	<!-- Requis pour les notifs -->
+	<?php if (!empty($_SESSION['ntf'])) {
+		echo $_SESSION['ntf'];
+		$_SESSION['ntf'] = null;
+	}
+	?>
 
 </body>
 </html>

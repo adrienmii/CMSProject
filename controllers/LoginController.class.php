@@ -16,20 +16,17 @@ class LoginController {
 			if (empty($errors)) {
 				header("Location: ".DIRNAME."dashboard");
 				exit();
-			}
+              
+            } else {
+            	$form['post'] = $params['POST'];
+                new Notify($errors,"danger");
+            }
 		}
 
 		$v = new View("login");
 		$v->assign("config", $form);
 		$v->assign("errors", $errors);
 
-	}
-
-	public function logoutAction() {
-		session_destroy();
-
-		header("Location: ".DIRNAME."login");
-		exit();
 	}
 
 }
