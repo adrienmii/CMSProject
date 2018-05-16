@@ -16,7 +16,10 @@ class LoginController {
 			if (empty($errors)) {
 				header("Location: ".DIRNAME."dashboard");
 				exit();
-			}
+              
+            }else{
+                new Notify($errors,"danger");
+            }
 		}
 
 		$v = new View("login");

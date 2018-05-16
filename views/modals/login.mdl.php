@@ -1,6 +1,3 @@
-<?php if(!empty($errors)) {
-	echo implode("<br>", $errors);
-} ?>
 <form method="<?php echo $config['config']['method']; ?>" action="<?php echo $config['config']['action']; ?>">
 
 	<?php foreach ($config['input'] as $name => $params): ?>
