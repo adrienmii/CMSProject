@@ -17,7 +17,8 @@ class LoginController {
 				header("Location: ".DIRNAME."dashboard");
 				exit();
               
-            }else{
+            } else {
+            	$form['post'] = $params['POST'];
                 new Notify($errors,"danger");
             }
 		}
