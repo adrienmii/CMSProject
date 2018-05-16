@@ -55,6 +55,10 @@ body {
 	text-align:right;
 }
 
+.active{
+    color: $secondary_color;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -233,7 +237,7 @@ td, th {
     border:$input_border_color;
     left:50%;
     transform: translateX(-50%) translateY(-50%);
-    z-index: 1200;
+    z-index: 2;
 }
 
 .modalHeader{
@@ -273,4 +277,97 @@ td, th {
     color:$primary_color;
     right: 20px;
     cursor:pointer;
+}
+
+
+#addBlock{
+    height: 150px;
+    background:#fff;
+    border:dashed 1px #C4C4C4;
+    text-align:center;
+    
+}
+
+#iconAddBlockContainer{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+#addItem{
+    width:60px;
+    height:60px;
+    text-align:center;
+    font-weight:bold;
+    border: solid 3px $button_input_color;
+    border-radius:50%;
+    display: inline-block;
+    text-decoration: none;
+    color: $button_input_color;
+    font-size:35px;
+    padding-top:6px;
+}
+
+.blueBlock{
+    height: 100px;
+    background: linear-gradient(204.26deg, $primary_color 5%, rgba(60, 85, 110, 0.7) 113.45%);
+    box-shadow: $block_shadow;
+    color:#fff;
+    padding:20px 20px;
+}
+
+.blueBlock .actionCol{
+    display:inline-block;   
+}
+
+.actionCol a{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border: solid 1px #fff;
+    display:inline-block;
+}
+
+.actionViewWhite{
+    background:url(../../img/icn/iconEyeWhite.svg) 50% 50% no-repeat;
+    font-size:10px;
+}
+
+.actionEditWhite{
+    background:url(../../img/icn/iconPencilWhite.svg) 50% 50% no-repeat;
+}
+
+.actionDeleteWhite{ 
+    margin-left:5px;
+    background:url(../../img/icn/iconXmarkWhite.svg) 50% 50% no-repeat; 
+}
+
+.actionAdd{ 
+    width:33px;
+    height:33px;
+    border-radius:50%;
+    color:#C4C4C4;
+    border:solid 1px #C4C4C4;
+    float: right;
+    text-align:center;
+    padding-top:5px;
+    font-weight:100;
+    font-size:19px;
+}
+
+.blockName{
+    font-size:20px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.blockContainer div.col-xs-12.col-sm-6.col-lg-4 {
+    padding: 30px;
+}
+
+@media screen and (max-width: 768px){
+    .blockContainer div.col-xs-12.col-sm-6.col-lg-4 {
+        padding: 0px 0.5rem;
+        margin-bottom: 20px;
+    }
 }
