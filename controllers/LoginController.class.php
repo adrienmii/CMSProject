@@ -29,11 +29,4 @@ class LoginController {
 
 	}
 
-	public function logoutAction() {
-		session_destroy();
-
-		header("Location: ".DIRNAME."login");
-		exit();
-	}
-
 }

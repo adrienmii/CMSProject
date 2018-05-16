@@ -7,81 +7,8 @@
 	margin:0px!important;
 }
 
-#newClassBlock{
-	height: 150px;
-	background:#fff;
-	border:dashed 1px #C4C4C4;
-	text-align:center;
-	
-}
-
-#iconAddClassContainer{
-	position: relative;
-	top:50%;
-	transform:translateY(-50%);
-}
-
-#addClasses{
-	width:60px;
-	height:60px;
-	text-align:center;
-	font-weight:bold;
-	border: solid 3px $button_input_color;
-	border-radius:50%;
- 	display: inline-block;
-    text-decoration: none;
-  	color: $button_input_color;
-  	font-size:35px;
-  	padding-top:6px;
-}
-
-.classBlock{
-	height: 150px;
-	background: linear-gradient(204.26deg, $primary_color 5%, rgba(60, 85, 110, 0.7) 113.45%);
-	box-shadow: $block_shadow;
-	color:#fff;
-	padding:20px 20px;
-}
-
-.classBlock .actionCol{
-	display:inline-block;	
-}
-
-.actionCol a{
-	width:30px;
-	height:30px;
-	border-radius:50%;
-	border: solid 1px #fff;
-	display:inline-block;
-}
-
-.actionEditWhite{
-	background:url(../../img/icn/iconPencilWhite.svg) 50% 50% no-repeat;
-}
-
-.actionDeleteWhite{	
-	margin-left:5px;
-	background:url(../../img/icn/iconXmarkWhite.svg) 50% 50% no-repeat;	
-}
-
-.actionAdd{	
-	width:33px;
-	height:33px;
-	border-radius:50%;
-	color:#C4C4C4;
-	border:solid 1px #C4C4C4;
-	float: right;
-	text-align:center;
-	padding-top:5px;
-	font-weight:100;
-	font-size:19px;
-}
-
-.className{
-	font-weight:100;
-	font-size:28px;
-	text-transform:uppercase;
-	margin-bottom:7px;
+#classesContainer .blueBlock{
+    height: 150px !important;
 }
 
 .addStudents{

@@ -1,9 +1,9 @@
 <main id="classesContainer">	
 	<div class="row">
 		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div id="newClassBlock">
-				<div id="iconAddClassContainer">
-					<a href="<?php echo DIRNAME."classe/add";?>" id="addClasses">+</a>
+			<div id="addBlock">
+				<div id="iconAddBlockContainer">
+					<a href="<?php echo DIRNAME."classe/add";?>" id="addItem">+</a>
 					<p>Ajouter une nouvelle classe</p>
 				</div>						
 			</div>
@@ -16,9 +16,9 @@
 		 ?>
 
 		<div class="col-xs-12 col-sm-6 col-lg-4">
-			<div class="classBlock">	
+			<div class="blueBlock">	
 				<div class="row">
-					<div class="col-xs-7 className">
+					<div class="col-xs-7 blockName">
 						<?php echo $class['classname']; ?>
 					</div>
 					<div class="actionCol text-right col-xs-5 ">

@@ -1,5 +1,5 @@
 					
-<main class="row" id="teacherClassesContainer">					
+<main class="row blockContainer">					
 	<section id="coursesList" class="col-xs-12">	
 		<header>
 			Les cours de mes classes
@@ -8,13 +8,10 @@
 			<div class="col-xs-12">
 				<div class="row">
 					<?php foreach ($chapters as $chapter) { ?>
-
-						
-
 						<div class="col-xs-12 col-sm-6 col-lg-4">
-							<div class="classBlock">	
+							<div class="blueBlock">	
 								<div class="row">
-									<div class="col-xs-7 className">
+									<div class="col-xs-7 blockName">
 										<?php echo ucfirst($chapter['label'])." (".$chapter['classname'].")"; ?>
 									</div>
 									<div class="actionCol text-right col-xs-5 ">
@@ -23,12 +20,7 @@
 									</div>
 									<div class="col-xs-10">
 										0 cours 
-									</div>
-									<div class="addStudents col-xs-12">
-										<div id="addStudentsIcon"></div>
-										<div class="addStudentsText">add chapter</div>
-										<a href="#" class="actionAdd">+</a>
-									</div>							
+									</div>													
 								</div>							
 							</div>
 						</div>

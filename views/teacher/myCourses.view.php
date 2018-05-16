@@ -1,4 +1,4 @@
-<main class="row" id="teacherClassesContainer">
+<main class="row">
     <section id="coursesList" class="col-xs-12">
         <header>
             Tous mes cours
@@ -6,18 +6,21 @@
         <main class="row">
             <div class="col-xs-12">
                 <div class="row">
-                    <?php foreach ($courses as $course) { ?>
-
-                        <article class="col-xs-6 col-md-3">
-                            <div class="block">
-
-                                <div class="teacherClassName"><?php echo ucfirst($course['title'])." (".$course['label'].")"; ?></div>
-                                <a href="<?php echo DIRNAME.'course/delete/'.$course['course']; ?>" onclick="return confirm('Souhaitez vous supprimer ce cours ?')">Supprimer</a>
-                                <a href="<?php echo DIRNAME.'course/edit/'.$course['course']; ?>" >Modifier</a>
-                                <a href="<?php echo DIRNAME.'course/view/'.$course['course']; ?>" >Afficher</a>
-
+                    <?php foreach ($courses as $course) { ?>                       
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
+                            <div class="blueBlock"> 
+                                <div class="row">
+                                    <div class="col-xs-7 blockName">
+                                       <?php echo ucfirst($course['title'])." (".$course['label'].")"; ?>
+                                    </div>
+                                    <div class="actionCol text-right col-xs-5 ">
+                                        <a class="actionViewWhite" href="<?php echo DIRNAME.'course/view/'.$course['course']; ?>"></a>
+                                        <a class="actionEditWhite" href="<?php echo DIRNAME.'course/edit/'.$course['course']; ?>"></a>
+                                        <a class="actionDeleteWhite" href="<?php echo DIRNAME.'course/delete/'.$course['course']; ?>" onclick="return confirm('Souhaitez vous supprimer ce cours ?')"></a>
+                                    </div>                                                                                
+                                </div>                          
                             </div>
-                        </article>
+                        </div>
 
                     <?php } ?>
 
