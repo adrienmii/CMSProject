@@ -12,7 +12,7 @@
 						placeholder="<?php echo $params['placeholder']; ?>"
 						id="<?php echo $params['id']; ?>"
 						<?php echo (isset($params['required']))?'required="required"':''; ?>
-						<?php echo (!empty($config['post'][$name]) ? $config['post'][$name] : ""); ?>
+						<?php echo (!empty($config['post'][$name]) ? 'value="'. $config['post'][$name].'"' : ""); ?>
 					>
 				</div>
 			
@@ -23,13 +23,13 @@
 					<input name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" value="<?php echo (!empty($config['post'][$name]) ? $config['post'][$name] : "1"); ?>" type="text" hidden/>
 				</div>
 				<div class="col-xs-10 col-xs-offset-1 col-sm-4 offset-sm-reset text-center profileChoiceContainer">
-					<a href="#" class="active"  onclick="toggleProfile(this)" id="profileAdmin">Admin</a>
+					<a href="#" class="<?php echo (empty($config['post'][$name]) || $config['post'][$name] == 1 ? "active" : ""); ?>"  onclick="toggleProfile(this)" id="profileAdmin">Admin</a>
 				</div>
 					<div class="col-xs-10 col-xs-offset-1 col-sm-4 offset-sm-reset text-center profileChoiceContainer">
-					<a href="#"  onclick="toggleProfile(this)" id="profileTeacher">Professeur</a>
+					<a href="#" class="<?php echo (!empty($config['post'][$name]) && $config['post'][$name] == 2 ? "active" : ""); ?>" onclick="toggleProfile(this)" id="profileTeacher">Professeur</a>
 				</div>
 				<div class="col-xs-10 col-xs-offset-1 col-sm-4 offset-sm-reset text-center profileChoiceContainer">
-					<a href="#" onclick="toggleProfile(this)" id="profileStudent">Etudiant</a>
+					<a href="#" class="<?php echo (!empty($config['post'][$name]) && $config['post'][$name] == 3 ? "active" : ""); ?>" onclick="toggleProfile(this)" id="profileStudent">Etudiant</a>
 				</div>
 							
 		<?php } ?>
