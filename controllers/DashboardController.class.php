@@ -14,7 +14,7 @@ class DashboardController {
 
         if (!empty($params['POST'])) {
             // Vérification des saisies
-            $errors = Validator::validateAddUser($form, $params['POST']);
+            $errors = Validator::validateEditUser($form, $params['POST']);
 
             $pwd = $params['POST']['pwd'];
             $pwd2 = $params['POST']['pwd2'];
