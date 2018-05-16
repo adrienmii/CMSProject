@@ -38,6 +38,7 @@ class UserController {
                 header('Location: '.DIRNAME.'user/list');
                 exit();
             }else{
+                $form['post'] = $params['POST'];
                 $notify = new Notify($errors,"danger");
             }
 
