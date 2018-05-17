@@ -74,7 +74,17 @@ class ChapterController {
         $v->assign("errors", $errors);
     }
 
+    public function viewAction($params) {
+        $BSQL = new BaseSQL();
+        $chapter = $BSQL->chapterInfoById($params['URL'][0]);
 
+        $courses = $BSQL->getCoursesByChapter($params['URL'][0]); 
+
+
+        $v = new View("myCourses");
+        $v->assign("courses", $courses);
+        $v->assign("chapter", $chapter);
+    }
 
 	public function listAction($params) {
 		$BSQL = new BaseSQL();
@@ -84,6 +94,7 @@ class ChapterController {
         $v = new View("myChapters");
         $v->assign("chapters", $chapters);
 	}
+
 
 	public function deleteAction($params) {
 		// modifier en ajoutant les supressions en cascades ?

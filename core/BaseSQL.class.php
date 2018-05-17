@@ -365,6 +365,16 @@ class BaseSQL {
         return $courses;
     }
 
+    public function getCoursesByChapter($id){
+        $sql = "SELECT c.id as course, c.*, p.* from course c INNER JOIN chapter p ON c.chapter = p.id WHERE p.id = ". $id;
+
+        try { $query = $this->pdo->query($sql); }
+        catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+        $courses = $query->fetchAll();
+
+        return $courses;
+    }
+
     public function courseInfoById($id)
     {
         $sql = "SELECT course.id as course, chapter.id as chapter, course.*, chapter.* FROM course INNER JOIN chapter ON course.chapter = chapter.id WHERE course.id = '" . $id . "'";

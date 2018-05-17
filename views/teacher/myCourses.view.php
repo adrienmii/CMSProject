@@ -1,7 +1,7 @@
-<main class="row">
+<main class="row blockContainer">
     <section id="coursesList" class="col-xs-12">
         <header>
-            Tous mes cours
+            Cours du chapitre <?php echo $chapter['label']; ?>
         </header>
         <main class="row">
             <div class="col-xs-12">
@@ -11,7 +11,7 @@
                             <div class="blueBlock"> 
                                 <div class="row">
                                     <div class="col-xs-7 blockName">
-                                       <?php echo ucfirst($course['title'])." (".$course['label'].")"; ?>
+                                       <?php echo ucfirst($course['title']); ?>
                                     </div>
                                     <div class="actionCol text-right col-xs-5 ">
                                         <a class="actionViewWhite" href="<?php echo DIRNAME.'course/view/'.$course['course']; ?>"></a>
