@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mar. 15 mai 2018 à 16:52
+-- Généré le :  jeu. 17 mai 2018 à 16:31
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -102,6 +102,26 @@ INSERT INTO `course` (`id`, `title`, `content`, `teacher`, `chapter`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` int(11) NOT NULL,
+  `sitename` varchar(200) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `logo` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `settings`
+--
+
+INSERT INTO `settings` (`id`, `sitename`, `address`, `logo`) VALUES
+(1, 'EDULAB', '254 Rue du Faubourg Saint-Antoine 75012 Paris', 'LOGO-ESGI-300x203.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `user`
 --
 
@@ -125,16 +145,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$P2t8qEoskLl6SLeEH5tvvu9vrnORPePprGZcs7Z4p.VMc51Rg4oR2', '4ef3bde3a89bc07', 1, 1, NULL, '2018-04-23 14:41:56', '2018-05-15 14:48:44', 0),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'eedc248849d9737', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-15 14:44:42', 0),
-(7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$sRnco4uGAj0mhtZ5OSaGv.HO4CQRfc0HhFbUhF61gCFxkUWBn6Imi', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-04-26 12:26:13', 0),
-(8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'ce5c6372b64b875', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-01 21:35:47', 0),
+(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '58783755c41d3e8', 1, 1, NULL, '2018-04-23 14:41:56', '2018-05-16 15:12:33', 0),
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '5fb26f07377694a', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-17 14:28:05', 0),
+(7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-05-16 14:53:12', 0),
+(8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 14:21:05', 0),
 (9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:56', 0),
 (10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:58', 0),
 (11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-26 11:45:23', 0),
-(12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$2AsCqsKQIWDAcfX/rAWXnOzEZ6mYq4fExTEv1xcAYNf7b/JZV6VEm', '5fbf4f3177d7618', 3, 1, 14, '2018-04-26 09:13:51', '2018-04-26 12:43:00', 0),
-(13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$bQsMx6tCMjTc/L5U396ZgOnf4zO7I9bzmDzXoVf.cMvfDEwuhuhQ.', '1702b296cfaa791', 3, 1, 14, '2018-04-26 11:43:31', '2018-04-26 12:43:00', 0),
-(14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$.Xr9JYCRI0K/M/6bpJUMJuK/HLPMMWuctMRQM47BeHBZfpW6pf3n.', '83e6ef0a72866e5', 3, 1, 0, '2018-04-28 16:33:18', '2018-04-29 17:40:04', 0),
+(12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '5fbf4f3177d7618', 3, 1, 14, '2018-04-26 09:13:51', '2018-05-16 14:53:06', 0),
+(13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '1702b296cfaa791', 3, 1, 14, '2018-04-26 11:43:31', '2018-05-16 14:53:07', 0),
+(14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '83e6ef0a72866e5', 3, 1, 0, '2018-04-28 16:33:18', '2018-05-16 14:53:09', 0),
 (15, 'Student4', 'EDULAB', 'student4@test.fr', '$2y$10$40KKHvCPw9dSZdbEcHbAX.FxuZymrQLkgHTGIOsWhylEjs8JNR//C', 'd8d5bd1e7c46ffc', 3, 1, 0, '2018-04-28 16:45:18', '2018-04-29 17:40:13', 0),
 (16, 'Student5', 'EDULAB', 'student5@test.fr', '$2y$10$kxNptCvYR1Vo2.50LY86cOpF.kd5S48O9B4i9f.RFib6fKLgKbd/a', 'b3e75245f008348', 3, 1, 0, '2018-04-28 16:47:04', '2018-04-29 17:40:18', 0),
 (17, 'Student6', 'EDULAB', 'student6@test.fr', '$2y$10$S.5K.eQbPqA9e9Xc0C8VXOKuZNfeaYZt9iVz991jScbRLHfeUWU6K', '9960d73c7cc9951', 3, 1, 0, '2018-04-28 17:32:09', '2018-04-29 17:40:21', 0),
@@ -172,6 +192,12 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
@@ -201,7 +227,12 @@ ALTER TABLE `classeteacher`
 -- AUTO_INCREMENT pour la table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT pour la table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
