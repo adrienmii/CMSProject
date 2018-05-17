@@ -62,6 +62,42 @@ class Validator {
         return $errorMsg;
     }
 
+    public static function validateSettings($form, $params, $files = null)
+    {
+        $errorMsg = [];
+        $BSQL = new BaseSQL();
+        foreach ($form['input'] as $name => $config) {
+
+            if (isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant";
+            }
+
+            if ($config['type'] == "file" && $files[$name]["name"] != null){
+                $target_dir = "./public/img/";
+                $target_file = $target_dir . basename($files[$name]["name"]);
+                $uploadOk = 1;
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                
+                if ($files[$name]["size"] > 500000) {
+                    $errorMsg[] = "Votre image doit faire moins de 500 Ko";
+                    $uploadOk = 0;
+                }
+
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                && $imageFileType != "gif" ) {
+                    $errorMsg[] = "Votre image doit être au format JPG, JPEG, PNG ou GIF";
+                    $uploadOk = 0;
+                }
+
+                if ($uploadOk == 1) {
+                    move_uploaded_file($files[$name]["tmp_name"], $target_file);
+                }
+            }
+        }
+
+        return $errorMsg;
+    }
+
     public static function validateEditUser($form, $params)
     {
         $errorMsg = [];

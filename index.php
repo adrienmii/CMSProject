@@ -41,6 +41,7 @@
 	$params = [
 				"POST" => $_POST,
 				"GET" => $_GET,
+				"FILES" => $_FILES,
 				"URL" => array_values($uriExplode), //recommence un tableau avec des clés de 0 à partir d'un autre tableau
 			  ];
 
