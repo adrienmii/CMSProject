@@ -6,11 +6,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php echo DIRNAME; ?>public/css/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo DIRNAME; ?>public/css/themes/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<?php $BSQL = new BaseSQL();
+$settings = $BSQL->getAllById('settings', 1);
+$logo = ($settings['logo'])?$settings['logo']:null; 
+$address = ($settings['address'])?$settings['address']:null;
+$sitename = ($settings['sitename'])?$settings['sitename']:null;
+
+if ($logo) {
+?>
+
+<div class="school-infos" style="width: 180px;background-color: white;padding:10px">
+	<img style=" width: 100%;" title="Logo de l'établissement" src="public/img/<?php echo $logo; ?>">
+	<p><b><?php echo $sitename."</b><br>".$address ?></p>
+</div>
+
+<?php } ?>
 <body id="loginBody">
 	<main>		
 		<section id="loginForm">

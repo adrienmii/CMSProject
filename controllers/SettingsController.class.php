@@ -27,6 +27,8 @@ class SettingsController {
 					$settings->setLogo($params['FILES']['logo']["name"]);
 				}
 
+                $settings->setTheme($params['POST']['theme']);
+
 				$settings->save();
 
 

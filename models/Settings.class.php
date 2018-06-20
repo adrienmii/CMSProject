@@ -5,6 +5,7 @@ class Settings extends BaseSQL {
 	protected $sitename;
 	protected $logo;
 	protected $address;
+	protected $theme;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -42,17 +43,25 @@ class Settings extends BaseSQL {
 	}
 
 	public function getAddress() {
-		return $this->Address;
+		return $this->address;
 	}
 
+	public function getTheme() {
+		return $this->theme;
+	}
 
-	 public function generateForm() {
+	public function setTheme($theme) {
+		$this->theme = $theme;
+	}
+
+	public function generateForm() {
         return [
             "config" => ["method"=> "POST", "action" => ""],
             "input" => [
                 "sitename" => ["type" => "text", "placeholder" => "Nom de l'école", "required" => true, "id" => "sitename"],
                  "address" => ["type" => "text", "placeholder" => "Adresse de l'école", "required" => true, "id" => "address"],
                 "logo" => ["type" => "file", "placeholder" => "Logo", "id" => "logo"],
+                "theme" => ["type" => "select", "options" => ["Thème par défaut" => "default", "Thème light"=> "lightlab", "Thème dark" => "darklab", "Thème sunny" => "sunlab"], "required" => true, "multiple" => false, "id" => "selectTheme"]
       
             ],
             "submit" => "Enregistrer"
