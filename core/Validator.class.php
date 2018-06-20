@@ -9,6 +9,12 @@ class Validator {
 				$errorMsg[] = "Le champ ".$name." est manquant";
 			}
 
+            if ($name == 'captcha') {
+                if ($_SESSION['captcha'] != $_POST['captcha']) {
+                    $errorMsg[] = "Le ".$name." saisi est incorrect";
+                }
+            }
+
 		}
 
 		$BSQL = new BaseSQL();

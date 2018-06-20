@@ -109,7 +109,8 @@ class User extends BaseSQL {
 					"config" => ["method"=> "POST", "action" => ""],
 					"input" => [
 						"email" => ["type" => "text", "placeholder" => "E-mail", "required" => true, "id" => "inputLogin"],
-						"pwd" => ["type" => "password", "placeholder" => "Mot de passe", "required" => true, "id" => "inputPwd"]
+						"pwd" => ["type" => "password", "placeholder" => "Mot de passe", "required" => true, "id" => "inputPwd"],
+                        "captcha" => ["type" => "text", "placeholder" => "Captcha", "required" => true, "id" => "inputCaptcha"]
 					],
 					"submit" => "Se connecter"
 		];

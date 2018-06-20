@@ -36,7 +36,7 @@ $settings = $BSQL->getAllById('settings', 1);
 						DIRNAME."user/list" => "Elèves",
 						DIRNAME."Classe" => "Classes",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."Param" => "Paramètres"
+						DIRNAME."settings" => "Paramètres"
 					);
 
 					$menuTeacher = array(
@@ -45,7 +45,7 @@ $settings = $BSQL->getAllById('settings', 1);
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Classe" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."Param" => "Paramètres"
+						DIRNAME."settings" => "Paramètres"
 					);
 
 					$menuStudent = array(
@@ -54,7 +54,7 @@ $settings = $BSQL->getAllById('settings', 1);
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."Param" => "Paramètres"
+						DIRNAME."settings" => "Paramètres"
 					);	
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé

@@ -13,9 +13,19 @@
 </head>
 <?php $BSQL = new BaseSQL();
 $settings = $BSQL->getAllById('settings', 1);
-$logo = ($settings['logo'])?$settings['logo']:null; ?>
+$logo = ($settings['logo'])?$settings['logo']:null; 
+$address = ($settings['address'])?$settings['address']:null;
+$sitename = ($settings['sitename'])?$settings['sitename']:null;
 
-<img style=" width: 14%;" title="Logo de l'établissement" src="public/img/<?php echo $logo; ?>">
+if ($logo) {
+?>
+
+<div class="school-infos" style="width: 180px;background-color: white;padding:10px">
+	<img style=" width: 100%;" title="Logo de l'établissement" src="public/img/<?php echo $logo; ?>">
+	<p><b><?php echo $sitename."</b><br>".$address ?></p>
+</div>
+
+<?php } ?>
 <body id="loginBody">
 	<main>		
 		<section id="loginForm">
