@@ -3,14 +3,10 @@
 
 	<section class="col-md-12">
 		<header class="text-center">
-			<h4><?php if($config['label']){ echo $config['label'];} else{ ?>Créer un QCM <? } ?></h4>
-			<a href="#" id="previousQuestion">-</a>
-			<a href="#" id="nextQuestion">+</a>
-			<div id="questionNumber">Question<br><b>2</b><br>sur 2</div>
+			Modifier un QCM
 		</header>
 		<main>
 			<?php $this->addModal("qcm", $config, $errors); ?>
-
 		</main>
 	</section>
 
