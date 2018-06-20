@@ -615,7 +615,7 @@ body {
   padding: 0; }
 
 #navBar ul li {
-  border-bottom: solid 1px #3b5976;
+  border-bottom: solid 1px #485A6C;
   color: white;
   padding: 15px 0px 15px 50px;
   transition: all 0.3s;
@@ -665,15 +665,13 @@ body {
 
 #topBar {
   height: 70px;
-  background-color: #F4F4F4;
+  background-color: #EDEDED;
   border-bottom: solid 1px #D9DEE4; }
 
 #toggleIcon {
+  background: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
   width: 100px;
-  height: 70px;
-  background-color: #446587;
-  -webkit-mask: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
-  mask: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat; }
+  height: 70px; }
 
 #inputSearch {
   border-bottom: 1px solid #5A738E;
@@ -707,7 +705,7 @@ body {
   margin-left: 100px; }
 
 #sideBar.menuClose ul li {
-  border-bottom: solid 1px #3b5976;
+  border-bottom: solid 1px #485A6C;
   color: white;
   font-size: 10px;
   padding: 30px 15px 15px 15px;
@@ -920,7 +918,7 @@ body {
 #addBlock {
   height: 150px;
   background: #fff;
-  border: dashed 1px #2A3F54;
+  border: dashed 1px #C4C4C4;
   text-align: center; }
 
 #iconAddBlockContainer {
@@ -933,17 +931,17 @@ body {
   height: 60px;
   text-align: center;
   font-weight: bold;
-  border: solid 3px #446587;
+  border: solid 3px #5A738E;
   border-radius: 50%;
   display: inline-block;
   text-decoration: none;
-  color: #446587;
+  color: #5A738E;
   font-size: 35px;
   padding-top: 6px; }
 
 .blueBlock {
   height: 100px;
-  background: linear-gradient(204.26deg, #2A3F54 5%, #446587 113.45%);
+  background: linear-gradient(204.26deg, #2A3F54 5%, rgba(60, 85, 110, 0.7) 113.45%);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   color: #fff;
   padding: 20px 20px; }
@@ -973,8 +971,8 @@ body {
   width: 33px;
   height: 33px;
   border-radius: 50%;
-  color: #2A3F54;
-  border: solid 1px #2A3F54;
+  color: #C4C4C4;
+  border: solid 1px #C4C4C4;
   float: right;
   text-align: center;
   padding-top: 5px;
@@ -1982,7 +1980,7 @@ hr.timeLeft {
   overflow-x: auto; }
 
 #weekSelect {
-  color: #446587;
+  color: #5A738E;
   font-size: 18px;
   text-align: center;
   margin-top: 50px;
@@ -1995,7 +1993,7 @@ hr.timeLeft {
   margin-left: 25px; }
 
 #weekSelect a {
-  color: #446587;
+  color: #5A738E;
   font-weight: bold; }
 
 #edtContainer > .row {
@@ -2003,7 +2001,7 @@ hr.timeLeft {
 
 #edtTable th {
   text-align: center;
-  color: #446587; }
+  color: #5A738E; }
 
 #edtTable tbody tr td {
   min-width: 160px;

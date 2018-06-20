@@ -43,7 +43,7 @@
 }
 
 #navBar ul li {
-	border-bottom: solid 1px #485A6C;
+	border-bottom: solid 1px lighten($primary_color, 10%);
 	color:white;
 	padding: 15px 0px 15px 50px;
 	transition:all 0.3s;
@@ -109,14 +109,16 @@
 
 #topBar{
 	height:70px;
-	background-color: $topBar_color;
+	background-color: $tritiary_color;
 	border-bottom: solid 1px #D9DEE4;
 }
 
 #toggleIcon{
-	background:url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
 	width:100px;
 	height:70px;
+	background-color: lighten($primary_color, 15%);
+    -webkit-mask:  url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
+    mask:url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
 }
 
 #inputSearch{
@@ -160,7 +162,7 @@
 }
 
 #sideBar.menuClose ul li {
-	border-bottom: solid 1px #485A6C;
+	border-bottom: solid 1px lighten($primary_color, 10%);
 	color:white;	
 	font-size: 10px;
 	padding: 30px 15px 15px 15px;
@@ -412,7 +414,7 @@
 #addBlock{
     height: 150px;
     background:#fff;
-    border:dashed 1px #C4C4C4;
+    border:dashed 1px $primary_color;
     text-align:center;
     
 }
@@ -428,18 +430,18 @@
     height:60px;
     text-align:center;
     font-weight:bold;
-    border: solid 3px $button_input_color;
+    border: solid 3px lighten($primary_color, 15%);
     border-radius:50%;
     display: inline-block;
     text-decoration: none;
-    color: $button_input_color;
+    color: lighten($primary_color, 15%);
     font-size:35px;
     padding-top:6px;
 }
 
 .blueBlock{
     height: 100px;
-    background: linear-gradient(204.26deg, $primary_color 5%, rgba(60, 85, 110, 0.7) 113.45%);
+    background: linear-gradient(204.26deg, $primary_color 5%, lighten($primary_color, 15%) 113.45%);
     box-shadow: $block_shadow;
     color:#fff;
     padding:20px 20px;
@@ -475,8 +477,8 @@
     width:33px;
     height:33px;
     border-radius:50%;
-    color:#C4C4C4;
-    border:solid 1px #C4C4C4;
+    color:$primary_color;
+    border:solid 1px $primary_color;
     float: right;
     text-align:center;
     padding-top:5px;

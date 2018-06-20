@@ -5,7 +5,7 @@
 .blocInfo{
 	width:230px;
 	height: 150px;
-	background:$block_color;
+	background:$tritiary_color;
 	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 	margin:0 auto;
 	padding:35px;
@@ -45,9 +45,8 @@
 
 #arrowLeftSchedule{
 	height: 170px;
-	background:url(../../img/icn/iconArrowLeftSchedule.svg)  50% 50% no-repeat $secondary_color;
+	background:url(../../img/icn/iconArrowLeftSchedule.svg)  50% 50% no-repeat lighten($secondary_color, 25%);
 	width: 45px;
-	opacity: 0.7;
 	cursor: pointer;
 }
 
@@ -67,22 +66,21 @@
 }
 
 #contentSchedule #currentCourse a,{	
-	background:#8CDDCD;
+	background:lighten($secondary_color, 25%);
 	float: right;
     margin-right: 25px;
 }
 
 #contentSchedule #nextCourse a,{
-	background:#9DAAB6;
+	background:lighten($primary_color, 25%);
 	float: right;
     margin-right: 25px;
 }
 
 #arrowRightSchedule{
 	height: 170px;
-	background: url(../../img/icn/iconArrowRightSchedule.svg) 50% 50% no-repeat #3c556e;
+	background: url(../../img/icn/iconArrowRightSchedule.svg) 50% 50% no-repeat lighten($primary_color, 25%);
 	width: 45px;
-	opacity: 0.7;
 	cursor: pointer;
 }
 
@@ -93,7 +91,7 @@
 	flex:1;
 }
 #nextCourse{
-	background:#3C556E;
+	background:lighten($primary_color, 5%);
 	height: 100%;
 	flex:1;
 	height: 170px;
