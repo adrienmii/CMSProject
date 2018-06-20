@@ -25,7 +25,7 @@
         <?php } elseif ($params['type'] == "file"){ ?>
             
                 <div class="col-sm-6 col-sm-offset-3">
-                    <img style=" width: 10%; " src="public/img/<?php echo $config['prefill'][$name]; ?>">
+                    <img style=" width: 15%; margin-bottom:5px;" title="Logo de l'établissement" src="public/img/<?php echo $config['prefill'][$name]; ?>">
                     <input
                         type="<?php echo $params['type']; ?>"
                         name="<?php echo $name; ?>"
@@ -34,6 +34,15 @@
                         <?php echo (!empty($config['post'][$name]) ? 'value="'. $config['post'][$name].'"' : ""); ?>
                     >
                 </div>
+
+        <?php }elseif ($params['type'] == "select"){ ?>
+             <div class="col-sm-6 col-sm-offset-3">
+                <select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" <?php echo ($params['multiple'])?" style='height:100px' multiple":""; ?>>
+                    <?php foreach ($params['options'] as $value => $key): ?>
+                        <option value="<?php echo $key; ?>" <?php echo ($config['prefill'][$name] == $key)?'selected':''; ?>> <?php echo $value; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
                             
         <?php } ?>
     <?php endforeach; ?>

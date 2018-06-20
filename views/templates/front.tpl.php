@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php echo DIRNAME; ?>public/css/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo DIRNAME; ?>public/css/themes/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,10 @@
 	<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>	
 
 </head>
-<body>	
+<body>
+<?php $BSQL = new BaseSQL();
+$settings = $BSQL->getAllById('settings', 1);
+//echo ($settings['theme'])?$settings['theme']:'style'; ?>
 	<div id="sideBar" class="hidden-xs visible-md">
 		<header>
 			<img src="<?php echo DIRNAME; ?>public/img/petitLogo.svg">
@@ -52,8 +55,7 @@
 						DIRNAME."Devoirs" => "Devoirs",
 						DIRNAME."Timetable" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"
-					);
-										
+					);	
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
 
@@ -77,7 +79,6 @@
 						$i++;
 					}
 					
-			
 				?>
 				
 			</ul>			
@@ -90,9 +91,7 @@
 					<div class="col-md-6">
 						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
 					</div>
-					<div class="col-md-2 col-md-offset-4">
-						<input  id="inputSearch" type="text">
-					</div>
+					
 				</div>											
 			</div>
 			<div id="topBarMobile" class="hidden-md">
@@ -101,7 +100,7 @@
 						<a id="toggleIcon" onclick="toggleMenuMobile()" href="#"></a>
 					</div>
 					<div id="logoMobile" class="col-xs-6 col-xs-offset-1"><img src="<?php echo DIRNAME; ?>public/img/logoMobile.png"></div>
-					<div id="iconSearch" class="col-xs-2 col-xs-offset-1" onclick="toggleSearchMobile()""></div>					
+										
 				</div>	
 				<nav id="navBarMobile" class="menuMobileClose">
 					<ul>
