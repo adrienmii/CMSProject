@@ -3,7 +3,7 @@
 }
 
 #weekSelect{
-	color:$button_input_color;
+	color:lighten($primary_color, 15%);
 	font-size:18px;
 	text-align:center;
 	margin-top:50px;
@@ -18,7 +18,7 @@
 }
 
 #weekSelect a{
-	color:$button_input_color;
+	color:lighten($primary_color, 15%);
 	font-weight:bold;
 }
 
@@ -28,7 +28,7 @@
 
 #edtTable th{
 	text-align:center;
-	color:$button_input_color;
+	color:lighten($primary_color, 15%);
 
 }
 
