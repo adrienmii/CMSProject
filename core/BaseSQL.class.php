@@ -389,4 +389,16 @@ class BaseSQL {
 
     }
 
+    public function getQCMById($id){
+        $sql = "SELECT * FROM QCM WHERE id = $id";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $qcm = $query->fetch();
+
+        return $qcm;
+    }
+
 }
