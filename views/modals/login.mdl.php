@@ -23,3 +23,9 @@
 
 </form>
 
+<script>
+	$("#captcha").dblclick(function() {
+		$(this).attr('src', '/ProjetCMS/public/captcha');
+	});
+</script>
+
