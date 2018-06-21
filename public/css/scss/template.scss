@@ -318,7 +318,7 @@
 	}
 
 	#navBarMobile ul li{
-		border-bottom: solid 1px #485A6C;
+		border-bottom: solid 1px lighten($primary_color, 10%);
 		padding: 15px 0px 15px 0px;
 		transition:all 0.3s;
 		text-align: center;	

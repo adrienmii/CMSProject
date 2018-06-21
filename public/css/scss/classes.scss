@@ -32,10 +32,12 @@
 }
 
 #addStudentsIcon{
-	background: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat #53667A;
+
+	background-color: lighten($primary_color, 15%);
+    -webkit-mask: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat;
+    mask: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat;
 	width:33px;
 	height:33px;
-	border-radius:50%;	
 }
 
 

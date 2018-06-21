@@ -20,13 +20,13 @@
 	//height: 30px;
 	font-size:21px;
 	width:100%;
-	border-bottom: $input_border_color; 
+	border-bottom: solid 1px lighten($primary_color, 10%); 
 	color:$primary_color;
 	margin: 10px 0px;
 }
 
 .addProfile{
-	background:$button_input_color !important;	
+	background:lighten($primary_color, 15%) !important;	
 	//font-size: 21px;
 	//padding:10px 30px;
 	//border-radius: 25px;

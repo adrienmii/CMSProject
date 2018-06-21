@@ -846,7 +846,7 @@ body {
     padding: 0; }
 
   #navBarMobile ul li {
-    border-bottom: solid 1px #485A6C;
+    border-bottom: solid 1px #3b5976;
     padding: 15px 0px 15px 0px;
     transition: all 0.3s;
     text-align: center; }
@@ -1756,10 +1756,11 @@ hr.timeLeft {
   margin-left: 5px; }
 
 #addStudentsIcon {
-  background: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat #53667A;
+  background-color: #446587;
+  -webkit-mask: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat;
+  mask: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat;
   width: 33px;
-  height: 33px;
-  border-radius: 50%; }
+  height: 33px; }
 
 @media screen and (max-width: 768px) {
   #classesContainer {
@@ -1839,13 +1840,19 @@ hr.timeLeft {
   font-size: 18px; }
 
 #studentsCount {
-  background: url(../../img/icn/iconStudentsBlue.svg) 7px 7px no-repeat;
   display: inline-block;
   font-size: 24px;
   font-weight: 100;
   padding-top: 2px;
-  padding-left: 45px;
   color: #2A3F54; }
+
+#iconStudents {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: #2A3F54;
+  -webkit-mask: url(../../img/icn/iconStudentsBlue.svg) 75px 7px no-repeat;
+  mask: url(../../img/icn/iconStudentsBlue.svg) 75px 7px no-repeat; }
 
 #addStudent {
   width: 40px;
@@ -1870,9 +1877,6 @@ hr.timeLeft {
     overflow-x: auto; }
 
   #teacherName {
-    margin-top: 20px; }
-
-  #studentsCount {
     margin-top: 20px; } }
 #subscribeContainer {
   font-size: 28px;
@@ -1892,12 +1896,12 @@ hr.timeLeft {
 #subscribeContainer input[type="password"] {
   font-size: 21px;
   width: 100%;
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: solid 1px #3b5976;
   color: #2A3F54;
   margin: 10px 0px; }
 
 .addProfile {
-  background: #5A738E !important;
+  background: #446587 !important;
   width: 150px; }
 
 .btnAddSubscribe {

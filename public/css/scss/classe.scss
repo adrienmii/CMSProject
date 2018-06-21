@@ -88,13 +88,20 @@
 }
 
 #studentsCount{
-	background:url(../../img/icn/iconStudentsBlue.svg) 7px 7px no-repeat;
 	display:inline-block;
 	font-size:24px;
 	font-weight:100;
 	padding-top:2px;
-	padding-left:45px;
 	color:$primary_color;
+}
+
+#iconStudents{
+	width:40px;
+	height:40px;
+	display: inline-block;
+	background-color: $primary_color;
+    -webkit-mask: url(../../img/icn/iconStudentsBlue.svg) 75px 7px no-repeat;
+    mask: url(../../img/icn/iconStudentsBlue.svg) 75px 7px no-repeat;
 }
 
 #addStudent{
@@ -123,10 +130,6 @@
 	}
 
 	#teacherName{
-		margin-top:20px
-	}
-
-	#studentsCount{
 		margin-top:20px
 	}
 }

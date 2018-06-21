@@ -4,8 +4,9 @@
 		<div class="col-xs-12">
 			<header>
 				<div class="row">
-					<div id="offset" class="col-xs-8 col-sm-4"></div>
-					<div id="studentsCount" class="col-xs-4 col-sm-2 col-sm-offset-6 text-left"><?php echo $count; ?><a href="<?php echo DIRNAME.'user/add'; ?>" id="addStudent">+</a></div>
+					<div id="offset" class="col-xs-5 col-sm-4"></div>
+					<div id="iconStudents" class="col-xs-4 col-sm-1 col-sm-offset-6 "></div>
+					<div id="studentsCount" class="col-xs-3 col-sm-1 text-left"><?php echo $count; ?><a href="<?php echo DIRNAME.'user/add'; ?>" id="addStudent">+</a></div>
 				</div>
 			</header>
 			<main>
