@@ -13,12 +13,13 @@ body {
 }
 
 #loginForm header{
-	height: 50%;
+	height: 35%;
 	background: url(../../img/logo.png) no-repeat 50% 40%;
 }
 
 #loginForm main{
 	height:260px;
+	margin-bottom: 120px;
 }
 
 #loginForm input[type="text"],
@@ -45,7 +46,12 @@ body {
 
 #inputPwd{
 	background: url(../../img/icn/iconPwd.svg) no-repeat;
-	margin-bottom:80px;
+	margin-bottom:40px;
+}
+
+#inputCaptcha{
+	background: url(../../img/icn/iconPwd.svg) no-repeat;
+	margin-bottom:40px;
 }
 
 #help{

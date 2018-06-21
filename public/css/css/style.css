@@ -405,11 +405,12 @@ body {
   font-family: 'Ubuntu', sans-serif !important; }
 
 #loginForm header {
-  height: 50%;
+  height: 35%;
   background: url(../../img/logo.png) no-repeat 50% 40%; }
 
 #loginForm main {
-  height: 260px; }
+  height: 260px;
+  margin-bottom: 120px; }
 
 #loginForm input[type="text"],
 #loginForm input[type="password"] {
@@ -430,7 +431,11 @@ body {
 
 #inputPwd {
   background: url(../../img/icn/iconPwd.svg) no-repeat;
-  margin-bottom: 80px; }
+  margin-bottom: 40px; }
+
+#inputCaptcha {
+  background: url(../../img/icn/iconPwd.svg) no-repeat;
+  margin-bottom: 40px; }
 
 #help {
   background: url(../../img/icn/iconHelp.svg) no-repeat 25px;

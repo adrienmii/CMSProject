@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$secondary_color".
-        on line 30 of scss/login.scss
+        on line 31 of scss/login.scss
 
-25: #loginForm input[type="password"]
-26: {
-27:     height: 2rem;
-28:     font-size: 1.3rem;
-29:     padding-left:30px; 
-30:     border-bottom: 1px solid $secondary_color;     
-31: }
-32: 
-33: #loginForm input[type="submit"]{	
-34: 	width:200px;
-35: 	left: 50%;
+26: #loginForm input[type="password"]
+27: {
+28:     height: 2rem;
+29:     font-size: 1.3rem;
+30:     padding-left:30px; 
+31:     border-bottom: 1px solid $secondary_color;     
+32: }
+33: 
+34: #loginForm input[type="submit"]{	
+35: 	width:200px;
+36: 	left: 50%;
 
 Backtrace:
-scss/login.scss:30
+scss/login.scss:31
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/script/tree/variable.rb:49:in `_perform'
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/script/tree/node.rb:50:in `perform'
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -59,17 +59,18 @@ scss/login.scss:30
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:294:in `watch'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin.rb:109:in `method_missing'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/base.rb:52:in `parse'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/base.rb:19:in `parse!'
-/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/usr/local/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$secondary_color\".\A         on line 30 of scss/login.scss\A \A 25: #loginForm input[type=\"password\"]\A 26: {\A 27:     height: 2rem;\A 28:     font-size: 1.3rem;\A 29:     padding-left:30px; \A 30:     border-bottom: 1px solid $secondary_color;     \A 31: }\A 32: \A 33: #loginForm input[type=\"submit\"]{	\A 34: 	width:200px;\A 35: 	left: 50%;"; }
+  content: "Error: Undefined variable: \"$secondary_color\".\A         on line 31 of scss/login.scss\A \A 26: #loginForm input[type=\"password\"]\A 27: {\A 28:     height: 2rem;\A 29:     font-size: 1.3rem;\A 30:     padding-left:30px; \A 31:     border-bottom: 1px solid $secondary_color;     \A 32: }\A 33: \A 34: #loginForm input[type=\"submit\"]{	\A 35: 	width:200px;\A 36: 	left: 50%;"; }
