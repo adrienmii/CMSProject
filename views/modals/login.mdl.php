@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-xs-8 col-xs-offset-2">
 					<?php if ($name == 'captcha') { ?> 
-					<img style="width:210px;margin:0 auto;margin-bottom: 10px;" src="public/captcha">
+					<img style="width:210px;margin:0 auto;margin-bottom: 10px;" src="./public/captcha" id="captcha">
 					<?php } ?>
 					<input <?php echo (!empty($config['post'][$name]) ? 'value="'. $config['post'][$name].'"' : ""); ?> type="<?php echo $params['type']; ?>" name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
 				</div>

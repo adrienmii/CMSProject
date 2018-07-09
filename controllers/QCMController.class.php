@@ -1,11 +1,18 @@
 <?php
 
 class QCMController {
-	
 
-	public function participateAction($params) {		
+    public function indexAction($params){
+        $BSQL = new BaseSQL();
+        $user = $BSQL->userInfoByToken();
+        $qcms = $BSQL->getQCMByTeacherId($user['id']);
 
-		$v = new View("QCM", "front");
+        $v = new View("myQCM", "front");
+        $v->assign("qcms", $qcms);
+    }
+
+	public function participateAction($params) {
+
 		
 	}
 
@@ -21,11 +28,14 @@ class QCMController {
             $errors = Validator::validateQCM($form, $params['POST']);
 
             if (empty($errors)) {
+                $db = new BaseSQL();
                 $qcm = new QCM();
                 $qcm->setLabel($params['POST']['label']);
+                $qcm->setTeacher($db->userInfoByToken()['id']);
+                $qcm->setClasse($params['POST']['classe']);
                 $qcmId = $qcm->save();
 
-                $notify = new Notify("La question a été créée avec succés","success");
+                $notify = new Notify("Le QCM a été créé avec succés","success");
 
                 header('Location: '.DIRNAME.'QCM/createQuestion/'. $qcmId);
                 exit();
@@ -77,7 +87,9 @@ class QCMController {
             }
 
         }else{
-            header('Location: ' . DIRNAME . 'QCM/createjezhzeoieh');
+            $notify = new Notify("Le QCM n'a pas pu etre créé", "danger");
+            header('Location: ' . DIRNAME . 'QCM/create');
+            exit();
         }
 
         $v = new View("addQCM");

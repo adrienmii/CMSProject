@@ -401,4 +401,16 @@ class BaseSQL {
         return $qcm;
     }
 
+    public function getQCMByTeacherId($teacherId){
+        $sql = "SELECT * FROM QCM WHERE teacher=". $teacherId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $qcms = $query->fetchAll();
+
+        return $qcms;
+    }
+
 }
