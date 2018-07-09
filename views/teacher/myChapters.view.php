@@ -7,7 +7,11 @@
 		<main class="row">
 			<div class="col-xs-12">
 				<div class="row">
-					<?php foreach ($chapters as $chapter) { ?>
+					<?php foreach ($chapters as $chapter) { 
+						$BaseSQL = new BaseSQL(); 
+						$count = $BaseSQL->getCountCourse($chapter['id']);
+					?>
+
 						<div class="col-xs-12 col-sm-6 col-lg-4">
 							<div class="blueBlock">	
 								<div class="row">
@@ -20,7 +24,7 @@
 										<a class="actionDeleteWhite" href="<?php echo DIRNAME.'chapter/delete/'.$chapter['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
 									</div>
 									<div class="col-xs-10">
-										0 cours 
+										<?php echo $count; ?> cours 
 									</div>													
 								</div>							
 							</div>

@@ -1,7 +1,10 @@
+<?php $BSQL = new BaseSQL();
+$settings = $BSQL->getAllById('settings', 1);
+$style = ($settings['theme'])?$settings['theme']:'default'; ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php echo DIRNAME; ?>public/css/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo DIRNAME; ?>public/css/themes/<?php echo $style; ?>.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700|Ubuntu:300,400,500" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +17,6 @@
 
 </head>
 <body>
-<?php $BSQL = new BaseSQL();
-$settings = $BSQL->getAllById('settings', 1);
-//echo ($settings['theme'])?$settings['theme']:'style'; ?>
 	<div id="sideBar" class="hidden-xs visible-md">
 		<header>
 			<img src="<?php echo DIRNAME; ?>public/img/petitLogo.svg">

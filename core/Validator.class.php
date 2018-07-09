@@ -10,7 +10,7 @@ class Validator {
 			}
 
             if ($name == 'captcha') {
-                if ($_SESSION['captcha'] != $_POST['captcha']) {
+                if (strtolower($_SESSION['captcha']) != strtolower($_POST['captcha'])) {
                     $errorMsg[] = "Le ".$name." saisi est incorrect";
                 }
             }
