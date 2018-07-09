@@ -405,11 +405,12 @@ body {
   font-family: 'Ubuntu', sans-serif !important; }
 
 #loginForm header {
-  height: 50%;
+  height: 35%;
   background: url(../../img/logo.png) no-repeat 50% 40%; }
 
 #loginForm main {
-  height: 260px; }
+  height: 260px;
+  margin-bottom: 120px; }
 
 #loginForm input[type="text"],
 #loginForm input[type="password"] {
@@ -430,7 +431,11 @@ body {
 
 #inputPwd {
   background: url(../../img/icn/iconPwd.svg) no-repeat;
-  margin-bottom: 80px; }
+  margin-bottom: 40px; }
+
+#inputCaptcha {
+  background: url(../../img/icn/iconPwd.svg) no-repeat;
+  margin-bottom: 40px; }
 
 #help {
   background: url(../../img/icn/iconHelp.svg) no-repeat 25px;
@@ -615,7 +620,7 @@ body {
   padding: 0; }
 
 #navBar ul li {
-  border-bottom: solid 1px #485A6C;
+  border-bottom: solid 1px #3b5976;
   color: white;
   padding: 15px 0px 15px 50px;
   transition: all 0.3s;
@@ -665,13 +670,15 @@ body {
 
 #topBar {
   height: 70px;
-  background-color: #EDEDED;
+  background-color: #F4F4F4;
   border-bottom: solid 1px #D9DEE4; }
 
 #toggleIcon {
-  background: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
   width: 100px;
-  height: 70px; }
+  height: 70px;
+  background-color: #446587;
+  -webkit-mask: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat;
+  mask: url(../../img/icn/iconBurgerMenu.svg) 5px 50% no-repeat; }
 
 #inputSearch {
   border-bottom: 1px solid #5A738E;
@@ -705,7 +712,7 @@ body {
   margin-left: 100px; }
 
 #sideBar.menuClose ul li {
-  border-bottom: solid 1px #485A6C;
+  border-bottom: solid 1px #3b5976;
   color: white;
   font-size: 10px;
   padding: 30px 15px 15px 15px;
@@ -839,7 +846,7 @@ body {
     padding: 0; }
 
   #navBarMobile ul li {
-    border-bottom: solid 1px #485A6C;
+    border-bottom: solid 1px #3b5976;
     padding: 15px 0px 15px 0px;
     transition: all 0.3s;
     text-align: center; }
@@ -918,7 +925,7 @@ body {
 #addBlock {
   height: 150px;
   background: #fff;
-  border: dashed 1px #C4C4C4;
+  border: dashed 1px #2A3F54;
   text-align: center; }
 
 #iconAddBlockContainer {
@@ -931,17 +938,17 @@ body {
   height: 60px;
   text-align: center;
   font-weight: bold;
-  border: solid 3px #5A738E;
+  border: solid 3px #446587;
   border-radius: 50%;
   display: inline-block;
   text-decoration: none;
-  color: #5A738E;
+  color: #446587;
   font-size: 35px;
   padding-top: 6px; }
 
 .blueBlock {
   height: 100px;
-  background: linear-gradient(204.26deg, #2A3F54 5%, rgba(60, 85, 110, 0.7) 113.45%);
+  background: linear-gradient(204.26deg, #2A3F54 5%, #446587 113.45%);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   color: #fff;
   padding: 20px 20px; }
@@ -971,8 +978,8 @@ body {
   width: 33px;
   height: 33px;
   border-radius: 50%;
-  color: #C4C4C4;
-  border: solid 1px #C4C4C4;
+  color: #2A3F54;
+  border: solid 1px #2A3F54;
   float: right;
   text-align: center;
   padding-top: 5px;
@@ -1035,9 +1042,8 @@ body {
 
 #arrowLeftSchedule {
   height: 170px;
-  background: url(../../img/icn/iconArrowLeftSchedule.svg) 50% 50% no-repeat #1ABB9C;
+  background: url(../../img/icn/iconArrowLeftSchedule.svg) 50% 50% no-repeat #6aead2;
   width: 45px;
-  opacity: 0.7;
   cursor: pointer; }
 
 #contentSchedule {
@@ -1054,20 +1060,19 @@ body {
   font-size: 15px; }
 
 #contentSchedule #currentCourse a {
-  background: #8CDDCD;
+  background: #6aead2;
   float: right;
   margin-right: 25px; }
 
 #contentSchedule #nextCourse a {
-  background: #9DAAB6;
+  background: #557fa9;
   float: right;
   margin-right: 25px; }
 
 #arrowRightSchedule {
   height: 170px;
-  background: url(../../img/icn/iconArrowRightSchedule.svg) 50% 50% no-repeat #3c556e;
+  background: url(../../img/icn/iconArrowRightSchedule.svg) 50% 50% no-repeat #557fa9;
   width: 45px;
-  opacity: 0.7;
   cursor: pointer; }
 
 #currentCourse {
@@ -1077,7 +1082,7 @@ body {
   flex: 1; }
 
 #nextCourse {
-  background: #3C556E;
+  background: #334c65;
   height: 100%;
   flex: 1;
   height: 170px; }
@@ -1751,10 +1756,11 @@ hr.timeLeft {
   margin-left: 5px; }
 
 #addStudentsIcon {
-  background: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat #53667A;
+  background-color: #446587;
+  -webkit-mask: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat;
+  mask: url(../../img/icn/iconStudents.svg) 50% 50% no-repeat;
   width: 33px;
-  height: 33px;
-  border-radius: 50%; }
+  height: 33px; }
 
 @media screen and (max-width: 768px) {
   #classesContainer {
@@ -1834,13 +1840,19 @@ hr.timeLeft {
   font-size: 18px; }
 
 #studentsCount {
-  background: url(../../img/icn/iconStudentsBlue.svg) 7px 7px no-repeat;
   display: inline-block;
   font-size: 24px;
   font-weight: 100;
   padding-top: 2px;
-  padding-left: 45px;
   color: #2A3F54; }
+
+#iconStudents {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: #2A3F54;
+  -webkit-mask: url(../../img/icn/iconStudentsBlue.svg) 75px 7px no-repeat;
+  mask: url(../../img/icn/iconStudentsBlue.svg) 75px 7px no-repeat; }
 
 #addStudent {
   width: 40px;
@@ -1865,9 +1877,6 @@ hr.timeLeft {
     overflow-x: auto; }
 
   #teacherName {
-    margin-top: 20px; }
-
-  #studentsCount {
     margin-top: 20px; } }
 #subscribeContainer {
   font-size: 28px;
@@ -1887,12 +1896,12 @@ hr.timeLeft {
 #subscribeContainer input[type="password"] {
   font-size: 21px;
   width: 100%;
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: solid 1px #3b5976;
   color: #2A3F54;
   margin: 10px 0px; }
 
 .addProfile {
-  background: #5A738E !important;
+  background: #446587 !important;
   width: 150px; }
 
 .btnAddSubscribe {
@@ -1982,7 +1991,7 @@ hr.timeLeft {
   overflow-x: auto; }
 
 #weekSelect {
-  color: #5A738E;
+  color: #446587;
   font-size: 18px;
   text-align: center;
   margin-top: 50px;
@@ -1995,7 +2004,7 @@ hr.timeLeft {
   margin-left: 25px; }
 
 #weekSelect a {
-  color: #5A738E;
+  color: #446587;
   font-weight: bold; }
 
 #edtContainer > .row {
@@ -2003,7 +2012,7 @@ hr.timeLeft {
 
 #edtTable th {
   text-align: center;
-  color: #5A738E; }
+  color: #446587; }
 
 #edtTable tbody tr td {
   min-width: 160px;

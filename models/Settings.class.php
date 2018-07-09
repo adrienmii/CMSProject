@@ -61,7 +61,7 @@ class Settings extends BaseSQL {
                 "sitename" => ["type" => "text", "placeholder" => "Nom de l'école", "required" => true, "id" => "sitename"],
                  "address" => ["type" => "text", "placeholder" => "Adresse de l'école", "required" => true, "id" => "address"],
                 "logo" => ["type" => "file", "placeholder" => "Logo", "id" => "logo"],
-                "theme" => ["type" => "select", "options" => ["Thème par défaut" => "default", "Thème light"=> "lightlab", "Thème dark" => "darklab", "Thème sunny" => "sunlab"], "required" => true, "multiple" => false, "id" => "selectTheme"]
+                "theme" => ["type" => "select", "options" => ["Thème par défaut" => "default", "Thème red"=> "redlab", "Thème vert" => "wildlab", "Thème sunny" => "sunlab", "Thème dark" => "darklab"], "required" => true, "multiple" => false, "id" => "selectTheme"]
       
             ],
             "submit" => "Enregistrer"

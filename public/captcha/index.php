@@ -44,7 +44,7 @@ for ($i=0; $i < strlen($captcha); $i++) {
 }
 
 
-//imagestring($image, 2, 115, 2, $captcha, imagecolorallocate($image, rand(0,127), rand(0,127), rand(0,127)));
+imagestring($image, 2, 100, 2, $captcha, imagecolorallocate($image, rand(0,127), rand(0,127), rand(0,127)));
 
 
 imagepng($image);

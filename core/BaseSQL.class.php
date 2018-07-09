@@ -289,6 +289,15 @@ class BaseSQL {
 		return $count['count']; 
 	}
 
+	public function getCountCourse($id) {
+		$sql = "SELECT count(*) as count FROM course WHERE teacher = ".$id;
+		try { $query = $this->pdo->query($sql); }
+		catch (Exception $e) { die('Erreur : '.$e->getMessage()); }
+		$count = $query->fetch();
+
+		return $count['count']; 
+	}
+
 	public function getCountTeachers($id) {
 		$sql = "SELECT count(*) as count FROM classeteacher c INNER JOIN user u ON u.id = c.teacher WHERE status = 1 AND c.classe = ".$id;
 		try { $query = $this->pdo->query($sql); }
