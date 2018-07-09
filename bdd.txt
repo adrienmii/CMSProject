@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le :  jeu. 17 mai 2018 à 16:31
--- Version du serveur :  5.6.35
--- Version de PHP :  7.1.8
+-- Hôte : localhost
+-- Généré le :  lun. 09 juil. 2018 à 14:10
+-- Version du serveur :  5.6.38
+-- Version de PHP :  7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `EDULAB`
+-- Base de données :  `edulab`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `chapter` (
 --
 
 INSERT INTO `chapter` (`id`, `label`, `description`, `classe`) VALUES
-(1, 'Mathématiques', 'Cours de maths', 13),
+(1, 'Maths', 'Cours de mathss', 13),
 (2, 'Python', '', 12),
 (5, 'BDD', '', 14);
 
@@ -102,6 +102,52 @@ INSERT INTO `course` (`id`, `title`, `content`, `teacher`, `chapter`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `QCM`
+--
+
+CREATE TABLE `QCM` (
+  `id` int(20) NOT NULL,
+  `teacher` int(20) NOT NULL,
+  `label` varchar(200) NOT NULL,
+  `classe` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `QCM`
+--
+
+INSERT INTO `QCM` (`id`, `teacher`, `label`, `classe`) VALUES
+(1, 6, 'dkljferg', 1),
+(2, 6, 'dffsd', 13),
+(3, 6, 'Dffsdkjhljkh', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `questionQCM`
+--
+
+CREATE TABLE `questionQCM` (
+  `id` int(11) NOT NULL,
+  `question` varchar(500) NOT NULL,
+  `answer1` varchar(500) NOT NULL,
+  `answer2` varchar(500) NOT NULL,
+  `answer3` varchar(500) DEFAULT NULL,
+  `answer4` varchar(500) DEFAULT NULL,
+  `result` int(11) NOT NULL,
+  `idQCM` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `questionQCM`
+--
+
+INSERT INTO `questionQCM` (`id`, `question`, `answer1`, `answer2`, `answer3`, `answer4`, `result`, `idQCM`) VALUES
+(1, 'Ceci est une question test', 'Voila la réponse test 1', 'Voila la réponse test 2', '', '', 1, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `settings`
 --
 
@@ -109,15 +155,16 @@ CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
   `sitename` varchar(200) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `logo` mediumtext NOT NULL
+  `logo` mediumtext NOT NULL,
+  `theme` varchar(255) NOT NULL DEFAULT 'default'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `settings`
 --
 
-INSERT INTO `settings` (`id`, `sitename`, `address`, `logo`) VALUES
-(1, 'EDULAB', '254 Rue du Faubourg Saint-Antoine 75012 Paris', 'LOGO-ESGI-300x203.jpg');
+INSERT INTO `settings` (`id`, `sitename`, `address`, `logo`, `theme`) VALUES
+(1, 'ESGI', '254 Rue du Faubourg Saint-Antoine, 75012 Paris 0198341092', 'LOGO-ESGI-300x203.jpg', 'default');
 
 -- --------------------------------------------------------
 
@@ -145,8 +192,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '58783755c41d3e8', 1, 1, NULL, '2018-04-23 14:41:56', '2018-05-16 15:12:33', 0),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '5fb26f07377694a', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-17 14:28:05', 0),
+(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'bb616eef9242773', 1, 1, NULL, '2018-04-23 14:41:56', '2018-06-20 17:42:51', 0),
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '1dfb601bca6f70e', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-09 14:09:22', 0),
 (7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-05-16 14:53:12', 0),
 (8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 14:21:05', 0),
 (9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:56', 0),
@@ -170,6 +217,7 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 -- Index pour la table `chapter`
 --
 ALTER TABLE `chapter`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
@@ -189,6 +237,18 @@ ALTER TABLE `classeteacher`
 -- Index pour la table `course`
 --
 ALTER TABLE `course`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `QCM`
+--
+ALTER TABLE `QCM`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `questionQCM`
+--
+ALTER TABLE `questionQCM`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -213,26 +273,43 @@ ALTER TABLE `user`
 --
 ALTER TABLE `chapter`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT pour la table `classe`
 --
 ALTER TABLE `classe`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT pour la table `classeteacher`
 --
 ALTER TABLE `classeteacher`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT pour la table `course`
 --
 ALTER TABLE `course`
   MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `QCM`
+--
+ALTER TABLE `QCM`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `questionQCM`
+--
+ALTER TABLE `questionQCM`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT pour la table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT pour la table `user`
 --

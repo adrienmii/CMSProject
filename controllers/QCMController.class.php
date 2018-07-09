@@ -76,7 +76,7 @@ class QCMController {
                         $qcm->setClasse($params['POST']['classe']);
                         $qcmId = $qcm->save();
 
-                        $notify = new Notify("Le QCM a été créé avec succés","success");
+                        $notify = new Notify("Le QCM a été modifié avec succés","success");
 
                         header('Location: '.DIRNAME.'QCM/createQuestion/'. $qcmId);
                         exit();
