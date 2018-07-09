@@ -402,7 +402,7 @@ class BaseSQL {
     }
 
     public function getQCMByTeacherId($teacherId){
-        $sql = "SELECT * FROM QCM WHERE teacher=". $teacherId;
+        $sql = "SELECT QCM.*, classe.classname AS classname FROM QCM INNER JOIN classe ON classe.id = QCM.classe WHERE teacher=". $teacherId;
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
@@ -411,6 +411,30 @@ class BaseSQL {
         $qcms = $query->fetchAll();
 
         return $qcms;
+    }
+
+    public function getQuestionsByQCM($qcmId){
+        $sql = "SELECT * FROM questionQCM WHERE idQCM=". $qcmId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $questions = $query->fetchAll();
+
+        return $questions;
+    }
+
+    public function countQuestionsByQCM($qcmId){
+        $sql = "SELECT COUNT(id) AS nbQuestions FROM questionQCM WHERE idQCM=". $qcmId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $nbQuestions = $query->fetch();
+
+        return $nbQuestions;
     }
 
 }
