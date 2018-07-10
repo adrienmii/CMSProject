@@ -80,7 +80,7 @@ class QCMController {
                     $v->assign("config", $form);
 
                 }else{
-                    if($_POST['submit_signin']){
+                    if(isset($_POST['submit_signin']) && !empty($_POST['submit_signin'])){
                         $BSQL = new BaseSQL();
                         $goodAnswer = $BSQL->getQuestionById($_POST['idQuestion'])['result'];
                         if($_POST['answer'] == $goodAnswer){
