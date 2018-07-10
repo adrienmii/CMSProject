@@ -11,7 +11,7 @@
 							<div class="blueBlock">	
 								<div class="row">
 									<div class="col-xs-7 blockName">
-										<?php echo ucfirst($qcm['label'])." "; echo ($qcm['classname']) ? "(".$qcm['classname'].")" : ""; ?>
+										<?php echo ucfirst($qcm['label'])." "; echo (isset($qcm['classname']) && !empty($qcm['classname'])) ? "(".$qcm['classname'].")" : ""; ?>
 									</div>
 									<div class="actionCol text-right col-xs-5 ">
 										<?php if($qcm['classname']){ ?>
