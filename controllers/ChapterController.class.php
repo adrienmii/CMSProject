@@ -33,8 +33,7 @@ class ChapterController {
 
 		$v = new View("addChapter");
         $v->assign("config", $form);
-        $v->assign("errors", $errors);
-		
+        $v->assign("errors", $errors);	
 	}
 
 	public function editAction($params) {
@@ -95,7 +94,6 @@ class ChapterController {
         $v->assign("chapters", $chapters);
 	}
 
-
 	public function deleteAction($params) {
 		// modifier en ajoutant les supressions en cascades ?
 		
@@ -105,9 +103,7 @@ class ChapterController {
 		new Notify("Le chapitre a bien été supprimé", "success");
 
         header('Location: '.DIRNAME.'chapter/list');
-        exit();
-
-      
+        exit();  
 	}
 
 	
