@@ -3,7 +3,10 @@
 class ChapterController {
 
     public function __construct() {
-        if ();
+        if (!isset($_SESSION['token']) || !isset($_SESSION['user_id'])) {
+            header("Location: ".DIRNAME."login");
+            exit();
+        }
     }
 
 	public function addAction($params) {		
