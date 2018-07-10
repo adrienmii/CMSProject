@@ -14,7 +14,7 @@
 										<?php echo ucfirst($qcm['label'])." "; echo (isset($qcm['classname']) && !empty($qcm['classname'])) ? "(".$qcm['classname'].")" : ""; ?>
 									</div>
 									<div class="actionCol text-right col-xs-5 ">
-										<?php if($qcm['classname']){ ?>
+										<?php if(isset($qcm['classname']) && !empty($qcm['classname'])){ ?>
 											<a class="actionEditWhite" href="<?php echo DIRNAME.'QCM/edit/'.$qcm['id']; ?>"></a>
 											<a class="actionDeleteWhite" href="<?php echo DIRNAME.'QCM/delete/'.$qcm['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
 										<?php }else{ ?>
