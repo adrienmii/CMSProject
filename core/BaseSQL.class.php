@@ -434,6 +434,18 @@ class BaseSQL {
         return $questions;
     }
 
+    public function getQuestionById($questionId){
+        $sql = "SELECT * FROM questionQCM WHERE id=". $questionId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $questions = $query->fetch();
+
+        return $questions;
+    }
+
     public function countQuestionsByQCM($qcmId){
         $sql = "SELECT COUNT(id) AS nbQuestions FROM questionQCM WHERE idQCM=". $qcmId;
         try {
@@ -442,6 +454,18 @@ class BaseSQL {
             die('Erreur : ' . $e->getMessage());
         }
         $nbQuestions = $query->fetch();
+
+        return $nbQuestions;
+    }
+
+    public function getQCMByClassId($classId){
+        $sql = "SELECT * FROM QCM WHERE classe=". $classId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $nbQuestions = $query->fetchAll();
 
         return $nbQuestions;
     }

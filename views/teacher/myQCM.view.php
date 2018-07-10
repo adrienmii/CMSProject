@@ -11,11 +11,15 @@
 							<div class="blueBlock">	
 								<div class="row">
 									<div class="col-xs-7 blockName">
-										<?php echo ucfirst($qcm['label'])." (".$qcm['classname'].")"; ?>
+										<?php echo ucfirst($qcm['label'])." "; echo ($qcm['classname']) ? "(".$qcm['classname'].")" : ""; ?>
 									</div>
 									<div class="actionCol text-right col-xs-5 ">
-										<a class="actionEditWhite" href="<?php echo DIRNAME.'QCM/edit/'.$qcm['id']; ?>"></a>
-										<a class="actionDeleteWhite" href="<?php echo DIRNAME.'QCM/delete/'.$qcm['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
+										<?php if($qcm['classname']){ ?>
+											<a class="actionEditWhite" href="<?php echo DIRNAME.'QCM/edit/'.$qcm['id']; ?>"></a>
+											<a class="actionDeleteWhite" href="<?php echo DIRNAME.'QCM/delete/'.$qcm['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
+										<?php }else{ ?>
+											<a class="actionEditWhite" href="<?php echo DIRNAME.'QCM/participate/'.$qcm['id']; ?>"></a>
+										<?php } ?>
 									</div>
 									<div class="col-xs-10">
 										<?php echo $qcm['nbQuestions']; ?> question(s)

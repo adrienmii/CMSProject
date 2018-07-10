@@ -70,5 +70,17 @@ class QCM extends BaseSQL {
         ];
     }
 
+    public function generateFormParticipateQCM() {
+
+        return [
+            "config" => ["method"=> "POST", "action" => ""],
+            "input" => [
+                "answer1" => ["type" => "radio", "id" => "radioAnswer1"]
+
+            ],
+            "submit" => "Suivant"
+        ];
+    }
+
 
 }

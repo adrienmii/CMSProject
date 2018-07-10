@@ -5,17 +5,73 @@ class QCMController {
     public function indexAction($params){
         $BSQL = new BaseSQL();
         $user = $BSQL->userInfoByToken();
-        $qcms = $BSQL->getQCMByTeacherId($user['id']);
-        $qcm['nbQuestions'] = "fgvv";
-        foreach($qcms as $key => $qcm){
-            $qcms[$key]['nbQuestions'] = $BSQL->countQuestionsByQCM($qcm['id'])['nbQuestions'];
+
+        if($user['rank'] == 2){
+            $qcms = $BSQL->getQCMByTeacherId($user['id']);
+            foreach($qcms as $key => $qcm){
+                $qcms[$key]['nbQuestions'] = $BSQL->countQuestionsByQCM($qcm['id'])['nbQuestions'];
+            }
+
+        }elseif($user['rank'] == 3){
+            $qcms = $BSQL->getQCMByClassId($user['classe']);
+            foreach($qcms as $key => $qcm){
+                $qcms[$key]['nbQuestions'] = $BSQL->countQuestionsByQCM($qcm['id'])['nbQuestions'];
+            }
         }
+
         $v = new View("myQCM", "front");
         $v->assign("qcms", $qcms);
     }
 
 	public function participateAction($params) {
+        if($params['URL'][0]){
+            if(!isset($_SESSION['qcm_'.$params['URL'][0]]) && $_SESSION['qcm_'.$params['URL'][0]] != "end"){
+                $BSQL = new BaseSQL();
+                $questions = $BSQL->getQuestionsByQCM($params['URL'][0]);
+                foreach ($questions as $question){
+                    $_SESSION['qcm_'.$params['URL'][0]][] = $question['id'];
+                }
+                $nbQuestion = sizeof($_SESSION['qcm_'.$params['URL'][0]]);
+                $_SESSION['currentQuestion'] = 1;
+                $_SESSION['mark'] = 0;
+            }
+            if($_SESSION['qcm_'.$params['URL'][0]][0] || $_SESSION['qcm_'.$params['URL'][0]] != "end"){
+                $BSQL = new BaseSQL();
+                $qcm = new QCM();
+                $form = $qcm->generateFormParticipateQCM();
+                $form['question'] = $BSQL->getQuestionById($_SESSION['qcm_'.$params['URL'][0]][0]);
+                $form['currentQuestion'] = $_SESSION['currentQuestion'];
+                $form['nbQuestion'] = $nbQuestion;
 
+                if($_POST){
+                    if($_POST['answer'] == $form['question']['answer']){
+                        $_SESSION['mark'] ++;
+                    }
+                    $_SESSION['qcm_'.$params['URL'][0]] = array_shift($_SESSION['qcm_'.$params['URL'][0]]);
+                    if(empty($_SESSION['qcm_'.$params['URL'][0]]))
+                        $_SESSION['qcm_'.$params['URL'][0]] = "end";
+                    $_SESSION['currentQuestion'] ++;
+                    header('Location: '.DIRNAME.'QCM/participate/'. $params['URL'][0]);
+
+                }
+                $v = new View("QCM", "front");
+                $v->assign("config", $form);
+
+            }else{
+                $participateQCM = new ParticipateQCM();
+                $participateQCM->setIdQCM($params['URL'][0]);
+                $participateQCM->setIdUser($participateQCM->userInfoByToken());
+                $participateQCM->setMark(($_SESSION['mark']) ? $_SESSION['mark'] : 0);
+                $participateQCM->save();
+
+                header('Location: '. DIRNAME .'dashboard');
+
+            }
+
+
+        }else{
+            header('Location: '. DIRNAME .'QCM');
+        }
 		
 	}
 
@@ -70,15 +126,15 @@ class QCMController {
 
                     if (empty($errors)) {
                         $db = new BaseSQL();
-                        $qcm = new QCM();
+                        $qcm = new QCM($params['URL'][0]);
                         $qcm->setLabel($params['POST']['label']);
                         $qcm->setTeacher($db->userInfoByToken()['id']);
                         $qcm->setClasse($params['POST']['classe']);
-                        $qcmId = $qcm->save();
+                        $qcm->save();
 
                         $notify = new Notify("Le QCM a été modifié avec succés","success");
 
-                        header('Location: '.DIRNAME.'QCM/createQuestion/'. $qcmId);
+                        header('Location: '.DIRNAME.'QCM/edit/'. $params['URL'][0]);
                         exit();
                     }else{
                         $form['post'] = $params['POST'];
@@ -97,6 +153,20 @@ class QCMController {
         }else{
             header('Location: ' . DIRNAME . 'QCM/create');
         }
+
+    }
+
+    public function deleteAction($params) {
+        // modifier en ajoutant les supressions en cascades ?
+
+        $qcm = new QCM($params['URL'][0]);
+        $qcm->delete();
+
+        new Notify("Le QCM a bien été supprimé", "success");
+
+        header('Location: '.DIRNAME.'chapter/list');
+        exit();
+
 
     }
 
