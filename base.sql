@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mar. 10 juil. 2018 à 15:49
--- Version du serveur :  5.6.38
--- Version de PHP :  7.1.12
+-- Généré le :  mar. 10 juil. 2018 à 16:38
+-- Version du serveur :  5.6.35
+-- Version de PHP :  7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `edulab`
+-- Base de données :  `EDULAB1`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `chapter` (
 --
 
 INSERT INTO `chapter` (`id`, `label`, `description`, `classe`) VALUES
-(1, 'Mathématiques', 'Cours de maths', 13),
+(1, 'Maths', 'Cours de mathss', 13),
 (2, 'Python', '', 12),
 (5, 'BDD', '', 14);
 
@@ -112,6 +112,14 @@ CREATE TABLE `participateQCM` (
   `mark` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `participateQCM`
+--
+
+INSERT INTO `participateQCM` (`id`, `idUser`, `idQCM`, `mark`) VALUES
+(24, 12, 1, 2),
+(37, 12, 2, 13.5);
+
 -- --------------------------------------------------------
 
 --
@@ -130,7 +138,9 @@ CREATE TABLE `QCM` (
 --
 
 INSERT INTO `QCM` (`id`, `teacher`, `label`, `classe`) VALUES
-(1, 6, 'QCM Test 2', 14);
+(1, 6, 'QCM Test 2', 14),
+(2, 12, 'Mon qcm', 14),
+(3, 12, 'QCM Debian', 14);
 
 -- --------------------------------------------------------
 
@@ -155,30 +165,16 @@ CREATE TABLE `questionQCM` (
 
 INSERT INTO `questionQCM` (`id`, `question`, `answer1`, `answer2`, `answer3`, `answer4`, `result`, `idQCM`) VALUES
 (13, 'Ceci est une question test', 'Voila la réponse test 1', 'Voila la réponse test 2', '', '', 1, 1),
-(26, 'Une autre question pour le QCM', 'Reponse 1', 'Reponse 2', 'Reponse 3', NULL, 2, 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `scheduleSettings`
---
-
-CREATE TABLE `scheduleSettings` (
-  `id` int(11) NOT NULL,
-  `days` int(11) NOT NULL,
-  `firstHour` varchar(255) NOT NULL,
-  `lastHour` varchar(255) NOT NULL,
-  `lunchHour` varchar(255) NOT NULL,
-  `lunchTime` varchar(255) NOT NULL,
-  `courseTime` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `scheduleSettings`
---
-
-INSERT INTO `scheduleSettings` (`id`, `days`, `firstHour`, `lastHour`, `lunchHour`, `lunchTime`, `courseTime`) VALUES
-(4, 5, '08:00', '17:00', '12:00', '01:00', '01:00');
+(26, 'Une autre question pour le QCM', 'Reponse 1', 'Reponse 2', 'Reponse 3', NULL, 2, 1),
+(27, 'On adore ou pas ?', 'Oui', 'Non', 'On sait pas', 'MDRR clique ici', 4, 2),
+(28, 'Bref?', 'c la bonne rep', ' on', 'kkkk', 'odfodf', 1, 2),
+(29, 'OKkk', 'eoeoeo?', 'c la bonne rep', 'oeoreo', 'oeoeoeoe', 2, 2),
+(30, 'Que veut dire DHCP ?', 'Dot Host Configuration Password', ' Dynamic Host Controller Port', 'Dynamic Host Configuration Protocol', '', 3, 3),
+(31, 'Combien y a-t-il d\'étapes dans une requête DHCP ?', '8', '4', '2', '3', 2, 3),
+(32, 'À quoi sert un serveur web ?', 'Permet de publier et d\'afficher des sites sur internet ou intranet', 'Permet d\'accéder au web', 'Permet d\'héberger un jeu vidéo', 'Permet d\'utiliser le World Wide Web', 1, 3),
+(33, 'Quel est le port utilisé par le protocole HTTPS ?', '25', '443', '22', '335', 2, 3),
+(34, 'Que signifie DNS ?', 'Domain Name Save', 'Dynamic Nomination System', 'Dynamic Name System', 'Domain Name System', 4, 3),
+(35, 'Doit-on associer un domaine au DNS ?', 'Vrai', 'Faux', '', 'Je ne sais pas', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -217,7 +213,7 @@ CREATE TABLE `user` (
   `rank` int(11) DEFAULT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `classe` int(10) DEFAULT NULL,
-  `date_inserted` varchar(100) DEFAULT NULL,
+  `date_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_created` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `pwd_changed` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -227,22 +223,22 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '7b631b39601833f', 1, 1, NULL, '2018-04-23 14:41:56', '2018-07-10 13:23:05', 0),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'b8b56e53b6b3111', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-10 06:05:27', 0),
-(7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-05-16 12:53:12', 0),
-(8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 12:21:05', 0),
-(9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 19:01:56', 0),
-(10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 19:01:58', 0),
-(11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-26 09:45:23', 0),
-(12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '5fbf4f3177d7618', 3, 1, 14, '2018-04-26 09:13:51', '2018-05-16 12:53:06', 0),
-(13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '17324f02261aa2f', 3, 1, 14, '2018-04-26 11:43:31', '2018-07-09 12:13:49', 0),
-(14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '83e6ef0a72866e5', 3, 1, 0, '2018-04-28 16:33:18', '2018-05-16 12:53:09', 0),
-(15, 'Student4', 'EDULAB', 'student4@test.fr', '$2y$10$40KKHvCPw9dSZdbEcHbAX.FxuZymrQLkgHTGIOsWhylEjs8JNR//C', 'd8d5bd1e7c46ffc', 3, 1, 0, '2018-04-28 16:45:18', '2018-04-29 15:40:13', 0),
-(16, 'Student5', 'EDULAB', 'student5@test.fr', '$2y$10$kxNptCvYR1Vo2.50LY86cOpF.kd5S48O9B4i9f.RFib6fKLgKbd/a', 'b3e75245f008348', 3, 1, 0, '2018-04-28 16:47:04', '2018-04-29 15:40:18', 0),
-(17, 'Student6', 'EDULAB', 'student6@test.fr', '$2y$10$S.5K.eQbPqA9e9Xc0C8VXOKuZNfeaYZt9iVz991jScbRLHfeUWU6K', '9960d73c7cc9951', 3, 1, 0, '2018-04-28 17:32:09', '2018-04-29 15:40:21', 0),
-(18, 'Student7', 'EDULAB', 'student7@test.fr', '$2y$10$hJny31M1mpJr0fMr0xmz8eXjZXc5ClhcAJqYaxT6WB.8iyxnG39UK', '0433890b5aca277', 3, 1, 12, '2018-04-28 17:34:14', '2018-04-29 15:10:18', 0),
-(19, 'Student8', 'EDULAB', 'student8@test.fr', '$2y$10$GHaCzAHXgSMo0LgftNbLvuqak8DltTaOkwqDFKTgykn8HFYMceMkK', 'b8e1654778f1045', 3, 1, 13, '2018-04-28 17:37:24', '2018-04-29 15:39:50', 0),
-(20, 'Student9', 'EDULAB', 'student9@test.fr', '$2y$10$P5c1229g3k3SRLheuKXaYuiLN9eNJy1ayrRwciUnVYtoTKW6rQeBW', 'bf0ed08ff3bb4e7', 3, 1, 13, '2018-04-29 15:47:41', '2018-04-29 15:39:50', 0);
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'b8b56e53b6b3111', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-10 08:05:27', 0),
+(7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-05-16 14:53:12', 0),
+(8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 14:21:05', 0),
+(9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:56', 0),
+(10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 21:01:58', 0),
+(11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-26 11:45:23', 0),
+(12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '090a3da166a318d', 3, 1, 14, '2018-04-26 09:13:51', '2018-07-10 14:38:42', 0),
+(13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '1702b296cfaa791', 3, 1, 14, '2018-04-26 11:43:31', '2018-05-16 14:53:07', 0),
+(14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '83e6ef0a72866e5', 3, 1, 0, '2018-04-28 16:33:18', '2018-05-16 14:53:09', 0),
+(15, 'Student4', 'EDULAB', 'student4@test.fr', '$2y$10$40KKHvCPw9dSZdbEcHbAX.FxuZymrQLkgHTGIOsWhylEjs8JNR//C', 'd8d5bd1e7c46ffc', 3, 1, 0, '2018-04-28 16:45:18', '2018-04-29 17:40:13', 0),
+(16, 'Student5', 'EDULAB', 'student5@test.fr', '$2y$10$kxNptCvYR1Vo2.50LY86cOpF.kd5S48O9B4i9f.RFib6fKLgKbd/a', 'b3e75245f008348', 3, 1, 0, '2018-04-28 16:47:04', '2018-04-29 17:40:18', 0),
+(17, 'Student6', 'EDULAB', 'student6@test.fr', '$2y$10$S.5K.eQbPqA9e9Xc0C8VXOKuZNfeaYZt9iVz991jScbRLHfeUWU6K', '9960d73c7cc9951', 3, 1, 0, '2018-04-28 17:32:09', '2018-04-29 17:40:21', 0),
+(18, 'Student7', 'EDULAB', 'student7@test.fr', '$2y$10$hJny31M1mpJr0fMr0xmz8eXjZXc5ClhcAJqYaxT6WB.8iyxnG39UK', '0433890b5aca277', 3, 1, 12, '2018-04-28 17:34:14', '2018-04-29 17:10:18', 0),
+(19, 'Student8', 'EDULAB', 'student8@test.fr', '$2y$10$GHaCzAHXgSMo0LgftNbLvuqak8DltTaOkwqDFKTgykn8HFYMceMkK', 'b8e1654778f1045', 3, 1, 13, '2018-04-28 17:37:24', '2018-04-29 17:39:50', 0),
+(20, 'Student9', 'EDULAB', 'student9@test.fr', '$2y$10$P5c1229g3k3SRLheuKXaYuiLN9eNJy1ayrRwciUnVYtoTKW6rQeBW', 'bf0ed08ff3bb4e7', 3, 1, 13, '2018-04-29 15:47:41', '2018-04-29 17:39:50', 0),
+(21, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$4ryWJ2LH4Ik.68aCxPRY8.4Hv6DwiGVhqXIEvyzSQoU5ExAfJaAR2', '3da4465ae532b4a', 1, 1, NULL, '2018-07-10 13:00:45', NULL, 1);
 
 --
 -- Index pour les tables déchargées
@@ -252,6 +248,7 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 -- Index pour la table `chapter`
 --
 ALTER TABLE `chapter`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
@@ -274,10 +271,29 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `scheduleSettings`
+-- Index pour la table `participateQCM`
 --
-ALTER TABLE `scheduleSettings`
+ALTER TABLE `participateQCM`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `QCM`
+--
+ALTER TABLE `QCM`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `questionQCM`
+--
+ALTER TABLE `questionQCM`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -288,27 +304,38 @@ ALTER TABLE `scheduleSettings`
 --
 ALTER TABLE `chapter`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT pour la table `classe`
 --
 ALTER TABLE `classe`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT pour la table `classeteacher`
 --
 ALTER TABLE `classeteacher`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT pour la table `course`
 --
 ALTER TABLE `course`
   MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT pour la table `scheduleSettings`
+-- AUTO_INCREMENT pour la table `participateQCM`
 --
-ALTER TABLE `scheduleSettings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `participateQCM`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+--
+-- AUTO_INCREMENT pour la table `QCM`
+--
+ALTER TABLE `QCM`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `questionQCM`
+--
+ALTER TABLE `questionQCM`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
