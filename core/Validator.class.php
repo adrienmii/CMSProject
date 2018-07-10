@@ -278,36 +278,40 @@ class Validator {
 
 
         //ici on vérifie si on peut remplir la journée sans qu'il y est de trou
-
         $firstHour = $params['firstHour'];
         $lastHour = $params['lastHour'];
         $lunchTime = $params['lunchTime'];
         $lunchHour = $params['lunchHour'];
         $courseTime = $params['courseTime'];
 
-        //conversion en minute des variables
+        
         $firstHourExploded = explode(':', $firstHour);
         $lastHourExploded = explode(':', $lastHour);
         $lunchTimeExploded = explode(':', $lunchTime);
+
+        //conversion en minute des variables
         $minutesLunchTime = ($lunchTimeExploded[0] * 60.0 + $lunchTimeExploded[1] * 1.0);
         $courseTimeExploded = explode(':', $courseTime);
         $minutesCourseTime = ($courseTimeExploded[0] * 60.0 + $courseTimeExploded[1] * 1.0);
 
+        // Calcul du nombres de minutes dans une journée ex:8h45 à 17h30 = 9x60
         $minutesDay = 0;
         for($i = intval($firstHourExploded[0]); $i < intval($lastHourExploded[0]); $i++){
             $minutesDay += 60;
         }
 
+        // on ajoute les minutes de la derniere heure de cours ex:+30 min de 17h30
         $minutesDay += $lastHourExploded[1];
+        // on retire les minutes de la premiere heure de cours ex:-45 min de 8h45
         $minutesDay -= $firstHourExploded[1];
+         // on retire les minutes de la pause lunch
         $minutesDay -= $minutesLunchTime;
-
+        // on divise le nombre total de cours en minutes par la durée d'un cours en minutes 
         $nbCoursesPerDay = $minutesDay/$minutesCourseTime;
 
         //Si c'est un float c'est qu'il y aura des trous dans la planning. On doit récupérer un resultat rond 
-        
         if (strpos($nbCoursesPerDay,'.')) {
-            $errorMsg[] = $nbCoursesPerDay;
+            $errorMsg[] = "Votre planning aura des périodes vides avec la configuration des heures actuelles";
         }
 
         foreach ($form['input'] as $name => $config) {
