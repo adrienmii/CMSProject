@@ -1,6 +1,6 @@
 <?php $BSQL = new BaseSQL();
 $settings = $BSQL->getAllById('settings', 1);
-$style = ($settings['theme'])?$settings['theme']:'default'; ?>
+$style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +35,7 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."#" => "Enseignants",
 						DIRNAME."user/list" => "Elèves",
 						DIRNAME."Classe" => "Classes",
-						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."ScheduleSettings/list" => "Emploi du temps",
 						DIRNAME."settings" => "Paramètres"
 					);
 
@@ -45,7 +45,6 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Classe" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."settings" => "Paramètres"
 					);
 
 					$menuStudent = array(
@@ -54,7 +53,6 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."settings" => "Paramètres"
 					);	
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
@@ -112,8 +110,8 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."#" => "Enseignants",
 						DIRNAME."Class/getClassStundent" => "Elèves",
 						DIRNAME."Class" => "Classes",
-						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."Param" => "Paramètres"
+						DIRNAME."ScheduleSettings/list" => "Emploi du temps",
+						DIRNAME."settings" => "Paramètres"
 					);
 
 					$menuTeacher = array(
@@ -122,7 +120,6 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Class" => "Ma classe",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."Param" => "Paramètres"
 					);
 
 					$menuStudent = array(
@@ -131,12 +128,11 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
 						DIRNAME."Timetable" => "Emploi du temps",
-						DIRNAME."Param" => "Paramètres"
 					);
 										
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
-					if($userinfo['rank'] == 1){						
+					if($userinfo['rank'] == 1){			
 						$myArray = $menuAdmin;
 					}elseif($userinfo['rank'] == 2){
 						$myArray = $menuTeacher;

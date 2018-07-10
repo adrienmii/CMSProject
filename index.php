@@ -66,6 +66,21 @@
 	}
 
 
+	// VERIFIER SI USER PEUT ACCEDER A LA ROUTE
+
+	
+	$BSQL = new BaseSQL(); 
+	if(isset($_SESSION['token'])){
+		$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
+		if($userinfo['rank'] == 1){
+			$routeAccess = [
+							 "",
+			];
+		}
+	}
+
+
+
 	if (isset($_SESSION['token']) && isset($_SESSION['user_id'])) {
 		$BSQL = new BaseSQL();
 		$userinfo = $BSQL->userInfoByToken($_SESSION['token']);

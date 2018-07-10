@@ -4,7 +4,7 @@ $logo = ($settings['logo'])?$settings['logo']:null;
 $address = ($settings['address'])?$settings['address']:null;
 $sitename = ($settings['sitename'])?$settings['sitename']:null;
 
-$style = ($settings['theme'])?$settings['theme']:'default';
+$style = (isset($settings['theme']))?$settings['theme']:'default';
 
 
 ?>
