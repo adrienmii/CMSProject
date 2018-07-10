@@ -5,6 +5,7 @@ class QCMController {
     public function indexAction($params){
         $BSQL = new BaseSQL();
         $user = $BSQL->userInfoByToken();
+        $qcms = [];
 
         if($user['rank'] == 2){
             $qcms = $BSQL->getQCMByTeacherId($user['id']);
@@ -16,6 +17,10 @@ class QCMController {
             $qcms = $BSQL->getQCMByClassId($user['classe']);
             foreach($qcms as $key => $qcm){
                 $qcms[$key]['nbQuestions'] = $BSQL->countQuestionsByQCM($qcm['id'])['nbQuestions'];
+
+                if($BSQL->isQCMDone($user['id'], $qcm['id'])['isDone'] != 0){
+                    unset($qcms[$key]);
+                }
             }
         }
 
@@ -25,54 +30,98 @@ class QCMController {
 
 	public function participateAction($params) {
         if($params['URL'][0]){
-            if(!isset($_SESSION['qcm_'.$params['URL'][0]]) && $_SESSION['qcm_'.$params['URL'][0]] != "end"){
-                $BSQL = new BaseSQL();
-                $questions = $BSQL->getQuestionsByQCM($params['URL'][0]);
-                foreach ($questions as $question){
-                    $_SESSION['qcm_'.$params['URL'][0]][] = $question['id'];
-                }
-                $nbQuestion = sizeof($_SESSION['qcm_'.$params['URL'][0]]);
-                $_SESSION['currentQuestion'] = 1;
-                $_SESSION['mark'] = 0;
-            }
-            if($_SESSION['qcm_'.$params['URL'][0]][0] || $_SESSION['qcm_'.$params['URL'][0]] != "end"){
-                $BSQL = new BaseSQL();
-                $qcm = new QCM();
-                $form = $qcm->generateFormParticipateQCM();
-                $form['question'] = $BSQL->getQuestionById($_SESSION['qcm_'.$params['URL'][0]][0]);
-                $form['currentQuestion'] = $_SESSION['currentQuestion'];
-                $form['nbQuestion'] = $nbQuestion;
+            $BSQL = new BaseSQL();
+            $user = $BSQL->userInfoByToken();
 
-                if($_POST){
-                    if($_POST['answer'] == $form['question']['answer']){
-                        $_SESSION['mark'] ++;
+            if($BSQL->isQCMDone($user['id'], $params['URL'][0])['isDone'] == 0){
+                if(!isset($_SESSION['qcm_'.$params['URL'][0]])){
+                    $BSQL = new BaseSQL();
+                    $questions = $BSQL->getQuestionsByQCM($params['URL'][0]);
+                    foreach ($questions as $question){
+                        $_SESSION['qcm_'.$params['URL'][0]][] = $question['id'];
                     }
-                    $_SESSION['qcm_'.$params['URL'][0]] = array_shift($_SESSION['qcm_'.$params['URL'][0]]);
+                    $_SESSION['nbQuestions'] = sizeof($_SESSION['qcm_'.$params['URL'][0]]);
+                    $_SESSION['idCurrentQuestion'] = $_SESSION['qcm_'.$params['URL'][0]][0];
+                    unset($_SESSION['qcm_'.$params['URL'][0]][0]);
+                    array_splice($_SESSION['qcm_'.$params['URL'][0]], 0, 0);
                     if(empty($_SESSION['qcm_'.$params['URL'][0]]))
-                        $_SESSION['qcm_'.$params['URL'][0]] = "end";
-                    $_SESSION['currentQuestion'] ++;
-                    header('Location: '.DIRNAME.'QCM/participate/'. $params['URL'][0]);
+                        $_SESSION['qcm_'.$params['URL'][0]][] = "end";
+                    $_SESSION['currentQuestion'] = 1;
+                    $_SESSION['mark'] = 0;
+                    $_SESSION['goodAnswer'] = 0;
+                }
+
+                if(($_SESSION['qcm_'.$params['URL'][0]][0]) && ($_SESSION['qcm_'.$params['URL'][0]][0] != "end")){
+                    $BSQL = new BaseSQL();
+                    $qcm = new QCM();
+                    $form = $qcm->generateFormParticipateQCM();
+                    $form['question'] = $BSQL->getQuestionById($_SESSION['idCurrentQuestion']);
+                    $_SESSION['goodAnswer'] = $form['question']['result'];
+                    $form['currentQuestion'] = $_SESSION['currentQuestion'];
+
+                    if($_POST['submit_signin']){
+                        $goodAnswer = $BSQL->getQuestionById($_POST['idQuestion'])['result'];
+                        if($_POST['answer'] == $goodAnswer){
+                            $_SESSION['mark'] ++;
+                        }
+                        unset($_SESSION['qcm_'.$params['URL'][0]][0]);
+                        array_splice($_SESSION['qcm_'.$params['URL'][0]], 0, 0);
+                        if(empty($_SESSION['qcm_'.$params['URL'][0]]))
+                            $_SESSION['qcm_'.$params['URL'][0]][] = "end";
+
+                        $_SESSION['currentQuestion'] ++;
+                        $form['currentQuestion'] = $_SESSION['currentQuestion'];
+                        //header('Location: '.DIRNAME.'QCM/participate/'. $params['URL'][0]);
+
+                    }
+                    $_SESSION['idCurrentQuestion'] = $_SESSION['qcm_'.$params['URL'][0]][0];
+                    $form['nbQuestion'] = $_SESSION['nbQuestions'];
+                    $v = new View("QCM", "front");
+                    $v->assign("config", $form);
+
+                }else{
+                    if($_POST['submit_signin']){
+                        $BSQL = new BaseSQL();
+                        $goodAnswer = $BSQL->getQuestionById($_POST['idQuestion'])['result'];
+                        if($_POST['answer'] == $goodAnswer){
+                            $_SESSION['mark'] ++;
+                        }
+
+                    }
+                    $participateQCM = new ParticipateQCM();
+                    $participateQCM->setIdQCM($params['URL'][0]);
+                    $participateQCM->setIdUser($participateQCM->userInfoByToken()['id']);
+                    $participateQCM->setMark($_SESSION['mark']);
+                    if($participateQCM->save()){
+                        unset($_SESSION['qcm_'.$params['URL'][0]]);
+                        $notify = new Notify("Vos réponses ont bien été enregistrées","success");
+                        header('Location: '. DIRNAME .'QCM');
+                    }else{
+                        $notify = new Notify("Erreur encourue lors de l'enregistrement en bdd","danger");
+                    }
+
+
 
                 }
-                $v = new View("QCM", "front");
-                $v->assign("config", $form);
-
             }else{
-                $participateQCM = new ParticipateQCM();
-                $participateQCM->setIdQCM($params['URL'][0]);
-                $participateQCM->setIdUser($participateQCM->userInfoByToken());
-                $participateQCM->setMark(($_SESSION['mark']) ? $_SESSION['mark'] : 0);
-                $participateQCM->save();
-
-                header('Location: '. DIRNAME .'dashboard');
-
+                $notify = new Notify("Vous avez déjà réaliser ce QCM","danger");
+                header('Location: '. DIRNAME .'QCM');
             }
+
 
 
         }else{
+            $notify = new Notify("Veuillez choisir un QCM","danger");
             header('Location: '. DIRNAME .'QCM');
         }
-		
+
+        //echo "Mark : ".$_SESSION['mark']."<br>";
+        //var_dump($_SESSION['qcm_'.$params['URL'][0]]);
+        //echo "Nb Questions : ".$_SESSION['nbQuestions']."<br>";
+        //echo "Current Questions : ".$_SESSION['currentQuestion']."<br>";
+        //echo "Good Answer : ".$_SESSION['goodAnswer']."<br>";
+        //echo "ID Current Questions : ".$_SESSION['idCurrentQuestion']."<br>";
+
 	}
 
     public function createAction($params) {

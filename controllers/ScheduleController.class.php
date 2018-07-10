@@ -42,6 +42,7 @@ class ScheduleController {
                 header('Location: '.DIRNAME.'schedule/list');
                 exit();
             }else{
+                $form['post'] = $params['POST'];
                 $notify = new Notify($errors,"danger");
             }
 

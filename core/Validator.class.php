@@ -286,25 +286,28 @@ class Validator {
         $courseTime = $params['courseTime'];
 
         //conversion en minute des variables
-        $firstHourExploded = explode(':', $lastHour);
-        $minutesFirstHour = ($firstHourExploded[0] * 60.0 + $firstHourExploded[1] * 1.0);
-
-        $lastHourExploded = explode(':', $firstHour);
-        $minutesLastHour = ($lastHourExploded[0] * 60.0 + $lastHourExploded[1] * 1.0);
-
+        $firstHourExploded = explode(':', $firstHour);
+        $lastHourExploded = explode(':', $lastHour);
         $lunchTimeExploded = explode(':', $lunchTime);
         $minutesLunchTime = ($lunchTimeExploded[0] * 60.0 + $lunchTimeExploded[1] * 1.0);
-
         $courseTimeExploded = explode(':', $courseTime);
         $minutesCourseTime = ($courseTimeExploded[0] * 60.0 + $courseTimeExploded[1] * 1.0);
 
-        $minutesDay = $minutesLastHour - $minutesFirstHour - $minutesLunchTime;
+        $minutesDay = 0;
+        for($i = intval($firstHourExploded[0]); $i < intval($lastHourExploded[0]); $i++){
+            $minutesDay += 60;
+        }
+
+        $minutesDay += $lastHourExploded[1];
+        $minutesDay -= $firstHourExploded[1];
+        $minutesDay -= $minutesLunchTime;
 
         $nbCoursesPerDay = $minutesDay/$minutesCourseTime;
 
         //Si c'est un float c'est qu'il y aura des trous dans la planning. On doit récupérer un resultat rond 
-        if(is_float($nbCoursesPerDay)){
-            $errorMsg[] = "non";
+        
+        if (strpos($nbCoursesPerDay,'.')) {
+            $errorMsg[] = $nbCoursesPerDay;
         }
 
         foreach ($form['input'] as $name => $config) {
