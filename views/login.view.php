@@ -27,7 +27,7 @@ if ($logo) {
 ?>
 
 <div class="school-infos" style="width: 160px;margin:10px;filter: drop-shadow(white 0px 0px 0.71rem)">
-	<img style=" width: 100%;" title="<?php echo $sitename.' '.$address ?>" src="public/img/<?php echo $logo; ?>">
+	<img style=" width: 100%;" title="<?php echo $sitename.' - '.$address ?>" src="public/img/<?php echo $logo; ?>">
 </div>
 
 <?php } ?>

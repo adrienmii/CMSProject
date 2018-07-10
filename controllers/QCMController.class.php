@@ -72,9 +72,9 @@ class QCMController {
                         $_SESSION['currentQuestion'] ++;
                         $form['currentQuestion'] = $_SESSION['currentQuestion'];
                         //header('Location: '.DIRNAME.'QCM/participate/'. $params['URL'][0]);
-
+                        $_SESSION['idCurrentQuestion'] = $_SESSION['qcm_'.$params['URL'][0]][0];
                     }
-                    $_SESSION['idCurrentQuestion'] = $_SESSION['qcm_'.$params['URL'][0]][0];
+                    
                     $form['nbQuestion'] = $_SESSION['nbQuestions'];
                     $v = new View("QCM", "front");
                     $v->assign("config", $form);
