@@ -244,6 +244,44 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 -- Index pour les tables déchargées
 --
 
+
+CREATE TABLE `scheduleSettings` (
+  `id` int(11) NOT NULL,
+  `days` int(11) NOT NULL,
+  `firstHour` varchar(255) NOT NULL,
+  `lastHour` varchar(255) NOT NULL,
+  `lunchHour` varchar(255) NOT NULL,
+  `lunchTime` varchar(255) NOT NULL,
+  `courseTime` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `scheduleSettings`
+--
+
+INSERT INTO `scheduleSettings` (`id`, `days`, `firstHour`, `lastHour`, `lunchHour`, `lunchTime`, `courseTime`) VALUES
+(4, 5, '08:00', '17:00', '12:00', '01:00', '01:00');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `scheduleSettings`
+--
+ALTER TABLE `scheduleSettings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `scheduleSettings`
+--
+ALTER TABLE `scheduleSettings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- Index pour la table `chapter`
 --
