@@ -59,7 +59,7 @@ class QCMController {
                     $_SESSION['goodAnswer'] = $form['question']['result'];
                     $form['currentQuestion'] = $_SESSION['currentQuestion'];
 
-                    if($_POST['submit_signin']){
+                    if(isset($_POST['submit_signin']) && !empty($_POST['submit_signin'])){
                         $goodAnswer = $BSQL->getQuestionById($_POST['idQuestion'])['result'];
                         if($_POST['answer'] == $goodAnswer){
                             $_SESSION['mark'] ++;
@@ -91,7 +91,8 @@ class QCMController {
                     $participateQCM = new ParticipateQCM();
                     $participateQCM->setIdQCM($params['URL'][0]);
                     $participateQCM->setIdUser($participateQCM->userInfoByToken()['id']);
-                    $participateQCM->setMark($_SESSION['mark']);
+                    $mark = round(($_SESSION['mark']/$_SESSION['nbQuestions']) * 20);
+                    $participateQCM->setMark($mark);
                     if($participateQCM->save()){
                         unset($_SESSION['qcm_'.$params['URL'][0]]);
                         $notify = new Notify("Vos réponses ont bien été enregistrées","success");
