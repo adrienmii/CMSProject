@@ -424,7 +424,7 @@ class BaseSQL {
 
     public function getQuestionsByQCM($qcmId){
         $sql = "SELECT * FROM questionQCM WHERE idQCM=". $qcmId;
-        try {
+         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
@@ -434,6 +434,7 @@ class BaseSQL {
         return $questions;
     }
 
+   
     public function countQuestionsByQCM($qcmId){
         $sql = "SELECT COUNT(id) AS nbQuestions FROM questionQCM WHERE idQCM=". $qcmId;
         try {
@@ -445,5 +446,20 @@ class BaseSQL {
 
         return $nbQuestions;
     }
+
+
+
+ 	public function getScheduleSettings(){
+        $sql = "SELECT * FROM scheduleSettings";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $settings = $query->fetch();
+
+        return $settings;
+    }
+    
 
 }

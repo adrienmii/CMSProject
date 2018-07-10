@@ -35,7 +35,7 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."#" => "Enseignants",
 						DIRNAME."user/list" => "Elèves",
 						DIRNAME."Classe" => "Classes",
-						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."Schedule/list" => "Emploi du temps",
 						DIRNAME."settings" => "Paramètres"
 					);
 
@@ -112,7 +112,7 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 						DIRNAME."#" => "Enseignants",
 						DIRNAME."Class/getClassStundent" => "Elèves",
 						DIRNAME."Class" => "Classes",
-						DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."ScheduleSettings/list" => "Emploi du temps",
 						DIRNAME."Param" => "Paramètres"
 					);
 
@@ -136,7 +136,7 @@ $style = ($settings['theme'])?$settings['theme']:'default'; ?>
 										
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé
-					if($userinfo['rank'] == 1){						
+					if($userinfo['rank'] == 1){			
 						$myArray = $menuAdmin;
 					}elseif($userinfo['rank'] == 2){
 						$myArray = $menuTeacher;

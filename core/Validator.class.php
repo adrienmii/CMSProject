@@ -271,6 +271,66 @@ class Validator {
         return $errorMsg;
     }
 
+    public static function validateScheduleSettings($form, $params)
+    {
+        $errorMsg = [];
+        $BSQL = new BaseSQL();
+
+
+        //ici on vérifie si on peut remplir la journée sans qu'il y est de trou
+
+        $firstHour = $params['firstHour'];
+        $lastHour = $params['lastHour'];
+        $lunchTime = $params['lunchTime'];
+        $lunchHour = $params['lunchHour'];
+        $courseTime = $params['courseTime'];
+
+        //conversion en minute des variables
+        $firstHourExploded = explode(':', $lastHour);
+        $minutesFirstHour = ($firstHourExploded[0] * 60.0 + $firstHourExploded[1] * 1.0);
+
+        $lastHourExploded = explode(':', $firstHour);
+        $minutesLastHour = ($lastHourExploded[0] * 60.0 + $lastHourExploded[1] * 1.0);
+
+        $lunchTimeExploded = explode(':', $lunchTime);
+        $minutesLunchTime = ($lunchTimeExploded[0] * 60.0 + $lunchTimeExploded[1] * 1.0);
+
+        $courseTimeExploded = explode(':', $courseTime);
+        $minutesCourseTime = ($courseTimeExploded[0] * 60.0 + $courseTimeExploded[1] * 1.0);
+
+        $minutesDay = $minutesLastHour - $minutesFirstHour - $minutesLunchTime;
+
+        $nbCoursesPerDay = $minutesDay/$minutesCourseTime;
+
+        //Si c'est un float c'est qu'il y aura des trous dans la planning. On doit récupérer un resultat rond 
+        if(is_float($nbCoursesPerDay)){
+            $errorMsg[] = "non";
+        }
+
+        foreach ($form['input'] as $name => $config) {
+
+            if ($config['type'] == "number" && isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant";
+            }
+
+            if ($config['type'] == "number" && isset($config['required']) && !self::maxLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est trop long";
+            }
+
+            if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est manquant";
+            }
+
+             if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 140)) {
+                $errorMsg[] = "Le champ " . $name . " est trop long";
+            }
+
+        }
+
+        return $errorMsg;
+    }
+
+
     public static function checkPwd($pwd){
         return strlen($pwd)>5 && preg_match("/[A-Z]/", $pwd) && preg_match("/[a-z]/", $pwd) && preg_match("/[0-9]/", $pwd);
     }
