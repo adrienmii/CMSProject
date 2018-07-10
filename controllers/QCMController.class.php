@@ -61,7 +61,7 @@ class QCMController {
 
                     if(isset($_POST['submit_signin']) && !empty($_POST['submit_signin'])){
                         $goodAnswer = $BSQL->getQuestionById($_POST['idQuestion'])['result'];
-                        if($_POST['answer'] == $goodAnswer){
+                        if(isset($_POST['answer']) && !empty($_POST['answer']) && $_POST['answer'] == $goodAnswer){
                             $_SESSION['mark'] ++;
                         }
                         unset($_SESSION['qcm_'.$params['URL'][0]][0]);
