@@ -414,7 +414,7 @@ class BaseSQL
     public function getChapters($option = null)
     {
         if (is_numeric($option)) {
-            $sql = "SELECT p.id, label, description, c.classe, s.classname from chapter p INNER JOIN classeteacher c ON p.classe = c.classe INNER JOIN classe s ON c.classe = s.id where c.teacher = " . $option;
+            $sql = "SELECT p.id, label, description, c.classe, s.classname from chapter p INNER JOIN classeteacher c ON p.classe = c.classe INNER JOIN classe s ON c.classe = s.id INNER JOIN user u ON c.classe = u.classe where u.id = " . $option;
 
         } elseif ($option == 'all') {
             $sql = "SELECT p.id, label, description, p.classe, c.classname from chapter p INNER JOIN classe c ON p.classe = c.id";

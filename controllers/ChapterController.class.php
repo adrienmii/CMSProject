@@ -2,6 +2,10 @@
 
 class ChapterController {
 
+    public function __construct() {
+        if ();
+    }
+
 	public function addAction($params) {		
 
 		$chapter = new Chapter();
@@ -88,7 +92,12 @@ class ChapterController {
 	public function listAction($params) {
 		$BSQL = new BaseSQL();
 		$user = $BSQL->userInfoByToken();
-        $chapters = $BSQL->getChapters('all'); // modifier 'all' par $user['id'] pour un listage perso selon le prof connecté
+
+        if ($user['rank'] == 3) {
+            $chapters = $BSQL->getChapters($user['id']);
+        } else {
+            $chapters = $BSQL->getChapters('all');
+        }
 
         $v = new View("myChapters");
         $v->assign("chapters", $chapters);
