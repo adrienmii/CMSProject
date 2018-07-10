@@ -35,7 +35,7 @@ $style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 						DIRNAME."#" => "Enseignants",
 						DIRNAME."user/list" => "Elèves",
 						DIRNAME."Classe" => "Classes",
-						DIRNAME."ScheduleSettings/list" => "Emploi du temps",
+						DIRNAME."Schedule/list" => "Emploi du temps",
 						DIRNAME."settings" => "Paramètres"
 					);
 
@@ -110,7 +110,7 @@ $style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 						DIRNAME."#" => "Enseignants",
 						DIRNAME."Class/getClassStundent" => "Elèves",
 						DIRNAME."Class" => "Classes",
-						DIRNAME."ScheduleSettings/list" => "Emploi du temps",
+						DIRNAME."Schedule/list" => "Emploi du temps",
 						DIRNAME."settings" => "Paramètres"
 					);
 
