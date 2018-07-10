@@ -6,6 +6,14 @@
 		<main class="row">
 			<div class="col-xs-12">
 				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-lg-4">
+						<div id="addBlock">
+							<div id="iconAddBlockContainer">
+								<a href="<?php echo DIRNAME."QCM/create";?>" id="addItem">+</a>
+								<p>Créer un nouveeau QCM</p>
+							</div>
+						</div>
+					</div>
 					<?php foreach ($qcms as $qcm) { ?>
 						<div class="col-xs-12 col-sm-6 col-lg-4">
 							<div class="blueBlock">	

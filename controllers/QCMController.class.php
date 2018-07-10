@@ -91,7 +91,7 @@ class QCMController {
                     $participateQCM = new ParticipateQCM();
                     $participateQCM->setIdQCM($params['URL'][0]);
                     $participateQCM->setIdUser($participateQCM->userInfoByToken()['id']);
-                    $mark = round(($_SESSION['mark']/$_SESSION['nbQuestions']) * 20);
+                    $mark = round((($_SESSION['mark']/$_SESSION['nbQuestions']) * 20)* 2) / 2;
                     $participateQCM->setMark($mark);
                     if($participateQCM->save()){
                         unset($_SESSION['qcm_'.$params['URL'][0]]);
@@ -105,7 +105,7 @@ class QCMController {
 
                 }
             }else{
-                $notify = new Notify("Vous avez déjà réaliser ce QCM","danger");
+                $notify = new Notify("Vous avez déjà réalisé ce QCM","danger");
                 header('Location: '. DIRNAME .'QCM');
             }
 
