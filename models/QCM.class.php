@@ -75,7 +75,7 @@ class QCM extends BaseSQL {
         return [
             "config" => ["method"=> "POST", "action" => ""],
             "input" => [
-                "answer1" => ["type" => "radio", "id" => "radioAnswer1"]
+                "answer" => ["type" => "radio", "id" => "radioAnswer"]
 
             ],
             "submit" => "Suivant"

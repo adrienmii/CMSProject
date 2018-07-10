@@ -2,7 +2,6 @@
 <main id="qcmContainer">
 	<section class="col-XS-12">
 		<header>
-			<div id="timeLeft"><span>0m59s</span></div>
 			<div id="questionNumber">Question<br><b><?php echo $config['currentQuestion'] ?></b><br>sur <?php echo $config['nbQuestion'] ?></div>
 			<div id="question"><?php echo $config['question']['question']; ?></div>
 		</header>

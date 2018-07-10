@@ -33,6 +33,7 @@
 			}elseif ($params['type'] == "radio"){
 
 		?>
+			<input type="hidden" name="idQuestion" value="<?php echo $config['question']['id']; ?>">
 			<?php if($config['question']['answer1']){ ?>
 				<div class="answerRow ">
 					<div class="answerNumber"><span>1</span></div>
