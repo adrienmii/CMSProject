@@ -7,5 +7,4 @@ class ErrorController {
 		$v = new View("error", "front");
 		
 	}
-	
 }

@@ -7,6 +7,14 @@ class ClasseController {
             header('Location: '.DIRNAME.'login');
             exit;
         }
+
+        $BSQL = new BaseSQL();
+        $user = $BSQL->userInfoByToken();
+
+        if ($user['rank'] == 3) {
+            header('Location: '.DIRNAME.'dashboard');
+            exit;
+        }
     }
 
 	public function indexAction($params) {	

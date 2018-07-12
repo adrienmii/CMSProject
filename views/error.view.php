@@ -25,7 +25,7 @@ $style = (isset($settings['theme']))?$settings['theme']:'default';
 			</header>	
 			<footer>
 				<div class="row">
-					<h1 style='color:white'>Une erreur est survenue. Merci de verifier l'URL saisie. Il se pourrait que la route n'existe pas. <a href="<?php echo DIRNAME; ?>">Retour à l'accueil.</a></h1>
+					<h1 style='color:white;padding:25px;'>Une erreur est survenue. Il se pourrait que la route n'existe pas ou que vous n'avez pas les accès requis. <a href="<?php echo DIRNAME; ?>" style="color:white;border-bottom:1px dotted white;">Retourner à l'accueil</a></h1>
 				</div>				
 			</footer>
 		</section>

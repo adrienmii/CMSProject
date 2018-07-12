@@ -1,5 +1,6 @@
 <?php
 	session_start(); // session accessible partout sur le site
+	//ini_set("display_errors", 0);
 	require("conf.inc.php");
 
 
