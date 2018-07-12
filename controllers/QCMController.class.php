@@ -26,6 +26,7 @@ class QCMController {
                 $qcms[$key]['nbQuestions'] = $BSQL->countQuestionsByQCM($qcm['id'])['nbQuestions'];
 
                 if($BSQL->isQCMDone($user['id'], $qcm['id'])['isDone'] != 0){
+                    $qcmsDone[] = ["qcm" => $qcms[$key], "mark" => $BSQL->isQCMDone($user['id'], $qcm['id'])['mark']];
                     unset($qcms[$key]);
                 }
             }
@@ -33,6 +34,7 @@ class QCMController {
 
         $v = new View("myQCM", "front");
         $v->assign("qcms", $qcms);
+        $v->assign("qcmsDone", $qcmsDone);
     }
 
 	public function participateAction($params) {
