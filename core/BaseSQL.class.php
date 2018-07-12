@@ -551,7 +551,7 @@ class BaseSQL
     }
 
     public function isQCMDone($idUser, $idQCM){
-        $sql = "SELECT COUNT(id) AS isDone, mark FROM participateQCM WHERE idUser=". $idUser ." AND idQCM=". $idQCM;
+        $sql = "SELECT COUNT(id) AS isDone FROM participateQCM WHERE idUser=". $idUser ." AND idQCM=". $idQCM;
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
