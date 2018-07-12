@@ -1,6 +1,7 @@
 <?php
 
 class LoginController {
+	
 	public function indexAction($params) {
 		$user = new User();
 		$form = $user->generateLoginForm();

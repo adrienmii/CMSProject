@@ -1,7 +1,7 @@
 <?php
 			define("DBHOST", "localhost");
 			define("DBPORT", "");
-			define("DBNAME", "EDULAB");
+			define("DBNAME", "EDULAB4");
 			define("DBUSER", "root");
 			define("DBPWD", "root");
 			define("DBDRIVER", "mysql");

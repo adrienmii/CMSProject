@@ -62,7 +62,9 @@
 			die("Le controller ".$c." n'existe pas");
 		}
 	} else {
-		die("Le fichier ".$c." n'existe pas");
+		header('Location: '.DIRNAME.'error');
+        exit;
+		//die("Le fichier ".$c." n'existe pas");
 	}
 
 
