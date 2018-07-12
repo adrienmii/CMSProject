@@ -68,14 +68,14 @@
 
 	// VERIFIER SI USER PEUT ACCEDER A LA ROUTE
 
-	
+    $routeAccessAdmin = [
+        "",
+    ];
 	$BSQL = new BaseSQL(); 
 	if(isset($_SESSION['token'])){
 		$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 		if($userinfo['rank'] == 1){
-			$routeAccess = [
-							 "",
-			];
+
 		}
 	}
 

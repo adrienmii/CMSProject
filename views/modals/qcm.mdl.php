@@ -57,7 +57,7 @@
 
 			<?php if($config['question']['answer4']){ ?>
 				<div class="answerRow ">
-					<div class="answerNumber"><span>1</span></div>
+					<div class="answerNumber"><span>4</span></div>
 					<input type="radio" class="answer" name="answer" value="4"><?php echo $config['question']['answer4']; ?>
 				</div>
 			<?php } ?>
@@ -66,8 +66,8 @@
 	<?php endforeach; ?>
 
 	<div class="row">
-		<div class="col-xs-12 col-sm-2 col-sm-offset-10 btnAddSubscribe">
-			<input class="addProfile" type="submit" value="<?php echo $config['submit']; ?>" name="submit_signin">
+		<div class="col-xs-12 col-sm-2 col-sm-offset-7 btnAddSubscribe">
+			<input class="addProfile" type="submit" value="<?php echo $config['submit'][0]; ?>" name="submit_signin">
 		</div>
 	</div>
 
