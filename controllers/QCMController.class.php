@@ -13,6 +13,7 @@ class QCMController {
         $BSQL = new BaseSQL();
         $user = $BSQL->userInfoByToken();
         $qcms = [];
+        $qcmsDone = [];
 
         if($user['rank'] == 2){
             $qcms = $BSQL->getQCMByTeacherId($user['id']);
