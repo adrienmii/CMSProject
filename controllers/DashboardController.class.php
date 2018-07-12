@@ -24,7 +24,8 @@ class DashboardController {
         $form['dataChartMarks'] = [0, 0, 0, 0];
         $form['average'] = null;
         $form['nbQCMDone'] = $BSQL->countQCMDoneByUserId($userinfo["id"])['count'];
-        $form['nbQCMNotDone'] = $BSQL->countQCMNotDoneByUserId($userinfo["classe"], $userinfo["id"])['count'];
+        if(isset($userinfo["classe"]) && !empty($userinfo["classe"]))
+            $form['nbQCMNotDone'] = $BSQL->countQCMNotDoneByUserId($userinfo["classe"], $userinfo["id"])['count'];
         $total = 0;
         foreach ($marks as $mark){
             $total += $mark['mark'];

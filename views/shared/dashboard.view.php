@@ -113,7 +113,7 @@
 					QCM en attente
 				</div>
 				<div class="blocValue">
-					<?php echo $config['nbQCMNotDone']; ?>
+					<?php echo (isset($config['nbQCMNotDone']) && !empty($config['nbQCMNotDone'])) ? $config['nbQCMNotDone'] : "-"; ?>
 				</div>
 			</div>
 		</div>
