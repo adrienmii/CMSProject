@@ -256,6 +256,11 @@ class Validator {
         if(empty($params['answer1']) || empty($params['answer2'])){
             $errorMsg[] = "Veuillez remplir au moins 2 réponses";
         }
+
+        if(empty($params['response'])){
+            $errorMsg[] = "Veuillez cocher une bonne réponse";
+        }
+
         foreach ($form['input'] as $name => $config) {
 
             if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {

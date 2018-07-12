@@ -11,7 +11,7 @@
 					<input type="<?php echo $params['type']; ?>" <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))?"value='".ucfirst($config['prefill'][$name])."'":""; ?> name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
 					<?php if (isset($params['answer']) && $params['answer']){ ?>
 						</div>
-						<div class="goodAnswerCheckbox"><input type="checkbox" name="response" value="<?php echo $params['answerId']; ?>" /></div>
+						<div class="goodAnswerCheckbox"><input type="radio" name="response" value="<?php echo $params['answerId']; ?>" /></div>
 					<?php } ?>
 				</div>
 			</div>
@@ -66,8 +66,8 @@
 	<?php endforeach; ?>
 
 	<div class="row">
-		<div class="col-xs-12 col-sm-2 col-sm-offset-7 btnAddSubscribe">
-			<input class="addProfile" type="submit" value="<?php echo $config['submit']; ?>" name="submit_signin">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-5 btnAddSubscribe">
+			<input style="width: auto;" class="addProfile" type="submit" value="<?php echo $config['submit']; ?>" name="submit_signin">
 		</div>
 		<?php if(isset($config['terminer']) && !empty($config['terminer'])){ ?>
 			<div class="col-xs-12 col-sm-2 col-sm-offset-1 btnAddSubscribe">

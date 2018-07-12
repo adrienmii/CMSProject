@@ -576,4 +576,46 @@ class BaseSQL
         return $settings;
     }
 
+
+    public function getMarksFromStudentId($studentId)
+    {
+        $sql = "SELECT mark FROM participateQCM WHERE idUser=".$studentId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $marks = $query->fetchAll();
+
+        return $marks;
+    }
+
+
+    public function countQCMDoneByUserId($usertId)
+    {
+        $sql = "SELECT COUNT(*) AS count FROM participateQCM WHERE idUser=".$usertId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+
+    public function countQCMNotDoneByUserId($classeId, $userID)
+    {
+        $sql = "SELECT count(QCM.id) AS count FROM QCM WHERE QCM.id not in(SELECT idQCM FROM participateQCM WHERE idUser = ". $userID .") AND classe=".$classeId;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
 }

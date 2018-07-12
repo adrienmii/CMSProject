@@ -261,7 +261,7 @@ class QCMController {
                     }
                     exit();
                 } else {
-                    $form['post'] = $params['POST'];
+                    $form['prefill'] = $params['POST'];
                     $notify = new Notify($errors, "danger");
                 }
             }

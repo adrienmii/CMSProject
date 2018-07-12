@@ -93,40 +93,40 @@
 					moyenne général
 				</div>
 				<div class="blocValue">
-					14.5/20
+					<?php echo $config['average']; ?>/20
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
 			<div class="blocInfo">
 				<div class="blocTitle">
-					moyenne général
+					QCM réalisés
 				</div>
 				<div class="blocValue">
-					14.5/20
+					<?php echo $config['nbQCMDone']; ?>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
 			<div class="blocInfo">
 				<div class="blocTitle">
-					moyenne général
+					QCM en attente
 				</div>
 				<div class="blocValue">
-					14.5/20
+					<?php echo $config['nbQCMNotDone']; ?>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
 			<div class="blocInfo">
 				<div class="blocTitle">
-					moyenne général
+					Eleves dans la classe
 				</div>
 				<div class="blocValue">
-					14.5/20
+					14
 				</div>
 			</div>
-		</div>				
+		</div>
 	</div>
 	<div id="rowChart" class="row" >
 		<div class="col-xs-12 col-md-6">
@@ -136,7 +136,77 @@
 			<canvas id="myChart2"></canvas>
 		</div>				
 	</div>
-</main>	
+</main>
+<script>
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
+			datasets: [{
+				label: 'Nombre de notes',
+				data: [<?php echo implode(",", $config['dataChartMarks']); ?>],
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.5)',
+					'rgba(54, 162, 235, 0.5)',
+					'rgba(255, 206, 86, 0.5)',
+					'rgba(75, 192, 192, 0.5)',
+				],
+				backgroundColor: [
+					'#2A3F54',
+					'#1ABB9C',
+					'#172D44',
+					'#70D4C1',
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true
+					}
+				}]
+			},
+			title: {
+				display: true,
+				text:'Résultats Contrôle continu'
+			},
+			legend: {
+				display: true,
+				position: "bottom"
+			}
+		}
+	});
+
+	ctx = document.getElementById("myChart2");
+	var myChart2 = new Chart(ctx, {
+		type: 'pie',
+		data: {
+			labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
+			datasets: [{
+				data: [2, 4, 12, 6],
+				backgroundColor: [
+					'#2A3F54',
+					'#172D44',
+					'#1ABB9C',
+					'#70D4C1',
+				],
+			}]
+		},
+		options: {
+			title: {
+				display: true,
+				text:'Résultats Contrôle continu'
+			},
+			legend: {
+				display: true,
+				position: "bottom"
+			}
+		}
+	});
+</script>
 <?php
 
 		if($userinfo['pwd_changed'] == 0){			
