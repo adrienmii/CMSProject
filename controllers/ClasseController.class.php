@@ -12,7 +12,7 @@ class ClasseController {
         $user = $BSQL->userInfoByToken();
 
         if ($user['rank'] == 3) {
-            header('Location: '.DIRNAME.'dashboard');
+            header('Location: '.DIRNAME.'error');
             exit;
         }
     }
