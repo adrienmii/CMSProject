@@ -251,9 +251,14 @@ class QCMController {
                     $questionQCM->setIdQCM($params['URL'][0]);
                     $questionQCM->save();
 
-                    $notify = new Notify("La question a été créée avec succés", "success");
-
-                    header('Location: ' . DIRNAME . 'QCM/createQuestion/'. $params['URL'][0]);
+                    if(isset($params['POST']['terminer']) && !empty($params['POST']['terminer'])) {
+                        $notify = new Notify("QCM enregistré", "success");
+                        header('Location: ' . DIRNAME . 'QCM');
+                    }
+                    else {
+                        $notify = new Notify("La question a été créée avec succés", "success");
+                        header('Location: ' . DIRNAME . 'QCM/createQuestion/' . $params['URL'][0]);
+                    }
                     exit();
                 } else {
                     $form['post'] = $params['POST'];

@@ -67,8 +67,13 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-2 col-sm-offset-7 btnAddSubscribe">
-			<input class="addProfile" type="submit" value="<?php echo $config['submit'][0]; ?>" name="submit_signin">
+			<input class="addProfile" type="submit" value="<?php echo $config['submit']; ?>" name="submit_signin">
 		</div>
+		<?php if(isset($config['terminer']) && !empty($config['terminer'])){ ?>
+			<div class="col-xs-12 col-sm-2 col-sm-offset-1 btnAddSubscribe">
+				<input class="addProfile" type="submit" value="<?php echo $config['terminer']; ?>" name="terminer">
+			</div>
+		<?php } ?>
 	</div>
 
 </form>

@@ -114,7 +114,8 @@ class QuestionQCM extends BaseSQL {
                 "answer4" => ["type" => "text", "placeholder" => "Réponse 4", "answer" => true, "id" => "inputAnswer4", "answerId" => "4"]
 
             ],
-            "submit" => "Suivant"
+            "submit" => "Ajouter une question",
+            "terminer" => "Terminer"
         ];
     }
 
