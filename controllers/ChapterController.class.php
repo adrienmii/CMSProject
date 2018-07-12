@@ -3,9 +3,9 @@
 class ChapterController {
 
     public function __construct() {
-        if (!isset($_SESSION['token']) || !isset($_SESSION['user_id'])) {
-            header("Location: ".DIRNAME."login");
-            exit();
+        if (empty($_SESSION['token'])) {
+            header('Location: '.DIRNAME.'login');
+            exit;
         }
     }
 

@@ -1,7 +1,6 @@
 <?php
 
 class InstallController {
-	
 
 	public function indexAction($params) {		
 

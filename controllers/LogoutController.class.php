@@ -1,6 +1,7 @@
 <?php
 
 class LogoutController {
+
 	public function indexAction($params) {
 		session_destroy();
 
@@ -9,6 +10,5 @@ class LogoutController {
 
 	}
 
-	
 
 }
