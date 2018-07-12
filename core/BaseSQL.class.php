@@ -608,7 +608,7 @@ class BaseSQL
     public function countQCMNotDoneByUserId($classeId, $userID)
     {
         $sql = "SELECT count(QCM.id) AS count FROM QCM WHERE QCM.id not in(SELECT idQCM FROM participateQCM WHERE idUser = ". $userID .") AND classe=".$classeId;
-        echo $sql;
+
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
