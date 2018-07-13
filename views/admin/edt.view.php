@@ -20,13 +20,12 @@
 				</thead>
 				<tbody>
 					<?php
-						for($i = 0; $i <= $nbCoursesPerDay; $i++){
+						foreach($hourTable as $hour){
 		            ?>
 					<tr>
 						<td>
 							<?php
-								$hour = $firstHour + $i*1 ;
-								echo floor($hour) . ':' . str_pad((($hour * 60) % 60), 2, "0", STR_PAD_RIGHT);
+								echo $hour
 							?>									
 						</td>	
 						<?php

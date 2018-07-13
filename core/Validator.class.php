@@ -321,16 +321,12 @@ class Validator {
 
         foreach ($form['input'] as $name => $config) {
 
-            if ($config['type'] == "number" && isset($config['required']) && !self::minLength($params[$name], 1)) {
-                $errorMsg[] = "Le champ " . $name . " est manquant";
-            }
-
-            if ($config['type'] == "number" && isset($config['required']) && !self::maxLength($params[$name], 1)) {
-                $errorMsg[] = "Le champ " . $name . " est trop long";
-            }
-
             if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {
                 $errorMsg[] = "Le champ " . $name . " est manquant";
+            }
+
+            if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 1)) {
+                $errorMsg[] = "Le champ " . $name . " est trop long";
             }
 
              if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 140)) {

@@ -1,6 +1,6 @@
 <form method="<?php echo $config['config']['method']; ?>" action="<?php echo $config['config']['action']; ?>">
 	<?php foreach ($config['input'] as $name => $params): ?>
-		<?php if ($params['type'] == "text" || $params['type'] == "number"){ ?>
+		<?php if ($params['type'] == "text"){ ?>
 
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">

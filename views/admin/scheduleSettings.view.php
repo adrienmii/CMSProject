@@ -4,7 +4,7 @@
 			Créer vos paramètres
 		</header>
 		<main>
-			<?php $this->addModal("addScheduleSettings", $config, $errors); ?>
+			<?php $this->addModal("scheduleSettings", $config, $errors); ?>
 		</main>
 	</section>
 </main>

@@ -8,6 +8,7 @@ class ScheduleSettings extends BaseSQL {
 	protected $lunchTime;
 	protected $lunchHour;
 	protected $courseTime;
+	protected $nbCoursePerDay;
 
 	public function __construct($id = null) {
 		parent::__construct();
@@ -44,6 +45,10 @@ class ScheduleSettings extends BaseSQL {
 		$this->courseTime = $courseTime;
 	}
 
+	public function setNbCoursePerDay($nbCoursePerDay) {
+		$this->nbCoursePerDay = $nbCoursePerDay;
+	}
+
 	public function getId() {
 		return $this->id;
 	}
@@ -72,13 +77,16 @@ class ScheduleSettings extends BaseSQL {
 		return $this->courseTime;
 	}
 
+	public function getNbCoursePerDay($nbCoursePerDay) {
+		 return $this->nbCoursePerDay;
+	}
 
 	public function generateForm() {
 		$BaseSQL = new BaseSQL();
 		return [
 			"config" => ["method"=> "POST", "action" => ""],
 			"input" => [
-				"days" => ["type" => "number", "placeholder" => "Nombre de jours pour une semaine", "required" => true, "id" => "inputDays"],
+				"days" => ["type" => "text", "placeholder" => "Nombre de jours pour une semaine", "required" => true, "id" => "inputDays"],
 				"firstHour" => ["type" => "text", "placeholder" => "Heure du premier cours de la journée (exemple: 08:00)", "required" => true, "id" => "inputFirstHour"],
 				"lastHour" => ["type" => "text", "placeholder" => "Heure du dernier cours de la journée (exemple: 17:00)", "required" => true, "id" => "inputLastHour"],
 				"lunchTime" => ["type" => "text", "placeholder" => "Durée de la pause du midi (exemple: 01:00)", "required" => true, "id" => "inputLunchTime"],

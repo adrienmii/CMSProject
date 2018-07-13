@@ -20,15 +20,17 @@ class ScheduleController {
             $v->assign("classes", $classes);
 
         }else{
-             header('Location: '.DIRNAME.'schedule/addSettings');
+             header('Location: '.DIRNAME.'schedule/editScheduleSettingsAction');
         }
 
     }
 
-    public function addSettingsAction($params) {        
+    public function editScheduleSettingsAction($params) {        
 
-        $settings = new ScheduleSettings();
+        $BaseSQL = new BaseSQL();
+        $settings = new ScheduleSettings(1);
         $form = $settings->generateForm();
+        $form['prefill'] = $BaseSQL->getAllById('ScheduleSettings', 1);
 
         $errors = null;
 
@@ -38,13 +40,20 @@ class ScheduleController {
 
             if (empty($errors)) {
 
+                $firstHour = $params['POST']['firstHour'];
+                $lastHour = $params['POST']['lastHour'];
+                $lunchTime = $params['POST']['lunchTime'];
+                $lunchHour = $params['POST']['lunchHour'];
+                $courseTime = $params['POST']['courseTime'];
+
                 $settings = new ScheduleSettings();
                 $settings->setDays($params['POST']['days']);
-                $settings->setFirstHour($params['POST']['firstHour']);
-                $settings->setLastHour($params['POST']['lastHour']);
-                $settings->setLunchTime($params['POST']['lunchTime']);
-                $settings->setLunchHour($params['POST']['lunchHour']);
-                $settings->setCourseTime($params['POST']['courseTime']);
+                $settings->setFirstHour($firstHour);
+                $settings->setLastHour($lastHour);
+                $settings->setLunchTime($lunchTime);
+                $settings->setLunchHour($lunchHour);
+                $settings->setCourseTime($courseTime);
+                $settings->setNbCoursePerDay($this->getNbCoursePerDay($firstHour,$lastHour,$lunchTime,$lunchHour,$courseTime));
                 $settings->save();
 
                 $notify = new Notify("Vos paramètres ont été créés avec succés", "success");
@@ -58,7 +67,7 @@ class ScheduleController {
 
         }
 
-        $v = new View("addScheduleSettings");
+        $v = new View("scheduleSettings");
         $v->assign("config", $form);
         $v->assign("errors", $errors);
         
@@ -67,7 +76,7 @@ class ScheduleController {
     public function editAction($params) {        
 
         $BaseSQL = new BaseSQL();
-        $scheduleSettings = $BaseSQL->getAllById("ScheduleSettings","4");
+        $scheduleSettings = $BaseSQL->getAllById("ScheduleSettings","1");
 
         $year = $params['URL'][2]; 
         $week = $params['URL'][1];
@@ -83,7 +92,28 @@ class ScheduleController {
         $lunchHour = explode(':', $scheduleSettings['lunchHour']);
         $lunchHour = $lunchHour[0] + floor(($lunchHour[1]/60)*100) / 100;
 
-        $nbCoursesPerDay = $this->getNbCoursePerDay($scheduleSettings);
+        $courseTime = explode(':', $scheduleSettings['courseTime']);
+        $courseTime = $courseTime[0] + floor(($courseTime[1]/60)*100) / 100;
+
+        $lunchTime = explode(':', $scheduleSettings['lunchTime']);
+        $lunchTime = $lunchTime[0] + floor(($lunchTime[1]/60)*100) / 100;
+
+        $nbCoursesPerDay = $this->getNbCoursePerDay($scheduleSettings["firstHour"],$scheduleSettings["lastHour"],$scheduleSettings["lunchTime"],$scheduleSettings["lunchHour"],$scheduleSettings["courseTime"]);
+
+        $hourTable = array();
+        for($i = 0; $i <= $nbCoursesPerDay; $i++){
+            if($i == 0){
+                $hour = $firstHour ;
+            }else{
+                $hour += $courseTime ;
+                if($hour - $courseTime == $lunchHour){
+                  $hour = $hour - $courseTime + $lunchTime ;
+                }
+                
+            }
+            
+            array_push($hourTable, floor($hour) . ':' . str_pad((($hour * 60) % 60), 2, "0", STR_PAD_RIGHT));
+        }
        
         $weekDaysArray = array();
         $dto = new \DateTime();
@@ -100,30 +130,24 @@ class ScheduleController {
             $dto->modify("+1 days");
         }
 
+        // important pour avancer d'une année en semaine 52
+        $dto->modify("+1 week");
+
         $goToPreviousWeek = date( "W/Y", strtotime($year.'-W'.$week." -1 week"));
-        $goToNextWeek = date( "W/Y", strtotime($year.'-W'.$week." +1 week"));
+        $goToNextWeek = date( "W/", strtotime($year.'-W'.$week." +1 week")).$dto->format('Y');
+
 
         $v = new View("edt");
-        $v->assign("scheduleSettings", $scheduleSettings);
         $v->assign("weekDaysArray", $weekDaysArray);
         $v->assign("goToPreviousWeek", $goToPreviousWeek);
         $v->assign("goToNextWeek", $goToNextWeek);
-        $v->assign("lunchHour", $lunchHour);
-        $v->assign("firstHour", $firstHour);
-        $v->assign("nbCoursesPerDay", $nbCoursesPerDay);
+        $v->assign("lunchHour", $scheduleSettings['lunchHour']);
+        $v->assign("hourTable", $hourTable);
         $v->assign("class", $class);
 
     }
 
-    private function getNbCoursePerDay($scheduleSettings){
-
-        //ici on vérifie si on peut remplir la journée sans qu'il y est de trou
-        $firstHour = $scheduleSettings['firstHour'];
-        $lastHour = $scheduleSettings['lastHour'];
-        $lunchTime = $scheduleSettings['lunchTime'];
-        $lunchHour = $scheduleSettings['lunchHour'];
-        $courseTime = $scheduleSettings['courseTime'];
-
+    private function getNbCoursePerDay($firstHour,$lastHour,$lunchTime,$lunchHour,$courseTime){
         
         $firstHourExploded = explode(':', $firstHour);
         $lastHourExploded = explode(':', $lastHour);
