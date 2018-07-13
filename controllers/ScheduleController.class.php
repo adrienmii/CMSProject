@@ -2,6 +2,13 @@
 
 class ScheduleController {
 
+    public function __construct() {
+        if (empty($_SESSION['token'])) {
+            header('Location: '.DIRNAME.'login');
+            exit;
+        }
+    }
+
     public function listAction($params) {        
 
         $BaseSQL = new BaseSQL();

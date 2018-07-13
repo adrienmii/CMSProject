@@ -1,6 +1,14 @@
 <?php
 
 class UserController {
+    
+    public function __construct() {
+        if (empty($_SESSION['token'])) {
+            header('Location: '.DIRNAME.'login');
+            exit;
+        }
+    }
+
 	public function indexAction($params) {
 		echo "Action par défaut d'un User";
         $notify = new Notify("L'utilisateur a bien été ajouté, une notification de création de compte lui a été envoyé par mail", "success");

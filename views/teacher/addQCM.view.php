@@ -5,9 +5,6 @@
 		<header class="text-center">
 			<?php if(isset($config['label'])){ ?>
 			<h4><?php echo $config['label'];   ?></h4>
-			<a href="#" id="previousQuestion">-</a>
-			<a href="#" id="nextQuestion">+</a>
-			<div id="questionNumber">Question<br><b>2</b><br>sur 2</div>
 			<?php }else{ ?>
 			<h4>Créer un QCM</h4>
 			<?php } ?>

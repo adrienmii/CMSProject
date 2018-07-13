@@ -2,6 +2,13 @@
 
 class DashboardController {
 
+    public function __construct() {
+        if (empty($_SESSION['token'])) {
+            header('Location: '.DIRNAME.'login');
+            exit;
+        }
+    }
+
 	public function indexAction($params) {		
 
 		$BSQL = new BaseSQL();
@@ -11,6 +18,27 @@ class DashboardController {
 		
         $form = $user->generateNewPwdUserForm();
         $errors = null;
+
+
+        $marks = $BSQL->getMarksFromStudentId($userinfo["id"]);
+        $form['dataChartMarks'] = [0, 0, 0, 0];
+        $form['average'] = null;
+        $form['nbQCMDone'] = $BSQL->countQCMDoneByUserId($userinfo["id"])['count'];
+        if(isset($userinfo["classe"]) && !empty($userinfo["classe"]))
+            $form['nbQCMNotDone'] = $BSQL->countQCMNotDoneByUserId($userinfo["classe"], $userinfo["id"])['count'];
+        $total = 0;
+        foreach ($marks as $mark){
+            $total += $mark['mark'];
+            if($mark['mark'] < 5)
+                $form['dataChartMarks'][0] ++;
+            elseif($mark['mark'] >= 5 && $mark['mark'] < 10)
+                $form['dataChartMarks'][1] ++;
+            elseif($mark['mark'] >= 10 && $mark['mark'] < 15)
+                $form['dataChartMarks'][2] ++;
+            else
+                $form['dataChartMarks'][3] ++;
+        }
+        $form['average'] = (count($marks) != 0) ? round(($total/count($marks))*2)/2 : "-";
 
         if (!empty($params['POST'])) {
             // Vérification des saisies

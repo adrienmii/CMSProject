@@ -2,6 +2,21 @@
 
 class ClasseController {
 
+    public function __construct() {
+        if (empty($_SESSION['token'])) {
+            header('Location: '.DIRNAME.'login');
+            exit;
+        }
+
+        $BSQL = new BaseSQL();
+        $user = $BSQL->userInfoByToken();
+
+        if ($user['rank'] == 3) {
+            header('Location: '.DIRNAME.'error');
+            exit;
+        }
+    }
+
 	public function indexAction($params) {	
 
 		$BaseSQL = new BaseSQL();

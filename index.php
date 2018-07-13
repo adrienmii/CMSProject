@@ -1,5 +1,6 @@
 <?php
 	session_start(); // session accessible partout sur le site
+	//ini_set("display_errors", 0);
 	require("conf.inc.php");
 
 
@@ -62,20 +63,22 @@
 			die("Le controller ".$c." n'existe pas");
 		}
 	} else {
-		die("Le fichier ".$c." n'existe pas");
+		header('Location: '.DIRNAME.'error');
+        exit;
+		//die("Le fichier ".$c." n'existe pas");
 	}
 
 
 	// VERIFIER SI USER PEUT ACCEDER A LA ROUTE
 
-	
+    $routeAccessAdmin = [
+        "",
+    ];
 	$BSQL = new BaseSQL(); 
 	if(isset($_SESSION['token'])){
 		$userinfo = $BSQL->userInfoByToken($_SESSION['token']);
 		if($userinfo['rank'] == 1){
-			$routeAccess = [
-							 "",
-			];
+
 		}
 	}
 
