@@ -1,10 +1,12 @@
 
 <main id="edtContainer">	
 	<div class="row">
+
 		<div id="weekSelect" class="col-xs-12">
-			<a href="<?php echo DIRNAME.'schedule/edit/'.$class.'/'.$goToPreviousWeek; ?>"><</a>
+			<?php echo strtoupper($class["classname"]); ?><br>
+			<a href="<?php echo DIRNAME.'schedule/edit/'.$class["id"].'/'.$goToPreviousWeek; ?>"><</a>
 				<span><?php echo $weekDaysArray[0]["str"]." - ".end($weekDaysArray)["str"]?></span>
-			<a href="<?php echo DIRNAME.'schedule/edit/'.$class.'/'.$goToNextWeek; ?>" id="nextWeek">></a></div>
+			<a href="<?php echo DIRNAME.'schedule/edit/'.$class["id"].'/'.$goToNextWeek; ?>" id="nextWeek">></a></div>
 		<div class="col-xs-12 col-md-10 col-md-offset-1">
 			<div id="edtTableContainer" >
 			<table id="edtTable">

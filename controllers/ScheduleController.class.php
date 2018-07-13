@@ -80,7 +80,7 @@ class ScheduleController {
 
         $year = $params['URL'][2]; 
         $week = $params['URL'][1];
-        $class = $params['URL'][0];
+        $class = $BaseSQL->classeInfoById($params['URL'][0]);
         // nombre de jours de cours pas semaine configuré par admin
         $nbDaysPerWeek = $scheduleSettings["days"];
         // la semaine affiché (celle de la date courante de base)

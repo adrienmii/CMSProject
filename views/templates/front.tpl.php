@@ -89,7 +89,9 @@ $style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 					<div class="col-md-6">
 						<a id="toggleIcon" onclick="toggleNav()" href="#"></a>
 					</div>
-					
+					<div class="col-md-2 col-md-offset-4">
+						<a style="font-size: 1rem; padding-left: 30px; color: #5A738E; top: 35%; position: relative;" href="<?php echo DIRNAME."logout"; ?>">Déconnexion</a>
+					</div>
 				</div>											
 			</div>
 			<div id="topBarMobile" class="hidden-md">
