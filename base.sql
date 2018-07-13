@@ -244,6 +244,10 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 --
 
 
+--
+-- Structure de la table `scheduleSettings`
+--
+
 CREATE TABLE `scheduleSettings` (
   `id` int(11) NOT NULL,
   `days` int(11) NOT NULL,
@@ -251,15 +255,16 @@ CREATE TABLE `scheduleSettings` (
   `lastHour` varchar(255) NOT NULL,
   `lunchHour` varchar(255) NOT NULL,
   `lunchTime` varchar(255) NOT NULL,
-  `courseTime` varchar(255) NOT NULL
+  `courseTime` varchar(255) NOT NULL,
+  `nbCoursePerDay` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `scheduleSettings`
 --
 
-INSERT INTO `scheduleSettings` (`id`, `days`, `firstHour`, `lastHour`, `lunchHour`, `lunchTime`, `courseTime`) VALUES
-(4, 5, '08:00', '17:00', '12:00', '01:00', '01:00');
+INSERT INTO `scheduleSettings` (`id`, `days`, `firstHour`, `lastHour`, `lunchHour`, `lunchTime`, `courseTime`, `nbCoursePerDay`) VALUES
+(4, 5, '08:00', '18:00', '12:00', '01:00', '01:00', 9);
 
 --
 -- Index pour les tables déchargées
