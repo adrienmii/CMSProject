@@ -45,8 +45,7 @@ class ScheduleController {
                 $lunchTime = $params['POST']['lunchTime'];
                 $lunchHour = $params['POST']['lunchHour'];
                 $courseTime = $params['POST']['courseTime'];
-
-                $settings = new ScheduleSettings();
+                
                 $settings->setDays($params['POST']['days']);
                 $settings->setFirstHour($firstHour);
                 $settings->setLastHour($lastHour);

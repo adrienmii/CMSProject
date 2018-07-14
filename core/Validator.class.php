@@ -325,10 +325,6 @@ class Validator {
                 $errorMsg[] = "Le champ " . $name . " est manquant";
             }
 
-            if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 1)) {
-                $errorMsg[] = "Le champ " . $name . " est trop long";
-            }
-
              if ($config['type'] == "text" && isset($config['required']) && !self::maxLength($params[$name], 140)) {
                 $errorMsg[] = "Le champ " . $name . " est trop long";
             }
