@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  ven. 13 juil. 2018 à 16:53
+-- Généré le :  lun. 16 juil. 2018 à 21:05
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.1.12
 
@@ -169,11 +169,18 @@ CREATE TABLE `scheduleCourse` (
   `room` varchar(255) NOT NULL,
   `startHour` varchar(255) NOT NULL,
   `day` int(11) NOT NULL,
-  `month` int(11) NOT NULL,
-  `year` int(11) NOT NULL,
+  `week` int(11) NOT NULL,
   `classID` int(11) NOT NULL,
   `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `scheduleCourse`
+--
+
+INSERT INTO `scheduleCourse` (`id`, `matiere`, `room`, `startHour`, `day`, `week`, `classID`, `userID`) VALUES
+(2, 'histoire', 'B12', '15:00', 13, 28, 12, 7),
+(8, 'zef', 'zef', '08:00', 16, 29, 12, 0);
 
 -- --------------------------------------------------------
 
@@ -218,7 +225,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `sitename`, `address`, `logo`, `theme`) VALUES
-(1, 'ESGI', '254 Rue du Faubourg Saint-Antoine, 75012 Paris 0198341092', 'LOGO-ESGI-300x203.jpg', 'default');
+(1, 'ESGI', '254 Rue du Faubourg Saint-Antoine, 75012 Paris 0198341092', 'LOGO-ESGI-300x203.jpg', 'sunlab');
 
 -- --------------------------------------------------------
 
@@ -246,7 +253,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '8983fc8c97ec963', 1, 1, NULL, '2018-04-23 14:41:56', '2018-07-13 14:52:05', 0),
+(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'f39e70b1ef074a6', 1, 1, NULL, '2018-04-23 14:41:56', '2018-07-16 13:41:47', 0),
 (6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'b8b56e53b6b3111', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-10 06:05:27', 0),
 (7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 16:15:48', '2018-05-16 12:53:12', 0),
 (8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 12:21:05', 0),
@@ -255,7 +262,7 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 (11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-26 09:45:23', 0),
 (12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '5fbf4f3177d7618', 3, 1, 14, '2018-04-26 09:13:51', '2018-05-16 12:53:06', 0),
 (13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '17324f02261aa2f', 3, 1, 14, '2018-04-26 11:43:31', '2018-07-09 12:13:49', 0),
-(14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '83e6ef0a72866e5', 3, 1, 0, '2018-04-28 16:33:18', '2018-05-16 12:53:09', 0),
+(14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '83e6ef0a72866e5', 3, 1, 12, '2018-04-28 16:33:18', '2018-07-15 12:32:52', 0),
 (15, 'Student4', 'EDULAB', 'student4@test.fr', '$2y$10$40KKHvCPw9dSZdbEcHbAX.FxuZymrQLkgHTGIOsWhylEjs8JNR//C', 'd8d5bd1e7c46ffc', 3, 1, 0, '2018-04-28 16:45:18', '2018-04-29 15:40:13', 0),
 (16, 'Student5', 'EDULAB', 'student5@test.fr', '$2y$10$kxNptCvYR1Vo2.50LY86cOpF.kd5S48O9B4i9f.RFib6fKLgKbd/a', 'b3e75245f008348', 3, 1, 0, '2018-04-28 16:47:04', '2018-04-29 15:40:18', 0),
 (17, 'Student6', 'EDULAB', 'student6@test.fr', '$2y$10$S.5K.eQbPqA9e9Xc0C8VXOKuZNfeaYZt9iVz991jScbRLHfeUWU6K', '9960d73c7cc9951', 3, 1, 0, '2018-04-28 17:32:09', '2018-04-29 15:40:21', 0),
@@ -336,10 +343,10 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT pour la table `scheduleCourse`
 --
 ALTER TABLE `scheduleCourse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `scheduleSettings`
 --
 ALTER TABLE `scheduleSettings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
