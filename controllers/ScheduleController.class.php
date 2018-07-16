@@ -143,7 +143,7 @@ class ScheduleController {
 
 
                  //à modifier
-                header('Location: '.DIRNAME.'schedule/view/'.$course->getDay()."/".$params['URL'][1]."/".$params['URL'][4]);
+                header('Location: '.DIRNAME.'schedule/list');
                 exit();
             } else {
                 new Notify($errors, "danger");
