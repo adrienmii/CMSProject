@@ -90,7 +90,7 @@ class ScheduleCourse extends BaseSQL {
 			"input" => [
 				"matiere" => ["type" => "text", "placeholder" => "Matière", "required" => true, "id" => "inputMatiere"],
                 "room" => ["type" => "text", "placeholder" => "Salle de classe", "required" => true, "id" => "inputRoom"],
-                "teacher[]" => ["type" => "select", "options" => $options, "required" => true, "multiple" => false, "id" => "selectTeacher"]
+                "userID" => ["type" => "select", "options" => $options, "required" => true, "id" => "selectTeacher"]
 			],
 			"submit" => "Valider"
 		];

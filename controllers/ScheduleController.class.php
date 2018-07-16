@@ -89,11 +89,14 @@ class ScheduleController {
 
                 $course->setMatiere($params['POST']['matiere']);
                 $course->setRoom($params['POST']['room']);
-                $course->setUserID($params['POST']['teacher']);
+                $course->setUserID($params['POST']['userID']);
                 $course->setClassID($params['URL'][0]);
                 $course->setWeek($params['URL'][1]);
                 $course->setDay($params['URL'][2]);
                 $course->setStartHour($params['URL'][3]);
+
+                // var_dump($params);
+                // die();
 
                 $course->save();
 
@@ -133,13 +136,14 @@ class ScheduleController {
 
                 $course->setMatiere($params['POST']['matiere']);
                 $course->setRoom($params['POST']['room']);
-                $course->setUserID($params['POST']['teacher']);
+                $course->setUserID($params['POST']['userID']);
                 $course->save();
 
                 new Notify("La modification a bien été effectuée", "success");
 
+
                  //à modifier
-                header('Location: '.DIRNAME.'schedule/list/');
+                header('Location: '.DIRNAME.'schedule/view/'.$course->getDay()."/".$params['URL'][1]."/".$params['URL'][4]);
                 exit();
             } else {
                 new Notify($errors, "danger");
@@ -160,7 +164,7 @@ class ScheduleController {
 
 
         //à modifier
-        header('Location: '.DIRNAME.'schedule/list/');
+        header('Location: '.$_SERVER['HTTP_REFERER'].'');
         exit();
 	}
 
