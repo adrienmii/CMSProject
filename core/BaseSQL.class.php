@@ -619,4 +619,48 @@ class BaseSQL
         return $count;
     }
 
+    public function getScheduleCourseByClassAndWeek($classID, $week)
+    {
+        $sql = "SELECT * from scheduleCourse WHERE classID = ".$classID." AND week = ".$week;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetchAll();
+
+        return $res;
+    }
+
+    public function teacherWithoutCourses(){
+
+        $sql = "SELECT * from user WHERE rank = 2 AND status = 1";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetchAll();
+
+        return $res;
+
+    }
+
+    public function scheduleCourseInfoByID($id){
+
+        $sql = "SELECT * from scheduleCourse WHERE id = ".$id;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetch();
+
+        return $res;
+
+    }
+
 }

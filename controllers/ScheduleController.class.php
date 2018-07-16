@@ -72,7 +72,99 @@ class ScheduleController {
         
     }
 
-    public function editAction($params) {        
+    public function addAction($params) {        
+
+        $course = new ScheduleCourse();
+        $form = $course->generateForm();
+
+        $errors = null;
+
+        if (!empty($params['POST'])) {
+
+            $errors = Validator::validateAddScheduleCourse($form, $params['POST']);
+
+            if (empty($errors)) {
+
+                $course = new ScheduleCourse();
+
+                $course->setMatiere($params['POST']['matiere']);
+                $course->setRoom($params['POST']['room']);
+                $course->setUserID($params['POST']['teacher']);
+                $course->setClassID($params['URL'][0]);
+                $course->setWeek($params['URL'][1]);
+                $course->setDay($params['URL'][2]);
+                $course->setStartHour($params['URL'][3]);
+
+                $course->save();
+
+                new Notify("La cours a bien été ajoutée", "success");
+
+                 //à modifier
+                header('Location: '.DIRNAME.'schedule/view/'.$params['URL'][0]."/".$params['URL'][1]."/".$params['URL'][4]);
+                exit();
+            } else {
+                new Notify($errors, "danger");
+            }
+
+        }
+
+		$v = new View("addScheduleCourse");
+        $v->assign("config", $form);
+        $v->assign("errors", $errors);
+       
+
+    }
+
+    public function editAction($params) {
+        $course = new ScheduleCourse();
+        $form = $course->generateForm();
+        $BaseSQL = new BaseSQL();
+        $form['prefill'] = $BaseSQL->scheduleCourseInfoByID($params['URL'][0]);
+
+        $errors = null;
+
+        if (!empty($params['POST'])) {
+
+            $errors = Validator::validateAddScheduleCourse($form, $params['POST']);
+
+            if (empty($errors)) {
+
+                $course = new ScheduleCourse($params['URL'][0]);
+
+                $course->setMatiere($params['POST']['matiere']);
+                $course->setRoom($params['POST']['room']);
+                $course->setUserID($params['POST']['teacher']);
+                $course->save();
+
+                new Notify("La modification a bien été effectuée", "success");
+
+                 //à modifier
+                header('Location: '.DIRNAME.'schedule/list/');
+                exit();
+            } else {
+                new Notify($errors, "danger");
+            }
+
+        }
+        $v = new View("editScheduleCourse");
+        $v->assign("config", $form);
+        $v->assign("errors", $errors);
+    }
+
+    public function deleteAction($params) {
+
+        $course = new ScheduleCourse($params['URL'][0]);
+        $course->delete();
+
+        new Notify("La cours a bien été supprimée", "success");
+
+
+        //à modifier
+        header('Location: '.DIRNAME.'schedule/list/');
+        exit();
+	}
+
+    public function viewAction($params) {        
 
         $BaseSQL = new BaseSQL();
         $scheduleSettings = $BaseSQL->getAllById("ScheduleSettings","1");
@@ -99,6 +191,7 @@ class ScheduleController {
 
         $nbCoursesPerDay = $this->getNbCoursePerDay($scheduleSettings["firstHour"],$scheduleSettings["lastHour"],$scheduleSettings["lunchTime"],$scheduleSettings["lunchHour"],$scheduleSettings["courseTime"]);
 
+        // tout les créneaux horaire d'une journée de cours
         $hourTable = array();
         for($i = 0; $i <= $nbCoursesPerDay; $i++){
             if($i == 0){
@@ -112,12 +205,14 @@ class ScheduleController {
             }
             
             array_push($hourTable, floor($hour) . ':' . str_pad((($hour * 60) % 60), 2, "0", STR_PAD_RIGHT));
+            
         }
        
         $weekDaysArray = array();
         $dto = new \DateTime();
         $dto->setISODate($year, $week);
 
+        // tableau clé=>valeur avec les dates
         for($i = 0; $i < $nbDaysPerWeek; $i++) {
             $weekDaysArray[]= [
                 'str' => $this->convertDay($dto->format('N')).$dto->format(' d/m/Y'),
@@ -136,13 +231,19 @@ class ScheduleController {
         $goToNextWeek = date( "W/", strtotime($year.'-W'.$week." +1 week")).$dto->format('Y');
 
 
+        //Récupération des cours planifier en fonction de classe/n°semaine
+        $courseList = $BaseSQL->getScheduleCourseByClassAndWeek($params['URL'][0],$week);
+
         $v = new View("edt");
         $v->assign("weekDaysArray", $weekDaysArray);
         $v->assign("goToPreviousWeek", $goToPreviousWeek);
         $v->assign("goToNextWeek", $goToNextWeek);
         $v->assign("lunchHour", $scheduleSettings['lunchHour']);
         $v->assign("hourTable", $hourTable);
+        $v->assign("courseList", $courseList);
         $v->assign("class", $class);
+        $v->assign("week", $week);
+        $v->assign("year", $year);
 
     }
 

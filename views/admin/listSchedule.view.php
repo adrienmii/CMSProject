@@ -13,7 +13,7 @@
 						<?php echo $class['classname']; ?>
 					</div>
 					<div class="actionCol text-right col-xs-5 ">
-						<a class="actionEditWhite" href="<?php echo DIRNAME.'schedule/edit/'.$class['id'].'/'.date('W').'/'.date('Y'); ?>"></a>
+						<a class="actionEditWhite" href="<?php echo DIRNAME.'schedule/view/'.$class['id'].'/'.date('W').'/'.date('Y'); ?>"></a>
 					</div>
 					<div class="col-xs-10">
 						<?php echo $count; ?> élève(s)  •  <?php echo $teachers; ?> professeur(s)
