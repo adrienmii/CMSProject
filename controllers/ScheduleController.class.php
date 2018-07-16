@@ -95,9 +95,6 @@ class ScheduleController {
                 $course->setDay($params['URL'][2]);
                 $course->setStartHour($params['URL'][3]);
 
-                // var_dump($params);
-                // die();
-
                 $course->save();
 
                 new Notify("La cours a bien été ajoutée", "success");
@@ -141,8 +138,6 @@ class ScheduleController {
 
                 new Notify("La modification a bien été effectuée", "success");
 
-
-                 //à modifier
                 header('Location: '.DIRNAME.'schedule/view/'.$course->getDay()."/".$params['URL'][1]."/".$params['URL'][4]);
                 exit();
             } else {
@@ -162,8 +157,6 @@ class ScheduleController {
 
         new Notify("La cours a bien été supprimée", "success");
 
-
-        //à modifier
         header('Location: '.$_SERVER['HTTP_REFERER'].'');
         exit();
 	}
