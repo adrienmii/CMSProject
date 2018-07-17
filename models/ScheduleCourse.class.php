@@ -82,9 +82,9 @@ class ScheduleCourse extends BaseSQL {
 		return $this->userID;
     }
     
-    public function generateForm() {
+    public function generateForm($week,$day,$hour) {
         $BaseSQL = new BaseSQL();
-        $options = $BaseSQL->teacherWithoutCourses();
+        $options = $BaseSQL->teacherWithoutCourses($week,$day,$hour);
 		return [
 			"config" => ["method"=> "POST", "action" => ""],
 			"input" => [

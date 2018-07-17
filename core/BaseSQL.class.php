@@ -633,9 +633,9 @@ class BaseSQL
         return $res;
     }
 
-    public function teacherWithoutCourses(){
+    public function teacherWithoutCourses($week,$day,$hour){
 
-        $sql = "SELECT * from user WHERE rank = 2 AND status = 1";
+        $sql= "SELECT id, firstname, lastname from user where rank = 2 AND status = 1 AND id NOT IN (SELECT userID from scheduleCourse where day =".$day." and week =".$week." and startHour = '".$hour."')";
 
         try {
             $query = $this->pdo->query($sql);
@@ -649,9 +649,9 @@ class BaseSQL
     }
 
     public function scheduleCourseInfoByID($id){
-
+        
         $sql = "SELECT * from scheduleCourse WHERE id = ".$id;
-
+            
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {
