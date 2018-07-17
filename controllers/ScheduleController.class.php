@@ -139,6 +139,7 @@ class ScheduleController {
                 new Notify("La modification a bien été effectuée", "success");
 
                 header('Location: '.DIRNAME.'schedule/view/'.$course->getDay()."/".$params['URL'][1]."/".$params['URL'][4]);
+
                 exit();
             } else {
                 new Notify($errors, "danger");
