@@ -164,9 +164,18 @@ class ScheduleController {
 
     public function viewAction($params) {        
 
+        
+
         $BaseSQL = new BaseSQL();
 
         $user = $BaseSQL->userInfoByToken();
+
+        if($user["rank"]==3 && $user["classe"] != $params['URL'][0]){
+
+            header('Location: '.DIRNAME.'error');
+            exit;
+
+        }
 
         $scheduleSettings = $BaseSQL->getAllById("ScheduleSettings","1");
 
