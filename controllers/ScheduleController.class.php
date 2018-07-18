@@ -129,7 +129,7 @@ class ScheduleController {
 
             if (empty($errors)) {
 
-                $course = new ScheduleCourse($params['URL'][0]);
+                $course = new ScheduleCourse($params['URL'][5]);
 
                 $course->setMatiere($params['POST']['matiere']);
                 $course->setRoom($params['POST']['room']);
@@ -138,7 +138,7 @@ class ScheduleController {
 
                 new Notify("La modification a bien été effectuée", "success");
 
-                header('Location: '.DIRNAME.'schedule/view/'.$course->getDay()."/".$params['URL'][1]."/".$params['URL'][4]);
+                header('Location: '.DIRNAME.'schedule/view/'.$params['URL'][0]."/".$params['URL'][1]."/".$params['URL'][4]);
 
                 exit();
             } else {
