@@ -119,7 +119,7 @@ class ScheduleController {
         $course = new ScheduleCourse();
         $form = $course->generateForm($params['URL'][1],$params['URL'][2],$params['URL'][3]);
         $BaseSQL = new BaseSQL();
-        $form['prefill'] = $BaseSQL->scheduleCourseInfoByID($params['URL'][0]);
+        $form['prefill'] = $BaseSQL->scheduleCourseInfoByID($params['URL'][5]);
 
         $errors = null;
 
@@ -165,6 +165,9 @@ class ScheduleController {
     public function viewAction($params) {        
 
         $BaseSQL = new BaseSQL();
+
+        $user = $BaseSQL->userInfoByToken();
+
         $scheduleSettings = $BaseSQL->getAllById("ScheduleSettings","1");
 
         $year = $params['URL'][2]; 
@@ -229,8 +232,12 @@ class ScheduleController {
         $goToNextWeek = date( "W/", strtotime($year.'-W'.$week." +1 week")).$dto->format('Y');
 
 
-        //Récupération des cours planifier en fonction de classe/n°semaine
-        $courseList = $BaseSQL->getScheduleCourseByClassAndWeek($params['URL'][0],$week);
+        //Récupération des cours planifier en fonction de classe/n°semaine ou de l'id du prof 
+        if($user["rank"]==1 || $user["rank"]==3){
+            $courseList = $BaseSQL->getScheduleCourseByClassAndWeek($params['URL'][0],$week);
+        }else{
+            $courseList = $BaseSQL->getScheduleCourseTeacher($user["id"],$week);
+        }
 
         $v = new View("edt");
         $v->assign("weekDaysArray", $weekDaysArray);
@@ -242,7 +249,7 @@ class ScheduleController {
         $v->assign("class", $class);
         $v->assign("week", $week);
         $v->assign("year", $year);
-
+        $v->assign("user",$user);
     }
 
     private function getNbCoursePerDay($firstHour,$lastHour,$lunchTime,$lunchHour,$courseTime){

@@ -48,19 +48,40 @@
 												$foundCourse = true;
 												?>
 													<div class="tooltip">
+														
+														<?php
+															if($user['rank']==1){
+														?>
 														<div style="float:left"><?php echo $course["matiere"]?></div>
 														<div class="actionCol text-right">
-															<a class="actionEditWhite" href="<?php echo DIRNAME.'schedule/edit/'.$course["id"]; ?>"></a>
+															<a class="actionEditWhite" href="<?php echo DIRNAME.'schedule/edit/'.$class['id'].'/'.$week."/".$weekDaysArray[$i]["d"].'/'.$hour.'/'.$year.'/'.$course['id']; ?>"></a>
 															<a class="actionDeleteWhite" href="<?php echo DIRNAME.'schedule/delete/'.$course["id"];?>" onclick="return confirm('Souhaitez vous supprimer ce cours ?')"></a>
 														</div>
-														<div><?php $BSQL = new BaseSQL(); $userinfo = $BSQL->userInfoById($course["userID"]); echo $userinfo['lastname']." ".$userinfo['firstname']?></div>
+														<?php
+															}else{
+
+															
+														?>
+															<div><?php echo $course["matiere"]?></div>
+														<?php
+															}
+															if($user['rank']==2){
+														?>
+															<div><?php $BSQL = new BaseSQL();$classInfo = $BSQL->classeInfoById($course["classID"]); echo $classInfo['classname']?></div>
+														<?php
+															}else{
+														?>
+															<div><?php $userinfo = $BSQL->userInfoById($course["userID"]); echo $userinfo['lastname']." ".$userinfo['firstname']?></div>	
+														<?php
+															}
+														?>
 														<div class="room"><?php echo $course["room"]?></div>
 														
 													</div>
 												<?php
 											}
 										}
-										if(!$foundCourse){
+										if(!$foundCourse && $user['rank']==1){
 											?>
 												<a style="position: relative;left: 50%;top: 50%;transform: translateX(-50%) translateY(-50%);" 
 													href="<?php echo DIRNAME.'schedule/add/'.$class['id'].'/'.$week."/".$weekDaysArray[$i]["d"].'/'.$hour.'/'.$year; ?>" id="addItem">+</a>

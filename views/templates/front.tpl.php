@@ -43,16 +43,14 @@ $style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
-						DIRNAME."Classe" => "Ma classe",
-						//DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."schedule/view/".$userinfo['id']."/".date('W')."/".date('Y') => "Emploi du temps",
 					);
-
 					$menuStudent = array(
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
-						//DIRNAME."Timetable" => "Emploi du temps",
+						DIRNAME."schedule/view/".$userinfo['classe']."/".date('W')."/".date('Y') => "Emploi du temps",
 					);	
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé

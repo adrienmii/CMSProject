@@ -663,4 +663,18 @@ class BaseSQL
 
     }
 
+    public function getScheduleCourseTeacher($userID, $week)
+    {
+        $sql = "SELECT * from scheduleCourse WHERE userID = ".$userID." AND week = ".$week;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetchAll();
+
+        return $res;
+    }
+
 }
