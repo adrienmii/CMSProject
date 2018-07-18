@@ -5,11 +5,13 @@
 
             <div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
-					<input <?php echo (!empty($config['post'][$name]) ? 'value="'. $config['post'][$name].'"' : ""); ?> type="<?php echo $params['type']; ?>" <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))?"value='".strtoupper($config['prefill'][$name])."'":""; ?> name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
+					<input <?php echo (!empty($config['post'][$name]) ? 'value="'. $config['post'][$name].'"' : ""); ?> type="<?php echo $params['type']; ?>" <?php echo (!empty($config['prefill']) && !empty($config['prefill'][$name]))?"value='".$config['prefill'][$name]."'":""; ?> name="<?php echo $name; ?>" placeholder="<?php echo $params['placeholder']; ?>" id="<?php echo $params['id']; ?>" <?php echo (isset($params['required']))?'required="required"':''; ?>>
 				</div>
             </div>
 
         <?php }elseif ($params['type'] == "select"){ ?>
+
+
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                     <select name="<?php echo $name; ?>" id="<?php echo $params['id']; ?>" >
