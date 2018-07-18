@@ -90,7 +90,7 @@ class BaseSQL
 					WHERE id = " . $this->id
             );
 
-            $query->execute($this->columns);
+            $query->execute(array_map('htmlentities', $this->columns));
 
         } else {
             //insert
@@ -104,7 +104,7 @@ class BaseSQL
 					(:" . implode(",:", array_keys($this->columns)) . ")
 				");
 
-            $query->execute($this->columns);
+            $query->execute(array_map('htmlentities', $this->columns));
 
             return $this->pdo->lastInsertId();
         }
