@@ -55,6 +55,12 @@ class ScheduleController {
                 $settings->setNbCoursePerDay($this->getNbCoursePerDay($firstHour,$lastHour,$lunchTime,$lunchHour,$courseTime));
                 $settings->save();
 
+                $courses = $BaseSQL->getAllScheduleCourse();
+                foreach($courses as $course){
+                    $c = new ScheduleCourse($course["id"]);
+                    $c->delete();
+                }
+
                 $notify = new Notify("Vos paramètres ont été créés avec succés", "success");
 
                 header('Location: '.DIRNAME.'schedule/list');

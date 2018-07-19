@@ -12,7 +12,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-2 col-sm-offset-10 btnAddSubscribe">	
-			<input class="addProfile" type="submit" value="<?php echo $config['submit']; ?>" name="submit_signin">
+			<input class="addProfile" type="submit" onclick="return confirm('Souhaitez vous vraiment remplacer ces paramètres ? Si oui ceci supprimera tous les cours créés jusqu'à présent)" value="<?php echo $config['submit']; ?>" name="submit_signin">
 		</div>
 	</div>
 

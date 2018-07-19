@@ -320,13 +320,13 @@ class Validator {
 
         foreach ($form['input'] as $name => $config) {
             
-            if (!preg_match("/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/", $params[$name])) {
-                $errorMsg[] = "Le format d'une heure doit être sous la forme 07:35";
-            }
+            // if (!preg_match("/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/", $params[$name])) {
+            //     $errorMsg[] = "Le format d'une heure doit être sous la forme 07:35";
+            // }
             
-            if (!preg_match("/^[1-7]$/", $params[$name])) {
-                $errorMsg[] = "Une semaine peut comprendre doit comprendre entre 1 et 7 journées de cours";
-            }
+            // if (!preg_match("/^[1-7]$/", $params[$name])) {
+            //     $errorMsg[] = "Une semaine peut comprendre doit comprendre entre 1 et 7 journées de cours";
+            // }
 
 
             if ($config['type'] == "text" && isset($config['required']) && !self::minLength($params[$name], 1)) {

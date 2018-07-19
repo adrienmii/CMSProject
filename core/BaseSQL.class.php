@@ -722,4 +722,18 @@ class BaseSQL
         return $res;
     }
 
+    public function getAllScheduleCourse()
+    {
+        $sql = "SELECT * from scheduleCourse ";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetchAll();
+
+        return $res;
+    }
+
 }
