@@ -32,8 +32,8 @@ $style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 					//Définitions de chaque menu avec l'url correspondante
 					$menuAdmin = array(
 						DIRNAME."dashboard" => "Dashboard",
-						DIRNAME."#" => "Enseignants",
-						DIRNAME."user/list" => "Elèves",
+						DIRNAME."user/list/2" => "Enseignants",
+						DIRNAME."user/list/3" => "Elèves",
 						DIRNAME."Classe" => "Classes",
 						DIRNAME."Schedule/list" => "Emploi du temps",
 						DIRNAME."settings" => "Paramètres"

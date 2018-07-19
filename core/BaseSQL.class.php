@@ -254,6 +254,20 @@ class BaseSQL
 
     }
 
+    public function getAllUsersByRank($rank)
+    {
+        $sql = "SELECT * FROM user WHERE status = 1 and rank = ".$rank;
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $user = $query->fetchAll();
+
+        return $user;
+
+    }
+
     public function getTeachersAndAdmin()
     {
         $sql = "SELECT id, firstname, lastname FROM user WHERE rank = 2 OR rank = 1 AND status = 1";
@@ -322,6 +336,19 @@ class BaseSQL
     public function getCountUsers()
     {
         $sql = "SELECT count(*) as count FROM user WHERE status = 1";
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count['count'];
+    }
+
+    public function getCountUsersByRank($rank)
+    {
+        $sql = "SELECT count(*) as count FROM user WHERE status = 1 and rank = ".$rank;
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {

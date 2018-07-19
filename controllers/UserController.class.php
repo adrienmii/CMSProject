@@ -60,8 +60,11 @@ class UserController {
 
 	public function listAction($params){
         $BSQL = new BaseSQL();
-        $users = $BSQL->getAllUsers();
-        $count = $BSQL->getCountUsers();
+        //$users = $BSQL->getAllUsers();
+        //$count = $BSQL->getCountUsers();
+
+        $users = $BSQL->getAllUsersByRank($params['URL'][0]);
+        $count = $BSQL->getCountUsersByRank($params['URL'][0]);
 
         $v = new View("listUser");
         $v->assign("users", $users);
