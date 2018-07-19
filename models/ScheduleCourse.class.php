@@ -94,6 +94,20 @@ class ScheduleCourse extends BaseSQL {
 			],
 			"submit" => "Valider"
 		];
+  }
+
+    public function generateEditForm($week,$day,$hour,$classID) {
+        $BaseSQL = new BaseSQL();
+        $options = $BaseSQL->teacherWithoutCourses2($week,$day,$hour,$classID);
+		return [
+			"config" => ["method"=> "POST", "action" => ""],
+			"input" => [
+				"matiere" => ["type" => "text", "placeholder" => "Matière", "required" => true, "id" => "inputMatiere"],
+                "room" => ["type" => "text", "placeholder" => "Salle de classe", "required" => true, "id" => "inputRoom"],
+                "userID" => ["type" => "select", "options" => $options, "required" => true, "id" => "selectTeacher"]
+			],
+			"submit" => "Valider"
+		];
 	}
 
 }

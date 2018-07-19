@@ -117,7 +117,7 @@ class ScheduleController {
 
     public function editAction($params) {
         $course = new ScheduleCourse();
-        $form = $course->generateForm($params['URL'][1],$params['URL'][2],$params['URL'][3]);
+        $form = $course->generateEditForm($params['URL'][1],$params['URL'][2],$params['URL'][3],$params['URL'][0]);
         $BaseSQL = new BaseSQL();
         $form['prefill'] = $BaseSQL->scheduleCourseInfoByID($params['URL'][5]);
 

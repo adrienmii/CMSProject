@@ -675,6 +675,24 @@ class BaseSQL
 
     }
 
+    public function teacherWithoutCourses2($week,$day,$hour,$classeId){
+
+        $sql= "SELECT id, firstname, lastname from user where rank = 2 AND status = 1 AND id NOT IN (SELECT userID from scheduleCourse where day =".$day." and week =".$week." and startHour = '".$hour."') union SELECT user.id, firstname, lastname from user inner join scheduleCourse on user.id = scheduleCourse.userID where day =".$day." and week =".$week." and startHour = '".$hour."' and classID = ".$classeId." ORDER by lastname, firstname
+        ";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetchAll();
+
+        return $res;
+
+    }
+
+    
+
     public function scheduleCourseInfoByID($id){
         
         $sql = "SELECT * from scheduleCourse WHERE id = ".$id;
