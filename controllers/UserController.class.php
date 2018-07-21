@@ -43,7 +43,7 @@ class UserController {
                 $mail->send();
                 $notify = new Notify("L'utilisateur a bien été ajouté, une notification de création de compte lui a été envoyé par mail","success");
 
-                header('Location: '.DIRNAME.'user/list');
+                header('Location: '.DIRNAME.'user/list/'.$params['POST']['rank']);
                 exit();
             }else{
                 $form['post'] = $params['POST'];
