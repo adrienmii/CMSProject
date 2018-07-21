@@ -722,6 +722,20 @@ class BaseSQL
         return $res;
     }
 
+    public function getAllScheduleCourseTeacher($userID)
+    {
+        $sql = "SELECT * from scheduleCourse WHERE userID = ".$userID;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $res = $query->fetchAll();
+
+        return $res;
+    }
+
     public function getAllScheduleCourse()
     {
         $sql = "SELECT * from scheduleCourse ";

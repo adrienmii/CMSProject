@@ -97,7 +97,7 @@ class UserController {
                 $user->save();
 
                 $notify = new Notify("L'utilisateur a bien été modifié","success");
-                header('Location: '.DIRNAME.'user/list');
+                header('Location: '.DIRNAME.'user/list/'.$params['URL'][1]);
                 exit();
             }else{
                 $form['post'] = $params['POST'];
@@ -112,11 +112,17 @@ class UserController {
 	}
 
 	public function removeAction($params) {
+        $BSQL = new BaseSQL();
         $user = new User($params['URL'][0]);
+        $scheduleCourses = $BSQL->getAllScheduleCourseTeacher($params['URL'][0]);
+        foreach($scheduleCourses as $course){
+            $c = new ScheduleCourse($course["id"]);
+            $c->delete();
+        }
         $user->setStatus(0);
         $user->save();
 
-        header('Location: '.DIRNAME.'user/list');
+        header('Location: '.DIRNAME.'user/list/'.$params['URL'][1]);
 	}
 
 }

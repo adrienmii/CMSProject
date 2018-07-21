@@ -31,8 +31,8 @@
 									<td><?php echo $user['email']; ?></td>
 									<td><?php echo $rank[$user['rank']]; ?></td>
 									<td>
-										<a class="actionEditBlue" href="<?php echo DIRNAME.'user/edit/'.$user['id']; ?>"></a>
-										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'user/remove/'.$user['id']; ?>" onclick="return confirm('Souhaitez vous supprimer l\'utilisateur <?php echo $user['firstname'].' '.$user['lastname']; ?> ?')"></a>
+										<a class="actionEditBlue" href="<?php echo DIRNAME.'user/edit/'.$user['id']."/".$user['rank']; ?>"></a>
+										<a class="actionDeleteBlue" href="<?php echo DIRNAME.'user/remove/'.$user['id']."/".$user['rank']; ?>" onclick="return confirm('Souhaitez vous supprimer l\'utilisateur <?php echo $user['firstname'].' '.$user['lastname']; ?> ?')"></a>
 									</td>
 								</tr>
 							<?php endforeach; ?>
