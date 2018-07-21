@@ -736,4 +736,116 @@ class BaseSQL
         return $res;
     }
 
+    public function countAllTeachers()
+    {
+        $sql = "SELECT count(id) AS count from user WHERE rank=2 ";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countAllStudents()
+    {
+        $sql = "SELECT count(id) AS count from user WHERE rank=3 ";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countAllClasses()
+    {
+        $sql = "SELECT count(id) AS count from classe";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countAllChapters()
+    {
+        $sql = "SELECT count(id) AS count from chapter";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countClassByTeacher($teacherId)
+    {
+        $sql = "SELECT count(classe.id) AS count from classe INNER JOIN classeTeacher ON classe.id = classeTeacher.classe WHERE classeTeacher.teacher=". $teacherId;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countQCMByTeacher($teacherId)
+    {
+        $sql = "SELECT count(qcm.id) AS count from qcm WHERE teacher=". $teacherId;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countCoursesByTeacher($teacherId)
+    {
+        $sql = "SELECT count(course.id) AS count from course WHERE teacher=". $teacherId;
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
+    public function countStudentsByTeacher($teacherId)
+    {
+        $sql = "SELECT count(user.id) AS count from user where classe in(select classe from classeteacher where teacher=". $teacherId.")";
+
+        try {
+            $query = $this->pdo->query($sql);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $count = $query->fetch();
+
+        return $count;
+    }
+
 }

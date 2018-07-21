@@ -3,7 +3,7 @@
 	$userinfo = $BSQL->userInfoByToken();
 ?>
 
-<main class="col-xs-12">		
+<main class="col-xs-12" xmlns="http://www.w3.org/1999/html">
 	
 	<div id="rowBlockSchedule" class="row">
 		
@@ -87,55 +87,145 @@
 		
 	</div>	
 	<div id="rowBlockInfo" class="row" >
-		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-			<div class="blocInfo">
-				<div class="blocTitle">
-					moyenne général
-				</div>
-				<div class="blocValue">
-					<?php echo $config['average']; ?>/20
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-			<div class="blocInfo">
-				<div class="blocTitle">
-					QCM réalisés
-				</div>
-				<div class="blocValue">
-					<?php echo $config['nbQCMDone']; ?>
+		<?php if($config['userInfo']['rank'] == 1){ ?>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						professeurs
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countAllTeachers']; ?>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-			<div class="blocInfo">
-				<div class="blocTitle">
-					QCM en attente
-				</div>
-				<div class="blocValue">
-					<?php echo (isset($config['nbQCMNotDone']) && !empty($config['nbQCMNotDone'])) ? $config['nbQCMNotDone'] : "-"; ?>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-			<div class="blocInfo">
-				<div class="blocTitle">
-					Eleves dans la classe
-				</div>
-				<div class="blocValue">
-					14
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						étudiants
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countAllStudents']; ?>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						classes
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countAllClasses']; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						chapitres
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countAllChapters']; ?>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
+
+		<?php if($config['userInfo']['rank'] == 2){ ?>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						mes classes
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countClassByTeachers']; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						mes étudiants
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countStudentsByTeacher']; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						mes qcm
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countQCMByTeacher']; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						mes cours
+					</div>
+					<div class="blocValue">
+						<?php echo $config['countCoursesByTeacher']; ?>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
+
+		<?php if($config['userInfo']['rank'] == 3){ ?>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						moyenne général
+					</div>
+					<div class="blocValue">
+						<?php echo $config['average']; ?>/20
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						QCM réalisés
+					</div>
+					<div class="blocValue">
+						<?php echo $config['nbQCMDone']; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						QCM en attente
+					</div>
+					<div class="blocValue">
+						<?php echo (isset($config['nbQCMNotDone']) && !empty($config['nbQCMNotDone'])) ? $config['nbQCMNotDone'] : "-"; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+				<div class="blocInfo">
+					<div class="blocTitle">
+						ma classe
+					</div>
+					<div class="blocValue">
+						<?php echo $config['myClass']; ?>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
 	</div>
-	<div id="rowChart" class="row" >
-		<div class="col-xs-12 col-md-6">
-			<canvas id="myChart"></canvas>
+	<?php if($config['userInfo']['rank'] == 3){ ?>
+		<div id="rowChart" class="row" >
+			<div class="col-xs-12 col-md-6">
+				<canvas id="myChart"></canvas>
+			</div>
+			<!--<div class="col-xs-12 col-md-6">
+				<canvas id="myChart2"></canvas>
+			</div>-->
 		</div>
-		<div class="col-xs-12 col-md-6">			
-			<canvas id="myChart2"></canvas>
-		</div>				
-	</div>
+	<?php } ?>
 </main>
 <script>
 	var ctx = document.getElementById("myChart");
@@ -145,7 +235,7 @@
 			labels: ["De 0 à 5", "De 5 à 10", "De 10 à 15", "De 15 à 20",],
 			datasets: [{
 				label: 'Nombre de notes',
-				data: [<?php echo implode(",", $config['dataChartMarks']); ?>],
+				data: [<?php echo implode(",", $config['dataChart']); ?>],
 				backgroundColor: [
 					'rgba(255, 99, 132, 0.5)',
 					'rgba(54, 162, 235, 0.5)',
@@ -171,7 +261,7 @@
 			},
 			title: {
 				display: true,
-				text:'Résultats Contrôle continu'
+				text:'Résultats Contrôle'
 			},
 			legend: {
 				display: true,
