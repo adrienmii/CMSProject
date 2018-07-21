@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mer. 18 juil. 2018 à 22:31
--- Version du serveur :  5.6.38
--- Version de PHP :  7.1.12
+-- Généré le :  sam. 21 juil. 2018 à 19:30
+-- Version du serveur :  5.6.35
+-- Version de PHP :  7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `edulab`
+-- Base de données :  `EDULAB7`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,8 @@ CREATE TABLE `chapter` (
 INSERT INTO `chapter` (`id`, `label`, `description`, `classe`) VALUES
 (1, 'Mathématiques', 'Cours de maths', 13),
 (2, 'Python', '', 12),
-(5, 'BDD', '', 14);
+(5, 'BDD', '', 14),
+(6, 'Teetet', 'Rrrrr', 12);
 
 -- --------------------------------------------------------
 
@@ -180,13 +181,10 @@ CREATE TABLE `scheduleCourse` (
 
 INSERT INTO `scheduleCourse` (`id`, `matiere`, `room`, `startHour`, `day`, `week`, `classID`, `userID`) VALUES
 (2, 'zer', 'zer', '08:00', 16, 29, 13, 6),
-(3, 'test', 'test', '08:00', 16, 29, 12, 7),
 (4, 'TESTzfeezffzff', 'TEST', '08:00', 16, 29, 14, 9),
 (5, 'Anglais', 'B35', '10:30', 18, 29, 14, 6),
 (6, 'erz', 'zr', '09:15', 16, 29, 12, 6),
-(7, 'EZFzfezfeezf', 'ZEF', '10:30', 16, 29, 12, 7),
-(8, 'ozevfl', 'zpvm', '08:00', 17, 29, 12, 7),
-(9, 'zef', 'zf', '09:15', 17, 29, 14, 7);
+(7, 'EZFzfezfeezf', 'ZEF', '10:30', 16, 29, 12, 7);
 
 -- --------------------------------------------------------
 
@@ -259,13 +257,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
-(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '18dcef888fec9c5', 1, 1, NULL, '2018-04-23 14:41:56', '2018-07-18 20:29:23', 0),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'b8b56e53b6b3111', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-10 06:05:27', 0),
+(1, 'Istrateur', 'ADMIN', 'ad@ad.fr', '$2y$10$WxGeRBhys1fecnN2xVQlUeBN4XUnR4BhG5ubWm5Rm/xyZ5PevsIz6', 'cc4213e20cc4bf3', 1, 1, 0, NULL, NULL, 0),
+(2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$w.Zml8kUVOx3OunNBubjBeC9.1OyPT/c3uweqC4DpdiSJdqJXMLJ2', '63e1e8fb64b28f5', 1, 0, NULL, '2018-04-23 14:41:56', '2018-07-21 17:04:12', 1),
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '1789993290dedba', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-21 17:30:08', 0),
 (7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'c48dc9b79070eab', 2, 1, NULL, '2018-04-23 16:15:48', '2018-07-18 19:49:11', 0),
 (8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 12:21:05', 0),
 (9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 19:01:56', 0),
-(10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 19:01:58', 0),
-(11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 1, NULL, '2018-04-24 18:42:30', '2018-04-26 09:45:23', 0),
+(10, 'Teacher4', 'EDULAB', 'teacher4@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 0, NULL, '2018-04-23 15:54:57', '2018-07-21 17:03:17', 0),
+(11, 'Teacher5', 'EDULAB', 'teacher5@tetst.fr', '$2y$10$qwbwy9/L.N53gmGjI17EU.UvIDmmxzbxmfto5qy7CkpZHh8aa7VpG', '7bfa713ba3c357f', 2, 0, NULL, '2018-04-24 18:42:30', '2018-07-21 16:57:25', 0),
 (12, 'Student1', 'EDULAB', 'student1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'f0a90e58d584561', 3, 1, 14, '2018-04-26 09:13:51', '2018-07-18 20:29:27', 0),
 (13, 'Student2', 'EDULAB', 'student2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'bea6a187dac4a41', 3, 1, 14, '2018-04-26 11:43:31', '2018-07-18 12:04:56', 0),
 (14, 'Student3', 'EDULAB', 'student3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '48455771be4438b', 3, 1, 12, '2018-04-28 16:33:18', '2018-07-18 12:27:33', 0),
@@ -274,7 +273,9 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 (17, 'Student6', 'EDULAB', 'student6@test.fr', '$2y$10$S.5K.eQbPqA9e9Xc0C8VXOKuZNfeaYZt9iVz991jScbRLHfeUWU6K', '9960d73c7cc9951', 3, 1, 0, '2018-04-28 17:32:09', '2018-04-29 15:40:21', 0),
 (18, 'Student7', 'EDULAB', 'student7@test.fr', '$2y$10$hJny31M1mpJr0fMr0xmz8eXjZXc5ClhcAJqYaxT6WB.8iyxnG39UK', '0433890b5aca277', 3, 1, 12, '2018-04-28 17:34:14', '2018-04-29 15:10:18', 0),
 (19, 'Student8', 'EDULAB', 'student8@test.fr', '$2y$10$GHaCzAHXgSMo0LgftNbLvuqak8DltTaOkwqDFKTgykn8HFYMceMkK', 'b8e1654778f1045', 3, 1, 13, '2018-04-28 17:37:24', '2018-04-29 15:39:50', 0),
-(20, 'Student9', 'EDULAB', 'student9@test.fr', '$2y$10$P5c1229g3k3SRLheuKXaYuiLN9eNJy1ayrRwciUnVYtoTKW6rQeBW', 'bf0ed08ff3bb4e7', 3, 1, 13, '2018-04-29 15:47:41', '2018-04-29 15:39:50', 0);
+(20, 'Student9', 'EDULAB', 'student9@test.fr', '$2y$10$P5c1229g3k3SRLheuKXaYuiLN9eNJy1ayrRwciUnVYtoTKW6rQeBW', 'bf0ed08ff3bb4e7', 3, 1, 13, '2018-04-29 15:47:41', '2018-04-29 15:39:50', 0),
+(77, 'Lala', 'LALA', 'lalala0@lala.fr', '$2y$10$RsDk6RcNZHNxf5dzb1Tr0.to1CFsAIO.0aPYVGoFU00NmAT90JLYi', 'e1bc6db5fcd35eb', 1, 0, 0, NULL, '2018-07-21 17:05:12', 0),
+(78, 'Edulab', 'ADMIN', 'admin2@test.fr', '$2y$10$xBYwBKWlQ/8jkd18KJfkNeECIUW5czjwufku9ZClTxqe6vk84RaUC', '2038ac42fe53453', 1, 1, 0, NULL, NULL, 0);
 
 --
 -- Index pour les tables déchargées
@@ -318,6 +319,12 @@ ALTER TABLE `scheduleSettings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -325,34 +332,34 @@ ALTER TABLE `scheduleSettings`
 -- AUTO_INCREMENT pour la table `chapter`
 --
 ALTER TABLE `chapter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `classe`
 --
 ALTER TABLE `classe`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT pour la table `classeteacher`
 --
 ALTER TABLE `classeteacher`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT pour la table `course`
 --
 ALTER TABLE `course`
   MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT pour la table `scheduleCourse`
 --
 ALTER TABLE `scheduleCourse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `scheduleSettings`
 --
 ALTER TABLE `scheduleSettings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
