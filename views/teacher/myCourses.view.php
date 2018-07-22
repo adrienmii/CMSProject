@@ -6,6 +6,11 @@
         <main class="row">
             <div class="col-xs-12">
                 <div class="row">
+                    <?php 
+                    $BSQL = new BaseSQL();
+                    $user = $BSQL->userInfoByToken();
+                    if ($user['rank'] == 2) {
+                    ?>
                     <div class="col-xs-12 col-sm-6 col-lg-4">
                         <div id="addBlock">
                             <div id="iconAddBlockContainer">
@@ -14,6 +19,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                     <?php foreach ($courses as $course) { ?>                       
                         <div class="col-xs-12 col-sm-6 col-lg-4">
                             <div class="blueBlock"> 
