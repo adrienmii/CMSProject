@@ -36,24 +36,21 @@ $style = (isset($settings['theme']))?$settings['theme']:'default'; ?>
 						DIRNAME."user/list/3" => "Elèves",
 						DIRNAME."Classe" => "Classes",
 						DIRNAME."Schedule/list" => "Emploi du temps",
-						DIRNAME."settings" => "Paramètres",
-						DIRNAME."logout" => "Se déconnecter"
+						DIRNAME."settings" => "Paramètres"
 					);
 
 					$menuTeacher = array(
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
-						DIRNAME."schedule/view/".$userinfo['id']."/".date('W')."/".date('Y') => "Emploi du temps",
-						DIRNAME."logout" => "Se déconnecter"
+						DIRNAME."schedule/view/".$userinfo['id']."/".date('W')."/".date('Y') => "Emploi du temps"
 					);
 					$menuStudent = array(
 						DIRNAME."dashboard" => "Dashboard",
 						DIRNAME."chapter/list" => "Mes cours",
 						DIRNAME."QCM" => "Evaluations",
 						DIRNAME."Devoirs" => "Devoirs",
-						DIRNAME."schedule/view/".$userinfo['classe']."/".date('W')."/".date('Y') => "Emploi du temps",
-						DIRNAME."logout" => "Se déconnecter"
+						DIRNAME."schedule/view/".$userinfo['classe']."/".date('W')."/".date('Y') => "Emploi du temps"
 					);	
 
 					//En fonction du rank de l'utilisateur on récupére son menu associé

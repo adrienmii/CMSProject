@@ -43,8 +43,8 @@ for ($i=0; $i < strlen($captcha); $i++) {
 	imagettftext($image, 18, rand(-25,25), 15*$i+18, 30, $colorfont, $fonts[$font], $captcha[$i]);
 }
 
-
-imagestring($image, 2, 100, 2, $captcha, imagecolorallocate($image, rand(0,127), rand(0,127), rand(0,127)));
+//indice pour dev
+//imagestring($image, 2, 100, 2, $captcha, imagecolorallocate($image, rand(0,127), rand(0,127), rand(0,127)));
 
 
 imagepng($image);

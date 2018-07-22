@@ -7,6 +7,14 @@
 		<main class="row">
 			<div class="col-xs-12">
 				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div id="addBlock">
+                            <div id="iconAddBlockContainer">
+                                <a href="<?php echo DIRNAME."/chapter/add";?>" id="addItem">+</a>
+                                <p>Créer un nouveau chapitre</p>
+                            </div>
+                        </div>
+                    </div>
 					<?php foreach ($chapters as $chapter) { 
 						$BaseSQL = new BaseSQL(); 
 						$count = $BaseSQL->getCountCourse($chapter['id']);

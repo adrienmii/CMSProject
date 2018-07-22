@@ -7,7 +7,7 @@
 	<main class="row">
 		<section class="col-xs-12">
 			<article>
-				<?php echo $course['content']; ?>
+				<?php echo html_entity_decode($course['content']); ?>
 			</article>
 		</section>
 	</main>				

@@ -49,7 +49,8 @@
 </div>
     <div class="row">
         <div class="col-xs-12 col-sm-2 col-sm-offset-10 btnAddSubscribe">   
-            <input type="submit" class="addProfile" value="<?php echo $config['submit']; ?>" name="submit_signin">
+            <input type="submit" class="addProfile" value="<?php echo $config['submit']; ?>" name="submit_signin"><br>
+            <input type="button" value="Paramètres calendrier" class="addProfile" style="width:200px;font-size:13px" onclick="window.location='<?php echo DIRNAME.'schedule/editScheduleSettings'; ?>';">  
         </div>
     </div>
 

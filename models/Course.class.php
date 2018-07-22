@@ -65,7 +65,7 @@ class Course extends BaseSQL {
     }
 
     public function generateFormAddCourse() {
-        $options = $this->getChapters($this->userInfoByToken()['id']);
+        $options = $this->getChapters('all');
 
         return [
             "config" => ["method"=> "POST", "action" => ""],

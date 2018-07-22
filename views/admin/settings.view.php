@@ -5,7 +5,7 @@
 			Paramètres généraux
 		</header>
 		<main>
-			<?php $this->addModal("settings", $config, $errors); ?>			
+			<?php $this->addModal("settings", $config, $errors); ?>	
 		</main>
 	</section>
 </main>

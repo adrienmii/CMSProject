@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  sam. 21 juil. 2018 à 19:30
+-- Généré le :  Dim 22 juil. 2018 à 16:07
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -131,7 +131,8 @@ CREATE TABLE `QCM` (
 --
 
 INSERT INTO `QCM` (`id`, `teacher`, `label`, `classe`) VALUES
-(1, 6, 'QCM Test 2', 14);
+(1, 6, 'QCM Test 2', 14),
+(2, 6, 'ter', 12);
 
 -- --------------------------------------------------------
 
@@ -259,7 +260,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `rank`, `status`, `classe`, `date_inserted`, `date_created`, `pwd_changed`) VALUES
 (1, 'Istrateur', 'ADMIN', 'ad@ad.fr', '$2y$10$WxGeRBhys1fecnN2xVQlUeBN4XUnR4BhG5ubWm5Rm/xyZ5PevsIz6', 'cc4213e20cc4bf3', 1, 1, 0, NULL, NULL, 0),
 (2, 'Admin', 'EDULAB', 'admin@test.fr', '$2y$10$w.Zml8kUVOx3OunNBubjBeC9.1OyPT/c3uweqC4DpdiSJdqJXMLJ2', '63e1e8fb64b28f5', 1, 0, NULL, '2018-04-23 14:41:56', '2018-07-21 17:04:12', 1),
-(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '1789993290dedba', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-21 17:30:08', 0),
+(6, 'Teacher', 'EDULAB', 'teacher@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '59b123001a94867', 2, 1, NULL, '2018-04-23 15:54:57', '2018-07-22 13:45:24', 0),
 (7, 'Teacher1', 'EDULAB', 'teacher1@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', 'c48dc9b79070eab', 2, 1, NULL, '2018-04-23 16:15:48', '2018-07-18 19:49:11', 0),
 (8, 'Teacher2', 'EDULAB', 'teacher2@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', '266f76650137d37', 2, 1, NULL, '2018-04-23 15:54:57', '2018-05-16 12:21:05', 0),
 (9, 'Teacher3', 'EDULAB', 'teacher3@test.fr', '$2y$10$CpTNQpA7bmLPKGfYVrW.Zetq1zIAnUOOVRx3joAuy11/sFFT7Ql96', NULL, 2, 1, NULL, '2018-04-23 15:54:57', '2018-04-24 19:01:56', 0),
@@ -275,7 +276,7 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `pwd`, `token`, `ran
 (19, 'Student8', 'EDULAB', 'student8@test.fr', '$2y$10$GHaCzAHXgSMo0LgftNbLvuqak8DltTaOkwqDFKTgykn8HFYMceMkK', 'b8e1654778f1045', 3, 1, 13, '2018-04-28 17:37:24', '2018-04-29 15:39:50', 0),
 (20, 'Student9', 'EDULAB', 'student9@test.fr', '$2y$10$P5c1229g3k3SRLheuKXaYuiLN9eNJy1ayrRwciUnVYtoTKW6rQeBW', 'bf0ed08ff3bb4e7', 3, 1, 13, '2018-04-29 15:47:41', '2018-04-29 15:39:50', 0),
 (77, 'Lala', 'LALA', 'lalala0@lala.fr', '$2y$10$RsDk6RcNZHNxf5dzb1Tr0.to1CFsAIO.0aPYVGoFU00NmAT90JLYi', 'e1bc6db5fcd35eb', 1, 0, 0, NULL, '2018-07-21 17:05:12', 0),
-(78, 'Edulab', 'ADMIN', 'admin2@test.fr', '$2y$10$xBYwBKWlQ/8jkd18KJfkNeECIUW5czjwufku9ZClTxqe6vk84RaUC', '2038ac42fe53453', 1, 1, 0, NULL, NULL, 0);
+(78, 'Edulab', 'ADMIN', 'admin2@test.fr', '$2y$10$xBYwBKWlQ/8jkd18KJfkNeECIUW5czjwufku9ZClTxqe6vk84RaUC', '2038ac42fe53453', 1, 0, 0, NULL, '2018-07-21 17:34:37', 0);
 
 --
 -- Index pour les tables déchargées
@@ -307,6 +308,24 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `participateQCM`
+--
+ALTER TABLE `participateQCM`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `QCM`
+--
+ALTER TABLE `QCM`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `questionQCM`
+--
+ALTER TABLE `questionQCM`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `scheduleCourse`
 --
 ALTER TABLE `scheduleCourse`
@@ -316,6 +335,12 @@ ALTER TABLE `scheduleCourse`
 -- Index pour la table `scheduleSettings`
 --
 ALTER TABLE `scheduleSettings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `settings`
+--
+ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -349,6 +374,21 @@ ALTER TABLE `classeteacher`
 ALTER TABLE `course`
   MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT pour la table `participateQCM`
+--
+ALTER TABLE `participateQCM`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `QCM`
+--
+ALTER TABLE `QCM`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `questionQCM`
+--
+ALTER TABLE `questionQCM`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
 -- AUTO_INCREMENT pour la table `scheduleCourse`
 --
 ALTER TABLE `scheduleCourse`
@@ -357,6 +397,11 @@ ALTER TABLE `scheduleCourse`
 -- AUTO_INCREMENT pour la table `scheduleSettings`
 --
 ALTER TABLE `scheduleSettings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT pour la table `settings`
+--
+ALTER TABLE `settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `user`

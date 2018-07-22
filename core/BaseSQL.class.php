@@ -808,7 +808,7 @@ class BaseSQL
 
     public function countClassByTeacher($teacherId)
     {
-        $sql = "SELECT count(classe.id) AS count from classe INNER JOIN classeTeacher ON classe.id = classeTeacher.classe WHERE classeTeacher.teacher=". $teacherId;
+        $sql = "SELECT count(classe.id) AS count from classe INNER JOIN classeteacher ON classe.id = classeteacher.classe WHERE classeteacher.teacher=". $teacherId;
 
         try {
             $query = $this->pdo->query($sql);
@@ -822,7 +822,7 @@ class BaseSQL
 
     public function countQCMByTeacher($teacherId)
     {
-        $sql = "SELECT count(qcm.id) AS count from qcm WHERE teacher=". $teacherId;
+        $sql = "SELECT count(QCM.id) AS count from QCM WHERE teacher=". $teacherId;
 
         try {
             $query = $this->pdo->query($sql);

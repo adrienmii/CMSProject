@@ -30,7 +30,7 @@ class ScheduleController {
         $BaseSQL = new BaseSQL();
         $settings = new ScheduleSettings(1);
         $form = $settings->generateForm();
-        $form['prefill'] = $BaseSQL->getAllById('ScheduleSettings', 1);
+        $form['prefill'] = $BaseSQL->getAllById('scheduleSettings', 1);
 
         $errors = null;
 
@@ -183,7 +183,7 @@ class ScheduleController {
 
         }
 
-        $scheduleSettings = $BaseSQL->getAllById("ScheduleSettings","1");
+        $scheduleSettings = $BaseSQL->getAllById("scheduleSettings","1");
 
         $year = $params['URL'][2]; 
         $week = $params['URL'][1];
