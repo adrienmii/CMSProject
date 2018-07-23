@@ -361,7 +361,7 @@ class BaseSQL
 
     public function getCountCourse($id)
     {
-        $sql = "SELECT count(*) as count FROM course WHERE teacher = " . $id;
+        $sql = "SELECT count(*) as count FROM course WHERE chapter = " . $id;
         try {
             $query = $this->pdo->query($sql);
         } catch (Exception $e) {

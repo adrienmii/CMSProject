@@ -40,7 +40,7 @@
 										<a class="actionDeleteWhite" href="<?php echo DIRNAME.'chapter/delete/'.$chapter['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
 										<?php } ?>
 									</div>
-									<div class="col-xs-10">
+									<div class="col-xs-10" style="margin-top: -15px;">
 										<?php echo $count; ?> cours 
 									</div>													
 								</div>							

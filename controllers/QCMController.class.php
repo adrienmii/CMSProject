@@ -209,7 +209,7 @@ class QCMController {
 
         new Notify("Le QCM a bien été supprimé", "success");
 
-        header('Location: '.DIRNAME.'chapter/list');
+        header('Location: '.DIRNAME.'QCM');
         exit();
 
 
