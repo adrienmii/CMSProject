@@ -34,8 +34,11 @@
 									</div>
 									<div class="actionCol text-right col-xs-5 ">
 										<a class="actionViewWhite" href="<?php echo DIRNAME.'chapter/view/'.$chapter['id']; ?>"></a>
+										<?php if ($user['rank'] == 1 || $user['rank'] == 2) {
+                                        ?>
 										<a class="actionEditWhite" href="<?php echo DIRNAME.'chapter/edit/'.$chapter['id']; ?>"></a>
 										<a class="actionDeleteWhite" href="<?php echo DIRNAME.'chapter/delete/'.$chapter['id']; ?>" onclick="return confirm('Souhaitez vous supprimer ce chapitre ?')"></a>
+										<?php } ?>
 									</div>
 									<div class="col-xs-10">
 										<?php echo $count; ?> cours 

@@ -29,8 +29,11 @@
                                     </div>
                                     <div class="actionCol text-right col-xs-5 ">
                                         <a class="actionViewWhite" href="<?php echo DIRNAME.'course/view/'.$course['course']; ?>"></a>
+                                        <?php if ($user['rank'] == 1 || $user['rank'] == 2) {
+                                        ?>
                                         <a class="actionEditWhite" href="<?php echo DIRNAME.'course/edit/'.$course['course']; ?>"></a>
                                         <a class="actionDeleteWhite" href="<?php echo DIRNAME.'course/delete/'.$course['course']; ?>" onclick="return confirm('Souhaitez vous supprimer ce cours ?')"></a>
+                                        <?php } ?>
                                     </div>                                                                                
                                 </div>                          
                             </div>
